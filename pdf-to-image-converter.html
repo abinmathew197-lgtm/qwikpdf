@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-language" content="en">
+<meta name="robots" content="index, follow">
+<title>Free PDF to Image Converter | Convert PDF to JPG, PNG & more - QwikPDF</title>
+<meta name="description" content="Convert your PDFs to high-quality images with the free QwikPDF online converter. Our tool supports JPG, PNG, and other image formats, allowing you to quickly and easily transform your PDF pages without watermarks.">
+<meta name="keywords" content="PDF to Image converter, convert PDF to image, free PDF to image, PDF to JPG, PDF to PNG, online PDF to image, QwikPDF">
+
+<!-- Social Sharing (Open Graph + Twitter) -->
+<meta property="og:title" content="Free Online PDF to Image Converter | QwikPDF">
+<meta property="og:description" content="Convert PDF pages to high-quality images online for free. Perfect for sharing, presentations, or archiving - no watermarks, no registration needed.">
+<meta property="og:url" content="https://qwikpdf.com/pdf-to-image-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://qwikpdf.com/img/preview-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Online PDF to Image Converter | QwikPDF">
+<meta name="twitter:description" content="Convert PDF pages to high-quality images in seconds - completely free with no watermarks.">
+<meta name="twitter:image" content="https://qwikpdf.com/img/preview-image.png">
+
+
+
+<!-- Canonical & PWA -->
+<link rel="canonical" href="https://qwikpdf.com/pdf-to-image-converter.html">
+<link rel="manifest" href="/manifest.json">
+<!-- Icons & Favicons -->
+<link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+<!-- Preload & Preconnect -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preload" href="/css/general.css" as="style">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+
+<!-- Theme Colors -->
+<meta name="theme-color" content="#FFE1C4">
+<meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/general.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikPDF - Free PDF to Image Converter",
+  "description": "Convert PDF pages to high-quality images online for free. Perfect for extracting content, creating presentations, or sharing document pages.",
+  "url": "https://qwikpdf.com/pdf-to-image-converter.html",
+  "applicationCategory": "DocumentConverter",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "QwikPDF",
+    "url": "https://qwikpdf.com/"
+  },
+  "featureList": [
+    "Convert PDF to high-quality images",
+    "Select specific pages or convert all",
+    "Adjust quality settings",
+    "Batch process multiple files",
+    "No watermark added",
+    "Browser-based processing",
+    "Optimized output for all uses"
+  ]
+}
+</script>
+  
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-1ZSH7PWKEQ&amp;cx=c&amp;gtm=453e55m0h2za200&amp;tag_exp=101509157~103116026~103130498~103130500~103200004~103233427~103252644~103252646~104481633~104481635"></script><script src="https://www.googletagmanager.com/gtag/js?l=dataLayer" async=""></script></head>
+
+<body>
+   
+
+    <div class="container" style="margin-top: 5px;">
+           <div class="container">
+<div class="header">
+    <h1>
+        <i class="fas fa-file-image"></i>
+        <span>QwikPDF - Free PDF to Image Converter</span>
+    </h1>
+    <p style="font-size: 1.1rem;">Instantly Convert PDF Pages to High-Quality Images</p>
+</div>
+
+    </div>
+
+        <div id="dropZone" class="mb-4" ondrop="handleDrop(event)" ondragover="allowDrop(event)"  style="margin-top: 9px;">
+            <div class="drop-zone-text"><i class="fas fa-cloud-upload-alt me-2"></i>Drag and drop your PDFs here</div>
+            <div class="drop-zone-subtext">or click to browse files (supports multiple PDFs)</div>
+        </div>
+
+        <div class="mb-3 d-none" id="fileInputContainer" style="display: none !important;">
+            <input type="file" id="pdfUpload" accept=".pdf" class="form-control" onchange="loadPDF()" multiple="">
+        </div>
+
+        <div id="pdfListContainer" class="mb-3 d-none">
+            <h6>Uploaded PDFs:</h6>
+            <div class="pdf-list" id="pdfList"></div>
+        </div>
+
+        <!-- Improved Thumbnail Container -->
+        <div id="thumbnailContainer" class="thumbnail-container d-none"></div>
+
+       
+<!-- Professional Editor Toolbar -->
+<div class="editor-toolbar disabled" id="toolbar">
+    <!-- First Row - Editing Tools -->
+    <div class="toolbar-section">
+              <button id="addPageBtn" class="toolbar-btn" title="Add Page" onclick="showAddPageOptions()">
+    <i class="fas fa-plus"></i>
+    <span class="toolbar-btn-text">Add Page</span>
+</button>
+<button id="duplicatePageBtn" class="toolbar-btn" title="Duplicate Page" onclick="duplicateSelectedPage()">
+    <i class="fas fa-copy"></i>
+    <span class="toolbar-btn-text">Duplicate</span>
+</button>
+<!-- In your toolbar section (first row), add the OCR button: -->
+<button id="ocrBtn" class="toolbar-btn" title="Extract Text (OCR)" onclick="toggleOCRMode()">
+    <i class="fas fa-text-height"></i>
+    <span class="toolbar-btn-text">OCR Edit</span>
+</button>
+<!-- Add this dropdown menu for page size options -->
+<div id="pageSizeDropdown" class="dropdown-menu page-size-dropdown">
+    <div class="dropdown-header">Page Size</div>
+    <a class="dropdown-item" href="#" onclick="addBlankPage('A4')">A4 (210 × 297 mm)</a>
+    <a class="dropdown-item" href="#" onclick="addBlankPage('Letter')">Letter (216 × 279 mm)</a>
+    <a class="dropdown-item" href="#" onclick="addBlankPage('Legal')">Legal (216 × 356 mm)</a>
+    <a class="dropdown-item" href="#" onclick="addBlankPage('A3')">A3 (297 × 420 mm)</a>
+    <a class="dropdown-item" href="#" onclick="addBlankPage('Custom')">Custom Size</a>
+</div>
+         <button id="whiteoutBtn" class="toolbar-btn" title="White Out" onclick="toggleWhiteoutMode()">
+            <i class="fas fa-eraser"></i>
+            <span class="toolbar-btn-text">Whiteout</span>
+        </button>
+        <div class="image-upload-wrapper">
+            <button type="button" class="toolbar-btn" title="Add Image" onclick="document.getElementById('imageFileInput').click()">
+                <i class="fas fa-image"></i>
+                <span class="toolbar-btn-text">Image</span>
+            </button>
+            <input type="file" id="imageFileInput" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+        </div>
+      <button id="addTextBtn" class="toolbar-btn" title="Add Text" onclick="toggleAddTextMode()">
+    <i class="fas fa-font"></i>
+    <span class="toolbar-btn-text">Text</span>
+</button>
+        <input type="number" id="fontSize" class="toolbar-input" value="12" min="8" max="72" onchange="updateSelectedText()">
+        <button id="boldBtn" class="toolbar-btn" title="Bold" onclick="toggleBold()">
+            <i class="fas fa-bold"></i>
+        </button>
+       <select id="fontFamily" class="toolbar-select" onchange="updateSelectedText()">
+    <option value="Arial">Arial</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Verdana">Verdana</option>
+    <!-- Add more fonts below -->
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Impact">Impact</option>
+    <option value="Tahoma">Tahoma</option>
+    <option value="Trebuchet MS">Trebuchet MS</option>
+    <option value="Palatino">Palatino</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Bookman">Bookman</option>
+    <option value="Courier">Courier</option>
+    <option value="Lucida Console">Lucida Console</option>
+</select>
+        <button id="italicBtn" class="toolbar-btn" title="Italic" onclick="toggleItalic()">
+            <i class="fas fa-italic"></i>
+        </button>
+        <input type="color" id="fontColor" class="toolbar-color" value="#000000" onchange="updateSelectedText()" title="Text Color">
+        <!-- Add this inside your toolbar-section div, after the font controls -->
+<div id="textPropertiesPanel" class="text-properties-panel d-none">
+    <div class="toolbar-section">
+        <input type="number" id="textFontSize" class="toolbar-input" value="12" min="8" max="72">
+        <button id="textBoldBtn" class="toolbar-btn" title="Bold">
+            <i class="fas fa-bold"></i>
+        </button>
+        <button id="textItalicBtn" class="toolbar-btn" title="Italic">
+            <i class="fas fa-italic"></i>
+        </button>
+        <select id="textFontFamily" class="toolbar-select">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Impact">Impact</option>
+    <option value="Tahoma">Tahoma</option>
+    <option value="Trebuchet MS">Trebuchet MS</option>
+    <option value="Palatino">Palatino</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Bookman">Bookman</option>
+    <option value="Courier">Courier</option>
+    <option value="Lucida Console">Lucida Console</option>
+        </select>
+        <input type="color" id="textFontColor" class="toolbar-color" value="#000000">
+    </div>
+</div>
+        <!-- <div class="toolbar-divider"></div> -->
+      <button id="addPageNumberBtn" class="toolbar-btn" title="Add Page Number" onclick="addPageNumbers()">
+    <i class="fas fa-hashtag"></i>
+    <span class="toolbar-btn-text">Page Numbers</span>
+  </button>
+  <select id="pageNumberPosition" class="toolbar-select">
+    <option value="bottom-center">Bottom Center</option>
+    <option value="bottom-right">Bottom Right</option>
+    <option value="bottom-left">Bottom Left</option>
+    <option value="top-center">Top Center</option>
+    <option value="top-right">Top Right</option>
+    <option value="top-left">Top Left</option>
+  </select>
+  <select id="pageNumberFormat" class="toolbar-select">
+    <option value="empty">Empty (Just Number)</option>
+    <option value="page">Page X</option>
+    <option value="number">No. X</option>
+  </select>
+        <!-- <div class="toolbar-divider"></div> -->
+        <button id="penBtn" class="toolbar-btn" title="Pen" onclick="togglePenMode()">
+            <i class="fas fa-pen"></i>
+            <span class="toolbar-btn-text">Pen</span>
+        </button>
+        <button id="signatureBtn" class="toolbar-btn" title="Signature" onclick="toggleSignatureMode()">
+            <i class="fas fa-signature"></i>
+            <span class="toolbar-btn-text">Signature</span>
+        </button>
+        <button id="highlighterBtn" class="toolbar-btn" title="Highlighter" onclick="toggleHighlighterMode()">
+            <i class="fas fa-highlighter"></i>
+            <span class="toolbar-btn-text">Highlight</span>
+        </button>
+        <select id="drawingSize" class="toolbar-select" style="width: 80px;">
+            <option value="1">1px</option>
+            <option value="2">2px</option>
+            <option value="3" selected="">3px</option>
+            <option value="5">5px</option>
+            <option value="8">8px</option>
+            <option value="10">10px</option>
+        </select>
+ <!-- <div class="toolbar-divider"></div> -->
+        <button class="toolbar-btn" title="Undo" onclick="undo()">
+            <i class="fas fa-undo"></i>
+            <span class="toolbar-btn-text">Undo</span>
+        </button>
+        <button class="toolbar-btn" title="Redo" onclick="redo()">
+            <i class="fas fa-redo"></i>
+            <span class="toolbar-btn-text">Redo</span>
+        </button>
+        <button class="toolbar-btn"  title="Delete" onclick="deleteSelected()">
+            <i class="fas fa-trash"></i>
+            <span class="toolbar-btn-text">Delete</span>
+        </button>
+
+
+        <div class="dropdown" id="iconsDropdownContainer">
+    <button class="toolbar-btn dropdown-toggle" type="button" id="iconsDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Add Icons">
+        <i class="material-icons">check</i>
+        <span class="toolbar-btn-text">Icons</span>
+    </button>
+    <div class="dropdown-menu icons-dropdown" aria-labelledby="iconsDropdown">
+        <div class="icons-search-container">
+            <input type="text" id="iconsSearch" placeholder="Search icons..." class="icons-search">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="icons-categories">
+
+                      <button class="icon-category-btn " data-category="all">All</button>
+                      <button class="icon-category-btn active" data-category="tick">Tick</button>
+            <button class="icon-category-btn" data-category="cross">Cross</button>
+        </div>
+        <div class="icon-color-picker">
+            <label for="iconColor">Icon Color:</label>
+            <input type="color" id="iconColor" value="#000000" title="Choose icon color">
+        </div>
+        <div class="icons-grid" id="iconsGrid">
+            <!-- Icons will be loaded here -->
+        </div>
+    </div>
+</div>
+
+        <!-- Shape Dropdown -->
+        <div class="dropdown">
+            <button class="toolbar-btn dropdown-toggle" type="button" id="shapeDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Add Shape">
+                <i class="fas fa-shapes"></i>
+                <span class="toolbar-btn-text">Shapes</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="shapeDropdown">
+                <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); addShape('arrow')"><i class="fas fa-arrow-right me-2"></i> Arrow</a></li>
+                <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); addShape('circle')"><i class="far fa-circle me-2"></i> Circle</a></li>
+                <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); addShape('rectangle')"><i class="far fa-square me-2"></i> Rectangle</a></li>
+                <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); addShape('line')"><i class="fas fa-minus me-2"></i> Line</a></li>
+            </ul>
+        </div>
+
+<button id="metadataBtn" class="toolbar-btn" title="View Metadata">
+    <i class="fas fa-info-circle"></i>
+    <span class="toolbar-btn-text">Metadata</span>
+</button>
+ <!-- Add this to your toolbar-section in the editor-toolbar div -->
+<div class="toolbar-section compression-controls">
+  <select id="compressionLevel" class="toolbar-select">
+    <option value="high">High Quality (Large)</option>
+    <option value="medium" selected>Medium Quality (Recommended)</option>
+    <option value="low">Low Quality (Small)</option>
+    <option value="extreme">Extreme Compression (Smallest)</option>
+  </select>
+  <button id="compressBtn" class="toolbar-btn" title="Compress PDF" onclick="compressPDF()">
+    <i class="fas fa-compress-alt"></i>
+    <span class="toolbar-btn-text">Compress</span>
+  </button>
+</div>
+<!-- Add this button to your toolbar section -->
+<button id="imageToPdfBtn" class="btn btn-sm" title="Convert Images to PDF">
+    <i class="fas fa-file-pdf"></i>
+    <span class="toolbar-btn-text image-to-pdf-text" >Image to PDF</span>
+</button>
+    </div>
+
+    <!-- Second Row - Annotation Tools -->
+ 
+    <div class="toolbar-download-section">
+     <button class="btn btn-primary btn-sm" style="background-color: #01796f;" onclick="downloadEditedPDF()">
+  <i class="fas fa-download me-1"></i>
+  <span class="btn-text">Download</span>
+</button>
+<button class="btn btn-primary btn-sm" style="background-color: #01796f;" onclick="downloadEditedPDF()">
+  <i class="fas fa-layer-group me-1"></i>
+  <span class="btn-text">Merge PDF</span>
+</button>
+        <button class="btn btn-success btn-sm" style="background-color: #01796f; color: white;" onclick="downloadAllPagesAsZip()">
+  <i class="fas fa-file-archive me-1"></i>
+  <span class="btn-text">Split PDF</span>
+</button>
+        <select id="imageFormat" class="toolbar-select" style="width: 100px;">
+            <option value="jpeg">JPG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WebP</option>
+            <option value="bmp">BMP</option>
+        </select>
+         <button class="btn btn-info btn-sm" style="background-color: #01796f; color: white;" id="cnvttoimg" onclick="convertPDFToImages()">
+            <i class="fas fa-image me-1"></i> Convert to Image
+        </button>
+    </div>
+</div>
+
+        <div id="canvasContainer" class="canvasContainer"></div>
+        <div class="non-editable-overlay"></div>
+    </div>
+
+<div id="loaderOverlay" class="loader-overlay d-none">
+ <div class="loader"></div>
+</div>
+
+    <!-- Page Selection Modal -->
+ <div id="pageSelectionModal" class="page-selection-modal d-none">
+        <div class="page-selection-content">
+            <div class="page-selection-title">Select a page to add the image</div>
+            <div class="page-selection-grid" id="pageSelectionGrid"></div>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="cancelImagePlacement()">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmPageSelection()">Select Page</button>
+            </div>
+        </div>
+ </div>
+
+<div class="features-section">
+    <div class="container">
+        <div class="upgrade-notice" style="
+            background-color: #f8f9fa;
+            border-left: 4px solid #01796f;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            text-align: center;
+        ">
+            <p style="
+                font-size: 1.2rem;
+                color: #495057;
+                margin-bottom: 15px;
+                line-height: 1.5;
+            ">
+                For complete access to all PDF tools, visit our 
+                <a href="https://qwikpdf.com" style="
+                    color: #01796f;
+                    font-weight: 600;
+                    text-decoration: none;
+                    border-bottom: 2px dotted #01796f;
+                    transition: all 0.3s ease;
+                " 
+                onmouseover="this.style.color='#014a3d'; this.style.borderBottomColor='#014a3d'" 
+                onmouseout="this.style.color='#01796f'; this.style.borderBottomColor='#01796f'">
+                    PDF editing page
+                </a>
+            </p>
+            <a href="https://qwikpdf.com" class="btn btn-primary" style="
+                background-color: #01796f;
+                border: none;
+                padding: 8px 20px;
+                font-size: 0.9rem;
+                border-radius: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            ">
+                Go to QwikPDF Home
+            </a>
+        </div>
+        
+        <h1 style="color: #01796f; text-align: center; margin-bottom: 15px; font-size: 2rem;">How to Convert PDF to Images in 3 Simple Steps</h1>
+        <p class="text-center" style="margin-bottom: 30px; font-size: 1.1rem; color: #495057;">Free online PDF to image converter tool - Create high-quality JPG, PNG, WebP, or BMP images from your documents</p>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h2>Upload Your PDF</h2>
+                <div class="step-image">
+                    <img src="/img/pdftoimage/pdftoimageload.JPG" 
+                         alt="Upload PDF file to convert to images with QwikPDF's converter tool"
+                         class="img-fluid"
+                         loading="lazy"
+                         width="600"
+                         height="400">
+                </div>
+                <p>Drag and drop your PDF file or click to browse. Our PDF to image converter supports all PDF versions up to 50MB.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h2>Select Conversion Settings</h2>
+                <div class="step-image">
+                    <img src="/img/pdftoimage/pdftoimage.PNG" 
+                         alt="PDF to image conversion options and format selection"
+                         class="img-fluid"
+                         loading="lazy"
+                         width="600"
+                         height="400">
+                </div>
+                <p>Choose your preferred format (JPG, PNG, WebP, BMP), select page ranges, and adjust quality settings (up to 600 DPI for high-resolution images).</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h2>Download Your Images</h2>
+                <p>Get high-quality image files instantly in your chosen format. No watermarks, no limits—100% free conversion with perfect quality preservation.</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p><strong>All PDF to image conversions happen in your browser</strong> - Your files never leave your device for maximum privacy and security.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="text-center" style="color: #01796f; margin-bottom: 15px; font-size: 2rem;">Advanced PDF to Image Converter | Multiple Format Support</h2>
+        <p class="text-center" style="margin-bottom: 30px; font-size: 1.1rem; color: #495057;">Transform PDF pages into high-quality JPG, PNG, WebP, or BMP images instantly - free with no watermarks</p>
+        
+        <div class="row">
+            <!-- Feature 1: Quality Control -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <h3>Adjustable Quality & Resolution</h3>
+                <p><strong>Convert to images with customizable resolution</strong> from 150 to 600 DPI. Optimize for web use, printing, or archival purposes with precise quality control.</p>
+            </div>
+            
+            <!-- Feature 2: Page Management -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-minus-circle"></i>
+                </div>
+                <h3>Selective Page Conversion</h3>
+                <p><strong>Remove unwanted pages before converting</strong> - only kept pages become images. Perfect for extracting specific content from multi-page documents.</p>
+            </div>
+            
+            <!-- Feature 3: Fast Conversion -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Instant Browser Processing</h3>
+                <p><strong>Get your images in seconds</strong> with client-side processing. No server uploads mean faster conversions and complete privacy for your documents.</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Feature 4: Format Options -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h3>Multiple Format Support</h3>
+                <p><strong>Convert to JPG, PNG, WebP, or BMP</strong> formats. Choose the best format for your needs - lossy compression for web or lossless for editing and printing.</p>
+            </div>
+            
+            <!-- Feature 5: Batch Processing -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>Batch Conversion</h3>
+                <p><strong>Process multiple pages at once</strong> and download as individual images or a ZIP archive. Perfect for converting entire documents efficiently.</p>
+            </div>
+            
+            <!-- Feature 6: Quality Preservation -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Quality Preservation</h3>
+                <p><strong>Maintain original document quality</strong> during conversion. Text remains sharp, colors stay accurate, and graphics preserve their clarity in the output images.</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p class="feature-cta"><strong>100% free PDF to image converter</strong> - No watermarks, no registration, no file limits, just perfect conversions every time</p>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="use-case-section">
+    <div class="container">
+        <h2 class="text-center" style="color: #01796f; margin-bottom: 15px; font-size: 2rem;">Practical Applications for PDF to Image Conversion</h2>
+        <p class="text-center" style="margin-bottom: 30px; font-size: 1.1rem; color: #495057;">From web content to professional design, our PDF to image converter serves various needs</p>
+        
+        <div class="row">
+            <div class="col-md-6 use-case-card">
+                <div class="use-case-icon"><i class="fas fa-globe"></i></div>
+                <h3>Website & Blog Content</h3>
+                <p><strong>Convert PDF documents to web-friendly images</strong> for use on websites, blogs, and social media. Create visually appealing content from your PDF resources.</p>
+            </div>
+            <div class="col-md-6 use-case-card">
+                <div class="use-case-icon"><i class="fas fa-presentation"></i></div>
+                <h3>Presentations & Slideshows</h3>
+                <p><strong>Transform PDF slides into image formats</strong> compatible with PowerPoint, Keynote, and other presentation software. Perfect for repurposing existing content.</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 use-case-card">
+                <div class="use-case-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Document Sharing & Previews</h3>
+                <p><strong>Create image previews of PDF documents</strong> for sharing without revealing editable content. Ideal for contracts, reports, and sensitive documents.</p>
+            </div>
+            <div class="col-md-6 use-case-card">
+                <div class="use-case-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile-Friendly Content</h3>
+                <p><strong>Convert PDFs to optimized images</strong> for better viewing on mobile devices. Improve accessibility and user experience with image-based content.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="text-center" style="color: #01796f; margin-bottom: 15px; font-size: 2rem;">PDF to Image Converter FAQs: Common Questions Answered</h2>
+        <p class="text-center" style="margin-bottom: 30px; font-size: 1.1rem; color: #495057;">Get help with converting PDF documents to various image formats with our free online tool</p>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How do I convert a PDF to image format?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>To <strong>convert PDF to images</strong> with our free online tool:<br>
+                1. Upload your PDF file (drag and drop supported)<br>
+                2. Select your preferred format (JPG, PNG, WebP, or BMP)<br>
+                3. Choose pages to convert and set quality options<br>
+                4. Click "Convert to Images" to process<br>
+                5. Download your high-quality image files<br>
+                Works with any PDF up to 50MB in size.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Can I convert specific pages from a PDF to images?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! Our <strong>selective conversion feature</strong> allows you to:<br>
+                • Choose individual pages or page ranges<br>
+                • Delete pages you don't want to convert<br>
+                • Convert only the content you need<br>
+                • Save time and storage space<br>
+                Perfect for extracting specific charts, diagrams, or pages from multi-page documents.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>What image formats are supported for conversion?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our <strong>PDF to image converter</strong> supports multiple formats:<br>
+                • JPG - Best for photographs and web use<br>
+                • PNG - Ideal for graphics with transparency<br>
+                • WebP - Modern format with excellent compression<br>
+                • BMP - Uncompressed format for editing and printing<br>
+                Choose the format that best suits your specific needs and requirements.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Is there a file size limit for PDF to image conversion?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our conversion service has the following <strong>size limitations</strong>:<br>
+                • Maximum 50MB per PDF file<br>
+                • No limit on the number of pages converted<br>
+                • Output file sizes vary based on format and quality settings<br>
+                • Multiple image conversions are delivered as ZIP archives<br>
+                For larger files, consider splitting your document or using our premium tools.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Will the images match my PDF's original quality?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our <strong>PDF to image conversion</strong> preserves:<br>
+                • All original text sharpness and clarity<br>
+                • Vector graphics at maximum resolution<br>
+                • Color accuracy and consistency<br>
+                • Image quality at the selected DPI setting<br>
+                • Layout and formatting from the source PDF<br>
+                You get high-quality images that faithfully represent your original document.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How can I get just one page as an image from a multi-page PDF?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>To <strong>extract a single page as an image</strong>:<br>
+                1. Upload your multi-page PDF<br>
+                2. Use the page management tools to delete all other pages<br>
+                3. Only keep the page you want to convert<br>
+                4. Choose your preferred image format and quality settings<br>
+                5. Convert and download your single image file<br>
+                This process works for extracting any number of specific pages.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Which image format should I choose for my specific needs?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p><strong>Choose the best format</strong> for your requirements:<br>
+                • JPG - Best for photographs and web content (smaller file size)<br>
+                • PNG - Ideal for graphics, screenshots, and images with text<br>
+                • WebP - Modern format with superior compression (web use)<br>
+                • BMP - Perfect for editing, printing, and archival (lossless quality)<br>
+                Consider your intended use when selecting the output format.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features Section -->
+  <div id="pwaInstallContainer" class="pwa-install-container" style="display: flex;">
+    <button id="pwaInstallButton" class="pwa-install-button">
+      <i class="fas fa-download"></i> Install App
+    </button>
+  </div>
+  <!-- Custom Unsaved Changes Modal -->
+<div id="unsavedChangesModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unsaved Changes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+        You have unsaved changes. Continuing will discard all modifications.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancelActionBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmActionBtn">Continue Anyway</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add this modal for custom page size -->
+<div id="customPageSizeModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Custom Page Size</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="customPageWidth" class="form-label">Width (mm)</label>
+                    <input type="number" id="customPageWidth" class="form-control" value="210" min="50" max="1000">
+                </div>
+                <div class="mb-3">
+                    <label for="customPageHeight" class="form-label">Height (mm)</label>
+                    <input type="number" id="customPageHeight" class="form-control" value="297" min="50" max="1000">
+                </div>
+                <div class="mb-3">
+                    <label for="customPageOrientation" class="form-label">Orientation</label>
+                    <select id="customPageOrientation" class="form-select">
+                        <option value="portrait">Portrait</option>
+                        <option value="landscape">Landscape</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="addCustomBlankPage()">Add Page</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Metadata Modal -->
+<div id="metadataModal" class="metadata-modal">
+    <div class="metadata-content">
+        <div class="metadata-header">
+            <h3>Document Metadata</h3>
+            <button class="metadata-close">&times;</button>
+        </div>
+        <div class="metadata-body" id="metadataBody">
+            <!-- Metadata will be inserted here -->
+        </div>
+    </div>
+</div>
+<div class="overlay" id="touchOverlay"></div>
+<div class="touch-device-popup" id="touchDevicePopup">
+  <h4>Feature Coming Soon</h4>
+  <p>This feature is currently only available on desktop devices with a mouse. Touch support is coming in a future update!</p>
+  <button onclick="closeTouchPopup()">Got it</button>
+</div>
+<div class="tools-section">
+  <div class="container">
+    <h3 class="section-title">Explore Our PDF Tools</h3>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-merger.html" title="Merge PDF Files Online">
+          <i class="fas fa-object-group"></i>
+          <span>PDF Merger</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-organizer.html" title="Organize PDF Pages Online">
+          <i class="fas fa-layer-group"></i>
+          <span>PDF Organizer</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-splitter.html" title="Split PDF Files Online">
+          <i class="fas fa-cut"></i>
+          <span>PDF Splitter</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/rotate-pdf.html" title="Rotate PDF Pages Online">
+          <i class="fas fa-redo"></i>
+          <span>Rotate PDF</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" title="Convert PDF to JPG">
+          <i class="fas fa-file-image"></i>
+          <span>PDF to JPG</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-to-png-converter.html" title="Convert PDF to PNG">
+          <i class="fas fa-file-image"></i>
+          <span>PDF to PNG</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-to-webp-converter.html" title="Convert PDF to WebP">
+          <i class="fas fa-file-image"></i>
+          <span>PDF to WebP</span>
+        </a>
+      </div>
+      <div class="tool-card">
+        <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" title="Convert PDF to BMP">
+          <i class="fas fa-file-image"></i>
+          <span>PDF to BMP</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+ <div id="cryptoModal" class="crypto-modal">
+        <div class="crypto-modal-content">
+            <button class="crypto-modal-close">&times;</button>
+            <h2 class="crypto-modal-title">Donate with Cryptocurrency</h2>
+            <div class="crypto-options">
+                <div class="crypto-option">
+                    <div class="crypto-name">Bitcoin (BTC)</div>
+                    <!-- Replace with your actual BTC QR code image -->
+                    <img src="/img/BTC-qr-code.png" alt="Bitcoin QR Code" width="150" height="150">
+                    <div class="crypto-address" id="btcAddress"> bc1qkeydrgdypphn6zytqfzchm53jgz9vacfrtl35t</div>
+                </div>
+                <div class="crypto-option">
+                    <div class="crypto-name">Ethereum (ETH)</div>
+                    <!-- Replace with your actual ETH QR code image -->
+                    <img src="/img/ETH-qr-code.png" alt="Ethereum QR Code" width="150" height="150">
+                    <div class="crypto-address" id="ethAddress">0x9e19ADE8a52c006735B8Ff52b60c2CA95D6Aa6fd</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-notification" id="copyNotification">Address copied to clipboard!</div>
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i> Back to Top
+    </a>
+    
+    <div class="footer-links">
+      <a href="/pages/about.html" title="About Us">About</a>
+      <a href="/pages/contact.html" title="Contact Us">Contact</a>
+      <a href="/pages/journey.html" title="Our Journey">Journey</a>
+      <a href="/sitemap.xml" title="Sitemap">Sitemap</a>
+    </div>
+    
+    <p class="copyright">
+      © 2025 qwikpdf.com. All rights reserved.
+    </p>
+     <a href="https://www.paypal.com/donate/?hosted_button_id=XYZP48CFTNNLS" target="_blank" style="color:#01796f; font-weight:600;">
+        ❤️ Donate via PayPal
+      </a> | <a href="javascript:void(0);" id="openCryptoModal" style="color:#01796f; font-weight:600;">
+  ❤️ Donate via Crypto
+</a>
+
+    | <a href="/pages/privacy.html" style="color: #01796f;">Privacy Policy</a> 
+    | <a href="/pages/terms.html" style="color: #01796f;">Terms of Service</a>
+    
+    
+    
+    <p class="data-security">
+      <strong>100% Data Security:</strong> No files are uploaded to any server. All processing happens locally on your device for maximum privacy and safety.
+    </p>
+  </div>
+</footer>
+
+  
+  <script>
+    // FAQ toggle functionality
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      
+      answer.classList.toggle('active');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+      
+      // Close other open FAQs
+      const allFaqs = document.querySelectorAll('.faq-item');
+      allFaqs.forEach(faq => {
+        if (faq.querySelector('.faq-question') !== element) {
+          faq.querySelector('.faq-answer').classList.remove('active');
+          const otherIcon = faq.querySelector('.faq-question i');
+          if (otherIcon) {
+            otherIcon.classList.remove('fa-chevron-up');
+            otherIcon.classList.add('fa-chevron-down');
+          }
+        }
+      });
+    }
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/pdf.min.js"></script>
+<script src="/js/jspdf.umd.min.js"></script>
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/Sortable.min.js"></script>
+<script src="/js/jszip.min.js"></script>
+<script src="/js/FileSaver.min.js"></script>
+<script src="/js/pdf-lib.min.js"></script>
+ <script src="/js/firebase-app.js"></script>
+<script src="/js/firebase-analytics.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/general.js"></script>
+<script src="/js/general1.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const toolbar = document.getElementById('toolbar');
+  const whitelist = ['imageFormat', 'cnvttoimg']; // Add IDs of elements to keep enabled
+
+  // Disable all interactive elements
+  const interactiveElements = toolbar.querySelectorAll(
+    'button, input, select, [onclick], [onchange]'
+  );
+
+  interactiveElements.forEach(el => {
+    if (!whitelist.includes(el.id)) {
+      el.disabled = true;
+      el.style.opacity = '0.5';
+      el.style.pointerEvents = 'none';
+      el.onclick = null; // Remove click handlers
+    }
+  });
+});</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

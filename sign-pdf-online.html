@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign PDF Online Free – Draw or Upload Signature | QwikPDF</title>
+<meta name="description" content="Sign PDF documents online for free. Draw your signature with mouse or touchscreen, or upload a signature image. Place it anywhere on any page, resize, reposition and download instantly. No account, no upload to server.">
+<meta name="keywords" content="sign pdf online, pdf signature, draw signature on pdf, add signature to pdf, sign pdf free, electronic signature pdf, pdf esign, upload signature to pdf, sign document online, digital signature pdf">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/sign-pdf.html">
+<meta property="og:title" content="Sign PDF Online Free – Draw or Upload Signature | QwikPDF">
+<meta property="og:description" content="Draw your signature or upload an image and place it on any PDF page. Resize, reposition, apply to all pages. Free, private, browser-based.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/sign-pdf.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sign PDF Online Free – QwikPDF">
+<meta name="twitter:description" content="Draw or upload your signature and place it anywhere on a PDF. Free, browser-based, files never leave your device.">
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"QwikPDF – Sign PDF Online","url":"https://qwikpdf.com/sign-pdf.html","description":"Sign PDF documents online for free. Draw a signature using mouse or touch, or upload an existing signature image. Place it on any page, drag to reposition, adjust size and apply to all pages.","applicationCategory":"DocumentEditor","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Draw signature with mouse or touch","Upload signature image (PNG, JPG, SVG)","Place signature anywhere on page","Drag to reposition","Adjustable size and opacity","Apply to all pages","Multiple signatures per document","Multiple PDF support","Files never leave your device","Free forever"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Sign a PDF Online for Free","step":[{"@type":"HowToStep","name":"Upload your PDF","text":"Drag and drop your PDF onto the upload area or click Select PDF Files. Every page is shown as a live canvas preview you can click on."},{"@type":"HowToStep","name":"Create your signature","text":"Switch to the Draw tab and sign with your mouse or finger. Or switch to the Image tab and upload a PNG or JPG of your existing signature."},{"@type":"HowToStep","name":"Place and adjust","text":"Click any page to place the signature. Drag it to reposition. Use the Size and Opacity sliders to adjust. Click Apply to All Pages to sign every page at once."},{"@type":"HowToStep","name":"Download the signed PDF","text":"Click Download Signed PDF. Your signature is permanently embedded in the document and ready to share or print."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I sign a PDF online for free?","acceptedAnswer":{"@type":"Answer","text":"Upload your PDF to QwikPDF Sign, draw your signature in the drawing pad or upload a signature image, then click anywhere on a page to place it. Drag it to position, adjust the size if needed, and click Download Signed PDF."}},{"@type":"Question","name":"Is my PDF uploaded to a server when I sign it?","acceptedAnswer":{"@type":"Answer","text":"No. All signing and processing happens locally in your browser using pdf-lib and pdf.js. Your documents never leave your device, making it safe for contracts, legal forms and confidential files."}},{"@type":"Question","name":"Can I draw my signature on a touchscreen?","acceptedAnswer":{"@type":"Answer","text":"Yes. The signature drawing pad fully supports touch input, so you can sign naturally with your finger on a phone or tablet, or with a stylus on a tablet or drawing display."}},{"@type":"Question","name":"Can I upload an image of my signature?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch to the Image tab in the signature panel, then upload a PNG or JPG file of your existing signature. The tool automatically removes the white background from JPG signatures so only the ink shows on your document."}},{"@type":"Question","name":"Can I add the signature to every page?","acceptedAnswer":{"@type":"Answer","text":"Yes. Place the signature on one page, click to select it, then click Apply to All Pages. The signature is duplicated at the same proportional position on every page of the document."}},{"@type":"Question","name":"Can I place multiple signatures on a PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can place as many signatures as you need — on any page, in any position. Each one can be a different signature or the same one resized."}}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* HEADER */
+header { background: var(--teal); color: #fff; padding: 32px 20px 36px; text-align: center; }
+.h-inner { max-width: 680px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem,3.8vw,2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span { background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500; }
+
+/* MAIN */
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 140px; }
+
+/* DROP ZONE */
+#dropZone { background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r); padding: 48px 24px; text-align: center; cursor: pointer; transition: background .2s,border-color .2s,transform .15s; box-shadow: var(--sh); }
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.005); }
+.dz-icon { width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p  { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; background: var(--teal); color: #fff; border: none; padding: 11px 26px; border-radius: 8px; font-family: 'Plus Jakarta Sans',sans-serif; font-size: .88rem; font-weight: 600; cursor: pointer; transition: background .17s,transform .12s; box-shadow: 0 3px 14px rgba(1,121,111,.3); }
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* TOOLBAR */
+#toolbar { display: none; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 15px 18px; box-shadow: var(--sh); margin-top: 20px; }
+#toolbar.visible { display: flex; }
+.toolbar-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar-info { font-size: .875rem; font-weight: 600; }
+.toolbar-info span { color: var(--teal); }
+.toolbar-info em { font-style: normal; color: var(--muted); font-weight: 400; margin-left: 4px; font-size: .8rem; }
+.tb-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 15px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--white); color: var(--text); font-family: 'Plus Jakarta Sans',sans-serif; font-size: .8rem; font-weight: 600; cursor: pointer; transition: all .17s; white-space: nowrap; }
+.tb-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.tb-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.tb-btn-add { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
+.tb-btn-add:hover { background: var(--teal); color: #fff; }
+
+/* ══════════════════════════════════
+   SIGNATURE PANEL
+══════════════════════════════════ */
+#sigPanel { display: none; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); box-shadow: var(--sh); margin-top: 14px; overflow: hidden; }
+#sigPanel.visible { display: block; }
+
+.sp-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 14px 18px 12px; border-bottom: 1.5px solid var(--border); background: var(--teal-xs); }
+.sp-title { font-size: .9rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 7px; }
+.sp-tabs { display: flex; gap: 4px; }
+.sp-tab { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); font-family: 'Plus Jakarta Sans',sans-serif; font-size: .82rem; font-weight: 600; cursor: pointer; transition: all .17s; }
+.sp-tab:hover { border-color: var(--teal); color: var(--teal); }
+.sp-tab.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.sp-hint { font-size: .76rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+.sp-body { display: grid; grid-template-columns: 1fr 220px; }
+
+/* LEFT: draw / image pane */
+.sp-left { padding: 16px 18px; border-right: 1.5px solid var(--border); }
+
+/* Draw pad */
+
+.draw-pad-wrap { position: relative; border: 1.5px solid var(--border); border-radius: 9px; overflow: hidden; background: var(--white); cursor: crosshair; touch-action: none; }
+.draw-pad-wrap::after { content: 'Sign here'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: .85rem; color: var(--border); pointer-events: none; font-style: italic; }
+.draw-pad-wrap.has-drawing::after { display: none; }
+#drawCanvas { display: block; width: 100%; height: 140px; }
+.draw-controls { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.draw-color-row { display: flex; gap: 5px; align-items: center; }
+.draw-dot { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform .15s,border-color .15s; flex-shrink: 0; }
+.draw-dot:hover { transform: scale(1.15); }
+.draw-dot.active { border-color: var(--text); transform: scale(1.12); }
+.draw-dot.white-dot { border-color: var(--border) !important; }
+.draw-thickness { display: flex; gap: 5px; align-items: center; }
+.thick-btn { width: 32px; height: 28px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+.thick-btn:hover { border-color: var(--teal); }
+.thick-btn.active { border-color: var(--teal); background: var(--teal-xs); }
+.thick-dot { border-radius: 50%; background: var(--text); }
+.draw-action-btns { display: flex; gap: 6px; margin-left: auto; }
+.draw-act-btn { padding: 5px 12px; border: 1.5px solid var(--border); border-radius: 7px; background: var(--white); font-family: 'Plus Jakarta Sans',sans-serif; font-size: .76rem; font-weight: 600; cursor: pointer; color: var(--text); transition: all .15s; display: flex; align-items: center; gap: 5px; }
+.draw-act-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.draw-act-btn.primary { background: var(--teal); border-color: var(--teal); color: #fff; }
+.draw-act-btn.primary:hover { background: var(--teal-dark); }
+.draw-act-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+
+/* Image upload pane */
+#imagePane { display: none; }
+.img-upload-area { border: 2px dashed var(--border); border-radius: 9px; padding: 28px 16px; text-align: center; cursor: pointer; transition: border-color .2s,background .2s; }
+.img-upload-area:hover { border-color: var(--teal); background: var(--teal-xs); }
+.img-upload-area p { font-size: .82rem; color: var(--muted); margin-top: 4px; }
+.img-upload-area h3 { font-size: .88rem; font-weight: 700; color: var(--teal); }
+#sigImgInput { display: none; }
+#imgPreviewWrap { display: none; margin-top: 10px; position: relative; text-align: center; }
+#imgPreview { max-height: 120px; max-width: 100%; border-radius: 7px; border: 1.5px solid var(--border); background: var(--bg); padding: 4px; }
+.img-clear-btn { margin-top: 8px; padding: 5px 12px; border: 1.5px solid var(--border); border-radius: 7px; background: var(--white); font-family: 'Plus Jakarta Sans',sans-serif; font-size: .76rem; font-weight: 600; cursor: pointer; color: var(--muted); transition: all .15s; }
+.img-clear-btn:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+
+/* Signature preview strip - shows the saved sig to use */
+#sigPreviewStrip { display: none; margin-top: 10px; background: var(--teal-xs); border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 12px; align-items: center; gap: 10px; }
+#sigPreviewStrip.visible { display: flex; }
+#sigPreviewImg { height: 40px; max-width: 120px; object-fit: contain; border-radius: 4px; background: white; border: 1px solid var(--border); padding: 2px 4px; }
+.sig-strip-text { font-size: .76rem; color: var(--teal); font-weight: 600; flex: 1; }
+.sig-strip-hint { font-size: .7rem; color: var(--muted); }
+
+/* RIGHT: controls */
+.sp-right { padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; max-height: 380px; }
+.sp-right::-webkit-scrollbar { width: 4px; }
+.sp-right::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.ctrl-group { display: flex; flex-direction: column; gap: 7px; }
+.ctrl-lbl { font-size: .74rem; font-weight: 600; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
+.ctrl-lbl-val { font-weight: 700; color: var(--text); }
+.ctrl-range { width: 100%; height: 4px; -webkit-appearance: none; appearance: none; border-radius: 4px; background: var(--border); cursor: pointer; outline: none; }
+.ctrl-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--teal); border: 2px solid var(--white); box-shadow: 0 1px 4px rgba(1,121,111,.3); transition: transform .15s; }
+.ctrl-range::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.ctrl-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--teal); border: 2px solid var(--white); cursor: pointer; }
+.ctrl-divider { border: none; border-top: 1.5px dashed var(--border); margin: 2px 0; }
+
+/* Selected sig panel */
+#selPanel { background: var(--teal-xs); border: 1.5px solid var(--border); border-radius: 9px; padding: 11px 12px; display: none; flex-direction: column; gap: 8px; }
+#selPanel.visible { display: flex; }
+.sel-title { font-size: .76rem; font-weight: 700; color: var(--teal); }
+.sel-meta  { font-size: .72rem; color: var(--muted); }
+.sel-btns  { display: flex; flex-direction: column; gap: 5px; }
+.sel-btn { padding: 6px 10px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--white); color: var(--text); font-family: 'Plus Jakarta Sans',sans-serif; font-size: .74rem; font-weight: 600; cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 5px; }
+.sel-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
+.sel-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+
+/* HINT BANNER */
+.hint-banner { display: none; border: 1.5px dashed var(--teal); border-radius: 9px; padding: 9px 16px; margin-top: 14px; font-size: .78rem; font-weight: 600; color: var(--teal); background: var(--teal-light); }
+.hint-banner.visible { display: flex; align-items: center; gap: 9px; }
+
+/* PROGRESS */
+.prog-wrap { display: none; width: 100%; margin-top: 10px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg,var(--teal),var(--teal-mid)); border-radius: 8px; transition: width .25s ease; width: 0%; }
+.prog-lbl { font-size: .75rem; color: var(--muted); margin-top: 5px; text-align: center; }
+
+/* FILE GROUP */
+.file-group { margin-top: 22px; }
+.file-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1.5px solid var(--border); flex-wrap: wrap; }
+.file-group-icon { width: 32px; height: 32px; background: var(--teal-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.file-group-title { font-weight: 700; font-size: .9rem; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-group-meta { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+.btn-dl { display: inline-flex; align-items: center; gap: 6px; padding: 7px 15px; border-radius: 7px; border: none; background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans',sans-serif; font-size: .78rem; font-weight: 700; cursor: pointer; transition: background .15s,transform .12s; box-shadow: 0 2px 8px rgba(1,121,111,.22); flex-shrink: 0; }
+.btn-dl:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-dl:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+/* PAGE GRID */
+.page-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); gap: 14px; }
+.page-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 11px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .18s,box-shadow .18s; box-shadow: var(--sh); animation: fadeUp .22s ease both; }
+.page-card:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)} }
+
+.page-preview { width: 100%; position: relative; background: #e8f0ef; overflow: hidden; flex-shrink: 0; padding-bottom: 141.4%; }
+.page-preview canvas { position: absolute; top:0; left:0; width:100%; height:100%; display:block; cursor:crosshair; }
+.page-shimmer { position: absolute; top:0; left:0; width:100%; height:100%; }
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.shimmer-anim { background: linear-gradient(90deg,#eaf5f4 25%,#d4eeeb 50%,#eaf5f4 75%); background-size:200% 100%; animation:shimmer 1.6s infinite; }
+.pg-num { position: absolute; bottom:7px; left:50%; transform:translateX(-50%); background:rgba(1,70,64,.72); color:#fff; font-size:.64rem; font-weight:700; padding:2px 8px; border-radius:20px; backdrop-filter:blur(4px); z-index:3; pointer-events:none; white-space:nowrap; }
+.sig-count-pill { position: absolute; top:7px; right:7px; background:var(--teal); color:#fff; font-size:.62rem; font-weight:700; padding:2px 7px; border-radius:20px; z-index:3; opacity:0; transition:opacity .2s; pointer-events:none; }
+.sig-count-pill.show { opacity:1; }
+.page-actions { padding:7px 8px 8px; border-top:1px solid var(--border); }
+.pg-label { font-size:.68rem; color:var(--muted); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:0 4px; }
+
+/* SIG LIST */
+.sig-list { margin-top:10px; display:none; }
+.sig-list.has-items { display:block; }
+.sig-list-header { font-size:.76rem; font-weight:700; color:var(--teal); margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+.sig-items { display:flex; flex-direction:column; gap:4px; }
+.sig-item { display:flex; align-items:center; gap:8px; padding:6px 10px; background:var(--white); border:1.5px solid var(--border); border-radius:8px; font-size:.76rem; cursor:pointer; transition:border-color .15s; }
+.sig-item:hover { border-color:var(--teal); background:var(--teal-xs); }
+.sig-item.selected { border-color:var(--teal); background:var(--teal-light); }
+.sig-item-thumb { width:48px; height:24px; object-fit:contain; border-radius:3px; border:1px solid var(--border); background:#fff; flex-shrink:0; }
+.sig-item-info { flex:1; min-width:0; }
+.sig-item-name { font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sig-item-meta { color:var(--muted); font-size:.7rem; }
+.sig-item-del { padding:3px 7px; border:1.5px solid var(--border); border-radius:6px; background:var(--white); color:var(--muted); font-size:.7rem; font-weight:600; cursor:pointer; transition:all .15s; flex-shrink:0; font-family:'Plus Jakarta Sans',sans-serif; }
+.sig-item-del:hover { border-color:var(--warn); color:var(--warn); background:var(--warn-light); }
+
+/* SECTIONS */
+.section { margin-top:60px; }
+.sec-title { font-size:clamp(1.1rem,2.4vw,1.35rem); font-weight:700; color:var(--teal); text-align:center; margin-bottom:5px; letter-spacing:-.2px; }
+.sec-sub { text-align:center; color:var(--muted); font-size:.85rem; margin-bottom:26px; }
+.steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:14px; }
+.step-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:22px 17px; position:relative; overflow:hidden; }
+.step-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--teal); }
+.s-num { font-size:1.9rem; font-weight:700; color:var(--teal-light); line-height:1; margin-bottom:10px; }
+.step-card h3 { font-size:.88rem; font-weight:700; margin-bottom:5px; }
+.step-card p  { font-size:.80rem; color:var(--muted); line-height:1.55; }
+.feat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:13px; }
+.feat { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:19px 17px; transition:box-shadow .2s,transform .2s; }
+.feat:hover { box-shadow:var(--sh2); transform:translateY(-2px); }
+.feat-ico { width:38px; height:38px; background:var(--teal-light); border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:11px; }
+.feat h3 { font-size:.86rem; font-weight:700; margin-bottom:4px; }
+.feat p  { font-size:.79rem; color:var(--muted); line-height:1.55; }
+.faq-list { display:flex; flex-direction:column; gap:7px; }
+.faq-item { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); overflow:hidden; }
+.faq-q { padding:15px 17px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-weight:600; font-size:.875rem; user-select:none; gap:12px; transition:background .15s; }
+.faq-q:hover { background:var(--teal-xs); }
+.faq-q.open { color:var(--teal); background:var(--teal-xs); }
+.faq-chev { flex-shrink:0; transition:transform .25s; color:var(--muted); }
+.faq-q.open .faq-chev { transform:rotate(180deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .3s ease,padding .3s; font-size:.83rem; color:var(--muted); line-height:1.65; padding:0 17px; }
+.faq-a.open { max-height:260px; padding:0 17px 15px; }
+.tools-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(145px,1fr)); gap:9px; }
+.tool-a { display:flex; align-items:center; gap:7px; background:var(--white); border:1.5px solid var(--border); border-radius:9px; padding:11px 13px; text-decoration:none; color:var(--text); font-size:.80rem; font-weight:600; transition:border-color .17s,background .15s,color .17s,transform .15s; }
+.tool-a:hover { border-color:var(--teal); background:var(--teal-xs); color:var(--teal); transform:translateY(-1px); }
+.tool-a svg { flex-shrink:0; color:var(--teal); }
+
+footer { background:var(--teal); color:rgba(255,255,255,.82); text-align:center; padding:26px 16px; font-size:.79rem; }
+footer a { color:rgba(255,255,255,.9); text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+.f-note { margin-top:7px; opacity:.62; font-size:.73rem; }
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(12px); background:var(--teal); color:#fff; padding:11px 20px; border-radius:8px; font-size:.86rem; font-weight:600; box-shadow:0 5px 20px rgba(1,121,111,.32); opacity:0; pointer-events:none; transition:opacity .3s,transform .3s; z-index:1100; white-space:nowrap; }
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin { transform-origin:50% 50%; animation:spin .8s linear infinite; }
+
+@media(max-width:720px){
+  .sp-body { grid-template-columns:1fr; }
+  .sp-left { border-right:none; border-bottom:1.5px solid var(--border); }
+  .sp-right { max-height:none; }
+}
+@media(max-width:520px){
+  .page-grid { grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>Sign PDF Online — <em>Draw or Upload Signature</em></h1>
+    <p>Draw your signature with mouse or touch, or upload a signature image — place it anywhere on any PDF page, resize and download instantly.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>✍️ Draw signature</span>
+      <span>🖼️ Upload image</span>
+      <span>↕ Drag to reposition</span>
+      <span>⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- DROP ZONE -->
+<div id="dropZone">
+  <div class="dz-icon">
+    <svg width="26" height="26" fill="none" viewBox="0 0 26 26">
+      <rect x="4" y="3" width="18" height="20" rx="2.5" stroke="#01796f" stroke-width="2"/>
+      <path d="M8 17c2-1 4-3 6-1s4 2 6 0" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="19" cy="19" r="5" fill="#01796f"/>
+      <path d="M17 19h4M19 17v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h2>Drop a PDF here to sign it</h2>
+  <p>Upload one or more PDFs — draw or upload your signature, place it on any page, then download</p>
+  <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+    <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Select PDF Files
+  </button>
+  <input type="file" id="fileInput" accept=".pdf" multiple>
+</div>
+
+<!-- TOOLBAR -->
+<div id="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-info"><span id="totalPagesLabel">0</span> pages <em id="filesLabel"></em></div>
+    <button class="tb-btn tb-btn-add" onclick="document.getElementById('fileInput').click()">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Add More PDFs
+    </button>
+    <button class="tb-btn danger" onclick="clearAll()">
+      <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Clear All
+    </button>
+  </div>
+</div>
+
+<!-- SIGNATURE PANEL -->
+<div id="sigPanel">
+  <div class="sp-header">
+    <div class="sp-title">
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 12c2-1.5 4-4 5-2s3 2 5 0" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/><path d="M2 14h12" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Signature
+    </div>
+    <div class="sp-tabs">
+      <button class="sp-tab active" id="tabDraw" onclick="switchSigTab('draw')">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M2 10l1.5-1.5 5-5 1.5 1.5-5 5L2 11.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Draw
+      </button>
+      <button class="sp-tab" id="tabImage" onclick="switchSigTab('image')">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="1" y="2" width="11" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 8l3-3 2.5 2.5 2-2L12 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Upload Image
+      </button>
+    </div>
+    <div class="sp-hint">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="5.5" stroke="#5f7775" stroke-width="1.3"/><path d="M6.5 4.5v3M6.5 9v.5" stroke="#5f7775" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Create your signature, then click any page to place it
+    </div>
+  </div>
+
+  <div class="sp-body">
+    <!-- LEFT -->
+    <div class="sp-left">
+
+      <!-- DRAW PANE -->
+      <div id="drawPane">
+        <div class="draw-pad-wrap" id="drawPadWrap">
+          <canvas id="drawCanvas"></canvas>
+        </div>
+        <div class="draw-controls">
+          <div class="draw-color-row" id="drawColors"></div>
+          <div class="draw-thickness" id="drawThickness"></div>
+          <div class="draw-action-btns">
+            <button class="draw-act-btn danger" onclick="clearDrawing()">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M2 3h7M4.5 3V2h2v1M3 3l.5 7h4L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Clear
+            </button>
+            <button class="draw-act-btn primary" onclick="useDrawnSignature()">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1.5 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Use This Signature
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE PANE -->
+      <div id="imagePane">
+        <div class="img-upload-area" id="imgUploadArea" onclick="document.getElementById('sigImgInput').click()">
+          <svg width="28" height="28" fill="none" viewBox="0 0 28 28" style="margin:0 auto 8px;display:block">
+            <rect x="3" y="5" width="22" height="18" rx="2.5" stroke="#01796f" stroke-width="1.8"/>
+            <path d="M3 18l5-5 4 4 4-5 6 7" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="9" cy="11" r="2" fill="#01796f" opacity=".5"/>
+          </svg>
+          <h3>Upload Signature Image</h3>
+          <p>PNG or JPG — white background is removed automatically</p>
+        </div>
+        <input type="file" id="sigImgInput" accept="image/png,image/jpeg,image/jpg,image/svg+xml,image/webp">
+        <div id="imgPreviewWrap">
+          <img id="imgPreview" src="" alt="Signature preview">
+          <br>
+          <button class="img-clear-btn" onclick="clearImgUpload()">Remove image</button>
+        </div>
+        <div id="imgPreviewStrip" style="margin-top:8px;display:none">
+          <button class="draw-act-btn primary" onclick="useImageSignature()">
+            <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1.5 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Use This Signature
+          </button>
+        </div>
+      </div>
+
+      <!-- Active sig preview strip -->
+      <div id="sigPreviewStrip">
+        <img id="sigPreviewImg" src="" alt="Active signature">
+        <div>
+          <div class="sig-strip-text">✓ Signature ready</div>
+          <div class="sig-strip-hint">Click any page thumbnail to place it</div>
+        </div>
+      </div>
+
+    </div><!-- /sp-left -->
+
+    <!-- RIGHT: controls -->
+    <div class="sp-right">
+
+      <div class="ctrl-group">
+        <div class="ctrl-lbl">Size <span class="ctrl-lbl-val" id="sizeVal">80 pt</span></div>
+        <input type="range" class="ctrl-range" id="ctrlSize" min="20" max="300" value="80">
+      </div>
+
+      <div class="ctrl-group">
+        <div class="ctrl-lbl">Opacity <span class="ctrl-lbl-val" id="opacityVal">100%</span></div>
+        <input type="range" class="ctrl-range" id="ctrlOpacity" min="10" max="100" value="100">
+      </div>
+
+      <hr class="ctrl-divider">
+
+      <!-- Selected sig panel -->
+      <div id="selPanel">
+        <div class="sel-title" id="selTitle">Signature selected</div>
+        <div class="sel-meta" id="selMeta">–</div>
+        <div class="sel-btns">
+          <button class="sel-btn" onclick="applyToAllPages()">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M1 6h10M6 1v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Apply to All Pages
+          </button>
+          <button class="sel-btn danger" onclick="deleteSelected()">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M2 3h8M5 3V2h2v1M4 3v7M8 3v7M3 3l.5 7h5L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Delete Signature
+          </button>
+        </div>
+      </div>
+
+      <div class="prog-wrap" id="progressWrap">
+        <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+        <div class="prog-lbl" id="progressLabel">Processing…</div>
+      </div>
+
+    </div><!-- /sp-right -->
+  </div><!-- /sp-body -->
+</div><!-- /sigPanel -->
+
+<!-- HINT BANNER -->
+<div class="hint-banner" id="hintBanner">
+  <svg width="15" height="15" fill="none" viewBox="0 0 15 15" style="flex-shrink:0"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+  Create or upload your signature above, then <strong>click any page</strong> to place it. Drag to reposition. Click an existing signature to select and adjust it.
+</div>
+
+<!-- PAGE GROUPS -->
+<div id="pageGroups"></div>
+
+<!-- HOW TO -->
+<section class="section">
+  <h2 class="sec-title">How to Sign a PDF Online for Free</h2>
+  <p class="sec-sub">Four simple steps. No account needed. Completely free.</p>
+  <div class="steps">
+    <div class="step-card"><div class="s-num">01</div><h3>Upload Your PDF</h3><p>Drag and drop one or more PDF files onto the upload area or click <strong>Select PDF Files</strong>. Every page loads as a live canvas you can click directly on.</p></div>
+    <div class="step-card"><div class="s-num">02</div><h3>Create Your Signature</h3><p>Use the <strong>Draw</strong> tab to sign with your mouse or finger on a touchscreen. Or use the <strong>Upload Image</strong> tab to use a PNG or JPG of your existing signature — white backgrounds are removed automatically.</p></div>
+    <div class="step-card"><div class="s-num">03</div><h3>Place &amp; Adjust</h3><p>Click <strong>Use This Signature</strong> then click anywhere on any page to place it. Drag it to reposition. Use the Size and Opacity sliders to adjust. Click <strong>Apply to All Pages</strong> to sign the entire document at once.</p></div>
+    <div class="step-card"><div class="s-num">04</div><h3>Download the Signed PDF</h3><p>Click <strong>Download Signed PDF</strong>. Your signature is permanently embedded as a high-resolution image — clean, full quality, ready to share or print.</p></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <h2 class="sec-title">Why Sign PDFs with QwikPDF?</h2>
+  <p class="sec-sub">The fastest free way to add a real signature to any PDF document.</p>
+  <div class="feat-grid">
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M4 16c2-2 4-5 6-3s4 3 6 0" stroke="#01796f" stroke-width="2" stroke-linecap="round"/><path d="M3 18h16" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <h3>Draw with Mouse or Touch</h3>
+      <p>The signature pad works perfectly on desktop with a mouse and on mobile and tablet with your finger or a stylus — giving you a natural, handwritten look.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="2" y="5" width="18" height="12" rx="2" stroke="#01796f" stroke-width="2"/><path d="M2 9l5 4 5-4 5 3" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <h3>Upload a Signature Image</h3>
+      <p>Already have a scanned signature? Upload a PNG or JPG and QwikPDF automatically removes the white background so only the ink appears on your document.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" stroke="#01796f" stroke-width="1.5" stroke-dasharray="2 2"/><path d="M11 6V4M11 18v-2M6 11H4M18 11h-2" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <h3>Precise Placement &amp; Sizing</h3>
+      <p>Click any page to place your signature exactly where you want it. Drag it to reposition. Use the size slider to scale from a small initials mark to a large signature block.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M11 2L3 6v7c0 5.5 3.5 10.2 8 11.5 4.5-1.3 8-6 8-11.5V6L11 2z" fill="#01796f" opacity=".2" stroke="#01796f" stroke-width="1.5"/><path d="M8 11l2.5 2.5L14 8" stroke="#01796f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>100% Private</h3>
+      <p>Your PDF files are never uploaded to any server. All signing, rendering and embedding happens locally in your browser using pdf-lib — safe for contracts and sensitive documents.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="sec-title">Frequently Asked Questions</h2>
+  <p class="sec-sub">Everything about signing PDF documents online for free.</p>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How do I sign a PDF online for free?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Upload your PDF to QwikPDF Sign, draw your signature in the pad or upload a signature image, click <strong>Use This Signature</strong>, then click anywhere on a page to place it. Drag to reposition, adjust size if needed, and click <strong>Download Signed PDF</strong>.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Is my PDF uploaded to a server?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">No. All processing happens entirely in your browser using pdf-lib and pdf.js. Your files never leave your device, making it completely safe for legal, medical and confidential documents.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I draw my signature on a phone or tablet?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. The signature drawing pad fully supports touch input, so you can sign naturally with your finger on a phone or tablet, or with a stylus on a supported device.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How does white background removal work for uploaded images?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">When you upload a JPG signature, QwikPDF renders it into a canvas and converts near-white pixels to transparent. This means only your ink appears on the PDF, not a white box around it. PNG files with transparency are used as-is.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I add the signature to every page at once?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. Place a signature on one page, click it to select it, then click <strong>Apply to All Pages</strong>. The signature is duplicated at the same proportional position on every page of that PDF file.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Is a drawn signature legally binding?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">In many countries, an electronic signature that represents your intent to sign is legally valid under laws such as eIDAS (EU), ESIGN (US) and similar regulations. However, for high-stakes legal matters, we recommend consulting a legal professional about the requirements in your jurisdiction.</div></div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Signature Tool · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+let sourceFiles   = [];   // { uid, name, baseName, buffer, pageCount, pdfJsDoc, pages:[{w,h,rendered,snapshot}] }
+let signatures    = [];   // { id, fileUid, pageIndex, dataURL, xPct, yPct, size, opacity }
+let selectedSigId = null;
+let activeSigDataURL = null;  // the current signature image ready to place
+let currentStyle  = { size: 80, opacity: 100 };
+let dragging      = null;
+
+/* ══════════════════════════════════════════
+   DRAW PAD
+══════════════════════════════════════════ */
+const drawCanvas  = document.getElementById('drawCanvas');
+const drawCtx     = drawCanvas.getContext('2d');
+const drawPadWrap = document.getElementById('drawPadWrap');
+let isDrawing     = false;
+let lastX = 0, lastY = 0;
+let drawColor     = '#000000';
+let drawThickness = 2.5;
+
+const DRAW_COLORS = ['#000000','#1a237e','#b71c1c','#1b5e20','#4a148c'];
+const DRAW_THICKNESSES = [1.5, 2.5, 4];
+
+function initDrawPad() {
+  // Build color row
+  const colorRow = document.getElementById('drawColors');
+  DRAW_COLORS.forEach(c => {
+    const dot = document.createElement('div');
+    dot.className = 'draw-dot' + (c === drawColor ? ' active' : '');
+    dot.style.background = c;
+    dot.title = c;
+    dot.onclick = () => {
+      drawColor = c;
+      document.querySelectorAll('.draw-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    };
+    colorRow.appendChild(dot);
+  });
+
+  // Build thickness row
+  const thickRow = document.getElementById('drawThickness');
+  DRAW_THICKNESSES.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'thick-btn' + (t === drawThickness ? ' active' : '');
+    btn.title = `${t}px`;
+    const d = document.createElement('div');
+    d.className = 'thick-dot';
+    d.style.width  = (6 + i * 4) + 'px';
+    d.style.height = (6 + i * 4) + 'px';
+    btn.appendChild(d);
+    btn.onclick = () => {
+      drawThickness = t;
+      document.querySelectorAll('.thick-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    };
+    thickRow.appendChild(btn);
+  });
+
+  // Size canvas to container
+  resizeDrawCanvas();
+  window.addEventListener('resize', resizeDrawCanvas);
+
+  // Mouse events
+  drawCanvas.addEventListener('mousedown',  e => startDraw(e.offsetX, e.offsetY));
+  drawCanvas.addEventListener('mousemove',  e => { if (isDrawing) draw(e.offsetX, e.offsetY); });
+  drawCanvas.addEventListener('mouseup',    () => stopDraw());
+  drawCanvas.addEventListener('mouseleave', () => stopDraw());
+
+  // Touch events
+  drawCanvas.addEventListener('touchstart',  e => { e.preventDefault(); const t = getTouchPos(e); startDraw(t.x, t.y); }, { passive: false });
+  drawCanvas.addEventListener('touchmove',   e => { e.preventDefault(); if (isDrawing) { const t = getTouchPos(e); draw(t.x, t.y); } }, { passive: false });
+  drawCanvas.addEventListener('touchend',    () => stopDraw());
+}
+
+function resizeDrawCanvas() {
+  const w = drawPadWrap.clientWidth;
+  const h = 140;
+  if (drawCanvas.width === w && drawCanvas.height === h) return;
+  // Save current drawing
+  const tmp = drawCtx.getImageData(0, 0, drawCanvas.width, drawCanvas.height);
+  drawCanvas.width  = w;
+  drawCanvas.height = h;
+  drawCtx.putImageData(tmp, 0, 0);
+}
+
+function getTouchPos(e) {
+  const rect = drawCanvas.getBoundingClientRect();
+  const t    = e.touches[0];
+  return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+}
+
+function startDraw(x, y) {
+  isDrawing = true;
+  lastX = x; lastY = y;
+  drawCtx.beginPath();
+  drawCtx.arc(x, y, drawThickness / 2, 0, Math.PI * 2);
+  drawCtx.fillStyle = drawColor;
+  drawCtx.fill();
+  drawPadWrap.classList.add('has-drawing');
+}
+
+function draw(x, y) {
+  drawCtx.beginPath();
+  drawCtx.moveTo(lastX, lastY);
+  drawCtx.lineTo(x, y);
+  drawCtx.strokeStyle = drawColor;
+  drawCtx.lineWidth   = drawThickness;
+  drawCtx.lineCap     = 'round';
+  drawCtx.lineJoin    = 'round';
+  drawCtx.stroke();
+  lastX = x; lastY = y;
+}
+
+function stopDraw() { isDrawing = false; }
+
+function clearDrawing() {
+  drawCtx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+  drawPadWrap.classList.remove('has-drawing');
+}
+
+function useDrawnSignature() {
+  // Check if anything was drawn (any non-transparent pixel)
+  const data = drawCtx.getImageData(0, 0, drawCanvas.width, drawCanvas.height).data;
+  let hasPixels = false;
+  for (let i = 3; i < data.length; i += 4) { if (data[i] > 10) { hasPixels = true; break; } }
+  if (!hasPixels) { showToast('Please draw your signature first'); return; }
+
+  // Crop to bounding box + padding
+  const cropped = cropSignatureCanvas(drawCanvas);
+  activeSigDataURL = cropped;
+  showSigPreviewStrip(activeSigDataURL);
+  showToast('Signature ready — click any page to place it');
+}
+
+function cropSignatureCanvas(srcCanvas) {
+  const ctx  = srcCanvas.getContext('2d');
+  const w    = srcCanvas.width;
+  const h    = srcCanvas.height;
+  const data = ctx.getImageData(0, 0, w, h).data;
+  let minX = w, maxX = 0, minY = h, maxY = 0;
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const alpha = data[(y * w + x) * 4 + 3];
+      if (alpha > 10) {
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+      }
+    }
+  }
+  const pad = 8;
+  minX = Math.max(0, minX - pad);
+  minY = Math.max(0, minY - pad);
+  maxX = Math.min(w, maxX + pad);
+  maxY = Math.min(h, maxY + pad);
+  const cw = maxX - minX || 1;
+  const ch = maxY - minY || 1;
+  const out    = document.createElement('canvas');
+  out.width    = cw;
+  out.height   = ch;
+  out.getContext('2d').drawImage(srcCanvas, minX, minY, cw, ch, 0, 0, cw, ch);
+  return out.toDataURL('image/png');
+}
+
+/* ══════════════════════════════════════════
+   IMAGE UPLOAD + WHITE BG REMOVAL
+══════════════════════════════════════════ */
+document.getElementById('sigImgInput').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      // Render to canvas and remove white background
+      const c   = document.createElement('canvas');
+      c.width   = img.width;
+      c.height  = img.height;
+      const ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      // Remove near-white pixels (threshold)
+      const imageData = ctx.getImageData(0, 0, c.width, c.height);
+      const d = imageData.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i], g = d[i+1], b = d[i+2];
+        if (r > 230 && g > 230 && b > 230) d[i+3] = 0; // transparent
+      }
+      ctx.putImageData(imageData, 0, 0);
+
+      const processedURL = c.toDataURL('image/png');
+      document.getElementById('imgPreview').src           = processedURL;
+      document.getElementById('imgPreviewWrap').style.display = 'block';
+      document.getElementById('imgPreviewStrip').style.display = 'block';
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  this.value = '';
+});
+
+function clearImgUpload() {
+  document.getElementById('imgPreview').src                   = '';
+  document.getElementById('imgPreviewWrap').style.display     = 'none';
+  document.getElementById('imgPreviewStrip').style.display    = 'none';
+}
+
+function useImageSignature() {
+  const src = document.getElementById('imgPreview').src;
+  if (!src || src === window.location.href) { showToast('Please upload a signature image first'); return; }
+  activeSigDataURL = src;
+  showSigPreviewStrip(activeSigDataURL);
+  showToast('Signature ready — click any page to place it');
+}
+
+/* ══════════════════════════════════════════
+   SIGNATURE PREVIEW STRIP
+══════════════════════════════════════════ */
+function showSigPreviewStrip(dataURL) {
+  document.getElementById('sigPreviewImg').src = dataURL;
+  document.getElementById('sigPreviewStrip').classList.add('visible');
+}
+
+/* ══════════════════════════════════════════
+   TAB SWITCH
+══════════════════════════════════════════ */
+function switchSigTab(tab) {
+  const isDraw = tab === 'draw';
+  document.getElementById('tabDraw').classList.toggle('active', isDraw);
+  document.getElementById('tabImage').classList.toggle('active', !isDraw);
+  document.getElementById('drawPane').style.display  = isDraw ? '' : 'none';
+  document.getElementById('imagePane').style.display = isDraw ? 'none' : '';
+}
+
+/* ══════════════════════════════════════════
+   FILE LOADING
+══════════════════════════════════════════ */
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click',     e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop',      e => { e.preventDefault(); dropZone.classList.remove('drag-over'); loadFiles([...e.dataTransfer.files].filter(f => f.type==='application/pdf')); });
+fileInput.addEventListener('change',   () => { loadFiles([...fileInput.files]); fileInput.value = ''; });
+
+async function loadFiles(newFiles) {
+  for (const file of newFiles) {
+    if (file.type !== 'application/pdf') continue;
+    const uid    = 'f' + Date.now() + '_' + Math.random().toString(36).substr(2,8);
+    const buffer = await file.arrayBuffer();
+    let pdfJsDoc;
+    try { pdfJsDoc = await pdfjsLib.getDocument({ data: buffer.slice(0) }).promise; }
+    catch(e) { showToast('Could not read: ' + file.name); continue; }
+    const baseName = file.name.replace(/\.pdf$/i,'');
+    const pages    = Array.from({length: pdfJsDoc.numPages}, () => ({w:0,h:0,rendered:false,snapshot:null}));
+    sourceFiles.push({ uid, name:file.name, baseName, buffer, pageCount:pdfJsDoc.numPages, pdfJsDoc, pages });
+    renderGroups();
+    renderPages(uid);
+  }
+  updateUI();
+}
+
+/* ══════════════════════════════════════════
+   PAGE RENDERING — direct to canvas + snapshot
+══════════════════════════════════════════ */
+async function renderPages(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  const RENDER_W = 600;
+
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    const canvas = document.querySelector(`canvas.page-canvas[data-uid="${uid}"][data-pi="${pi}"]`);
+    if (!canvas) continue;
+    try {
+      const page  = await src.pdfJsDoc.getPage(pi + 1);
+      const vp    = page.getViewport({ scale: 1 });
+      const scale = RENDER_W / vp.width;
+      const sv    = page.getViewport({ scale });
+
+      canvas.width  = Math.round(sv.width);
+      canvas.height = Math.round(sv.height);
+
+      src.pages[pi].w = vp.width;
+      src.pages[pi].h = vp.height;
+
+      const preview = canvas.closest('.page-preview');
+      if (preview) {
+        preview.style.paddingBottom = ((sv.height / sv.width) * 100).toFixed(2) + '%';
+        const shimmer = preview.querySelector('.page-shimmer');
+        if (shimmer) shimmer.style.display = 'none';
+      }
+
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport: sv }).promise;
+
+      src.pages[pi].snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      src.pages[pi].rendered = true;
+
+      drawSigsOnCanvas(canvas, uid, pi);
+    } catch(e) { console.warn('Page render failed', pi, e); }
+  }
+}
+
+/* ══════════════════════════════════════════
+   REDRAW — restore snapshot + draw sigs
+══════════════════════════════════════════ */
+function redrawPage(fileUid, pageIndex) {
+  const src = sourceFiles.find(f => f.uid === fileUid);
+  if (!src) return;
+  const pg = src.pages[pageIndex];
+  if (!pg.rendered || !pg.snapshot) return;
+
+  const canvas = document.querySelector(`canvas.page-canvas[data-uid="${fileUid}"][data-pi="${pageIndex}"]`);
+  if (!canvas) return;
+
+  canvas.getContext('2d').putImageData(pg.snapshot, 0, 0);
+  drawSigsOnCanvas(canvas, fileUid, pageIndex);
+}
+
+function drawSigsOnCanvas(canvas, fileUid, pageIndex) {
+  const ctx  = canvas.getContext('2d');
+  const sigs = signatures.filter(s => s.fileUid === fileUid && s.pageIndex === pageIndex);
+
+  const pendingDraws = sigs.map(sig => new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      const src  = sourceFiles.find(f => f.uid === sig.fileUid);
+      const pgW  = src?.pages[sig.pageIndex]?.w || 595;
+      const scale = canvas.width / pgW;
+      const sz   = sig.size * scale;
+      const cx   = sig.xPct * canvas.width;
+      const cy   = sig.yPct * canvas.height;
+
+      ctx.save();
+      ctx.globalAlpha = sig.opacity / 100;
+      ctx.drawImage(img, cx - sz / 2, cy - sz / 2, sz, sz * (img.height / img.width));
+      ctx.restore();
+
+      // Selection ring
+      if (sig.id === selectedSigId) {
+        const rw = sz;
+        const rh = sz * (img.height / img.width);
+        ctx.save();
+        ctx.setLineDash([4,3]);
+        ctx.strokeStyle = '#1e88e5';
+        ctx.lineWidth   = Math.max(1.5, scale);
+        ctx.strokeRect(cx - rw/2, cy - rh/2, rw, rh);
+        const hs = Math.max(4, sz * 0.06);
+        [[cx-rw/2, cy-rh/2],[cx+rw/2, cy-rh/2],[cx-rw/2, cy+rh/2],[cx+rw/2, cy+rh/2]].forEach(([hx,hy]) => {
+          ctx.setLineDash([]);
+          ctx.fillStyle   = '#fff';
+          ctx.fillRect(hx-hs/2, hy-hs/2, hs, hs);
+          ctx.strokeStyle = '#1e88e5';
+          ctx.lineWidth   = Math.max(1, scale * 0.8);
+          ctx.strokeRect(hx-hs/2, hy-hs/2, hs, hs);
+        });
+        ctx.restore();
+      }
+      resolve();
+    };
+    img.onerror = resolve;
+    img.src = sig.dataURL;
+  }));
+
+  // Update pill after all drawn
+  Promise.all(pendingDraws).then(() => {
+    const pill = document.querySelector(`.sig-count-pill[data-uid="${fileUid}"][data-pi="${pageIndex}"]`);
+    if (pill) {
+      const count = sigs.length;
+      pill.textContent = count;
+      pill.classList.toggle('show', count > 0);
+    }
+    updateSigList(fileUid);
+  });
+}
+
+/* ══════════════════════════════════════════
+   RENDER GROUPS (DOM)
+══════════════════════════════════════════ */
+function renderGroups() {
+  const container = document.getElementById('pageGroups');
+  container.innerHTML = '';
+  let totalPages = 0;
+
+  sourceFiles.forEach(src => {
+    totalPages += src.pageCount;
+    const group = document.createElement('div');
+    group.className = 'file-group';
+    group.id        = 'group-' + src.uid;
+
+    const header = document.createElement('div');
+    header.className = 'file-group-header';
+    header.innerHTML = `
+      <div class="file-group-icon">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M9 2H4a1.5 1.5 0 00-1.5 1.5v8A1.5 1.5 0 004 13h7a1.5 1.5 0 001.5-1.5V6L9 2z" stroke="#01796f" stroke-width="1.4"/><path d="M9 2v4h4" stroke="#01796f" stroke-width="1.4"/></svg>
+      </div>
+      <div class="file-group-title" title="${escHtml(src.name)}">${escHtml(src.name)}</div>
+      <div class="file-group-meta">${src.pageCount} page${src.pageCount!==1?'s':''}</div>
+      <button class="btn-dl" id="dlbtn-${src.uid}" onclick="downloadPDF('${src.uid}')">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Signed PDF
+      </button>
+      <button class="tb-btn danger" style="padding:5px 10px;font-size:.73rem;" onclick="removeFile('${src.uid}')">Remove</button>`;
+    group.appendChild(header);
+
+    const grid = document.createElement('div');
+    grid.className = 'page-grid';
+    grid.id        = 'grid-' + src.uid;
+
+    for (let pi = 0; pi < src.pageCount; pi++) {
+      const card    = document.createElement('div');
+      card.className = 'page-card';
+
+      const preview = document.createElement('div');
+      preview.className = 'page-preview';
+
+      const shimmer = document.createElement('div');
+      shimmer.className = 'page-shimmer shimmer-anim';
+      preview.appendChild(shimmer);
+
+      const canvas         = document.createElement('canvas');
+      canvas.className     = 'page-canvas';
+      canvas.dataset.uid   = src.uid;
+      canvas.dataset.pi    = pi;
+      canvas.width = 200; canvas.height = 283;
+      attachCanvasHandlers(canvas, src.uid, pi);
+      preview.appendChild(canvas);
+
+      const pgNum       = document.createElement('div');
+      pgNum.className   = 'pg-num';
+      pgNum.textContent = `Page ${pi+1}${src.pageCount>1?' of '+src.pageCount:''}`;
+      preview.appendChild(pgNum);
+
+      const pill       = document.createElement('div');
+      pill.className   = 'sig-count-pill';
+      pill.dataset.uid = src.uid;
+      pill.dataset.pi  = pi;
+      preview.appendChild(pill);
+
+      const actions = document.createElement('div');
+      actions.className = 'page-actions';
+      actions.innerHTML = `<div class="pg-label">${escHtml(src.baseName)}</div>`;
+
+      card.appendChild(preview);
+      card.appendChild(actions);
+      grid.appendChild(card);
+
+      if (src.pages[pi].rendered) redrawPage(src.uid, pi);
+    }
+    group.appendChild(grid);
+
+    // Sig list
+    const sigList = document.createElement('div');
+    sigList.className = 'sig-list';
+    sigList.id        = 'siglist-' + src.uid;
+    sigList.innerHTML = `
+      <div class="sig-list-header">
+        <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" stroke="#01796f" stroke-width="1.4"/><path d="M4 6l1.5 1.5 3-3" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span id="siglist-title-${src.uid}">Signatures</span>
+      </div>
+      <div class="sig-items" id="sig-items-${src.uid}"></div>`;
+    group.appendChild(sigList);
+    container.appendChild(group);
+  });
+
+  document.getElementById('totalPagesLabel').textContent = totalPages;
+  const fc = sourceFiles.length;
+  document.getElementById('filesLabel').textContent = fc > 0 ? `from ${fc} file${fc!==1?'s':''}` : '';
+}
+
+/* ══════════════════════════════════════════
+   CANVAS INTERACTION
+══════════════════════════════════════════ */
+function attachCanvasHandlers(canvas, fileUid, pageIndex) {
+  canvas.addEventListener('mousedown', e => handlePointerDown(e, canvas, fileUid, pageIndex, e.clientX, e.clientY));
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); const t = e.touches[0]; handlePointerDown(e, canvas, fileUid, pageIndex, t.clientX, t.clientY); }, { passive: false });
+}
+
+document.addEventListener('mousemove', e => handlePointerMove(e.clientX, e.clientY));
+document.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); const t = e.touches[0]; handlePointerMove(t.clientX, t.clientY); } }, { passive: false });
+document.addEventListener('mouseup',   () => { dragging = null; });
+document.addEventListener('touchend',  () => { dragging = null; });
+
+function handlePointerDown(e, canvas, fileUid, pageIndex, clientX, clientY) {
+  const rect  = canvas.getBoundingClientRect();
+  const cx    = (clientX - rect.left) / rect.width;
+  const cy    = (clientY - rect.top)  / rect.height;
+  const src   = sourceFiles.find(f => f.uid === fileUid);
+  const pgW   = src?.pages[pageIndex]?.w || 595;
+  const cw    = canvas.width;
+  const scale = cw / pgW;
+
+  // Hit test sigs (reverse = topmost first)
+  const pageSigs = signatures.filter(s => s.fileUid===fileUid && s.pageIndex===pageIndex).slice().reverse();
+  const hit = pageSigs.find(sig => {
+    const hitR = (sig.size * scale * 0.55) / cw;
+    return Math.abs(sig.xPct - cx) < hitR && Math.abs(sig.yPct - cy) < hitR * 0.7;
+  });
+
+  if (hit) {
+    selectSig(hit.id);
+    dragging = { sigId:hit.id, startCx:cx, startCy:cy, startXPct:hit.xPct, startYPct:hit.yPct, canvasEl:canvas };
+    e.stopPropagation();
+  } else {
+    // Deselect from another page
+    if (selectedSigId) {
+      const prev = signatures.find(s => s.id === selectedSigId);
+      if (prev && (prev.fileUid !== fileUid || prev.pageIndex !== pageIndex)) {
+        selectedSigId = null;
+        redrawPage(prev.fileUid, prev.pageIndex);
+        document.getElementById('selPanel').classList.remove('visible');
+      }
+    }
+    placeSig(fileUid, pageIndex, cx, cy);
+  }
+}
+
+function handlePointerMove(clientX, clientY) {
+  if (!dragging) return;
+  const canvas = dragging.canvasEl;
+  const rect   = canvas.getBoundingClientRect();
+  const cx     = (clientX - rect.left) / rect.width;
+  const cy     = (clientY - rect.top)  / rect.height;
+  const sig    = signatures.find(s => s.id === dragging.sigId);
+  if (!sig) { dragging = null; return; }
+  sig.xPct = Math.max(0.02, Math.min(0.98, dragging.startXPct + (cx - dragging.startCx)));
+  sig.yPct = Math.max(0.02, Math.min(0.98, dragging.startYPct + (cy - dragging.startCy)));
+  redrawPage(sig.fileUid, sig.pageIndex);
+  updateSelPanel(sig);
+}
+
+/* ══════════════════════════════════════════
+   SIGNATURE PLACEMENT
+══════════════════════════════════════════ */
+function placeSig(fileUid, pageIndex, xPct, yPct) {
+  if (!activeSigDataURL) { showToast('Create or upload a signature first, then click Use This Signature'); return; }
+  const id  = 'sig_' + Date.now() + '_' + Math.random().toString(36).substr(2,5);
+  const sig = {
+    id, fileUid, pageIndex,
+    dataURL:  activeSigDataURL,
+    xPct, yPct,
+    size:    currentStyle.size,
+    opacity: currentStyle.opacity,
+  };
+  signatures.push(sig);
+  selectSig(id);
+  redrawPage(fileUid, pageIndex);
+}
+
+function selectSig(id) {
+  const prevId = selectedSigId;
+  selectedSigId = id;
+  const sig = signatures.find(s => s.id === id);
+  if (!sig) return;
+
+  currentStyle.size    = sig.size;
+  currentStyle.opacity = sig.opacity;
+  document.getElementById('ctrlSize').value         = sig.size;
+  document.getElementById('sizeVal').textContent    = sig.size + ' pt';
+  document.getElementById('ctrlOpacity').value      = sig.opacity;
+  document.getElementById('opacityVal').textContent = sig.opacity + '%';
+
+  updateSelPanel(sig);
+
+  if (prevId && prevId !== id) {
+    const prev = signatures.find(s => s.id === prevId);
+    if (prev) redrawPage(prev.fileUid, prev.pageIndex);
+  }
+  redrawPage(sig.fileUid, sig.pageIndex);
+  document.querySelectorAll('.sig-item').forEach(el => el.classList.toggle('selected', el.dataset.sigid === id));
+}
+
+function updateSelPanel(sig) {
+  if (!sig) { document.getElementById('selPanel').classList.remove('visible'); return; }
+  document.getElementById('selPanel').classList.add('visible');
+  const src = sourceFiles.find(f => f.uid === sig.fileUid);
+  document.getElementById('selMeta').textContent =
+    `Page ${sig.pageIndex+1}${src?' of '+src.pageCount:''} · X:${Math.round(sig.xPct*100)}% Y:${Math.round(sig.yPct*100)}%`;
+}
+
+function updateSigList(fileUid) {
+  const sigs    = signatures.filter(s => s.fileUid === fileUid);
+  const listEl  = document.getElementById('siglist-' + fileUid);
+  const itemEl  = document.getElementById('sig-items-' + fileUid);
+  const titleEl = document.getElementById('siglist-title-' + fileUid);
+  if (!listEl || !itemEl) return;
+  listEl.classList.toggle('has-items', sigs.length > 0);
+  if (titleEl) titleEl.textContent = `${sigs.length} signature${sigs.length!==1?'s':''}`;
+  itemEl.innerHTML = sigs.map(sig => `
+    <div class="sig-item${sig.id===selectedSigId?' selected':''}" data-sigid="${sig.id}" onclick="selectSig('${sig.id}')">
+      <img class="sig-item-thumb" src="${sig.dataURL}" alt="sig">
+      <div class="sig-item-info">
+        <div class="sig-item-name">Signature</div>
+        <div class="sig-item-meta">Page ${sig.pageIndex+1} · ${sig.size}pt · ${Math.round(sig.xPct*100)}%,${Math.round(sig.yPct*100)}%</div>
+      </div>
+      <button class="sig-item-del" onclick="deleteSigById(event,'${sig.id}')">✕</button>
+    </div>`).join('');
+}
+
+/* ══════════════════════════════════════════
+   CONTROLS
+══════════════════════════════════════════ */
+document.getElementById('ctrlSize').addEventListener('input', function() {
+  const v = parseInt(this.value);
+  currentStyle.size = v;
+  document.getElementById('sizeVal').textContent = v + ' pt';
+  if (selectedSigId) {
+    const sig = signatures.find(s => s.id === selectedSigId);
+    if (sig) { sig.size = v; redrawPage(sig.fileUid, sig.pageIndex); updateSelPanel(sig); }
+  }
+});
+
+document.getElementById('ctrlOpacity').addEventListener('input', function() {
+  const v = parseInt(this.value);
+  currentStyle.opacity = v;
+  document.getElementById('opacityVal').textContent = v + '%';
+  if (selectedSigId) {
+    const sig = signatures.find(s => s.id === selectedSigId);
+    if (sig) { sig.opacity = v; redrawPage(sig.fileUid, sig.pageIndex); }
+  }
+});
+
+function deleteSigById(e, sigId) {
+  e.stopPropagation();
+  const sig = signatures.find(s => s.id === sigId);
+  if (!sig) return;
+  const { fileUid, pageIndex } = sig;
+  signatures = signatures.filter(s => s.id !== sigId);
+  if (selectedSigId === sigId) {
+    selectedSigId = null;
+    document.getElementById('selPanel').classList.remove('visible');
+  }
+  redrawPage(fileUid, pageIndex);
+  updateSigList(fileUid);
+}
+
+function deleteSelected() {
+  if (!selectedSigId) { showToast('Select a signature first'); return; }
+  deleteSigById({ stopPropagation:()=>{} }, selectedSigId);
+}
+
+function applyToAllPages() {
+  if (!selectedSigId) { showToast('Select a signature first'); return; }
+  const srcSig = signatures.find(s => s.id === selectedSigId);
+  if (!srcSig) return;
+  const src = sourceFiles.find(f => f.uid === srcSig.fileUid);
+  if (!src) return;
+  let added = 0;
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    if (pi === srcSig.pageIndex) continue;
+    const dup = signatures.find(s =>
+      s.fileUid===srcSig.fileUid && s.pageIndex===pi &&
+      Math.abs(s.xPct-srcSig.xPct)<0.01 && Math.abs(s.yPct-srcSig.yPct)<0.01);
+    if (dup) continue;
+    signatures.push({...srcSig, id:'sig_'+Date.now()+'_'+pi+'_'+Math.random().toString(36).substr(2,5), pageIndex:pi});
+    redrawPage(srcSig.fileUid, pi);
+    added++;
+  }
+  updateSigList(srcSig.fileUid);
+  showToast(`Applied to ${added} more page${added!==1?'s':''}`);
+}
+
+/* ══════════════════════════════════════════
+   DOWNLOAD
+══════════════════════════════════════════ */
+async function downloadPDF(uid) {
+  const src      = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  const fileSigs = signatures.filter(s => s.fileUid === uid);
+  if (!fileSigs.length) { showToast('Add at least one signature first'); return; }
+
+  const btn  = document.getElementById('dlbtn-' + uid);
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  if (btn) { btn.disabled = true; btn.innerHTML = spinnerHTML() + ' Saving…'; }
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Loading PDF…';
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const pdfDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+    const pages  = pdfDoc.getPages();
+
+    for (let pi = 0; pi < pages.length; pi++) {
+      bar.style.width = Math.round(((pi+0.5)/pages.length)*88) + '%';
+      lbl.textContent = `Embedding: page ${pi+1} of ${pages.length}`;
+      const pageSigs = fileSigs.filter(s => s.pageIndex === pi);
+      if (!pageSigs.length) continue;
+
+      const pdfPage = pages[pi];
+      const { width:pw, height:ph } = pdfPage.getSize();
+
+      for (const sig of pageSigs) {
+        try {
+          // Render sig at high resolution
+          const pngBytes = await sigToPNG(sig);
+          const pdfImg   = await pdfDoc.embedPng(pngBytes);
+          const { width:iw, height:ih } = pdfImg.scale(1);
+          const aspect   = ih / iw;
+          const sigW     = sig.size;
+          const sigH     = sig.size * aspect;
+          pdfPage.drawImage(pdfImg, {
+            x:      sig.xPct * pw - sigW / 2,
+            y:      (1 - sig.yPct) * ph - sigH / 2,
+            width:  sigW,
+            height: sigH,
+            opacity: sig.opacity / 100,
+          });
+        } catch(e) { console.warn('Sig embed failed', e); }
+      }
+    }
+
+    bar.style.width = '96%'; lbl.textContent = 'Saving PDF…';
+    const bytes = await pdfDoc.save();
+    bar.style.width = '100%'; lbl.textContent = '✓ Done!';
+    triggerDownload(bytes, src.baseName + '_signed.pdf');
+    showToast('"' + src.name + '" downloaded!');
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(e) {
+    console.error(e);
+    showToast('Download failed. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  if (btn) {
+    btn.disabled  = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download Signed PDF`;
+  }
+}
+
+function sigToPNG(sig) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const SCALE  = 4;
+      const aspect = img.height / img.width;
+      const pw     = Math.round(sig.size * SCALE);
+      const ph     = Math.round(sig.size * aspect * SCALE);
+      const c      = document.createElement('canvas');
+      c.width      = pw; c.height = ph;
+      const ctx    = c.getContext('2d');
+      ctx.globalAlpha = sig.opacity / 100;
+      ctx.drawImage(img, 0, 0, pw, ph);
+      c.toBlob(blob => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(new Uint8Array(reader.result));
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(blob);
+      }, 'image/png');
+    };
+    img.onerror = reject;
+    img.src = sig.dataURL;
+  });
+}
+
+/* ══════════════════════════════════════════
+   UI HELPERS
+══════════════════════════════════════════ */
+function updateUI() {
+  const has = sourceFiles.length > 0;
+  document.getElementById('toolbar').classList.toggle('visible', has);
+  document.getElementById('sigPanel').classList.toggle('visible', has);
+  document.getElementById('hintBanner').classList.toggle('visible', has);
+}
+
+function removeFile(uid) {
+  sourceFiles = sourceFiles.filter(f => f.uid !== uid);
+  signatures  = signatures.filter(s => s.fileUid !== uid);
+  if (selectedSigId && !signatures.find(s => s.id === selectedSigId)) {
+    selectedSigId = null;
+    document.getElementById('selPanel').classList.remove('visible');
+  }
+  renderGroups(); updateUI();
+}
+
+function clearAll() {
+  sourceFiles = []; signatures = []; selectedSigId = null;
+  document.getElementById('pageGroups').innerHTML = '';
+  document.getElementById('selPanel').classList.remove('visible');
+  updateUI();
+}
+
+function toggleFAQ(el) {
+  const ans    = el.nextElementSibling;
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function triggerDownload(bytes, filename) {
+  const blob = new Blob([bytes], { type:'application/pdf' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a'); a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function spinnerHTML() {
+  return `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M7 2a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg>`;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  initDrawPad();
+});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

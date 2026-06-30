@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit PDF Metadata Online Free – Title, Author, Keywords | QwikPDF</title>
+<meta name="description" content="Edit PDF metadata online for free — update title, author, subject, keywords, creator and more. Read and rewrite PDF document properties instantly. Browser-based, no uploads, no account needed.">
+<meta name="keywords" content="edit pdf metadata, pdf metadata editor, change pdf title, edit pdf author, pdf document properties, pdf metadata online, update pdf info, remove pdf metadata, pdf keywords editor">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/pdf-metadata.html">
+<meta property="og:title" content="Edit PDF Metadata Online Free | QwikPDF">
+<meta property="og:description" content="Read and edit PDF document properties — title, author, subject, keywords, creator and more. Free, private, browser-based.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/pdf-metadata.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edit PDF Metadata Online Free – QwikPDF">
+<meta name="twitter:description" content="Edit PDF title, author, subject, keywords and more online for free. No uploads, instant download.">
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"QwikPDF – PDF Metadata Editor","url":"https://qwikpdf.com/pdf-metadata.html","description":"Edit PDF document metadata online. Read existing title, author, subject, keywords, creator and producer fields. Update and save with one click. 100% browser-based, files never leave your device.","applicationCategory":"DocumentEditor","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Read existing PDF metadata","Edit title, author, subject","Edit keywords, creator, producer","Edit creation and modification dates","Remove all metadata option","Multiple PDF support","No uploads – 100% private","Free forever"]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Edit PDF Metadata Online","step":[{"@type":"HowToStep","name":"Upload your PDF","text":"Drag and drop a PDF file or click Select PDF Files. The tool instantly reads all existing metadata and displays it in an editable form."},{"@type":"HowToStep","name":"Review current metadata","text":"All existing document properties are shown: title, author, subject, keywords, creator, producer and dates. Empty fields show as blank."},{"@type":"HowToStep","name":"Edit the fields","text":"Click any field to edit it. Change the title, author, subject, keywords or any other property. Use Clear All to wipe all metadata at once."},{"@type":"HowToStep","name":"Download","text":"Click Download Updated PDF to save the file with your new metadata permanently embedded."}]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is PDF metadata?","acceptedAnswer":{"@type":"Answer","text":"PDF metadata (also called document properties) is information stored inside the PDF file that describes it — including the title, author, subject, keywords, creator application and creation/modification dates. It is not visible in the document body but can be read by search engines, document managers and PDF readers."}},{"@type":"Question","name":"How do I edit PDF metadata online for free?","acceptedAnswer":{"@type":"Answer","text":"Upload your PDF to QwikPDF, review the existing metadata shown in the editor, update any fields you want to change, then click Download Updated PDF. All processing happens in your browser — no upload to a server is required."}},{"@type":"Question","name":"Will editing metadata change the content of my PDF?","acceptedAnswer":{"@type":"Answer","text":"No. Editing metadata only changes the document property fields stored in the PDF file. The pages, text, images and layout of your document remain completely unchanged."}},{"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. QwikPDF processes everything locally in your browser using pdf-lib. Your files never leave your device, making it safe for sensitive and confidential documents."}},{"@type":"Question","name":"Can I remove all metadata from a PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the Clear All Fields button to wipe all metadata fields at once before downloading. This removes the title, author, subject, keywords, creator and producer from the output file."}},{"@type":"Question","name":"What metadata fields can I edit?","acceptedAnswer":{"@type":"Answer","text":"You can edit the title, author, subject, keywords, creator (the application that created the document), producer (the PDF library used), and the creation and modification dates."}}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --success:    #2e7d32;
+  --success-lt: #f1f8f1;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg); color: var(--text);
+  font-size: 15px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+header { background: var(--teal); color: #fff; padding: 32px 20px 36px; text-align: center; }
+.h-inner { max-width: 680px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem, 3.8vw, 2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span { background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500; }
+
+/* ── MAIN ── */
+main { max-width: 900px; margin: 0 auto; padding: 28px 16px 120px; }
+
+/* ── DROP ZONE ── */
+#dropZone {
+  background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r);
+  padding: 48px 24px; text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s; box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.005); }
+.dz-icon { width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p  { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 18px;
+  background: var(--teal); color: #fff; border: none; padding: 11px 26px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s; box-shadow: 0 3px 14px rgba(1,121,111,.3);
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* ── FILE CARDS ── */
+#fileList { display: flex; flex-direction: column; gap: 18px; margin-top: 24px; }
+
+.file-card {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  box-shadow: var(--sh); overflow: hidden; animation: fadeUp .22s ease both;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+/* card header */
+.fc-head {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 14px 18px 13px; background: var(--teal-xs);
+  border-bottom: 1.5px solid var(--border);
+}
+.fc-icon { width: 34px; height: 34px; background: var(--teal-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fc-name { font-weight: 700; font-size: .92rem; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fc-meta { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+.fc-actions { display: flex; gap: 7px; flex-shrink: 0; flex-wrap: wrap; }
+
+/* small buttons */
+.sm-btn {
+  display: inline-flex; align-items: center; gap: 5px; padding: 6px 13px;
+  border-radius: 7px; border: 1.5px solid var(--border); background: var(--white);
+  color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 600;
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.sm-btn:hover        { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.sm-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.sm-btn.primary { background: var(--teal); border-color: var(--teal); color: #fff; box-shadow: 0 2px 8px rgba(1,121,111,.22); }
+.sm-btn.primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+.sm-btn:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+/* card body: two-column diff view */
+.fc-body { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .fc-body { grid-template-columns: 1fr; } }
+
+.fc-col { padding: 16px 18px; }
+.fc-col + .fc-col { border-left: 1.5px solid var(--border); }
+@media (max-width: 640px) { .fc-col + .fc-col { border-left: none; border-top: 1.5px solid var(--border); } }
+
+.fc-col-title {
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 13px; display: flex; align-items: center; gap: 6px;
+}
+.fc-col-title.current { color: var(--muted); }
+.fc-col-title.new     { color: var(--teal); }
+
+/* field rows */
+.field-row { display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
+.field-row:last-child { margin-bottom: 0; }
+.field-lbl {
+  font-size: .72rem; font-weight: 600; color: var(--muted);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.field-lbl .field-key { font-family: monospace; font-size: .7rem; color: var(--border); background: var(--teal-xs); padding: 1px 6px; border-radius: 4px; font-weight: 500; }
+
+/* current value display */
+.field-val {
+  font-size: .84rem; color: var(--text); padding: 7px 10px;
+  background: var(--bg); border: 1.5px solid transparent; border-radius: 7px;
+  min-height: 34px; word-break: break-all; line-height: 1.45;
+}
+.field-val.empty { color: var(--muted); font-style: italic; font-size: .78rem; }
+
+/* editable input */
+.field-input {
+  width: 100%; padding: 7px 10px; border: 1.5px solid var(--border); border-radius: 7px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .84rem; color: var(--text);
+  background: var(--white); transition: border-color .15s, box-shadow .15s; outline: none;
+  min-height: 34px; resize: none;
+}
+.field-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(1,121,111,.1); }
+.field-input.changed { border-color: var(--teal); background: var(--teal-xs); }
+textarea.field-input { height: 60px; line-height: 1.45; }
+
+/* changed badge */
+.changed-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); margin-left: 4px; vertical-align: middle; opacity: 0; transition: opacity .2s; }
+.changed-dot.show { opacity: 1; }
+
+/* progress bar */
+.prog-wrap { display: none; margin-top: 14px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .25s ease; width: 0%; }
+.prog-lbl { font-size: .75rem; color: var(--muted); margin-top: 5px; text-align: center; }
+
+/* success flash */
+.fc-success {
+  display: none; align-items: center; gap: 8px; padding: 10px 18px;
+  background: var(--success-lt); border-top: 1.5px solid #c8e6c9;
+  font-size: .82rem; font-weight: 600; color: var(--success);
+}
+.fc-success.show { display: flex; }
+
+/* add more / global toolbar */
+#globalBar {
+  display: none; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 13px 18px; box-shadow: var(--sh); margin-bottom: 4px;
+}
+#globalBar.visible { display: flex; }
+.gb-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gb-info { font-size: .875rem; font-weight: 600; }
+.gb-info span { color: var(--teal); }
+
+/* ── SECTIONS ── */
+.section { margin-top: 60px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub   { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+.steps     { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p  { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 13px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; transition: box-shadow .2s, transform .2s; }
+.feat:hover { box-shadow: var(--sh2); transform: translateY(-2px); }
+.feat-ico { width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 11px; }
+.feat h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.feat p  { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q { padding: 15px 17px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: .875rem; user-select: none; gap: 12px; transition: background .15s; }
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open  { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px; }
+.faq-a.open { max-height: 280px; padding: 0 17px 15px; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px,1fr)); gap: 9px; }
+.tool-a { display: flex; align-items: center; gap: 7px; background: var(--white); border: 1.5px solid var(--border); border-radius: 9px; padding: 11px 13px; text-decoration: none; color: var(--text); font-size: .80rem; font-weight: 600; transition: border-color .17s, background .15s, color .17s, transform .15s; }
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); transform: translateY(-1px); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* ── FOOTER ── */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* ── TOAST ── */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(12px); background: var(--teal); color: #fff; padding: 11px 20px; border-radius: 8px; font-size: .86rem; font-weight: 600; box-shadow: 0 5px 20px rgba(1,121,111,.32); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 1100; white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; display: inline-block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>PDF Metadata Editor — <em>Free &amp; Online</em></h1>
+    <p>Read and edit your PDF document properties — title, author, keywords and more. Instantly see current values, update them, and download.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>📄 Shows current metadata</span>
+      <span>✏️ Edit all fields</span>
+      <span>🗑️ Clear all metadata</span>
+      <span>⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- DROP ZONE -->
+<div id="dropZone">
+  <div class="dz-icon">
+    <svg width="26" height="26" fill="none" viewBox="0 0 26 26">
+      <rect x="4" y="3" width="18" height="20" rx="2.5" stroke="#01796f" stroke-width="2"/>
+      <path d="M9 9h8M9 13h8M9 17h5" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="19" cy="19" r="5" fill="#01796f"/>
+      <path d="M17 19h4M19 17v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h2>Drop a PDF here to read and edit its metadata</h2>
+  <p>Loads current title, author, subject, keywords, creator, producer and dates — ready to edit</p>
+  <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+    <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Select PDF Files
+  </button>
+  <input type="file" id="fileInput" accept=".pdf" multiple>
+</div>
+
+<!-- GLOBAL BAR -->
+<div id="globalBar">
+  <div class="gb-left">
+    <div class="gb-info"><span id="fileCount">0</span> file<span id="fileCountS">s</span> loaded</div>
+    <button class="sm-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Add More
+    </button>
+    <button class="sm-btn danger" onclick="clearAll()">
+      <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Clear All
+    </button>
+  </div>
+</div>
+
+<!-- FILE LIST -->
+<div id="fileList"></div>
+
+<!-- HOW TO -->
+<section class="section">
+  <h2 class="sec-title">How to Edit PDF Metadata Online</h2>
+  <p class="sec-sub">Four steps. No account. No upload. Completely free.</p>
+  <div class="steps">
+    <div class="step-card"><div class="s-num">01</div><h3>Upload Your PDF</h3><p>Drag and drop a PDF file onto the upload area or click <strong>Select PDF Files</strong>. You can load multiple files at once.</p></div>
+    <div class="step-card"><div class="s-num">02</div><h3>Review Current Metadata</h3><p>The left column shows every existing document property — title, author, subject, keywords, creator, producer and dates. Empty fields are clearly marked.</p></div>
+    <div class="step-card"><div class="s-num">03</div><h3>Edit the Fields</h3><p>Click any input in the right column to update it. Changed fields are highlighted so you can see exactly what has been modified at a glance.</p></div>
+    <div class="step-card"><div class="s-num">04</div><h3>Download</h3><p>Click <strong>Download Updated PDF</strong>. The new metadata is written into the file — pages and content are untouched. Instant download, no waiting.</p></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <h2 class="sec-title">Why Use QwikPDF to Edit PDF Metadata?</h2>
+  <p class="sec-sub">The fastest free way to read and rewrite PDF document properties.</p>
+  <div class="feat-grid">
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" stroke="#01796f" stroke-width="2"/><path d="M8 11l2.5 2.5L14.5 8" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>See Current Values First</h3>
+      <p>Unlike other tools that show blank forms, QwikPDF reads your existing PDF metadata and displays every field before you change anything.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="3" stroke="#01796f" stroke-width="2"/><path d="M7 11h8M7 7h5M7 15h3" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <h3>All 8 Standard Fields</h3>
+      <p>Edit title, author, subject, keywords, creator, producer, creation date and modification date — the complete set of standard PDF document properties.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M11 2L3 6v7c0 5.5 3.5 10.2 8 11.5 4.5-1.3 8-6 8-11.5V6L11 2z" fill="#01796f" opacity=".2" stroke="#01796f" stroke-width="1.5"/><path d="M8 11l2.5 2.5L14 8" stroke="#01796f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>100% Private</h3>
+      <p>Everything runs locally in your browser using pdf-lib. Your PDF files are never uploaded to any server — safe for legal, medical and confidential documents.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M4 7h14M4 11h10M4 15h6" stroke="#01796f" stroke-width="2" stroke-linecap="round"/><path d="M17 13l3 3-3 3" stroke="#01796f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Clear All Metadata</h3>
+      <p>One click wipes all fields clean before downloading — useful for removing author information or preparing documents for redistribution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="sec-title">Frequently Asked Questions</h2>
+  <p class="sec-sub">Everything about editing PDF metadata online for free.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is PDF metadata?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">PDF metadata (also called document properties) is information stored inside the PDF file that describes it — including the title, author, subject, keywords, the application that created it, and creation/modification dates. It is not visible in the document body but can be read by search engines, document managers and PDF readers like Adobe Acrobat.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Will editing metadata change my PDF content?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">No. Editing metadata only updates the document property fields stored in the PDF. The pages, text, images, fonts and layout of your document remain completely unchanged.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Are my PDF files uploaded to a server?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">No. QwikPDF processes everything entirely in your browser using pdf-lib. Your files never leave your device, making it completely safe for sensitive and confidential documents.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Can I remove all metadata from a PDF?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">Yes. Click <strong>Clear All Fields</strong> inside any file card to wipe all metadata fields at once. The downloaded PDF will have no title, author, subject, keywords, creator or producer values.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What metadata fields can I edit?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">You can edit all 8 standard PDF metadata fields: Title, Author, Subject, Keywords, Creator (the application that authored the document), Producer (the PDF library used to create it), Creation Date and Modification Date.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Does editing PDF keywords help with SEO?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="faq-a">Some search engines, including Google, read PDF metadata when indexing documents. A well-written title and relevant keywords in the metadata can help your PDF appear in search results. The title field in particular can influence how the document is listed in search engine results pages.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Metadata Editor · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+/* ══════════════════════════════════════════
+   FIELD DEFINITIONS
+   key      = pdf-lib method suffix (getTitle → 'Title')
+   label    = human label
+   type     = 'text' | 'textarea' | 'date'
+   pdfKey   = pdf-lib PDFDocument method name for reading
+   pdfSet   = pdf-lib PDFDocument method name for writing
+══════════════════════════════════════════ */
+const FIELDS = [
+  { key:'Title',        label:'Title',             type:'text',     pdfKey:'getTitle',        pdfSet:'setTitle'        },
+  { key:'Author',       label:'Author',             type:'text',     pdfKey:'getAuthor',       pdfSet:'setAuthor'       },
+  { key:'Subject',      label:'Subject',            type:'text',     pdfKey:'getSubject',      pdfSet:'setSubject'      },
+  { key:'Keywords',     label:'Keywords',           type:'textarea', pdfKey:'getKeywords',     pdfSet:'setKeywords'     },
+  { key:'Creator',      label:'Creator (app)',      type:'text',     pdfKey:'getCreator',      pdfSet:'setCreator'      },
+  { key:'Producer',     label:'Producer (library)', type:'text',     pdfKey:'getProducer',     pdfSet:'setProducer'     },
+  { key:'CreationDate', label:'Creation Date',      type:'date',     pdfKey:'getCreationDate', pdfSet:'setCreationDate' },
+  { key:'ModDate',      label:'Modification Date',  type:'date',     pdfKey:'getModificationDate', pdfSet:'setModificationDate' },
+];
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+let loadedFiles = []; // { uid, name, buffer, pdfDoc, current:{}, edited:{} }
+
+/* ══════════════════════════════════════════
+   FILE LOADING
+══════════════════════════════════════════ */
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click',     e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop',      e => { e.preventDefault(); dropZone.classList.remove('drag-over'); handleFiles([...e.dataTransfer.files]); });
+fileInput.addEventListener('change',   () => { handleFiles([...fileInput.files]); fileInput.value = ''; });
+
+async function handleFiles(files) {
+  const pdfs = files.filter(f => f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'));
+  if (!pdfs.length) { showToast('Please select PDF files only'); return; }
+
+  for (const file of pdfs) {
+    try {
+      const buffer = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(buffer, { ignoreEncryption: true });
+
+      // Read current metadata
+      const current = {};
+      for (const f of FIELDS) {
+        try {
+          const raw = pdfDoc[f.pdfKey]();
+          current[f.key] = raw != null ? String(raw) : '';
+        } catch(e) {
+          current[f.key] = '';
+        }
+      }
+
+      // Sanitise date strings for display
+      for (const f of FIELDS.filter(f => f.type === 'date')) {
+        current[f.key] = formatDateForDisplay(current[f.key]);
+      }
+
+      const uid = 'f_' + Date.now() + '_' + Math.random().toString(36).substr(2,6);
+      // edited starts as a copy of current
+      const edited = { ...current };
+
+      loadedFiles.push({ uid, name: file.name, buffer, pdfDoc, current, edited });
+      renderCard(uid);
+    } catch(e) {
+      showToast('Could not read: ' + file.name);
+      console.error(e);
+    }
+  }
+
+  updateGlobalBar();
+}
+
+/* ══════════════════════════════════════════
+   DATE HELPERS
+══════════════════════════════════════════ */
+function formatDateForDisplay(raw) {
+  if (!raw) return '';
+  // PDF dates look like D:20231025143000+00'00'
+  const m = raw.match(/D:(\d{4})(\d{2})(\d{2})(\d{2})?(\d{2})?(\d{2})?/);
+  if (m) {
+    const [,Y,Mo,D,h='00',mi='00'] = m;
+    return `${Y}-${Mo}-${D}T${h}:${mi}`;
+  }
+  // Try to parse as regular date
+  try {
+    const d = new Date(raw);
+    if (!isNaN(d)) {
+      return d.toISOString().slice(0, 16);
+    }
+  } catch(e) {}
+  return raw;
+}
+
+function formatDateForPDF(val) {
+  if (!val) return undefined;
+  try {
+    return new Date(val);
+  } catch(e) {
+    return undefined;
+  }
+}
+
+/* ══════════════════════════════════════════
+   RENDER FILE CARD
+══════════════════════════════════════════ */
+function renderCard(uid) {
+  const entry = loadedFiles.find(f => f.uid === uid);
+  if (!entry) return;
+
+  // Remove existing card if re-rendering
+  const existing = document.getElementById('card-' + uid);
+  if (existing) existing.remove();
+
+  const card = document.createElement('div');
+  card.className = 'file-card';
+  card.id        = 'card-' + uid;
+
+  // ── HEAD ──
+  const head = document.createElement('div');
+  head.className = 'fc-head';
+  head.innerHTML = `
+    <div class="fc-icon">
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M10 2H5a1.5 1.5 0 00-1.5 1.5v9A1.5 1.5 0 005 14h6a1.5 1.5 0 001.5-1.5V6L10 2z" stroke="#01796f" stroke-width="1.4"/><path d="M10 2v4h4" stroke="#01796f" stroke-width="1.4"/></svg>
+    </div>
+    <div class="fc-name" title="${escHtml(entry.name)}">${escHtml(entry.name)}</div>
+    <div class="fc-meta" id="fc-meta-${uid}">${countFields(entry.current)} field${countFields(entry.current)!==1?'s':''} found</div>
+    <div class="fc-actions">
+      <button class="sm-btn" onclick="clearFields('${uid}')" title="Wipe all fields">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M2 3h7M4.5 3V2h2v1M3 3l.5 7h4L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Clear All Fields
+      </button>
+      <button class="sm-btn" onclick="resetFields('${uid}')" title="Restore original values">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M9 2A4.5 4.5 0 102 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 1v2H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Reset
+      </button>
+      <button class="sm-btn primary" id="dl-${uid}" onclick="downloadFile('${uid}')">
+        <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 1v7M4 6l2 2 2-2M1 10h10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Updated PDF
+      </button>
+      <button class="sm-btn danger" onclick="removeFile('${uid}')">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Remove
+      </button>
+    </div>`;
+  card.appendChild(head);
+
+  // ── BODY ──
+  const body = document.createElement('div');
+  body.className = 'fc-body';
+
+  // LEFT — current
+  const colLeft = document.createElement('div');
+  colLeft.className = 'fc-col';
+  colLeft.innerHTML = `<div class="fc-col-title current">
+    <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="5.5" stroke="#5f7775" stroke-width="1.3"/><path d="M4.5 6.5h4M6.5 4.5v4" stroke="#5f7775" stroke-width="1.3" stroke-linecap="round"/></svg>
+    Current metadata
+  </div>`;
+  FIELDS.forEach(f => {
+    const val = entry.current[f.key];
+    const row = document.createElement('div');
+    row.className = 'field-row';
+    row.innerHTML = `
+      <div class="field-lbl">${escHtml(f.label)} <span class="field-key">${f.key}</span></div>
+      <div class="field-val${!val?' empty':''}">${val ? escHtml(val) : 'Not set'}</div>`;
+    colLeft.appendChild(row);
+  });
+
+  // RIGHT — editable
+  const colRight = document.createElement('div');
+  colRight.className = 'fc-col';
+  colRight.innerHTML = `<div class="fc-col-title new">
+    <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M2 9l1.5-1.5 5-5 1.5 1.5-5 5L2 10.5l.5-1.5z" stroke="#01796f" stroke-width="1.3" stroke-linejoin="round"/><path d="M7 4l2 2" stroke="#01796f" stroke-width="1.3"/></svg>
+    New metadata <span class="changed-dot" id="dot-${uid}"></span>
+  </div>`;
+
+  FIELDS.forEach(f => {
+    const row = document.createElement('div');
+    row.className = 'field-row';
+
+    const lbl = document.createElement('div');
+    lbl.className = 'field-lbl';
+    lbl.innerHTML = `${escHtml(f.label)} <span class="field-key">${f.key}</span>`;
+    row.appendChild(lbl);
+
+    let input;
+    if (f.type === 'textarea') {
+      input = document.createElement('textarea');
+    } else if (f.type === 'date') {
+      input = document.createElement('input');
+      input.type = 'datetime-local';
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+    }
+    input.className        = 'field-input';
+    input.id               = `inp-${uid}-${f.key}`;
+    input.value            = entry.edited[f.key] || '';
+    input.placeholder      = f.type === 'date' ? 'Not set' : `Enter ${f.label.toLowerCase()}…`;
+    if (f.type === 'textarea') input.setAttribute('rows', '3');
+
+    input.addEventListener('input', () => {
+      entry.edited[f.key] = input.value;
+      // highlight changed vs original
+      const changed = input.value !== (entry.current[f.key] || '');
+      input.classList.toggle('changed', changed);
+      updateChangedDot(uid);
+    });
+
+    row.appendChild(input);
+    colRight.appendChild(row);
+  });
+
+  body.appendChild(colLeft);
+  body.appendChild(colRight);
+  card.appendChild(body);
+
+  // Progress
+  const progWrap = document.createElement('div');
+  progWrap.className = 'prog-wrap';
+  progWrap.id        = 'prog-' + uid;
+  progWrap.innerHTML = `<div class="prog-track"><div class="prog-fill" id="progbar-${uid}"></div></div><div class="prog-lbl" id="proglbl-${uid}">Processing…</div>`;
+  card.appendChild(progWrap);
+
+  // Success bar
+  const successBar = document.createElement('div');
+  successBar.className = 'fc-success';
+  successBar.id        = 'succ-' + uid;
+  successBar.innerHTML = `<svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="#2e7d32" opacity=".15"/><path d="M4 7l2.5 2.5L10 5" stroke="#2e7d32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span id="succ-msg-${uid}">Downloaded!</span>`;
+  card.appendChild(successBar);
+
+  document.getElementById('fileList').appendChild(card);
+}
+
+function countFields(meta) {
+  return Object.values(meta).filter(v => v && v.trim()).length;
+}
+
+function updateChangedDot(uid) {
+  const entry = loadedFiles.find(f => f.uid === uid);
+  if (!entry) return;
+  const anyChanged = FIELDS.some(f => (entry.edited[f.key]||'') !== (entry.current[f.key]||''));
+  const dot = document.getElementById('dot-' + uid);
+  if (dot) dot.classList.toggle('show', anyChanged);
+}
+
+/* ══════════════════════════════════════════
+   FIELD ACTIONS
+══════════════════════════════════════════ */
+function clearFields(uid) {
+  const entry = loadedFiles.find(f => f.uid === uid);
+  if (!entry) return;
+  FIELDS.forEach(f => {
+    entry.edited[f.key] = '';
+    const inp = document.getElementById(`inp-${uid}-${f.key}`);
+    if (inp) { inp.value = ''; inp.classList.remove('changed'); }
+  });
+  updateChangedDot(uid);
+  showToast('All fields cleared');
+}
+
+function resetFields(uid) {
+  const entry = loadedFiles.find(f => f.uid === uid);
+  if (!entry) return;
+  FIELDS.forEach(f => {
+    entry.edited[f.key] = entry.current[f.key] || '';
+    const inp = document.getElementById(`inp-${uid}-${f.key}`);
+    if (inp) { inp.value = entry.edited[f.key]; inp.classList.remove('changed'); }
+  });
+  updateChangedDot(uid);
+  showToast('Fields reset to original values');
+}
+
+function removeFile(uid) {
+  loadedFiles = loadedFiles.filter(f => f.uid !== uid);
+  const card  = document.getElementById('card-' + uid);
+  if (card) card.remove();
+  updateGlobalBar();
+}
+
+function clearAll() {
+  loadedFiles = [];
+  document.getElementById('fileList').innerHTML = '';
+  updateGlobalBar();
+}
+
+/* ══════════════════════════════════════════
+   DOWNLOAD — write new metadata into PDF
+══════════════════════════════════════════ */
+async function downloadFile(uid) {
+  const entry = loadedFiles.find(f => f.uid === uid);
+  if (!entry) return;
+
+  const btn     = document.getElementById('dl-' + uid);
+  const prog    = document.getElementById('prog-' + uid);
+  const bar     = document.getElementById('progbar-' + uid);
+  const lbl     = document.getElementById('proglbl-' + uid);
+  const succDiv = document.getElementById('succ-' + uid);
+  const succMsg = document.getElementById('succ-msg-' + uid);
+
+  if (btn) { btn.disabled = true; btn.innerHTML = spinnerHTML() + ' Saving…'; }
+  succDiv.classList.remove('show');
+  prog.classList.add('show');
+  bar.style.width = '20%'; lbl.textContent = 'Loading PDF…';
+
+  try {
+    // Reload fresh from original buffer to avoid stale state
+    const pdfDoc = await PDFLib.PDFDocument.load(entry.buffer, { ignoreEncryption: true });
+    bar.style.width = '50%'; lbl.textContent = 'Writing metadata…';
+
+    // Write each field
+    const ed = entry.edited;
+
+    if (ed.Title     !== undefined) pdfDoc.setTitle(ed.Title         || '');
+    if (ed.Author    !== undefined) pdfDoc.setAuthor(ed.Author       || '');
+    if (ed.Subject   !== undefined) pdfDoc.setSubject(ed.Subject     || '');
+    if (ed.Keywords  !== undefined) pdfDoc.setKeywords(ed.Keywords ? [ed.Keywords] : []);
+    if (ed.Creator   !== undefined) pdfDoc.setCreator(ed.Creator     || '');
+    if (ed.Producer  !== undefined) pdfDoc.setProducer(ed.Producer   || '');
+
+    const creationDate = ed.CreationDate ? formatDateForPDF(ed.CreationDate) : null;
+    const modDate      = ed.ModDate      ? formatDateForPDF(ed.ModDate)      : null;
+    if (creationDate instanceof Date && !isNaN(creationDate)) pdfDoc.setCreationDate(creationDate);
+    if (modDate      instanceof Date && !isNaN(modDate))      pdfDoc.setModificationDate(modDate);
+
+    bar.style.width = '80%'; lbl.textContent = 'Saving PDF…';
+    const bytes = await pdfDoc.save();
+
+    bar.style.width = '100%'; lbl.textContent = '✓ Done!';
+
+    // Trigger download
+    const baseName = entry.name.replace(/\.pdf$/i, '');
+    triggerDownload(bytes, baseName + '_updated.pdf');
+
+    setTimeout(() => {
+      prog.classList.remove('show');
+      succMsg.textContent = `Downloaded as ${baseName}_updated.pdf`;
+      succDiv.classList.add('show');
+    }, 600);
+
+    // Update current to reflect saved values
+    entry.current = { ...ed };
+    // Refresh current column display
+    const card = document.getElementById('card-' + uid);
+    if (card) {
+      const vals = card.querySelectorAll('.field-val');
+      FIELDS.forEach((f, i) => {
+        if (vals[i]) {
+          const v = ed[f.key];
+          vals[i].textContent    = v || 'Not set';
+          vals[i].className      = 'field-val' + (!v ? ' empty' : '');
+        }
+      });
+      const metaEl = document.getElementById('fc-meta-' + uid);
+      if (metaEl) metaEl.textContent = countFields(entry.current) + ' field' + (countFields(entry.current)!==1?'s':'')+' found';
+    }
+    // Clear changed state
+    FIELDS.forEach(f => {
+      const inp = document.getElementById(`inp-${uid}-${f.key}`);
+      if (inp) inp.classList.remove('changed');
+    });
+    updateChangedDot(uid);
+
+  } catch(e) {
+    console.error(e);
+    showToast('Download failed. Please try again.');
+    prog.classList.remove('show');
+  }
+
+  if (btn) {
+    btn.disabled  = false;
+    btn.innerHTML = `<svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 1v7M4 6l2 2 2-2M1 10h10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download Updated PDF`;
+  }
+}
+
+/* ══════════════════════════════════════════
+   UI HELPERS
+══════════════════════════════════════════ */
+function updateGlobalBar() {
+  const has = loadedFiles.length > 0;
+  document.getElementById('globalBar').classList.toggle('visible', has);
+  if (has) {
+    document.getElementById('fileCount').textContent  = loadedFiles.length;
+    document.getElementById('fileCountS').textContent = loadedFiles.length !== 1 ? 's' : '';
+  }
+}
+
+function toggleFAQ(el) {
+  const ans    = el.nextElementSibling;
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function triggerDownload(bytes, filename) {
+  const blob = new Blob([bytes], { type: 'application/pdf' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a'); a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function spinnerHTML() {
+  return `<span class="spin"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="rgba(255,255,255,.35)" stroke-width="2"/><path d="M6.5 1.5a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>`;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

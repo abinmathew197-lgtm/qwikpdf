@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duplicate PDF Pages Online Free – No Upload, No Watermark | QwikPDF</title>
+<meta name="description" content="Duplicate pages in your PDF online for free. Select any page, click duplicate, reorder, and download — no file uploads, no watermarks, no sign-up required.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --success:    #16a34a;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.13);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+header {
+  background: var(--teal);
+  color: #fff;
+  padding: 34px 20px 38px;
+  text-align: center;
+}
+.h-inner { max-width: 640px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem, 3.8vw, 2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span {
+  background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500;
+}
+
+/* LAYOUT */
+main { max-width: 900px; margin: 0 auto; padding: 30px 16px 140px; }
+
+/* DROP ZONE */
+#dropZone {
+  background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r);
+  padding: 50px 24px; text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.01); }
+.dz-icon {
+  width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+}
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p  { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 18px; background: var(--teal); color: #fff; border: none;
+  padding: 11px 26px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s;
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* FILE INFO BAR */
+#fileInfoBar {
+  display: none;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 14px 18px; margin-top: 18px;
+  box-shadow: var(--sh);
+  align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.fi-left { display: flex; align-items: center; gap: 11px; }
+.fi-icon {
+  width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fi-name { font-weight: 700; font-size: .88rem; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fi-meta { font-size: .75rem; color: var(--muted); margin-top: 1px; }
+.fi-actions { display: flex; gap: 8px; align-items: center; }
+.btn-change {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 1.5px solid var(--teal); color: var(--teal);
+  padding: 6px 14px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .78rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, color .17s;
+}
+.btn-change:hover { background: var(--teal); color: #fff; }
+.btn-clear-file {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 1.5px solid var(--warn); color: var(--warn);
+  padding: 6px 13px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, color .17s;
+}
+.btn-clear-file:hover { background: var(--warn); color: #fff; }
+
+/* MAIN EDITOR SECTION */
+#editorSection { display: none; margin-top: 20px; }
+
+.editor-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; flex-wrap: wrap; gap: 10px;
+}
+.editor-header h3 { font-size: .875rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.p-badge {
+  background: var(--teal); color: #fff; font-size: .68rem; font-weight: 700;
+  border-radius: 20px; padding: 2px 8px;
+}
+.editor-hint {
+  display: flex; align-items: flex-start; gap: 9px;
+  background: var(--teal-xs); border: 1.5px dashed var(--teal);
+  border-radius: 9px; padding: 10px 14px; margin-bottom: 14px;
+  font-size: .80rem; color: var(--muted); line-height: 1.55;
+}
+.editor-hint svg { flex-shrink: 0; margin-top: 1px; }
+.editor-hint strong { color: var(--teal); }
+
+/* PAGE GRID */
+#pageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 14px;
+}
+
+/* PAGE CARD */
+.page-card {
+  background: var(--white); border: 2px solid var(--border); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: stretch;
+  position: relative; overflow: hidden;
+  transition: border-color .18s, box-shadow .18s, transform .15s;
+  animation: fadeUp .22s ease both;
+  box-shadow: var(--sh);
+  cursor: default;
+}
+.page-card:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); transform: translateY(-2px); }
+.page-card.selected {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(1,121,111,.2), var(--sh2);
+}
+.page-card.duplicated-flash {
+  animation: flashGreen .5s ease;
+}
+@keyframes flashGreen {
+  0%   { border-color: var(--success); box-shadow: 0 0 0 4px rgba(22,163,74,.25); }
+  100% { border-color: var(--teal-mid); box-shadow: var(--sh2); }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes popIn  { from { opacity: 0; transform: scale(.88); } to { opacity: 1; transform: scale(1); } }
+
+/* thumbnail area */
+.p-preview {
+  width: 100%; aspect-ratio: 3/4;
+  background: #f0f4f3;
+  position: relative; overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0; cursor: pointer;
+}
+.p-preview canvas, .p-preview img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+/* shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.p-preview-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(90deg, #eaf5f4 25%, #d4eeeb 50%, #eaf5f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 10px 10px 0 0;
+}
+
+/* order badge */
+.p-order-badge {
+  position: absolute; top: 7px; left: 7px;
+  background: var(--teal); color: #fff;
+  font-size: .65rem; font-weight: 700;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  z-index: 2;
+}
+/* duplicate badge (for clones) */
+.p-dup-badge {
+  position: absolute; top: 7px; right: 7px;
+  background: var(--success); color: #fff;
+  font-size: .62rem; font-weight: 700;
+  border-radius: 20px; padding: 2px 7px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  z-index: 2;
+  animation: popIn .3s ease;
+}
+/* select checkmark */
+.p-select-overlay {
+  position: absolute; inset: 0;
+  background: rgba(1,121,111,.12);
+  display: none; align-items: center; justify-content: center;
+  border-radius: 10px 10px 0 0;
+  z-index: 3;
+}
+.page-card.selected .p-select-overlay { display: flex; }
+.p-check {
+  width: 30px; height: 30px; background: var(--teal); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px rgba(1,121,111,.4);
+  animation: popIn .2s ease;
+}
+
+/* bottom strip */
+.p-info {
+  padding: 9px 10px 10px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+}
+.p-label { font-weight: 600; font-size: .76rem; color: var(--text); flex: 1; }
+.p-sub   { font-size: .67rem; color: var(--muted); margin-top: 1px; }
+.btn-dup-card {
+  background: var(--teal-light); border: none; cursor: pointer; color: var(--teal);
+  padding: 5px 8px; display: flex; border-radius: 7px; flex-shrink: 0;
+  transition: color .15s, background .15s; font-size: .68rem; font-weight: 700;
+  align-items: center; gap: 4px;
+}
+.btn-dup-card:hover { color: #fff; background: var(--teal); }
+.btn-rm-page {
+  background: none; border: none; cursor: pointer; color: #c4d8d6;
+  padding: 3px; display: flex; border-radius: 5px; flex-shrink: 0;
+  transition: color .15s, background .15s;
+}
+.btn-rm-page:hover { color: var(--warn); background: #fef2f2; }
+
+/* SELECTION BAR (sticky) */
+#selectionBar {
+  display: none;
+  position: sticky; top: 12px; z-index: 100;
+  background: var(--teal); color: #fff;
+  border-radius: 12px; padding: 13px 18px;
+  align-items: center; justify-content: space-between; gap: 12px;
+  box-shadow: 0 6px 24px rgba(1,121,111,.35);
+  margin-bottom: 14px;
+  animation: slideDown .25s ease;
+}
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.sel-left { display: flex; align-items: center; gap: 9px; font-size: .88rem; font-weight: 600; }
+.sel-count {
+  background: rgba(255,255,255,.2); border-radius: 20px;
+  padding: 2px 10px; font-size: .75rem; font-weight: 700;
+}
+.sel-actions { display: flex; gap: 8px; align-items: center; }
+.btn-dup-sel {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; color: var(--teal); border: none;
+  padding: 8px 16px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .82rem; font-weight: 700;
+  cursor: pointer; transition: background .15s, transform .12s;
+}
+.btn-dup-sel:hover { background: var(--teal-light); transform: translateY(-1px); }
+.btn-desel {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.3);
+  padding: 7px 13px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .78rem; font-weight: 600;
+  cursor: pointer; transition: background .15s;
+}
+.btn-desel:hover { background: rgba(255,255,255,.25); }
+
+/* SELECT ALL / ACTIONS ROW */
+.page-actions-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;
+}
+.btn-sel-all {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 1.5px solid var(--border); color: var(--muted);
+  padding: 6px 13px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .78rem; font-weight: 600;
+  cursor: pointer; transition: border-color .17s, color .17s, background .17s;
+}
+.btn-sel-all:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+
+/* DOWNLOAD SECTION */
+#downloadSection {
+  display: none; margin-top: 18px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 20px 18px; box-shadow: var(--sh);
+}
+.dl-hint {
+  display: flex; align-items: flex-start; gap: 9px;
+  background: var(--teal-xs); border-radius: 8px;
+  padding: 10px 13px; font-size: .80rem; color: var(--muted);
+  margin-bottom: 14px; line-height: 1.5;
+}
+.dl-hint svg { flex-shrink: 0; margin-top: 1px; }
+.btn-download {
+  width: 100%; padding: 14px; background: var(--teal); color: #fff;
+  border: none; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .98rem; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background .17s, transform .12s, box-shadow .17s;
+  box-shadow: 0 3px 12px rgba(1,121,111,.27);
+}
+.btn-download:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(1,121,111,.34); }
+.btn-download:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+/* PROGRESS */
+.prog-wrap { display: none; margin-top: 12px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .3s ease; width: 0%; }
+.prog-lbl { font-size: .76rem; color: var(--muted); margin-top: 6px; text-align: center; }
+
+/* CONTENT */
+.section { margin-top: 58px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub   { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+
+/* STEPS */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p  { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q {
+  padding: 15px 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: .875rem; user-select: none; gap: 12px;
+  transition: background .15s, color .15s;
+}
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .3s ease, padding .3s;
+  font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px;
+}
+.faq-a.open { max-height: 220px; padding: 0 17px 15px; }
+
+/* TOOLS GRID */
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 9px; }
+.tool-a {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 9px;
+  padding: 11px 13px; text-decoration: none; color: var(--text);
+  font-size: .80rem; font-weight: 600;
+  transition: border-color .17s, background .15s, color .17s;
+}
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* FOOTER */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--teal); color: #fff;
+  padding: 11px 20px; border-radius: 8px;
+  font-size: .86rem; font-weight: 600;
+  box-shadow: 0 5px 20px rgba(1,121,111,.32);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 1100; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; }
+
+/* Empty state */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center; padding: 40px 20px;
+  color: var(--muted); font-size: .85rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>Duplicate PDF Pages Online — <em>Free &amp; Private</em></h1>
+    <p>Select any page, click duplicate, reorder, and download your new PDF instantly.</p>
+    <div class="badges">
+      <span>🔒 Files never leave your device</span>
+      <span>✨ No watermarks</span>
+      <span>⚡ Instant download</span>
+      <span>📄 Any PDF</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path d="M12 4v13M7 10l5-6 5 6" stroke="#01796f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="4" y="19" width="16" height="2.5" rx="1.25" fill="#01796f" opacity=".2"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF file here</h2>
+    <p>Upload a single PDF to start duplicating pages</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF File
+    </button>
+    <input type="file" id="fileInput" accept=".pdf">
+  </div>
+
+  <!-- FILE INFO BAR -->
+  <div id="fileInfoBar">
+    <div class="fi-left">
+      <div class="fi-icon">
+        <svg width="19" height="19" fill="none" viewBox="0 0 19 19"><path d="M4 2h8l4 4v11a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 012 17V3.5A1.5 1.5 0 014 2z" fill="#01796f" opacity=".15" stroke="#01796f" stroke-width="1.5"/><path d="M12 2v5h5" stroke="#01796f" stroke-width="1.4"/><path d="M6 9h7M6 12h5" stroke="#01796f" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="fi-name" id="fi-filename">document.pdf</div>
+        <div class="fi-meta" id="fi-meta">0 pages · 0 MB</div>
+      </div>
+    </div>
+    <div class="fi-actions">
+      <button class="btn-change" onclick="document.getElementById('fileInput').click()">Change File</button>
+      <button class="btn-clear-file" onclick="clearFile()">
+        <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <!-- EDITOR SECTION -->
+  <div id="editorSection">
+    <div class="editor-header">
+      <h3>Pages <span class="p-badge" id="pageCount">0</span></h3>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span id="dupCountLabel" style="font-size:.78rem;color:var(--muted);font-weight:600;"></span>
+      </div>
+    </div>
+
+    <div class="editor-hint">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <div><strong>Click a page thumbnail</strong> to select it, then click <strong>Duplicate Selected</strong> — or use the <strong>Duplicate</strong> button on each card. Duplicated pages appear right after the original. Drag to reorder.</div>
+    </div>
+
+    <!-- SELECTION BAR -->
+    <div id="selectionBar">
+      <div class="sel-left">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><rect x="1.5" y="1.5" width="13" height="13" rx="3" stroke="white" stroke-width="1.6"/><path d="M5 8l2.5 2.5L11 5.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="selCountText">1 page selected</span>
+        <span class="sel-count" id="selCount">1</span>
+      </div>
+      <div class="sel-actions">
+        <button class="btn-dup-sel" onclick="duplicateSelected()">
+          <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="3" width="8.5" height="10.5" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4.5" y="1" width="8.5" height="10.5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="white"/><path d="M8.75 5.75v4M6.75 7.75h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Duplicate Selected
+        </button>
+        <button class="btn-desel" onclick="clearSelection()">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Deselect
+        </button>
+      </div>
+    </div>
+
+    <!-- ACTIONS ROW -->
+    <div class="page-actions-row">
+      <button class="btn-sel-all" onclick="selectAll()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="1" y="1" width="11" height="11" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 6.5l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Select All
+      </button>
+      <button class="btn-sel-all" onclick="clearSelection()" id="deselectAllBtn" style="display:none;">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="1" y="1" width="11" height="11" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 6.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Deselect All
+      </button>
+    </div>
+
+    <!-- PAGE GRID -->
+    <div id="pageGrid"></div>
+  </div>
+
+  <!-- DOWNLOAD SECTION -->
+  <div id="downloadSection">
+    <div class="dl-hint">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Page order shown in the grid is the exact order in the downloaded PDF. Drag any card to reorder before downloading.
+    </div>
+    <button class="btn-download" id="downloadBtn" onclick="buildAndDownload()">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M8.5 2v10M4 8.5l4.5 4.5 4.5-4.5M1.5 15h14" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download PDF
+    </button>
+    <div class="prog-wrap" id="progressWrap">
+      <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+      <div class="prog-lbl" id="progressLabel">Processing…</div>
+    </div>
+  </div>
+
+  <!-- HOW TO -->
+  <section class="section">
+    <h2 class="sec-title">How to Duplicate PDF Pages</h2>
+    <p class="sec-sub">Three steps. No account. Completely free.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="s-num">01</div>
+        <h3>Upload Your PDF</h3>
+        <p>Drag and drop your PDF file onto the upload area, or click <strong>Select PDF File</strong> to browse. All pages are shown as thumbnails instantly.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">02</div>
+        <h3>Select &amp; Duplicate Pages</h3>
+        <p>Click any page thumbnail to select it (you can select multiple). Then click <strong>Duplicate Selected</strong>, or use the <strong>Duplicate</strong> button on each card to copy that page immediately.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">03</div>
+        <h3>Download Your PDF</h3>
+        <p>Reorder pages by dragging if needed, then click <strong>Download PDF</strong>. Your updated PDF is generated in your browser and saved straight to your device.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything you need to know about duplicating PDF pages.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I duplicate multiple pages at once?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. Click multiple page thumbnails to select them all, then click <strong>Duplicate Selected</strong>. Each selected page will be duplicated and inserted right after the original.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Where does the duplicated page appear?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Duplicated pages are inserted immediately after the original page in the page list. You can then drag any page to reorder it before downloading.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Are my files uploaded to a server?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No. Everything runs in your browser using JavaScript and pdf-lib. Your PDF is never sent to any server, making it completely safe for confidential documents.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Will the downloaded PDF have a watermark?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No watermarks are added. The downloaded file is a clean, professional PDF with your original content and the duplicated pages, exactly as shown.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I duplicate a page more than once?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. You can duplicate any page as many times as you want — just keep clicking the Duplicate button on the card. Each copy appears after the previous one and can be reordered freely.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Does duplicating reduce PDF quality?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No. Pages are copied exactly from the source PDF with no re-rendering or compression. Text, images, vector graphics, and fonts are all preserved at full original quality.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="section">
+    <h2 class="sec-title">More Free PDF Tools</h2>
+    <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+    <div class="tools-grid">
+      <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Merge PDFs
+      </a>
+      <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        Split PDF
+      </a>
+      <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Rotate PDF
+      </a>
+      <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+        Organize Pages
+      </a>
+      <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        Compress PDF
+      </a>
+      <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PDF to JPG
+      </a>
+      <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Watermark PDF
+      </a>
+      <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Sign PDF
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free Online PDF Tools · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. No files are ever uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// ─── State ─────────────────────────────────────────────────────────────────
+let currentFile = null;          // original File object
+let sourcePdfBytes = null;       // ArrayBuffer of original PDF
+let totalOriginalPages = 0;      // page count of original
+let pageList = [];               // array of { uid, srcPageIdx, thumb, isDuplicate, label }
+let selectedUids = new Set();
+let dragSrcUid = null;
+let uidCounter = 0;
+
+// ─── File Input ─────────────────────────────────────────────────────────────
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  const f = [...e.dataTransfer.files].find(f => f.type === 'application/pdf');
+  if (f) loadFile(f);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) loadFile(fileInput.files[0]); fileInput.value = ''; });
+
+async function loadFile(file) {
+  currentFile = file;
+  sourcePdfBytes = await file.arrayBuffer();
+  const pdfDoc = await pdfjsLib.getDocument({ data: sourcePdfBytes.slice(0) }).promise;
+  totalOriginalPages = pdfDoc.numPages;
+
+  // Build initial page list
+  pageList = [];
+  for (let i = 0; i < totalOriginalPages; i++) {
+    pageList.push({ uid: ++uidCounter, srcPageIdx: i, thumb: null, isDuplicate: false, label: `Page ${i+1}` });
+  }
+
+  // Show UI
+  document.getElementById('fileInfoBar').style.display = 'flex';
+  document.getElementById('fi-filename').textContent = file.name;
+  document.getElementById('fi-meta').textContent = `${totalOriginalPages} page${totalOriginalPages !== 1 ? 's' : ''} · ${(file.size / 1048576).toFixed(2)} MB`;
+  document.getElementById('editorSection').style.display = 'block';
+  document.getElementById('downloadSection').style.display = 'block';
+  dropZone.style.display = 'none';
+
+  selectedUids.clear();
+  renderPageGrid();
+  updateSelectionBar();
+
+  // Generate thumbnails async
+  generateThumbs(pdfDoc);
+}
+
+async function generateThumbs(pdfDoc) {
+  for (let i = 0; i < totalOriginalPages; i++) {
+    try {
+      const page = await pdfDoc.getPage(i + 1);
+      const viewport = page.getViewport({ scale: 1 });
+      const scale = 260 / viewport.width;
+      const sv = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = sv.width; canvas.height = sv.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: sv }).promise;
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+      // Store on all pageList items with this srcPageIdx
+      pageList.forEach(p => {
+        if (p.srcPageIdx === i) p.thumb = dataUrl;
+      });
+      // Update DOM for this srcPageIdx
+      document.querySelectorAll(`.page-card[data-srcidx="${i}"] .p-preview`).forEach(el => {
+        setThumbInPreview(el, dataUrl);
+      });
+    } catch(e) { /* leave placeholder */ }
+  }
+}
+
+function setThumbInPreview(previewEl, dataUrl) {
+  const uid = previewEl.closest('.page-card').dataset.uid;
+  previewEl.innerHTML = `
+    <img src="${dataUrl}" draggable="false" alt="page preview">
+    ${previewEl.querySelector('.p-order-badge') ? '' : ''}
+  `;
+  // Re-add overlays
+  const card = previewEl.closest('.page-card');
+  const idx  = pageList.findIndex(p => p.uid == uid);
+  previewEl.innerHTML = `
+    <img src="${dataUrl}" draggable="false" alt="page preview">
+    <div class="p-order-badge">${idx + 1}</div>
+    ${pageList[idx].isDuplicate ? `<div class="p-dup-badge">Copy</div>` : ''}
+    <div class="p-select-overlay"><div class="p-check"><svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7l3.5 3.5 5.5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  `;
+  if (selectedUids.has(Number(uid) || uid)) card.classList.add('selected');
+}
+
+function clearFile() {
+  currentFile = null; sourcePdfBytes = null;
+  pageList = []; selectedUids.clear();
+  document.getElementById('fileInfoBar').style.display = 'none';
+  document.getElementById('editorSection').style.display = 'none';
+  document.getElementById('downloadSection').style.display = 'none';
+  document.getElementById('selectionBar').style.display = 'none';
+  dropZone.style.display = 'block';
+}
+
+// ─── Render ─────────────────────────────────────────────────────────────────
+function renderPageGrid() {
+  const grid = document.getElementById('pageGrid');
+  grid.innerHTML = '';
+  document.getElementById('pageCount').textContent = pageList.length;
+  updateDupCountLabel();
+
+  if (!pageList.length) {
+    grid.innerHTML = '<div class="empty-state">No pages. Add a PDF file to get started.</div>';
+    return;
+  }
+
+  pageList.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'page-card' + (selectedUids.has(p.uid) ? ' selected' : '');
+    card.dataset.uid = p.uid;
+    card.dataset.srcidx = p.srcPageIdx;
+    card.draggable = true;
+
+    const previewContent = p.thumb
+      ? `<img src="${p.thumb}" draggable="false" alt="page preview">`
+      : `<div class="p-preview-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 36 36"><rect x="5" y="2" width="22" height="29" rx="2.5" fill="#d1eae8"/><path d="M20 2v8h8" stroke="#7db8b4" stroke-width="1.6"/><rect x="9" y="16" width="14" height="2" rx="1" fill="#7db8b4"/><rect x="9" y="20" width="10" height="2" rx="1" fill="#7db8b4" opacity=".6"/><rect x="9" y="24" width="12" height="2" rx="1" fill="#7db8b4" opacity=".4"/></svg></div>`;
+
+    card.innerHTML = `
+      <div class="p-preview">
+        ${previewContent}
+        <div class="p-order-badge">${i + 1}</div>
+        ${p.isDuplicate ? `<div class="p-dup-badge">Copy</div>` : ''}
+        <div class="p-select-overlay">
+          <div class="p-check">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7l3.5 3.5 5.5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="p-info">
+        <div>
+          <div class="p-label">${escHtml(p.label)}</div>
+          ${p.isDuplicate ? '<div class="p-sub" style="color:var(--success);font-weight:600;">Duplicated</div>' : ''}
+        </div>
+        <div style="display:flex;gap:5px;align-items:center;">
+          <button class="btn-dup-card" title="Duplicate this page" onclick="duplicateSingle(${p.uid})">
+            <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><rect x=".5" y="2.5" width="7" height="8" rx="1.2" stroke="currentColor" stroke-width="1.3"/><rect x="3.5" y=".5" width="7" height="8" rx="1.2" stroke="currentColor" stroke-width="1.3" fill="white"/></svg>
+            Dup
+          </button>
+          <button class="btn-rm-page" title="Remove page" onclick="removePage(${p.uid})">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>`;
+
+    // Click to select
+    card.querySelector('.p-preview').addEventListener('click', () => toggleSelect(p.uid));
+
+    // Drag reorder
+    card.addEventListener('dragstart', e => {
+      dragSrcUid = p.uid;
+      e.dataTransfer.effectAllowed = 'move';
+      if (p.thumb) { const img = new Image(); img.src = p.thumb; e.dataTransfer.setDragImage(img, 40, 60); }
+      setTimeout(() => card.classList.add('dragging'), 0);
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('drag-target'));
+    });
+    card.addEventListener('dragover', e => {
+      e.preventDefault(); e.dataTransfer.dropEffect = 'move';
+      document.querySelectorAll('.page-card').forEach(el => el.classList.remove('drag-target'));
+      card.classList.add('drag-target');
+    });
+    card.addEventListener('dragleave', () => card.classList.remove('drag-target'));
+    card.addEventListener('drop', e => {
+      e.preventDefault(); e.stopPropagation();
+      card.classList.remove('drag-target');
+      if (dragSrcUid === null || dragSrcUid === p.uid) return;
+      const fromIdx = pageList.findIndex(x => x.uid === dragSrcUid);
+      const toIdx   = pageList.findIndex(x => x.uid === p.uid);
+      if (fromIdx === -1 || toIdx === -1) return;
+      const [moved] = pageList.splice(fromIdx, 1);
+      pageList.splice(toIdx, 0, moved);
+      dragSrcUid = null;
+      renderPageGrid();
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+function updateDupCountLabel() {
+  const dupCount = pageList.filter(p => p.isDuplicate).length;
+  const lbl = document.getElementById('dupCountLabel');
+  lbl.textContent = dupCount > 0 ? `${dupCount} duplicate${dupCount !== 1 ? 's' : ''} added` : '';
+}
+
+// ─── Selection ──────────────────────────────────────────────────────────────
+function toggleSelect(uid) {
+  if (selectedUids.has(uid)) { selectedUids.delete(uid); }
+  else { selectedUids.add(uid); }
+  const card = document.querySelector(`.page-card[data-uid="${uid}"]`);
+  if (card) card.classList.toggle('selected', selectedUids.has(uid));
+  updateSelectionBar();
+}
+
+function selectAll() {
+  pageList.forEach(p => selectedUids.add(p.uid));
+  document.querySelectorAll('.page-card').forEach(c => c.classList.add('selected'));
+  updateSelectionBar();
+}
+
+function clearSelection() {
+  selectedUids.clear();
+  document.querySelectorAll('.page-card').forEach(c => c.classList.remove('selected'));
+  updateSelectionBar();
+}
+
+function updateSelectionBar() {
+  const n = selectedUids.size;
+  const bar = document.getElementById('selectionBar');
+  const deselectBtn = document.getElementById('deselectAllBtn');
+  bar.style.display = n > 0 ? 'flex' : 'none';
+  document.getElementById('selCount').textContent = n;
+  document.getElementById('selCountText').textContent = `${n} page${n !== 1 ? 's' : ''} selected`;
+  deselectBtn.style.display = n > 0 ? 'inline-flex' : 'none';
+}
+
+// ─── Duplicate Logic ─────────────────────────────────────────────────────────
+function duplicateSingle(uid) {
+  const idx = pageList.findIndex(p => p.uid === uid);
+  if (idx === -1) return;
+  const orig = pageList[idx];
+  const copy = { uid: ++uidCounter, srcPageIdx: orig.srcPageIdx, thumb: orig.thumb, isDuplicate: true, label: `Page ${orig.srcPageIdx + 1}` };
+  pageList.splice(idx + 1, 0, copy);
+  renderPageGrid();
+  // Flash the new card
+  setTimeout(() => {
+    const newCard = document.querySelector(`.page-card[data-uid="${copy.uid}"]`);
+    if (newCard) { newCard.classList.add('duplicated-flash'); setTimeout(() => newCard.classList.remove('duplicated-flash'), 500); }
+  }, 50);
+  showToast('Page duplicated!');
+}
+
+function duplicateSelected() {
+  if (!selectedUids.size) return;
+  // Duplicate in reverse order to preserve correct insertion
+  const sortedIdxs = [...selectedUids]
+    .map(uid => pageList.findIndex(p => p.uid === uid))
+    .filter(i => i !== -1)
+    .sort((a, b) => b - a); // reverse
+
+  const newUids = [];
+  sortedIdxs.forEach(idx => {
+    const orig = pageList[idx];
+    const copy = { uid: ++uidCounter, srcPageIdx: orig.srcPageIdx, thumb: orig.thumb, isDuplicate: true, label: `Page ${orig.srcPageIdx + 1}` };
+    pageList.splice(idx + 1, 0, copy);
+    newUids.push(copy.uid);
+  });
+
+  clearSelection();
+  renderPageGrid();
+
+  // Flash new cards
+  setTimeout(() => {
+    newUids.forEach(uid => {
+      const card = document.querySelector(`.page-card[data-uid="${uid}"]`);
+      if (card) { card.classList.add('duplicated-flash'); setTimeout(() => card.classList.remove('duplicated-flash'), 500); }
+    });
+  }, 50);
+
+  showToast(`${sortedIdxs.length} page${sortedIdxs.length !== 1 ? 's' : ''} duplicated!`);
+}
+
+function removePage(uid) {
+  const idx = pageList.findIndex(p => p.uid === uid);
+  if (idx === -1) return;
+  pageList.splice(idx, 1);
+  selectedUids.delete(uid);
+  renderPageGrid();
+  updateSelectionBar();
+  if (!pageList.length) { document.getElementById('downloadSection').style.display = 'none'; }
+}
+
+// ─── Build & Download ────────────────────────────────────────────────────────
+async function buildAndDownload() {
+  if (!pageList.length || !sourcePdfBytes) return;
+  const btn = document.getElementById('downloadBtn');
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M8.5 2a6.5 6.5 0 016.5 6.5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg> Building PDF…`;
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Loading source…';
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const srcDoc = await PDFDocument.load(sourcePdfBytes);
+    const newDoc = await PDFDocument.create();
+
+    for (let i = 0; i < pageList.length; i++) {
+      bar.style.width = Math.round((i / pageList.length) * 90) + '%';
+      lbl.textContent = `Processing page ${i+1} of ${pageList.length}…`;
+      const [copied] = await newDoc.copyPages(srcDoc, [pageList[i].srcPageIdx]);
+      newDoc.addPage(copied);
+    }
+
+    bar.style.width = '96%'; lbl.textContent = 'Saving…';
+    const outBytes = await newDoc.save();
+    const blob = new Blob([outBytes], { type: 'application/pdf' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    const baseName = currentFile ? currentFile.name.replace(/\.pdf$/i, '') : 'document';
+    a.href = url; a.download = `${baseName}-duplicated.pdf`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    bar.style.width = '100%'; lbl.textContent = '✓ Done! Downloading…';
+    showToast('PDF downloaded!');
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(err) {
+    console.error(err);
+    showToast('Something went wrong. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M8.5 2v10M4 8.5l4.5 4.5 4.5-4.5M1.5 15h14" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg> Download PDF`;
+}
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+function toggleFAQ(el) {
+  const ans = el.nextElementSibling, isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+// ─── Toast ───────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+</script>
+</body>
+</html>

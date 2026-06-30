@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Icons &amp; Shapes to PDF Online Free | QwikPDF Annotator</title>
+<meta name="description" content="Add Google Material Icons and shapes to any PDF page online for free. Place, resize and reposition icons, arrows, circles, stars and more. Browser-based, no uploads, instant download.">
+<meta name="keywords" content="add icons to pdf, add shapes to pdf, annotate pdf online, pdf annotation tool, add arrows to pdf, add circles to pdf, pdf icon stamp, material icons pdf, annotate pdf free, pdf shape overlay">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/pdf-annotate.html">
+<meta property="og:title" content="Add Icons &amp; Shapes to PDF Online Free | QwikPDF">
+<meta property="og:description" content="Place Material Icons and geometric shapes anywhere on your PDF pages. Adjust size, color, opacity. Free, private, browser-based.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/pdf-annotate.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add Icons &amp; Shapes to PDF – Free Online Tool">
+<meta name="twitter:description" content="Add Google Material Icons and shapes to PDF pages. Click to place, drag to reposition, adjust size and color. Free and browser-based.">
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"QwikPDF – PDF Icon &amp; Shape Annotator","url":"https://qwikpdf.com/pdf-annotate.html","description":"Add Material Icons and geometric shapes to PDF pages online. Click any page to place an icon or shape, drag to reposition, adjust size, color and opacity. 100% browser-based.","applicationCategory":"DocumentEditor","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["40+ Material Icons","10 geometric shapes","Click to place anywhere on page","Drag to reposition","Adjustable size and color","Opacity control","Filled and outline styles","Apply to all pages","Multiple PDF support","No uploads","Free forever"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg); color: var(--text);
+  font-size: 15px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+header { background: var(--teal); color: #fff; padding: 32px 20px 36px; text-align: center; }
+.h-inner { max-width: 680px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem, 3.8vw, 2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span { background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500; }
+
+/* MAIN */
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 140px; }
+
+/* DROP ZONE */
+#dropZone {
+  background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r);
+  padding: 48px 24px; text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s; box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.005); }
+.dz-icon { width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 18px;
+  background: var(--teal); color: #fff; border: none; padding: 11px 26px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s; box-shadow: 0 3px 14px rgba(1,121,111,.3);
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* TOOLBAR */
+#toolbar { display: none; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 15px 18px; box-shadow: var(--sh); margin-top: 20px; }
+#toolbar.visible { display: flex; }
+.toolbar-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar-info { font-size: .875rem; font-weight: 600; }
+.toolbar-info span { color: var(--teal); }
+.toolbar-info em { font-style: normal; color: var(--muted); font-weight: 400; margin-left: 4px; font-size: .8rem; }
+.tb-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 15px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--white); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 600; cursor: pointer; transition: all .17s; white-space: nowrap; }
+.tb-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.tb-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.tb-btn-add { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
+.tb-btn-add:hover { background: var(--teal); color: #fff; }
+
+/* EDITOR PANEL */
+#editorPanel { display: none; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); box-shadow: var(--sh); margin-top: 14px; overflow: hidden; }
+#editorPanel.visible { display: block; }
+
+.ep-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 14px 18px 12px; border-bottom: 1.5px solid var(--border); background: var(--teal-xs); }
+.ep-title { font-size: .9rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 7px; }
+.ep-tabs { display: flex; gap: 4px; }
+.ep-tab { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 600; cursor: pointer; transition: all .17s; }
+.ep-tab:hover { border-color: var(--teal); color: var(--teal); }
+.ep-tab.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.ep-hint { font-size: .76rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+.ep-body { display: grid; grid-template-columns: 1fr 220px; min-height: 0; }
+
+/* LEFT: PICKER */
+.ep-left { padding: 14px 16px; border-right: 1.5px solid var(--border); }
+
+/* Category filter */
+.cat-bar { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.cat-btn { padding: 4px 10px; border: 1.5px solid var(--border); border-radius: 20px; background: var(--white); color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .73rem; font-weight: 600; cursor: pointer; transition: all .15s; }
+.cat-btn:hover { border-color: var(--teal); color: var(--teal); }
+.cat-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* Icon grid */
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 4px; max-height: 220px; overflow-y: auto; padding-right: 4px; }
+.icon-grid::-webkit-scrollbar { width: 4px; }
+.icon-grid::-webkit-scrollbar-track { background: var(--bg); border-radius: 4px; }
+.icon-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.icon-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 4px 6px; border: 1.5px solid transparent; border-radius: 9px; background: transparent; cursor: pointer; transition: all .15s; min-width: 0; }
+.icon-btn:hover { border-color: var(--teal); background: var(--teal-light); }
+.icon-btn.active { border-color: var(--teal); background: var(--teal); }
+.icon-btn.active .mi-icon { color: #fff; }
+.icon-btn.active .mi-label { color: rgba(255,255,255,.8); }
+.mi-icon { font-family: 'Material Symbols Outlined'; font-size: 22px; color: var(--text); line-height: 1; user-select: none; }
+.icon-btn:hover .mi-icon { color: var(--teal); }
+.mi-label { font-size: .62rem; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 52px; }
+
+/* Shape grid */
+.shape-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px; }
+.shape-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 10px 6px 7px; border: 1.5px solid var(--border); border-radius: 9px; background: var(--white); cursor: pointer; transition: all .15s; }
+.shape-btn:hover { border-color: var(--teal); background: var(--teal-light); }
+.shape-btn.active { border-color: var(--teal); background: var(--teal); }
+.shape-btn.active .shape-label { color: rgba(255,255,255,.85); }
+.shape-btn.active svg path, .shape-btn.active svg rect, .shape-btn.active svg circle, .shape-btn.active svg polygon, .shape-btn.active svg line { stroke: #fff !important; fill: rgba(255,255,255,.7) !important; }
+.shape-btn.active svg .shape-fill { fill: #fff !important; }
+.shape-label { font-size: .68rem; color: var(--muted); text-align: center; }
+
+/* RIGHT: CONTROLS */
+.ep-right { padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; max-height: 380px; }
+.ep-right::-webkit-scrollbar { width: 4px; }
+.ep-right::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.ctrl-group { display: flex; flex-direction: column; gap: 7px; }
+.ctrl-lbl { font-size: .74rem; font-weight: 600; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
+.ctrl-lbl-val { font-weight: 700; color: var(--text); }
+
+/* Color presets */
+.color-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.color-dot { width: 22px; height: 22px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform .15s, border-color .15s; flex-shrink: 0; }
+.color-dot:hover { transform: scale(1.15); }
+.color-dot.active { border-color: var(--text); transform: scale(1.12); }
+.color-dot.white-dot { border-color: var(--border) !important; }
+.color-custom-wrap { display: flex; align-items: center; gap: 6px; }
+.color-swatch-btn { width: 28px; height: 28px; border-radius: 7px; border: 1.5px solid var(--border); cursor: pointer; flex-shrink: 0; padding: 0; position: relative; overflow: hidden; }
+.color-swatch-btn input[type="color"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; border: none; padding: 0; }
+.color-hex { font-family: monospace; font-size: .76rem; color: var(--text); font-weight: 600; }
+
+/* Range */
+.ctrl-range { width: 100%; height: 4px; -webkit-appearance: none; appearance: none; border-radius: 4px; background: var(--border); cursor: pointer; outline: none; }
+.ctrl-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--teal); border: 2px solid var(--white); box-shadow: 0 1px 4px rgba(1,121,111,.3); transition: transform .15s; }
+.ctrl-range::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.ctrl-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--teal); border: 2px solid var(--white); cursor: pointer; }
+
+/* Fill/Outline toggle */
+.fill-btns { display: flex; gap: 5px; }
+.fill-btn { flex: 1; padding: 6px; border: 1.5px solid var(--border); border-radius: 7px; background: var(--white); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .75rem; font-weight: 600; cursor: pointer; transition: all .15s; text-align: center; }
+.fill-btn:hover { border-color: var(--teal); color: var(--teal); }
+.fill-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* Divider */
+.ctrl-divider { border: none; border-top: 1.5px dashed var(--border); margin: 4px 0; }
+
+/* Selected annotation panel */
+#selPanel { background: var(--teal-xs); border: 1.5px solid var(--border); border-radius: 9px; padding: 11px 12px; display: none; flex-direction: column; gap: 8px; }
+#selPanel.visible { display: flex; }
+.sel-title { font-size: .76rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 5px; }
+.sel-meta { font-size: .72rem; color: var(--muted); }
+.sel-btns { display: flex; flex-direction: column; gap: 5px; }
+.sel-btn { padding: 6px 10px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--white); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .74rem; font-weight: 600; cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 5px; }
+.sel-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
+.sel-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+
+/* HINT BANNER */
+.hint-banner { display: none; border: 1.5px dashed var(--teal); border-radius: 9px; padding: 9px 16px; margin-top: 14px; font-size: .78rem; font-weight: 600; color: var(--teal); background: var(--teal-light); }
+.hint-banner.visible { display: flex; align-items: center; gap: 9px; }
+.hint-banner strong { font-weight: 700; }
+
+/* PROGRESS */
+.prog-wrap { display: none; width: 100%; margin-top: 10px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .25s ease; width: 0%; }
+.prog-lbl { font-size: .75rem; color: var(--muted); margin-top: 5px; text-align: center; }
+
+/* FILE GROUP */
+.file-group { margin-top: 22px; }
+.file-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1.5px solid var(--border); flex-wrap: wrap; }
+.file-group-icon { width: 32px; height: 32px; background: var(--teal-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.file-group-title { font-weight: 700; font-size: .9rem; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-group-meta { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+.btn-dl { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 7px; border: none; background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 700; cursor: pointer; transition: background .15s, transform .12s; box-shadow: 0 2px 8px rgba(1,121,111,.22); flex-shrink: 0; }
+.btn-dl:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-dl:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+
+
+/* PAGE CARD */
+/* PAGE PREVIEW - Full-width canvas container */
+.page-preview {
+  width: 100%;
+  position: relative;
+  background: #e8f0ef;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 300px; /* Minimum height for visibility */
+}
+
+/* Canvas fills preview and maintains aspect ratio */
+.page-canvas {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh);
+}
+
+/* Page grid - stack vertically */
+.page-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Page card - full width */
+.page-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .18s, box-shadow .18s;
+  box-shadow: var(--sh);
+  animation: fadeUp .22s ease both;
+  width: 100%;
+  max-width: 100%;
+}
+.page-card:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* PAGE PREVIEW - Canvas container with fixed aspect ratio */
+
+
+
+
+/* Shimmer loading effect */
+.page-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #eaf5f4 25%, #d4eeeb 50%, #eaf5f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  z-index: 2;
+}
+
+@keyframes shimmer { 
+  0% { background-position: -200% 0; } 
+  100% { background-position: 200% 0; } 
+}
+
+/* Hide shimmer when canvas is loaded */
+.page-canvas.loaded + .page-shimmer,
+.page-canvas.loaded ~ .page-shimmer {
+  display: none;
+}
+
+.pg-num { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); background: rgba(1,70,64,.72); color: #fff; font-size: .64rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; backdrop-filter: blur(4px); z-index: 3; pointer-events: none; white-space: nowrap; }
+.ann-count-pill { position: absolute; top: 7px; right: 7px; background: var(--teal); color: #fff; font-size: .62rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; z-index: 3; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.ann-count-pill.show { opacity: 1; }
+.page-actions { padding: 7px 8px 8px; border-top: 1px solid var(--border); }
+.pg-label { font-size: .68rem; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
+
+/* ANNOTATION LIST */
+.ann-list { margin-top: 10px; display: none; }
+.ann-list.has-items { display: block; }
+.ann-list-header { font-size: .76rem; font-weight: 700; color: var(--teal); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.ann-items { display: flex; flex-direction: column; gap: 4px; }
+.ann-item { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; font-size: .76rem; cursor: pointer; transition: border-color .15s; }
+.ann-item:hover { border-color: var(--teal); background: var(--teal-xs); }
+.ann-item.selected { border-color: var(--teal); background: var(--teal-light); }
+.ann-item-icon { font-family: 'Material Symbols Outlined'; font-size: 16px; color: var(--teal); flex-shrink: 0; }
+.ann-item-info { flex: 1; min-width: 0; }
+.ann-item-name { font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ann-item-meta { color: var(--muted); font-size: .7rem; }
+.ann-item-color { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(0,0,0,.1); flex-shrink: 0; }
+.ann-item-del { padding: 3px 7px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--white); color: var(--muted); font-size: .7rem; font-weight: 600; cursor: pointer; transition: all .15s; flex-shrink: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+.ann-item-del:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+
+/* SECTIONS */
+.section { margin-top: 60px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 13px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; transition: box-shadow .2s, transform .2s; }
+.feat:hover { box-shadow: var(--sh2); transform: translateY(-2px); }
+.feat-ico { width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 11px; }
+.feat h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.feat p { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q { padding: 15px 17px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: .875rem; user-select: none; gap: 12px; transition: background .15s; }
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px; }
+.faq-a.open { max-height: 220px; padding: 0 17px 15px; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 9px; }
+.tool-a { display: flex; align-items: center; gap: 7px; background: var(--white); border: 1.5px solid var(--border); border-radius: 9px; padding: 11px 13px; text-decoration: none; color: var(--text); font-size: .80rem; font-weight: 600; transition: border-color .17s, background .15s, color .17s, transform .15s; }
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); transform: translateY(-1px); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* FOOTER */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* TOAST */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(12px); background: var(--teal); color: #fff; padding: 11px 20px; border-radius: 8px; font-size: .86rem; font-weight: 600; box-shadow: 0 5px 20px rgba(1,121,111,.32); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 1100; white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; }
+
+@media (max-width: 720px) {
+  .ep-body { grid-template-columns: 1fr; }
+  .ep-left { border-right: none; border-bottom: 1.5px solid var(--border); }
+  .ep-right { max-height: none; }
+  .icon-grid { max-height: 180px; }
+}
+@media (max-width: 520px) {
+  .page-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>PDF Annotator — <em>Icons &amp; Shapes</em></h1>
+    <p>Add Google Material Icons and shapes to any PDF page. Click to place, drag to reposition, adjust size and color — then download.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>🎨 40+ Material Icons</span>
+      <span>⬟ 10 Shapes</span>
+      <span>↕ Drag to reposition</span>
+      <span>⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div id="dropZone">
+  <div class="dz-icon">
+    <svg width="26" height="26" fill="none" viewBox="0 0 26 26">
+      <rect x="4" y="3" width="18" height="20" rx="2.5" stroke="#01796f" stroke-width="2"/>
+      <path d="M9 9h8M9 13h5" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="19" cy="19" r="5" fill="#01796f"/>
+      <path d="M17 19h4M19 17v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h2>Drop PDF files here to annotate them</h2>
+  <p>Upload one or more PDFs — place icons and shapes on any page, then download</p>
+  <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+    <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Select PDF Files
+  </button>
+  <input type="file" id="fileInput" accept=".pdf" multiple>
+</div>
+
+<div id="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-info">
+      <span id="totalPagesLabel">0</span> pages
+      <em id="filesLabel"></em>
+    </div>
+    <button class="tb-btn tb-btn-add" onclick="document.getElementById('fileInput').click()">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Add More PDFs
+    </button>
+    <button class="tb-btn danger" onclick="clearAll()">
+      <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Clear All
+    </button>
+  </div>
+</div>
+
+<div id="editorPanel">
+  <div class="ep-header">
+    <div class="ep-title">
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1" fill="#01796f" opacity=".5"/><rect x="9" y="2" width="5" height="5" rx="1" fill="#01796f"/><rect x="2" y="9" width="5" height="5" rx="1" fill="#01796f" opacity=".8"/><rect x="9" y="9" width="5" height="5" rx="1" fill="#01796f" opacity=".35"/></svg>
+      Annotation Editor
+    </div>
+    <div class="ep-tabs">
+      <button class="ep-tab active" id="tabIcons" onclick="switchTab('icons')">
+        <span class="mi-icon" style="font-size:15px;">auto_awesome</span> Icons
+      </button>
+      <button class="ep-tab" id="tabShapes" onclick="switchTab('shapes')">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="10.5" cy="3.5" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 13l3-5 3 5H1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+        Shapes
+      </button>
+    </div>
+    <div class="ep-hint">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="5.5" stroke="#5f7775" stroke-width="1.3"/><path d="M6.5 4.5v3M6.5 9v.5" stroke="#5f7775" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Select an item, then click any page canvas to place it
+    </div>
+  </div>
+
+  <div class="ep-body">
+    <div class="ep-left">
+      <div id="iconPane">
+        <div class="cat-bar" id="catBar"></div>
+        <div class="icon-grid" id="iconGrid"></div>
+      </div>
+      <div id="shapePane" style="display:none">
+        <div class="shape-grid" id="shapeGrid"></div>
+      </div>
+    </div>
+
+    <div class="ep-right">
+      <div class="ctrl-group">
+        <div class="ctrl-lbl">Color</div>
+        <div class="color-row" id="colorPresets"></div>
+        <div class="color-custom-wrap" style="margin-top:6px;">
+          <div class="color-swatch-btn" id="colorSwatchBtn" style="background:#e53935;">
+            <input type="color" id="colorCustom" value="#e53935">
+          </div>
+          <span class="color-hex" id="colorHex">#E53935</span>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <div class="ctrl-lbl">Size <span class="ctrl-lbl-val" id="sizeVal">48 pt</span></div>
+        <input type="range" class="ctrl-range" id="ctrlSize" min="16" max="160" value="48">
+      </div>
+
+      <div class="ctrl-group">
+        <div class="ctrl-lbl">Opacity <span class="ctrl-lbl-val" id="opacityVal">100%</span></div>
+        <input type="range" class="ctrl-range" id="ctrlOpacity" min="10" max="100" value="100">
+      </div>
+
+      <div class="ctrl-group" id="fillGroup" style="display:none">
+        <div class="ctrl-lbl">Style</div>
+        <div class="fill-btns">
+          <button class="fill-btn active" id="btnFilled" onclick="setFill(true)">Filled</button>
+          <button class="fill-btn" id="btnOutline" onclick="setFill(false)">Outline</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group" id="strokeGroup" style="display:none">
+        <div class="ctrl-lbl">Stroke Width <span class="ctrl-lbl-val" id="strokeVal">3 pt</span></div>
+        <input type="range" class="ctrl-range" id="ctrlStroke" min="1" max="12" value="3">
+      </div>
+
+      <hr class="ctrl-divider">
+
+      <div id="selPanel">
+        <div class="sel-title">
+          <span class="mi-icon" style="font-size:15px;color:var(--teal);" id="selPanelIcon">crop_square</span>
+          <span id="selPanelName">–</span>
+        </div>
+        <div class="sel-meta" id="selPanelMeta">–</div>
+        <div class="sel-btns">
+          <button class="sel-btn" onclick="applyToAllPages()">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M1 6h10M6 1v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Apply to All Pages
+          </button>
+          <button class="sel-btn danger" onclick="deleteSelected()">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M2 3h8M5 3V2h2v1M4 3v7M8 3v7M3 3l.5 7h5L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Delete Annotation
+          </button>
+        </div>
+      </div>
+
+      <div class="prog-wrap" id="progressWrap">
+        <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+        <div class="prog-lbl" id="progressLabel">Processing…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hint-banner" id="hintBanner">
+  <svg width="15" height="15" fill="none" viewBox="0 0 15 15" style="flex-shrink:0"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+  Pick an icon or shape, then <strong>click any page canvas</strong> to place it. Drag to reposition. Click an existing annotation to select it and adjust or delete it.
+</div>
+
+<div id="pageGroups"></div>
+
+<!-- HOW TO -->
+<section class="section">
+  <h2 class="sec-title">How to Add Icons and Shapes to a PDF Online</h2>
+  <p class="sec-sub">Four simple steps. No account. Completely free.</p>
+  <div class="steps">
+    <div class="step-card"><div class="s-num">01</div><h3>Upload Your PDF</h3><p>Drag and drop one or more PDF files onto the upload area, or click <strong>Select PDF Files</strong>. Every page loads directly into an interactive canvas that you can click on.</p></div>
+    <div class="step-card"><div class="s-num">02</div><h3>Pick an Icon or Shape</h3><p>Choose from 40+ Google Material Icons organized by category, or pick one of 10 geometric shapes. Set the color, size, and opacity using the controls on the right.</p></div>
+    <div class="step-card"><div class="s-num">03</div><h3>Place &amp; Adjust</h3><p>Click anywhere on a page canvas to place the selected item. Drag it to reposition. Click any existing annotation to select it — then change its color, size or delete it. Use <strong>Apply to All Pages</strong> to stamp every page.</p></div>
+    <div class="step-card"><div class="s-num">04</div><h3>Download the PDF</h3><p>Click <strong>Download Annotated PDF</strong> next to any file. All annotations are permanently embedded as images — clean, full quality, instantly downloaded.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sec-title">Why Use QwikPDF to Annotate PDFs with Icons &amp; Shapes?</h2>
+  <p class="sec-sub">The most flexible free PDF annotation tool — no software, no sign-up required.</p>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-ico"><span class="mi-icon" style="font-family:'Material Symbols Outlined';font-size:22px;color:#01796f;">auto_awesome</span></div><h3>40+ Material Icons</h3><p>Choose from a curated library of Google Material Icons across 5 categories.</p></div>
+    <div class="feat"><div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="#01796f" opacity=".7"/><circle cx="16" cy="6" r="4" fill="#01796f" opacity=".4"/><path d="M3 19l4.5-7 4.5 7H3z" fill="#01796f"/></svg></div><h3>10 Geometric Shapes</h3><p>Rectangles, circles, triangles, stars, diamonds, arrows, lines and checkmarks.</p></div>
+    <div class="feat"><div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="4" fill="none" stroke="#01796f" stroke-width="2" stroke-dasharray="2 2"/><path d="M11 6V4M11 18v-2M6 11H4M18 11h-2" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Drag to Reposition</h3><p>After placing an annotation, drag it anywhere on the page canvas to fine-tune its position.</p></div>
+    <div class="feat"><div class="feat-ico"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M11 2L3 6v7c0 5.5 3.5 10.2 8 11.5 4.5-1.3 8-6 8-11.5V6L11 2z" fill="#01796f"/></svg></div><h3>100% Private</h3><p>All processing happens locally in your browser. Your PDF files never leave your device.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sec-title">Frequently Asked Questions</h2>
+  <p class="sec-sub">Everything about adding icons and shapes to PDF files online for free.</p>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How do I add an icon or shape to a PDF page?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Upload your PDF, then select an icon or shape from the picker panel. Click anywhere on a page canvas to place it. Drag to reposition. Click <strong>Download Annotated PDF</strong> when you are ready.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I resize or move an annotation after placing it?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. Click the annotation on the canvas to select it, then drag to reposition or adjust the Size slider to resize.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Are my PDF files uploaded to a server?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">No. QwikPDF runs entirely in your browser. Your files never leave your device.</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Icon &amp; Shape Annotator · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ══════════════════════════════════════════
+   ICON & SHAPE DEFINITIONS
+══════════════════════════════════════════ */
+const ICON_DEFS = [
+  {cat:'general', name:'home',          label:'home'},
+  {cat:'general', name:'search',        label:'search'},
+  {cat:'general', name:'settings',      label:'settings'},
+  {cat:'general', name:'person',        label:'person'},
+  {cat:'general', name:'group',         label:'group'},
+  {cat:'general', name:'notifications', label:'alerts'},
+  {cat:'general', name:'email',         label:'email'},
+  {cat:'general', name:'phone',         label:'phone'},
+  {cat:'general', name:'star',          label:'star'},
+  {cat:'general', name:'favorite',      label:'heart'},
+  {cat:'general', name:'bookmark',      label:'bookmark'},
+  {cat:'general', name:'thumb_up',      label:'like'},
+  {cat:'files',   name:'folder',        label:'folder'},
+  {cat:'files',   name:'description',   label:'document'},
+  {cat:'files',   name:'attach_file',   label:'attach'},
+  {cat:'files',   name:'cloud',         label:'cloud'},
+  {cat:'files',   name:'download',      label:'download'},
+  {cat:'files',   name:'upload',        label:'upload'},
+  {cat:'files',   name:'print',         label:'print'},
+  {cat:'files',   name:'share',         label:'share'},
+  {cat:'status',  name:'check_circle',  label:'check'},
+  {cat:'status',  name:'cancel',        label:'cancel'},
+  {cat:'status',  name:'warning',       label:'warning'},
+  {cat:'status',  name:'info',          label:'info'},
+  {cat:'status',  name:'lock',          label:'lock'},
+  {cat:'status',  name:'visibility',    label:'visible'},
+  {cat:'status',  name:'help',          label:'help'},
+  {cat:'status',  name:'error',         label:'error'},
+  {cat:'nav',     name:'arrow_forward', label:'→'},
+  {cat:'nav',     name:'arrow_back',    label:'←'},
+  {cat:'nav',     name:'arrow_upward',  label:'↑'},
+  {cat:'nav',     name:'arrow_downward',label:'↓'},
+  {cat:'nav',     name:'refresh',       label:'refresh'},
+  {cat:'nav',     name:'open_in_new',   label:'open'},
+  {cat:'nav',     name:'menu',          label:'menu'},
+  {cat:'nav',     name:'close',         label:'close'},
+  {cat:'media',   name:'image',         label:'image'},
+  {cat:'media',   name:'camera_alt',    label:'camera'},
+  {cat:'media',   name:'play_circle',   label:'play'},
+  {cat:'media',   name:'volume_up',     label:'volume'},
+  {cat:'media',   name:'mic',           label:'mic'},
+  {cat:'media',   name:'palette',       label:'palette'},
+];
+
+const SHAPE_DEFS = [
+  {name:'rect',           label:'Rectangle'},
+  {name:'rect-outline',   label:'Rect Outline'},
+  {name:'circle',         label:'Circle'},
+  {name:'circle-outline', label:'Circ Outline'},
+  {name:'triangle',       label:'Triangle'},
+  {name:'star',           label:'Star'},
+  {name:'diamond',        label:'Diamond'},
+  {name:'arrow',          label:'Arrow →'},
+  {name:'line',           label:'Line ─'},
+  {name:'check',          label:'Checkmark'},
+];
+
+const CAT_LABELS = {all:'All', general:'General', files:'Files', status:'Status', nav:'Navigation', media:'Media'};
+const COLOR_PRESETS = ['#e53935','#1e88e5','#43a047','#fb8c00','#8e24aa','#00897b','#3949ab','#000000','#ffffff'];
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+let sourceFiles   = [];   // { uid, name, baseName, buffer, pageCount, pdfJsDoc, pages:[ {w, h, rendered, snapshot} ] }
+let annotations   = [];   // { id, fileUid, pageIndex, type, name, xPct, yPct, size, color, opacity, filled, strokeWidth }
+let selectedAnnId = null;
+let selectedTool  = { type:'icon', name:'star' };
+let currentStyle  = { color:'#e53935', size:48, opacity:100, filled:true, strokeWidth:3 };
+let activeCat     = 'all';
+let dragging      = null; // { annId, startCx, startCy, startXPct, startYPct, canvasEl }
+
+/* ══════════════════════════════════════════
+   BUILD PICKERS
+══════════════════════════════════════════ */
+function buildIconPicker() {
+  const bar  = document.getElementById('catBar');
+  const cats = ['all','general','files','status','nav','media'];
+  bar.innerHTML = cats.map(c =>
+    `<button class="cat-btn${c==='all'?' active':''}" onclick="filterCat('${c}')">${CAT_LABELS[c]}</button>`
+  ).join('');
+  renderIconGrid();
+}
+
+function filterCat(cat) {
+  activeCat = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.textContent === CAT_LABELS[cat]));
+  renderIconGrid();
+}
+
+function renderIconGrid() {
+  const grid  = document.getElementById('iconGrid');
+  const icons = activeCat === 'all' ? ICON_DEFS : ICON_DEFS.filter(i => i.cat === activeCat);
+  grid.innerHTML = icons.map(ic =>
+    `<button class="icon-btn${selectedTool.type==='icon' && selectedTool.name===ic.name?' active':''}"
+      onclick="selectIcon('${ic.name}')" title="${ic.name}">
+      <span class="mi-icon">${ic.name}</span>
+      <span class="mi-label">${ic.label}</span>
+    </button>`
+  ).join('');
+}
+
+function buildShapePicker() {
+  const grid = document.getElementById('shapeGrid');
+  grid.innerHTML = SHAPE_DEFS.map(s => `
+    <button class="shape-btn${selectedTool.type==='shape' && selectedTool.name===s.name?' active':''}"
+      onclick="selectShape('${s.name}')" title="${s.label}">
+      ${shapePreviewSVG(s.name)}
+      <span class="shape-label">${s.label}</span>
+    </button>`).join('');
+}
+
+function shapePreviewSVG(name) {
+  const c = '#5f7775', sw = '2.5';
+  switch(name) {
+    case 'rect':          return `<svg width="28" height="22" viewBox="0 0 28 22"><rect x="3" y="3" width="22" height="16" rx="1.5" fill="${c}"/></svg>`;
+    case 'rect-outline':  return `<svg width="28" height="22" viewBox="0 0 28 22"><rect x="3" y="3" width="22" height="16" rx="1.5" fill="none" stroke="${c}" stroke-width="${sw}"/></svg>`;
+    case 'circle':        return `<svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" fill="${c}"/></svg>`;
+    case 'circle-outline':return `<svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="${c}" stroke-width="${sw}"/></svg>`;
+    case 'triangle':      return `<svg width="28" height="26" viewBox="0 0 28 26"><polygon points="14,3 26,23 2,23" fill="${c}"/></svg>`;
+    case 'star':          return `<svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,3 16.9,10.1 24.5,10.1 18.5,14.9 20.6,22.5 14,18 7.4,22.5 9.5,14.9 3.5,10.1 11.1,10.1" fill="${c}"/></svg>`;
+    case 'diamond':       return `<svg width="28" height="28" viewBox="0 0 28 28"><polygon points="14,3 25,14 14,25 3,14" fill="${c}"/></svg>`;
+    case 'arrow':         return `<svg width="32" height="22" viewBox="0 0 32 22"><polygon points="2,8 20,8 20,3 30,11 20,19 20,14 2,14" fill="${c}"/></svg>`;
+    case 'line':          return `<svg width="32" height="14" viewBox="0 0 32 14"><line x1="3" y1="7" x2="29" y2="7" stroke="${c}" stroke-width="3" stroke-linecap="round"/></svg>`;
+    case 'check':         return `<svg width="28" height="22" viewBox="0 0 28 22"><polyline points="3,12 10,19 25,5" fill="none" stroke="${c}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    default: return '';
+  }
+}
+
+function buildColorPresets() {
+  const row = document.getElementById('colorPresets');
+  row.innerHTML = COLOR_PRESETS.map(c =>
+    `<div class="color-dot${c===currentStyle.color?' active':''}${c==='#ffffff'?' white-dot':''}"
+      style="background:${c}" data-color="${c}" onclick="setColor('${c}')" title="${c}"></div>`
+  ).join('');
+}
+
+/* ══════════════════════════════════════════
+   TOOL SELECTION
+══════════════════════════════════════════ */
+function selectIcon(name) {
+  selectedTool = {type:'icon', name};
+  renderIconGrid();
+  document.getElementById('fillGroup').style.display   = 'none';
+  document.getElementById('strokeGroup').style.display = 'none';
+  showToast(`Selected: ${name}`);
+}
+
+function selectShape(name) {
+  selectedTool = {type:'shape', name};
+  buildShapePicker();
+  const isLineOrCheck = name === 'line' || name === 'check';
+  const isOutline     = name === 'rect-outline' || name === 'circle-outline';
+  document.getElementById('fillGroup').style.display   = isLineOrCheck ? 'none' : 'flex';
+  document.getElementById('strokeGroup').style.display = (!currentStyle.filled || isOutline || isLineOrCheck) ? 'flex' : 'none';
+  showToast(`Selected: ${name}`);
+}
+
+function switchTab(tab) {
+  const isIcons = tab === 'icons';
+  document.getElementById('tabIcons').classList.toggle('active', isIcons);
+  document.getElementById('tabShapes').classList.toggle('active', !isIcons);
+  document.getElementById('iconPane').style.display   = isIcons ? '' : 'none';
+  document.getElementById('shapePane').style.display  = isIcons ? 'none' : '';
+}
+
+/* ══════════════════════════════════════════
+   STYLE CONTROLS
+══════════════════════════════════════════ */
+function setColor(c) {
+  currentStyle.color = c;
+  document.getElementById('colorCustom').value          = c;
+  document.getElementById('colorSwatchBtn').style.background = c;
+  document.getElementById('colorHex').textContent       = c.toUpperCase();
+  document.querySelectorAll('.color-dot').forEach(d => d.classList.toggle('active', d.dataset.color === c));
+  if (selectedAnnId) {
+    const ann = annotations.find(a => a.id === selectedAnnId);
+    if (ann) { ann.color = c; redrawPage(ann.fileUid, ann.pageIndex); updateAnnList(ann.fileUid); }
+  }
+}
+
+document.getElementById('colorCustom').addEventListener('input', function() { setColor(this.value); });
+
+document.getElementById('ctrlSize').addEventListener('input', function() {
+  const v = parseInt(this.value);
+  currentStyle.size = v;
+  document.getElementById('sizeVal').textContent = v + ' pt';
+  if (selectedAnnId) {
+    const ann = annotations.find(a => a.id === selectedAnnId);
+    if (ann) { ann.size = v; redrawPage(ann.fileUid, ann.pageIndex); updateSelPanel(ann); }
+  }
+});
+
+document.getElementById('ctrlOpacity').addEventListener('input', function() {
+  const v = parseInt(this.value);
+  currentStyle.opacity = v;
+  document.getElementById('opacityVal').textContent = v + '%';
+  if (selectedAnnId) {
+    const ann = annotations.find(a => a.id === selectedAnnId);
+    if (ann) { ann.opacity = v; redrawPage(ann.fileUid, ann.pageIndex); }
+  }
+});
+
+document.getElementById('ctrlStroke').addEventListener('input', function() {
+  const v = parseInt(this.value);
+  currentStyle.strokeWidth = v;
+  document.getElementById('strokeVal').textContent = v + ' pt';
+  if (selectedAnnId) {
+    const ann = annotations.find(a => a.id === selectedAnnId);
+    if (ann) { ann.strokeWidth = v; redrawPage(ann.fileUid, ann.pageIndex); }
+  }
+});
+
+function setFill(filled) {
+  currentStyle.filled = filled;
+  document.getElementById('btnFilled').classList.toggle('active',  filled);
+  document.getElementById('btnOutline').classList.toggle('active', !filled);
+  document.getElementById('strokeGroup').style.display = filled ? 'none' : 'flex';
+  if (selectedAnnId) {
+    const ann = annotations.find(a => a.id === selectedAnnId);
+    if (ann && ann.type === 'shape') { ann.filled = filled; redrawPage(ann.fileUid, ann.pageIndex); }
+  }
+}
+
+/* ══════════════════════════════════════════
+   FILE LOADING
+══════════════════════════════════════════ */
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click',     e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop',      e => { e.preventDefault(); dropZone.classList.remove('drag-over'); loadFiles([...e.dataTransfer.files].filter(f => f.type==='application/pdf')); });
+fileInput.addEventListener('change',   () => { loadFiles([...fileInput.files]); fileInput.value=''; });
+
+async function loadFiles(newFiles) {
+  for (const file of newFiles) {
+    if (file.type !== 'application/pdf') continue;
+    const uid    = 'f' + Date.now() + '_' + Math.random().toString(36).substr(2,8);
+    const buffer = await file.arrayBuffer();
+    let pdfJsDoc;
+    try { pdfJsDoc = await pdfjsLib.getDocument({ data: buffer.slice(0) }).promise; }
+    catch(e) { showToast('Could not read: ' + file.name); continue; }
+    const baseName = file.name.replace(/\.pdf$/i,'');
+    // pages: { w, h, rendered, snapshot }
+    const pages = Array.from({length: pdfJsDoc.numPages}, () => ({w:0, h:0, rendered:false, snapshot:null}));
+    sourceFiles.push({ uid, name:file.name, baseName, buffer, pageCount:pdfJsDoc.numPages, pdfJsDoc, pages });
+    renderGroups();
+    renderPages(uid);
+  }
+  updateUI();
+}
+
+/* ══════════════════════════════════════════
+   PAGE RENDERING - Direct canvas rendering
+══════════════════════════════════════════ */
+async function renderPages(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+
+  // Pre-load Material Symbols so icons render correctly
+  try { await document.fonts.load('32px "Material Symbols Outlined"'); } catch(e) {}
+
+  const RENDER_W = 800; // Increased canvas width for larger pages
+
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    const canvas = document.querySelector(`canvas.page-canvas[data-uid="${uid}"][data-pi="${pi}"]`);
+    if (!canvas) continue;
+
+    try {
+      const page  = await src.pdfJsDoc.getPage(pi + 1);
+      const vp    = page.getViewport({ scale: 1 });
+
+      // Choose scale so canvas width = RENDER_W
+      const scale = RENDER_W / vp.width;
+      const sv    = page.getViewport({ scale });
+
+      // Size the canvas to match the rendered page
+      canvas.width  = Math.round(sv.width);
+      canvas.height = Math.round(sv.height);
+
+      // Store PDF dimensions (pts) for coordinate mapping
+      src.pages[pi].w = vp.width;
+      src.pages[pi].h = vp.height;
+
+      // Hide shimmer once canvas is ready
+      const shimmer = canvas.parentElement?.querySelector('.page-shimmer');
+      if (shimmer) shimmer.style.display = 'none';
+
+      // Render PDF page directly into the canvas
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport: sv }).promise;
+
+      // Snapshot the bare PDF pixels for fast redraws
+      src.pages[pi].snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      src.pages[pi].rendered = true;
+      
+      // Mark canvas as loaded
+      canvas.classList.add('loaded');
+
+      // Draw any existing annotations
+      drawAnnotationsOnCanvas(canvas, uid, pi);
+
+    } catch(e) {
+      console.warn('Page render failed for page', pi, e);
+      // Hide shimmer even on error
+      const shimmer = canvas.parentElement?.querySelector('.page-shimmer');
+      if (shimmer) shimmer.style.display = 'none';
+    }
+  }
+}
+/* ══════════════════════════════════════════
+   CORE REDRAW - Restores snapshot and redraws annotations
+══════════════════════════════════════════ */
+function redrawPage(fileUid, pageIndex) {
+  const src = sourceFiles.find(f => f.uid === fileUid);
+  if (!src) return;
+  const pg = src.pages[pageIndex];
+  if (!pg.rendered || !pg.snapshot) return; // not loaded yet
+
+  const canvas = document.querySelector(`canvas.page-canvas[data-uid="${fileUid}"][data-pi="${pageIndex}"]`);
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+
+  // 1) Restore the bare PDF page pixels
+  ctx.putImageData(pg.snapshot, 0, 0);
+
+  // 2) Draw all annotations on top
+  drawAnnotationsOnCanvas(canvas, fileUid, pageIndex);
+}
+
+function drawAnnotationsOnCanvas(canvas, fileUid, pageIndex) {
+  const ctx      = canvas.getContext('2d');
+  const pageAnns = annotations.filter(a => a.fileUid === fileUid && a.pageIndex === pageIndex);
+  pageAnns.forEach(ann => drawAnnOnCtx(ctx, ann, canvas.width, canvas.height, ann.id === selectedAnnId));
+
+  // Update count pill
+  const pill = document.querySelector(`.ann-count-pill[data-uid="${fileUid}"][data-pi="${pageIndex}"]`);
+  if (pill) {
+    pill.textContent = pageAnns.length;
+    pill.classList.toggle('show', pageAnns.length > 0);
+  }
+}
+
+/* ══════════════════════════════════════════
+   DRAW ANNOTATION ON CANVAS CONTEXT
+══════════════════════════════════════════ */
+function drawAnnOnCtx(ctx, ann, cw, ch, isSelected) {
+  const src   = sourceFiles.find(f => f.uid === ann.fileUid);
+  const pgW   = src?.pages[ann.pageIndex]?.w || 595;
+  const scale = cw / pgW;           // canvas-px per PDF-pt
+  const sz    = ann.size * scale;   // icon/shape size in canvas px
+  const cx    = ann.xPct * cw;
+  const cy    = ann.yPct * ch;
+
+  if (ann.type === 'icon') {
+    ctx.save();
+    ctx.globalAlpha    = ann.opacity / 100;
+    ctx.fillStyle      = ann.color;
+    ctx.font           = `${sz}px "Material Symbols Outlined"`;
+    ctx.textAlign      = 'center';
+    ctx.textBaseline   = 'middle';
+    ctx.fillText(ann.name, cx, cy);
+    ctx.restore();
+  } else {
+    drawShapeOnCtx(ctx, ann.name, cx, cy, sz, ann.color, ann.opacity, ann.filled, ann.strokeWidth * scale);
+  }
+
+  // Selection indicator
+  if (isSelected) {
+    const r  = sz * 0.62;
+    const hs = Math.max(4, sz * 0.08);
+    ctx.save();
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = '#1e88e5';
+    ctx.lineWidth   = Math.max(1.5, scale);
+    ctx.strokeRect(cx - r, cy - r, r * 2, r * 2);
+    ctx.setLineDash([]);
+    [[cx-r, cy-r],[cx+r, cy-r],[cx-r, cy+r],[cx+r, cy+r]].forEach(([hx, hy]) => {
+      ctx.fillStyle   = '#fff';
+      ctx.fillRect(hx - hs/2, hy - hs/2, hs, hs);
+      ctx.strokeStyle = '#1e88e5';
+      ctx.lineWidth   = Math.max(1, scale * 0.8);
+      ctx.strokeRect(hx - hs/2, hy - hs/2, hs, hs);
+    });
+    ctx.restore();
+  }
+}
+
+function drawShapeOnCtx(ctx, shape, cx, cy, sz, color, opacity, filled, strokeW) {
+  ctx.save();
+  ctx.globalAlpha = opacity / 100;
+  ctx.fillStyle   = color;
+  ctx.strokeStyle = color;
+  ctx.lineWidth   = Math.max(1, strokeW);
+  ctx.lineCap     = 'round';
+  ctx.lineJoin    = 'round';
+  const r = sz / 2;
+  switch(shape) {
+    case 'rect': case 'rect-outline': {
+      ctx.beginPath(); ctx.rect(cx-r, cy-r*0.75, sz, sz*0.75);
+      (shape==='rect' && filled) ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'circle': case 'circle-outline': {
+      ctx.beginPath(); ctx.arc(cx, cy, r*0.9, 0, Math.PI*2);
+      (shape==='circle' && filled) ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'triangle': {
+      ctx.beginPath(); ctx.moveTo(cx,cy-r); ctx.lineTo(cx+r,cy+r*0.8); ctx.lineTo(cx-r,cy+r*0.8); ctx.closePath();
+      filled ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'star': {
+      ctx.beginPath();
+      for (let i=0;i<5;i++) {
+        const a1=(i*4*Math.PI/5)-Math.PI/2, a2=a1+2*Math.PI/10;
+        i===0?ctx.moveTo(cx+r*Math.cos(a1),cy+r*Math.sin(a1)):ctx.lineTo(cx+r*Math.cos(a1),cy+r*Math.sin(a1));
+        ctx.lineTo(cx+r*0.38*Math.cos(a2),cy+r*0.38*Math.sin(a2));
+      }
+      ctx.closePath(); filled ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'diamond': {
+      ctx.beginPath(); ctx.moveTo(cx,cy-r); ctx.lineTo(cx+r*0.7,cy); ctx.lineTo(cx,cy+r); ctx.lineTo(cx-r*0.7,cy); ctx.closePath();
+      filled ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'arrow': {
+      const bh=r*0.28,ah=r*0.55,tip=cx+r,notch=cx+r*0.18;
+      ctx.beginPath(); ctx.moveTo(cx-r,cy-bh); ctx.lineTo(notch,cy-bh); ctx.lineTo(notch,cy-ah);
+      ctx.lineTo(tip,cy); ctx.lineTo(notch,cy+ah); ctx.lineTo(notch,cy+bh); ctx.lineTo(cx-r,cy+bh); ctx.closePath();
+      filled ? ctx.fill() : ctx.stroke(); break;
+    }
+    case 'line': {
+      ctx.beginPath(); ctx.moveTo(cx-r,cy); ctx.lineTo(cx+r,cy); ctx.lineWidth=Math.max(1.5,strokeW); ctx.stroke(); break;
+    }
+    case 'check': {
+      ctx.beginPath(); ctx.moveTo(cx-r*0.5,cy); ctx.lineTo(cx-r*0.05,cy+r*0.5); ctx.lineTo(cx+r*0.65,cy-r*0.5);
+      ctx.lineWidth=Math.max(1.5,sz*0.12); ctx.stroke(); break;
+    }
+  }
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════
+   RENDER GROUPS - Build DOM with canvas elements
+══════════════════════════════════════════ */
+function renderGroups() {
+  const container = document.getElementById('pageGroups');
+  container.innerHTML = '';
+  let totalPages = 0;
+
+  sourceFiles.forEach(src => {
+    totalPages += src.pageCount;
+    const group = document.createElement('div');
+    group.className = 'file-group';
+    group.id        = 'group-' + src.uid;
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'file-group-header';
+    header.innerHTML = `
+      <div class="file-group-icon">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M9 2H4a1.5 1.5 0 00-1.5 1.5v8A1.5 1.5 0 004 13h7a1.5 1.5 0 001.5-1.5V6L9 2z" stroke="#01796f" stroke-width="1.4"/><path d="M9 2v4h4" stroke="#01796f" stroke-width="1.4"/></svg>
+      </div>
+      <div class="file-group-title" title="${escHtml(src.name)}">${escHtml(src.name)}</div>
+      <div class="file-group-meta">${src.pageCount} page${src.pageCount!==1?'s':''}</div>
+      <button class="btn-dl" id="dlbtn-${src.uid}" onclick="downloadPDF('${src.uid}')">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Annotated PDF
+      </button>
+      <button class="tb-btn danger" style="padding:5px 10px;font-size:.73rem;" onclick="removeFile('${src.uid}')">Remove</button>`;
+    group.appendChild(header);
+
+    // Page grid - now vertical
+    const grid = document.createElement('div');
+    grid.className = 'page-grid';
+    grid.id        = 'grid-' + src.uid;
+
+    for (let pi = 0; pi < src.pageCount; pi++) {
+      const card = document.createElement('div');
+      card.className = 'page-card';
+
+      // Preview container - no fixed padding
+      const preview = document.createElement('div');
+      preview.className = 'page-preview';
+      preview.dataset.uid = src.uid;
+      preview.dataset.pi  = pi;
+
+      // Shimmer loading effect
+      const shimmer = document.createElement('div');
+      shimmer.className = 'page-shimmer';
+      preview.appendChild(shimmer);
+
+      // Canvas element - will size naturally
+      const canvas         = document.createElement('canvas');
+      canvas.className     = 'page-canvas';
+      canvas.dataset.uid   = src.uid;
+      canvas.dataset.pi    = pi;
+      preview.appendChild(canvas);
+      attachCanvasHandlers(canvas, src.uid, pi);
+
+      // Page number overlay
+      const pgNum       = document.createElement('div');
+      pgNum.className   = 'pg-num';
+      pgNum.textContent = `Page ${pi+1}`;
+      preview.appendChild(pgNum);
+
+      // Annotation count pill
+      const pill           = document.createElement('div');
+      pill.className       = 'ann-count-pill';
+      pill.dataset.uid     = src.uid;
+      pill.dataset.pi      = pi;
+      preview.appendChild(pill);
+
+      // Page label
+      const actions = document.createElement('div');
+      actions.className = 'page-actions';
+      actions.innerHTML = `<div class="pg-label">${escHtml(src.baseName)}</div>`;
+
+      card.appendChild(preview);
+      card.appendChild(actions);
+      grid.appendChild(card);
+    }
+    group.appendChild(grid);
+
+    // Annotation list
+    const annList = document.createElement('div');
+    annList.className = 'ann-list';
+    annList.id        = 'annlist-' + src.uid;
+    annList.innerHTML = `
+      <div class="ann-list-header">
+        <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" stroke="#01796f" stroke-width="1.4"/><path d="M4 6l1.5 1.5 3-3" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span id="annlist-title-${src.uid}">Annotations</span>
+      </div>
+      <div class="ann-items" id="ann-items-${src.uid}"></div>`;
+    group.appendChild(annList);
+
+    container.appendChild(group);
+  });
+
+  document.getElementById('totalPagesLabel').textContent = totalPages;
+  const fc = sourceFiles.length;
+  document.getElementById('filesLabel').textContent = fc > 0 ? `from ${fc} file${fc!==1?'s':''}` : '';
+}
+/* ══════════════════════════════════════════
+   CANVAS INTERACTION HANDLERS
+══════════════════════════════════════════ */
+function attachCanvasHandlers(canvas, fileUid, pageIndex) {
+  canvas.addEventListener('mousedown', e => handlePointerDown(e, canvas, fileUid, pageIndex, e.clientX, e.clientY));
+  canvas.addEventListener('touchstart', e => {
+    e.preventDefault();
+    const t = e.touches[0];
+    handlePointerDown(e, canvas, fileUid, pageIndex, t.clientX, t.clientY);
+  }, { passive: false });
+}
+
+document.addEventListener('mousemove', e => handlePointerMove(e.clientX, e.clientY));
+document.addEventListener('touchmove', e => {
+  if (dragging) { e.preventDefault(); const t = e.touches[0]; handlePointerMove(t.clientX, t.clientY); }
+}, { passive: false });
+document.addEventListener('mouseup',  () => { dragging = null; });
+document.addEventListener('touchend', () => { dragging = null; });
+
+function handlePointerDown(e, canvas, fileUid, pageIndex, clientX, clientY) {
+  const rect = canvas.getBoundingClientRect();
+  const cx   = (clientX - rect.left) / rect.width;
+  const cy   = (clientY - rect.top)  / rect.height;
+
+  const src    = sourceFiles.find(f => f.uid === fileUid);
+  const pgW    = src?.pages[pageIndex]?.w || 595;
+  const cw     = canvas.width;
+  const scale  = cw / pgW;
+
+  // Hit-test existing annotations (check from topmost/last placed first)
+  const pageAnns = annotations.filter(a => a.fileUid===fileUid && a.pageIndex===pageIndex).slice().reverse();
+  const hit = pageAnns.find(ann => {
+    const hitR = (ann.size * scale * 0.62) / cw;
+    return Math.abs(ann.xPct - cx) < hitR && Math.abs(ann.yPct - cy) < hitR;
+  });
+
+  if (hit) {
+    selectAnnotation(hit.id);
+    dragging = { annId:hit.id, startCx:cx, startCy:cy, startXPct:hit.xPct, startYPct:hit.yPct, canvasEl:canvas };
+    e.stopPropagation();
+  } else {
+    // Deselect previous from another page
+    if (selectedAnnId) {
+      const prev = annotations.find(a => a.id === selectedAnnId);
+      if (prev && (prev.fileUid !== fileUid || prev.pageIndex !== pageIndex)) {
+        selectedAnnId = null;
+        redrawPage(prev.fileUid, prev.pageIndex);
+        document.getElementById('selPanel').classList.remove('visible');
+      }
+    }
+    placeAnnotation(fileUid, pageIndex, cx, cy);
+  }
+}
+
+function handlePointerMove(clientX, clientY) {
+  if (!dragging) return;
+  const canvas = dragging.canvasEl;
+  const rect   = canvas.getBoundingClientRect();
+  const cx     = (clientX - rect.left) / rect.width;
+  const cy     = (clientY - rect.top)  / rect.height;
+  const ann    = annotations.find(a => a.id === dragging.annId);
+  if (!ann) { dragging = null; return; }
+  ann.xPct = Math.max(0.02, Math.min(0.98, dragging.startXPct + (cx - dragging.startCx)));
+  ann.yPct = Math.max(0.02, Math.min(0.98, dragging.startYPct + (cy - dragging.startCy)));
+  redrawPage(ann.fileUid, ann.pageIndex);
+  updateSelPanel(ann);
+}
+
+/* ══════════════════════════════════════════
+   ANNOTATION MANAGEMENT
+══════════════════════════════════════════ */
+function placeAnnotation(fileUid, pageIndex, xPct, yPct) {
+  if (!selectedTool) { showToast('Pick an icon or shape first'); return; }
+  const id  = 'ann_' + Date.now() + '_' + Math.random().toString(36).substr(2,5);
+  const ann = {
+    id, fileUid, pageIndex,
+    type:        selectedTool.type,
+    name:        selectedTool.name,
+    xPct, yPct,
+    size:        currentStyle.size,
+    color:       currentStyle.color,
+    opacity:     currentStyle.opacity,
+    filled:      currentStyle.filled,
+    strokeWidth: currentStyle.strokeWidth,
+  };
+  annotations.push(ann);
+  selectAnnotation(id);
+  redrawPage(fileUid, pageIndex);
+  updateAnnList(fileUid);
+}
+
+function selectAnnotation(id) {
+  const prevId = selectedAnnId;
+  selectedAnnId = id;
+  const ann = annotations.find(a => a.id === id);
+  if (!ann) return;
+
+  // Sync controls
+  currentStyle.color       = ann.color;
+  currentStyle.size        = ann.size;
+  currentStyle.opacity     = ann.opacity;
+  currentStyle.filled      = ann.filled;
+  currentStyle.strokeWidth = ann.strokeWidth;
+
+  document.getElementById('ctrlSize').value            = ann.size;
+  document.getElementById('sizeVal').textContent       = ann.size + ' pt';
+  document.getElementById('ctrlOpacity').value         = ann.opacity;
+  document.getElementById('opacityVal').textContent    = ann.opacity + '%';
+  document.getElementById('ctrlStroke').value          = ann.strokeWidth;
+  document.getElementById('strokeVal').textContent     = ann.strokeWidth + ' pt';
+  document.getElementById('colorCustom').value         = ann.color;
+  document.getElementById('colorSwatchBtn').style.background = ann.color;
+  document.getElementById('colorHex').textContent      = ann.color.toUpperCase();
+  document.querySelectorAll('.color-dot').forEach(d => d.classList.toggle('active', d.dataset.color === ann.color));
+
+  if (ann.type === 'shape') {
+    const isLineOrCheck = ann.name==='line'||ann.name==='check';
+    document.getElementById('fillGroup').style.display   = isLineOrCheck ? 'none' : 'flex';
+    document.getElementById('strokeGroup').style.display = (!ann.filled||isLineOrCheck) ? 'flex' : 'none';
+    document.getElementById('btnFilled').classList.toggle('active',  ann.filled);
+    document.getElementById('btnOutline').classList.toggle('active', !ann.filled);
+  } else {
+    document.getElementById('fillGroup').style.display   = 'none';
+    document.getElementById('strokeGroup').style.display = 'none';
+  }
+
+  updateSelPanel(ann);
+
+  // Redraw previous page if different
+  if (prevId && prevId !== id) {
+    const prev = annotations.find(a => a.id === prevId);
+    if (prev) redrawPage(prev.fileUid, prev.pageIndex);
+  }
+  redrawPage(ann.fileUid, ann.pageIndex);
+
+  document.querySelectorAll('.ann-item').forEach(el => el.classList.toggle('selected', el.dataset.annid === id));
+}
+
+function updateSelPanel(ann) {
+  if (!ann) { document.getElementById('selPanel').classList.remove('visible'); return; }
+  document.getElementById('selPanel').classList.add('visible');
+  document.getElementById('selPanelIcon').textContent = ann.type==='icon' ? ann.name : 'crop_square';
+  document.getElementById('selPanelName').textContent = ann.name.replace(/_/g,' ');
+  const src = sourceFiles.find(f => f.uid === ann.fileUid);
+  document.getElementById('selPanelMeta').textContent =
+    `Page ${ann.pageIndex+1}${src?' of '+src.pageCount:''} · X:${Math.round(ann.xPct*100)}% Y:${Math.round(ann.yPct*100)}%`;
+}
+
+function updateAnnList(fileUid) {
+  const anns    = annotations.filter(a => a.fileUid === fileUid);
+  const listEl  = document.getElementById('annlist-' + fileUid);
+  const itemEl  = document.getElementById('ann-items-' + fileUid);
+  const titleEl = document.getElementById('annlist-title-' + fileUid);
+  if (!listEl || !itemEl) return;
+  listEl.classList.toggle('has-items', anns.length > 0);
+  if (titleEl) titleEl.textContent = `${anns.length} annotation${anns.length!==1?'s':''}`;
+  itemEl.innerHTML = anns.map(ann => `
+    <div class="ann-item${ann.id===selectedAnnId?' selected':''}" data-annid="${ann.id}" onclick="selectAnnotation('${ann.id}')">
+      <span class="ann-item-icon">${ann.type==='icon'?ann.name:'crop_square'}</span>
+      <div class="ann-item-info">
+        <div class="ann-item-name">${ann.name.replace(/_/g,' ')}</div>
+        <div class="ann-item-meta">Page ${ann.pageIndex+1} · ${ann.size}pt · ${Math.round(ann.xPct*100)}%,${Math.round(ann.yPct*100)}%</div>
+      </div>
+      <div class="ann-item-color" style="background:${ann.color}"></div>
+      <button class="ann-item-del" onclick="deleteAnn(event,'${ann.id}')">✕</button>
+    </div>`).join('');
+}
+
+function deleteAnn(e, annId) {
+  e.stopPropagation();
+  const ann = annotations.find(a => a.id === annId);
+  if (!ann) return;
+  const { fileUid, pageIndex } = ann;
+  annotations = annotations.filter(a => a.id !== annId);
+  if (selectedAnnId === annId) {
+    selectedAnnId = null;
+    document.getElementById('selPanel').classList.remove('visible');
+  }
+  redrawPage(fileUid, pageIndex);
+  updateAnnList(fileUid);
+}
+
+function deleteSelected() {
+  if (!selectedAnnId) { showToast('Select an annotation first'); return; }
+  deleteAnn({ stopPropagation:()=>{} }, selectedAnnId);
+}
+
+function applyToAllPages() {
+  if (!selectedAnnId) { showToast('Select an annotation first'); return; }
+  const srcAnn = annotations.find(a => a.id === selectedAnnId);
+  if (!srcAnn) return;
+  const src = sourceFiles.find(f => f.uid === srcAnn.fileUid);
+  if (!src) return;
+  let added = 0;
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    if (pi === srcAnn.pageIndex) continue;
+    const dup = annotations.find(a =>
+      a.fileUid===srcAnn.fileUid && a.pageIndex===pi && a.name===srcAnn.name &&
+      Math.abs(a.xPct-srcAnn.xPct)<0.01 && Math.abs(a.yPct-srcAnn.yPct)<0.01);
+    if (dup) continue;
+    annotations.push({...srcAnn, id:'ann_'+Date.now()+'_'+pi+'_'+Math.random().toString(36).substr(2,5), pageIndex:pi});
+    redrawPage(srcAnn.fileUid, pi);
+    added++;
+  }
+  updateAnnList(srcAnn.fileUid);
+  showToast(`Applied to ${added} more page${added!==1?'s':''}`);
+}
+
+/* ══════════════════════════════════════════
+   DOWNLOAD - Embed annotations into PDF
+══════════════════════════════════════════ */
+async function downloadPDF(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  const fileAnns = annotations.filter(a => a.fileUid === uid);
+  if (!fileAnns.length) { showToast('Add at least one annotation first'); return; }
+
+  const btn  = document.getElementById('dlbtn-' + uid);
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  if (btn) { btn.disabled = true; btn.innerHTML = spinnerHTML() + ' Saving…'; }
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Loading PDF…';
+
+  try {
+    await document.fonts.load('64px "Material Symbols Outlined"');
+    const { PDFDocument } = PDFLib;
+    const pdfDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+    const pages  = pdfDoc.getPages();
+
+    for (let pi = 0; pi < pages.length; pi++) {
+      bar.style.width  = Math.round(((pi+0.5)/pages.length)*88) + '%';
+      lbl.textContent  = `Embedding: page ${pi+1} of ${pages.length}`;
+      const pageAnns   = fileAnns.filter(a => a.pageIndex === pi);
+      if (!pageAnns.length) continue;
+
+      const pdfPage    = pages[pi];
+      const { width:pw, height:ph } = pdfPage.getSize();
+
+      for (const ann of pageAnns) {
+        try {
+          const pngBytes = await renderAnnToPNG(ann);
+          const pdfImg   = await pdfDoc.embedPng(pngBytes);
+          const imgSize  = ann.size;
+          pdfPage.drawImage(pdfImg, {
+            x: ann.xPct * pw - imgSize / 2,
+            y: (1 - ann.yPct) * ph - imgSize / 2,
+            width: imgSize, height: imgSize
+          });
+        } catch(e) { console.warn('Annotation embed failed:', e); }
+      }
+    }
+
+    bar.style.width = '96%'; lbl.textContent = 'Saving PDF…';
+    const bytes = await pdfDoc.save();
+    bar.style.width = '100%'; lbl.textContent = '✓ Done!';
+    triggerDownload(bytes, `${src.baseName}_annotated.pdf`);
+    showToast('"' + src.name + '" downloaded!');
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(e) {
+    console.error(e);
+    showToast('Download failed. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  if (btn) {
+    btn.disabled  = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download Annotated PDF`;
+  }
+}
+
+async function renderAnnToPNG(ann) {
+  const SCALE = 4;
+  const px    = Math.round(ann.size * SCALE);
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = px;
+  const ctx    = canvas.getContext('2d');
+
+  if (ann.type === 'icon') {
+    await document.fonts.load(`${px}px "Material Symbols Outlined"`);
+    ctx.font            = `${px}px "Material Symbols Outlined"`;
+    ctx.fillStyle       = ann.color;
+    ctx.globalAlpha     = ann.opacity / 100;
+    ctx.textAlign       = 'center';
+    ctx.textBaseline    = 'middle';
+    ctx.fillText(ann.name, px/2, px/2);
+  } else {
+    drawShapeOnCtx(ctx, ann.name, px/2, px/2, px*0.88, ann.color, ann.opacity, ann.filled, ann.strokeWidth * SCALE);
+  }
+
+  return new Promise(resolve => {
+    canvas.toBlob(blob => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(new Uint8Array(reader.result));
+      reader.readAsArrayBuffer(blob);
+    }, 'image/png');
+  });
+}
+
+/* ══════════════════════════════════════════
+   UI HELPERS
+══════════════════════════════════════════ */
+function updateUI() {
+  const has = sourceFiles.length > 0;
+  document.getElementById('toolbar').classList.toggle('visible', has);
+  document.getElementById('editorPanel').classList.toggle('visible', has);
+  document.getElementById('hintBanner').classList.toggle('visible', has);
+}
+
+function removeFile(uid) {
+  sourceFiles  = sourceFiles.filter(f => f.uid !== uid);
+  annotations  = annotations.filter(a => a.fileUid !== uid);
+  if (selectedAnnId && !annotations.find(a => a.id === selectedAnnId)) {
+    selectedAnnId = null;
+    document.getElementById('selPanel').classList.remove('visible');
+  }
+  renderGroups(); updateUI();
+}
+
+function clearAll() {
+  sourceFiles = []; annotations = []; selectedAnnId = null;
+  document.getElementById('pageGroups').innerHTML = '';
+  document.getElementById('selPanel').classList.remove('visible');
+  updateUI();
+}
+
+function toggleFAQ(el) {
+  const ans    = el.nextElementSibling;
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function triggerDownload(bytes, filename) {
+  const blob = new Blob([bytes], { type:'application/pdf' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a'); a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function spinnerHTML() {
+  return `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M7 2a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg>`;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  buildIconPicker();
+  buildShapePicker();
+  buildColorPresets();
+  selectIcon('star');
+});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

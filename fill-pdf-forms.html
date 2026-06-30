@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free PDF Form Filler – Fill &amp; Edit PDF Online | Add Text, Checkmarks, Symbols | QwikPDF</title>
+<meta name="description" content="Fill any PDF form online for free. Add text, checkmarks, crosses, circles, dates and more. Click to place, drag to position, customize font and color. 100% browser-based — files never leave your device.">
+<meta name="keywords" content="fill pdf form online, pdf form filler, add text to pdf, fill pdf free, pdf editor online, tick pdf, checkmark pdf, fill form pdf browser, pdf fill and sign, annotate pdf free">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/pdf-fill-form.html">
+<meta property="og:title" content="Free PDF Form Filler – Fill PDF Online | Add Text &amp; Symbols">
+<meta property="og:description" content="Fill any PDF form online for free. Add text, ticks, crosses, circles and more. Drag to position, customize styling. 100% private.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/pdf-fill-form.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PDF Form Filler – Fill PDF Online">
+<meta name="twitter:description" content="Add text, checkmarks, crosses and symbols to any PDF. Click to place, drag to position. Free and browser-based.">
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikPDF – Free PDF Form Filler",
+  "url": "https://qwikpdf.com/pdf-fill-form.html",
+  "description": "Fill PDF forms online for free. Add text, checkmarks, crosses, circles and other symbols. Click to place elements anywhere on the page, drag to reposition. 100% browser-based.",
+  "applicationCategory": "DocumentEditor",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Add text to PDF","Checkmark / tick symbol","Cross / X symbol","Circle / oval","Rectangle / box","Dot / filled circle","Date stamp","Custom font size","Font color picker","Bold and italic text","Drag to reposition","Delete individual elements","Multi-page support","Download filled PDF","100% browser-based","Free forever"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I fill a PDF form online for free?","acceptedAnswer":{"@type":"Answer","text":"Upload your PDF, select a tool from the toolbar (text, tick, cross, etc.), then click anywhere on the PDF page to place it. Drag elements to reposition them, adjust styling, then click Download Filled PDF."}},
+    {"@type":"Question","name":"Can I add text to a PDF without Adobe?","acceptedAnswer":{"@type":"Answer","text":"Yes. QwikPDF lets you add custom text to any PDF online for free, directly in your browser. No Adobe Acrobat or any software needed."}},
+    {"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens locally in your browser using JavaScript. Your PDF files never leave your device."}},
+    {"@type":"Question","name":"Can I add checkmarks and tick marks to a PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select the Tick (✓) tool and click anywhere on the PDF to place a checkmark. You can change its color, size and position freely."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --purple:     #6c5ce7;
+  --purple-lt:  #f0eeff;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --amber:      #e67e22;
+  --amber-lt:   #fef5ec;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* HEADER */
+header{background:var(--teal);color:#fff;padding:28px 20px 32px;text-align:center;}
+.h-inner{max-width:720px;margin:0 auto;}
+header h1{font-size:clamp(1.4rem,3.6vw,2rem);font-weight:700;letter-spacing:-.3px;line-height:1.22;}
+header h1 em{font-style:normal;font-weight:400;opacity:.86;}
+header p{margin-top:7px;font-size:.92rem;opacity:.8;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;}
+.badges span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 10px;font-size:.72rem;font-weight:500;}
+
+/* MAIN */
+main{max-width:1280px;margin:0 auto;padding:22px 14px 120px;}
+
+/* DROP ZONE */
+#dropZone{background:var(--white);border:2px dashed var(--teal);border-radius:var(--r);padding:44px 24px;text-align:center;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;box-shadow:var(--sh);}
+#dropZone:hover{background:var(--teal-xs);}
+#dropZone.drag-over{background:var(--teal-light);border-color:var(--teal-mid);transform:scale(1.004);}
+.dz-icon{width:52px;height:52px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;}
+#dropZone h2{font-size:1rem;font-weight:700;color:var(--teal);}
+#dropZone p{color:var(--muted);font-size:.83rem;margin-top:4px;}
+.browse-btn{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--teal);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;font-weight:600;cursor:pointer;transition:background .17s,transform .12s;box-shadow:0 3px 14px rgba(1,121,111,.3);}
+.browse-btn:hover{background:var(--teal-dark);transform:translateY(-1px);}
+#fileInput{display:none;}
+
+/* APP LAYOUT */
+#appLayout{display:none;gap:14px;margin-top:18px;}
+#appLayout.visible{display:grid;grid-template-columns:300px 1fr;align-items:start;}
+
+/* ══ LEFT PANEL ══ */
+.left-panel{display:flex;flex-direction:column;gap:11px;position:sticky;top:14px;}
+
+/* Tool section */
+.tool-section{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;}
+.tool-section-header{padding:10px 13px;border-bottom:1.5px solid var(--border);font-size:.78rem;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:7px;background:var(--teal-xs);}
+
+/* Tool grid */
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:10px;}
+.tool-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 4px;border:1.5px solid var(--border);border-radius:8px;background:var(--white);cursor:pointer;transition:all .15s;font-family:'Plus Jakarta Sans',sans-serif;}
+.tool-btn:hover{border-color:var(--teal);background:var(--teal-light);}
+.tool-btn.active{background:var(--teal);border-color:var(--teal);color:#fff;}
+.tool-btn.active .tool-icon{color:#fff;}
+.tool-icon{font-size:1.1rem;line-height:1;}
+.tool-label{font-size:.62rem;font-weight:600;color:var(--muted);white-space:nowrap;}
+.tool-btn.active .tool-label{color:rgba(255,255,255,.85);}
+
+/* Props panel */
+.props-panel{padding:11px 12px;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid var(--border);}
+.prop-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;}
+.prop-field{display:flex;flex-direction:column;gap:4px;flex:1;min-width:80px;}
+.prop-label{font-size:.7rem;font-weight:600;color:var(--muted);display:flex;align-items:center;justify-content:space-between;}
+.prop-val{font-weight:700;color:var(--text);}
+.prop-input{width:100%;padding:7px 9px;border:1.5px solid var(--border);border-radius:7px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;color:var(--text);background:var(--white);transition:border-color .15s;outline:none;}
+.prop-input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(1,121,111,.1);}
+.prop-range{width:100%;height:4px;border-radius:4px;-webkit-appearance:none;appearance:none;background:var(--border);cursor:pointer;outline:none;}
+.prop-range::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--teal);cursor:pointer;border:2px solid var(--white);box-shadow:0 1px 4px rgba(1,121,111,.3);}
+.prop-range::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--teal);border:2px solid var(--white);cursor:pointer;}
+.color-wrap{display:flex;align-items:center;gap:7px;padding:5px 9px;border:1.5px solid var(--border);border-radius:7px;background:var(--white);cursor:pointer;transition:border-color .15s;}
+.color-wrap:focus-within{border-color:var(--teal);}
+.color-swatch{width:20px;height:20px;border-radius:4px;border:1.5px solid rgba(0,0,0,.1);flex-shrink:0;}
+input[type="color"]{display:none;}
+.color-hex{font-size:.74rem;font-weight:600;font-family:monospace;color:var(--text);}
+.style-btns{display:flex;gap:4px;}
+.style-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:6px;background:var(--white);color:var(--text);font-family:Georgia,serif;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.style-btn:hover{border-color:var(--teal);color:var(--teal);}
+.style-btn.active{background:var(--teal);border-color:var(--teal);color:#fff;}
+
+/* Quick color palette */
+.palette{display:flex;gap:4px;flex-wrap:wrap;}
+.pal-dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:transform .15s,border-color .15s;flex-shrink:0;}
+.pal-dot:hover{transform:scale(1.18);}
+.pal-dot.active{border-color:var(--teal);transform:scale(1.22);}
+
+/* Elements list */
+.elem-panel{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;}
+.elem-header{padding:10px 13px;border-bottom:1.5px solid var(--border);font-size:.78rem;font-weight:700;color:var(--teal);display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--teal-xs);}
+.elem-count{background:var(--teal);color:#fff;font-size:.64rem;font-weight:700;padding:2px 7px;border-radius:10px;}
+.elem-list{padding:7px;display:flex;flex-direction:column;gap:4px;max-height:200px;overflow-y:auto;}
+.elem-empty{font-size:.74rem;color:var(--muted);text-align:center;padding:12px 0;}
+.elem-item{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:7px;border:1.5px solid var(--border);font-size:.72rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.elem-item:hover{border-color:var(--teal);background:var(--teal-xs);}
+.elem-item.selected{background:var(--teal-light);border-color:var(--teal);}
+.elem-ico{font-size:.9rem;width:20px;text-align:center;flex-shrink:0;}
+.elem-lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.elem-pg{font-size:.64rem;color:var(--muted);flex-shrink:0;}
+.elem-del{width:20px;height:20px;border:none;background:none;color:var(--muted);cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .15s;flex-shrink:0;}
+.elem-del:hover{background:var(--warn-light);color:var(--warn);}
+
+/* Download */
+.btn-download-main{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:9px;border:none;background:var(--teal);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:background .17s,transform .12s,box-shadow .17s;box-shadow:0 4px 16px rgba(1,121,111,.3);}
+.btn-download-main:hover{background:var(--teal-dark);transform:translateY(-1px);box-shadow:0 6px 22px rgba(1,121,111,.35);}
+.btn-download-main:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* Progress */
+.prog-wrap{display:none;width:100%;margin-top:8px;}
+.prog-wrap.show{display:block;}
+.prog-track{background:var(--border);border-radius:8px;height:5px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-mid));border-radius:8px;transition:width .25s ease;width:0%;}
+.prog-lbl{font-size:.7rem;color:var(--muted);margin-top:4px;text-align:center;}
+
+/* ══ VIEWER ══ */
+.viewer-area{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;}
+.viewer-toolbar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1.5px solid var(--border);flex-wrap:wrap;background:var(--teal-xs);}
+.viewer-filename{font-size:.8rem;font-weight:700;color:var(--teal);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.page-nav{display:flex;align-items:center;gap:5px;}
+.page-nav-btn{width:28px;height:28px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--text);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.page-nav-btn:hover:not(:disabled){border-color:var(--teal);color:var(--teal);background:var(--teal-xs);}
+.page-nav-btn:disabled{opacity:.4;cursor:not-allowed;}
+.page-info{font-size:.78rem;font-weight:600;color:var(--muted);white-space:nowrap;}
+.tb-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;border:1.5px solid var(--border);background:var(--white);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.74rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.tb-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-xs);}
+.tb-btn.danger:hover{border-color:var(--warn);color:var(--warn);background:var(--warn-light);}
+
+/* PDF canvas wrap */
+#pdfCanvasWrap{position:relative;overflow:auto;min-height:500px;background:#dde6e5;display:flex;align-items:flex-start;justify-content:center;padding:20px;}
+#pdfCanvas{display:block;box-shadow:0 6px 36px rgba(0,0,0,.2);cursor:default;max-width:100%;}
+#pdfCanvasWrap.tool-active{cursor:crosshair;}
+#pdfCanvasWrap.tool-active #pdfCanvas{cursor:crosshair;}
+
+/* Crosshair hint */
+.place-hint{display:none;position:absolute;top:10px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;padding:6px 14px;border-radius:20px;font-size:.74rem;font-weight:700;pointer-events:none;z-index:60;white-space:nowrap;box-shadow:0 3px 12px rgba(1,121,111,.3);}
+.place-hint.show{display:block;}
+
+/* ══ ELEMENT OVERLAYS ══ */
+.elem-overlay{position:absolute;cursor:move;user-select:none;touch-action:none;box-sizing:border-box;}
+.elem-overlay:hover .elem-controls,
+.elem-overlay.selected .elem-controls{opacity:1;}
+.elem-controls{position:absolute;top:-10px;right:-10px;display:flex;gap:3px;opacity:0;transition:opacity .15s;z-index:30;}
+.ctrl-btn{width:20px;height:20px;border-radius:50%;border:none;font-size:10px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.2);line-height:1;}
+.ctrl-del{background:var(--warn);color:#fff;}
+.ctrl-del:hover{background:#b93b3b;}
+.elem-resize{position:absolute;bottom:-7px;right:-7px;width:16px;height:16px;border-radius:3px;background:var(--teal);cursor:se-resize;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2);z-index:31;}
+
+/* Text overlay */
+.elem-overlay.type-text{border:1.5px dashed var(--teal);border-radius:3px;background:rgba(255,255,255,.01);}
+.elem-overlay.type-text.selected{border-color:var(--purple);border-width:2px;}
+.elem-overlay.type-text .inner-text{width:100%;height:100%;display:flex;align-items:center;padding:2px 4px;overflow:hidden;pointer-events:none;line-height:1.2;}
+
+/* Symbol overlay */
+.elem-overlay.type-symbol{border:1.5px dashed var(--teal);border-radius:3px;}
+.elem-overlay.type-symbol.selected{border-color:var(--purple);border-width:2px;}
+.elem-overlay.type-symbol .inner-sym{width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;font-weight:700;line-height:1;}
+
+/* SECTIONS */
+.section{margin-top:54px;}
+.sec-title{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:700;color:var(--teal);text-align:center;margin-bottom:5px;letter-spacing:-.2px;}
+.sec-sub{text-align:center;color:var(--muted);font-size:.83rem;margin-bottom:24px;}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;}
+.step-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:20px 15px;position:relative;overflow:hidden;}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);}
+.s-num{font-size:1.8rem;font-weight:700;color:var(--teal-light);line-height:1;margin-bottom:9px;}
+.step-card h3{font-size:.85rem;font-weight:700;margin-bottom:4px;}
+.step-card p{font-size:.78rem;color:var(--muted);line-height:1.55;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.feat{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:18px 16px;transition:box-shadow .2s,transform .2s;}
+.feat:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
+.feat-ico{width:36px;height:36px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.feat h3{font-size:.84rem;font-weight:700;margin-bottom:3px;}
+.feat p{font-size:.77rem;color:var(--muted);line-height:1.5;}
+.faq-list{display:flex;flex-direction:column;gap:6px;}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.faq-q{padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.85rem;user-select:none;gap:12px;transition:background .15s,color .15s;}
+.faq-q:hover{background:var(--teal-xs);}
+.faq-q.open{color:var(--teal);background:var(--teal-xs);}
+.faq-chev{flex-shrink:0;transition:transform .25s;color:var(--muted);}
+.faq-q.open .faq-chev{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:.81rem;color:var(--muted);line-height:1.65;padding:0 16px;}
+.faq-a.open{max-height:220px;padding:0 16px 14px;}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;}
+.tool-a{display:flex;align-items:center;gap:6px;background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;text-decoration:none;color:var(--text);font-size:.78rem;font-weight:600;transition:border-color .17s,background .15s,color .17s,transform .15s;}
+.tool-a:hover{border-color:var(--teal);background:var(--teal-xs);color:var(--teal);transform:translateY(-1px);}
+.tool-a svg{flex-shrink:0;color:var(--teal);}
+
+/* FOOTER */
+footer{background:var(--teal);color:rgba(255,255,255,.82);text-align:center;padding:24px 16px;font-size:.77rem;}
+footer a{color:rgba(255,255,255,.9);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+.f-note{margin-top:6px;opacity:.62;font-size:.71rem;}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--teal);color:#fff;padding:10px 18px;border-radius:8px;font-size:.84rem;font-weight:600;box-shadow:0 5px 20px rgba(1,121,111,.32);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:1100;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* text edit modal */
+.text-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:200;align-items:center;justify-content:center;}
+.text-modal-backdrop.show{display:flex;}
+.text-modal{background:var(--white);border-radius:var(--r);box-shadow:0 8px 40px rgba(0,0,0,.2);padding:22px;width:340px;max-width:95vw;}
+.text-modal h3{font-size:.92rem;font-weight:700;margin-bottom:12px;color:var(--teal);}
+.text-modal textarea{width:100%;min-height:80px;padding:9px 11px;border:1.5px solid var(--border);border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;resize:vertical;outline:none;color:var(--text);}
+.text-modal textarea:focus{border-color:var(--teal);}
+.modal-actions{display:flex;gap:8px;margin-top:12px;justify-content:flex-end;}
+.modal-btn{padding:8px 16px;border-radius:7px;border:1.5px solid var(--border);background:var(--white);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.modal-btn:hover{border-color:var(--teal);color:var(--teal);}
+.modal-btn.primary{background:var(--teal);border-color:var(--teal);color:#fff;}
+.modal-btn.primary:hover{background:var(--teal-dark);}
+
+@media(max-width:900px){#appLayout.visible{grid-template-columns:1fr;}.left-panel{position:static;display:grid;grid-template-columns:1fr 1fr;}.left-panel>:last-child,.left-panel>.btn-download-main,.left-panel>.prog-wrap{grid-column:1/-1;}}
+@media(max-width:560px){.left-panel{grid-template-columns:1fr;}.tool-grid{grid-template-columns:repeat(5,1fr);}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>Fill PDF Forms — <em>Free &amp; Online</em></h1>
+    <p>Add text, checkmarks, crosses, circles and other symbols to any PDF. Click to place, drag to position, customize styling — then download.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>✍️ Add text anywhere</span>
+      <span>✓ Tick &amp; cross symbols</span>
+      <span>⭕ Shapes &amp; markers</span>
+      <span>↔️ Drag &amp; resize</span>
+      <span>⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="25" height="25" fill="none" viewBox="0 0 25 25"><path d="M12.5 4v14M6.5 9l6-6 6 6" stroke="#01796f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 19h18" stroke="#01796f" stroke-width="2.1" stroke-linecap="round" opacity=".35"/></svg>
+    </div>
+    <h2>Drop your PDF here to fill it</h2>
+    <p>Upload any PDF form — add text, ticks, crosses, dates and more — download filled PDF</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v9M4 7l2.5 2.5L9 7M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF File
+    </button>
+    <input type="file" id="fileInput" accept=".pdf">
+  </div>
+
+  <!-- APP LAYOUT -->
+  <div id="appLayout">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+      <!-- TOOLS -->
+      <div class="tool-section">
+        <div class="tool-section-header">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="1.5" y="1.5" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 6.5h5M6.5 4v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Insert Element
+        </div>
+        <div class="tool-grid" id="toolGrid">
+          <!-- Text -->
+          <button class="tool-btn active" data-tool="text" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.95rem;font-weight:700;font-family:Georgia,serif;">T</span>
+            <span class="tool-label">Text</span>
+          </button>
+          <!-- Tick -->
+          <button class="tool-btn" data-tool="tick" onclick="setTool(this)">
+            <span class="tool-icon">✓</span>
+            <span class="tool-label">Tick</span>
+          </button>
+          <!-- Heavy tick -->
+          <button class="tool-btn" data-tool="heavytick" onclick="setTool(this)">
+            <span class="tool-icon">✔</span>
+            <span class="tool-label">Check</span>
+          </button>
+          <!-- Cross X -->
+          <button class="tool-btn" data-tool="cross" onclick="setTool(this)">
+            <span class="tool-icon">✕</span>
+            <span class="tool-label">Cross</span>
+          </button>
+          <!-- X bold -->
+          <button class="tool-btn" data-tool="xmark" onclick="setTool(this)">
+            <span class="tool-icon">✗</span>
+            <span class="tool-label">X Mark</span>
+          </button>
+          <!-- Circle -->
+          <button class="tool-btn" data-tool="circle" onclick="setTool(this)">
+            <span class="tool-icon">○</span>
+            <span class="tool-label">Circle</span>
+          </button>
+          <!-- Filled circle -->
+          <button class="tool-btn" data-tool="dot" onclick="setTool(this)">
+            <span class="tool-icon">●</span>
+            <span class="tool-label">Dot</span>
+          </button>
+          <!-- Rectangle -->
+          <button class="tool-btn" data-tool="rect" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.85rem;">▭</span>
+            <span class="tool-label">Box</span>
+          </button>
+          <!-- Filled rect -->
+          <button class="tool-btn" data-tool="fillrect" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.85rem;">▬</span>
+            <span class="tool-label">Fill Box</span>
+          </button>
+          <!-- Underline -->
+          <button class="tool-btn" data-tool="underline" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.9rem;text-decoration:underline;">U̲</span>
+            <span class="tool-label">Line</span>
+          </button>
+          <!-- Arrow right -->
+          <button class="tool-btn" data-tool="arrow" onclick="setTool(this)">
+            <span class="tool-icon">→</span>
+            <span class="tool-label">Arrow</span>
+          </button>
+          <!-- Star -->
+          <button class="tool-btn" data-tool="star" onclick="setTool(this)">
+            <span class="tool-icon">★</span>
+            <span class="tool-label">Star</span>
+          </button>
+          <!-- Date -->
+          <button class="tool-btn" data-tool="date" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.75rem;font-weight:700;">📅</span>
+            <span class="tool-label">Date</span>
+          </button>
+          <!-- N/A -->
+          <button class="tool-btn" data-tool="na" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.62rem;font-weight:700;">N/A</span>
+            <span class="tool-label">N/A</span>
+          </button>
+          <!-- Number -->
+          <button class="tool-btn" data-tool="number" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.75rem;font-weight:700;">#</span>
+            <span class="tool-label">Number</span>
+          </button>
+          <!-- Initial -->
+          <button class="tool-btn" data-tool="initial" onclick="setTool(this)">
+            <span class="tool-icon" style="font-size:.72rem;font-weight:700;">INI</span>
+            <span class="tool-label">Initial</span>
+          </button>
+        </div>
+
+        <!-- PROPERTIES -->
+        <div class="props-panel" id="propsPanel">
+
+          <!-- Text props (shown for text / date / na / number / initial) -->
+          <div id="textProps">
+            <div class="prop-row">
+              <div class="prop-field" style="flex:2;">
+                <label class="prop-label">Font Size <span class="prop-val" id="fszVal">14</span></label>
+                <input type="range" class="prop-range" id="propFontSize" min="6" max="72" value="14">
+              </div>
+              <div class="prop-field" style="flex:0 0 auto;">
+                <label class="prop-label">Style</label>
+                <div class="style-btns">
+                  <button class="style-btn" id="btnBold" title="Bold" onclick="toggleProp('bold')"><b>B</b></button>
+                  <button class="style-btn" id="btnItalic" title="Italic" onclick="toggleProp('italic')"><i>I</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Size (for symbols) -->
+          <div id="symbolProps" style="display:none;">
+            <div class="prop-row">
+              <div class="prop-field">
+                <label class="prop-label">Size <span class="prop-val" id="symSzVal">28</span></label>
+                <input type="range" class="prop-range" id="propSymSize" min="10" max="120" value="28">
+              </div>
+            </div>
+          </div>
+
+          <!-- Color (all) -->
+          <div class="prop-row">
+            <div class="prop-field" style="flex:0 0 auto;">
+              <label class="prop-label">Color</label>
+              <div class="color-wrap" onclick="document.getElementById('propColorInput').click()">
+                <div class="color-swatch" id="colorSwatch" style="background:#1a1a1a;"></div>
+                <span class="color-hex" id="colorHex">#1A1A1A</span>
+                <input type="color" id="propColorInput" value="#1a1a1a">
+              </div>
+            </div>
+            <div class="prop-field">
+              <label class="prop-label">Quick Colors</label>
+              <div class="palette">
+                <div class="pal-dot active" style="background:#1a1a1a" data-color="#1a1a1a" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#01796f" data-color="#01796f" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#1a3de8" data-color="#1a3de8" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#c0392b" data-color="#c0392b" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#e67e22" data-color="#e67e22" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#8e44ad" data-color="#8e44ad" onclick="setPalColor(this)"></div>
+                <div class="pal-dot" style="background:#888888" data-color="#888888" onclick="setPalColor(this)"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ELEMENTS LIST -->
+      <div class="elem-panel">
+        <div class="elem-header">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg>
+            Elements
+          </span>
+          <span class="elem-count" id="elemCount">0</span>
+        </div>
+        <div class="elem-list" id="elemList">
+          <div class="elem-empty" id="elemEmpty">No elements added yet</div>
+        </div>
+      </div>
+
+      <!-- DOWNLOAD -->
+      <button class="btn-download-main" id="btnDownload" onclick="downloadFilledPDF()" disabled>
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M7.5 1v10M5 8l2.5 2.5L10 8M1 13h13" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Filled PDF
+      </button>
+      <div class="prog-wrap" id="progressWrap">
+        <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+        <div class="prog-lbl" id="progressLabel">Processing…</div>
+      </div>
+
+    </div><!-- /left-panel -->
+
+    <!-- RIGHT: PDF VIEWER -->
+    <div class="viewer-area">
+      <div class="viewer-toolbar">
+        <div class="viewer-filename" id="viewerFilename">—</div>
+        <div class="page-nav">
+          <button class="page-nav-btn" id="btnPrev" onclick="goPage(-1)" disabled>&#8249;</button>
+          <span class="page-info" id="pageInfo">1 / 1</span>
+          <button class="page-nav-btn" id="btnNext" onclick="goPage(1)" disabled>&#8250;</button>
+        </div>
+        <button class="tb-btn" onclick="setZoom(-0.2)">
+          <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><circle cx="4.5" cy="4.5" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 7.5l2.5 2.5M2.5 4.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          −
+        </button>
+        <span class="page-info" id="zoomLabel">100%</span>
+        <button class="tb-btn" onclick="setZoom(0.2)">
+          <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><circle cx="4.5" cy="4.5" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 7.5l2.5 2.5M2.5 4.5h4M4.5 2.5v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          +
+        </button>
+        <button class="tb-btn danger" onclick="confirmNewPDF()">
+          <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          New PDF
+        </button>
+      </div>
+      <div id="pdfCanvasWrap">
+        <div class="place-hint" id="placeHint">Click anywhere on the page to place element</div>
+        <canvas id="pdfCanvas"></canvas>
+      </div>
+    </div>
+
+  </div><!-- /appLayout -->
+
+  <!-- TEXT EDIT MODAL -->
+  <div class="text-modal-backdrop" id="textModalBackdrop">
+    <div class="text-modal">
+      <h3 id="textModalTitle">Enter Text</h3>
+      <textarea id="textModalInput" placeholder="Type here…" rows="3"></textarea>
+      <div class="modal-actions">
+        <button class="modal-btn" onclick="closeTextModal(false)">Cancel</button>
+        <button class="modal-btn primary" onclick="closeTextModal(true)">Add to PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO -->
+  <section class="section">
+    <h2 class="sec-title">How to Fill a PDF Form Online for Free</h2>
+    <p class="sec-sub">Four steps. No account needed. 100% free.</p>
+    <div class="steps">
+      <div class="step-card"><div class="s-num">01</div><h3>Upload Your PDF</h3><p>Drag and drop your PDF form onto the upload area or click <strong>Select PDF File</strong>. The PDF opens at full size, ready to fill.</p></div>
+      <div class="step-card"><div class="s-num">02</div><h3>Select a Tool</h3><p>Choose from the toolbar: <strong>Text</strong> to type custom content, or pick a symbol like ✓ Tick, ✕ Cross, ○ Circle, ★ Star, date, and more.</p></div>
+      <div class="step-card"><div class="s-num">03</div><h3>Click to Place &amp; Adjust</h3><p>Click anywhere on the PDF to place your element. Drag it to the exact position. Use the resize handle to scale. Delete with the × button.</p></div>
+      <div class="step-card"><div class="s-num">04</div><h3>Download Filled PDF</h3><p>Click <strong>Download Filled PDF</strong>. All your text and symbols are permanently embedded — clean, full quality, ready to send or print.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="sec-title">Everything You Need to Fill a PDF Form</h2>
+    <p class="sec-sub">The most complete free online PDF form filler.</p>
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#01796f" stroke-width="1.6"/><path d="M6 14l3-7 3 7M7 11h4" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg></div><h3>Add Text Anywhere</h3><p>Click any blank field or area to type. Change font size, bold, italic and color to match the existing form text perfectly.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 11l4 4 8-8" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Tick &amp; Cross Symbols</h3><p>Multiple checkmark styles (✓ ✔) and cross styles (✕ ✗) let you tick boxes and mark fields exactly like a physical form.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" stroke="#01796f" stroke-width="1.7"/></svg></div><h3>Shapes &amp; Markers</h3><p>Circle, dot, box, filled box, underline and arrow tools let you highlight, mark, and annotate any part of the form.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="#01796f" stroke-width="1.6"/><path d="M7 5V4a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#01796f" stroke-width="1.5"/></svg></div><h3>Drag to Reposition</h3><p>Every element you place can be dragged to any position on the page. Resize with the bottom-right handle. Delete with ×.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2L2 6v7c0 5 3.2 9.3 8 10.5C14.8 20.3 18 16 18 11V6L10 2z" fill="#01796f"/></svg></div><h3>100% Private</h3><p>Your PDF never leaves your browser. All processing happens locally using pdf-lib and PDF.js — no server uploads, ever.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 9l4 4 8-8" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8" stroke="#01796f" stroke-width="1.4"/></svg></div><h3>Multi-Page Support</h3><p>Navigate to any page and fill fields throughout the entire document. All elements are embedded when you download.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything about filling PDF forms online for free.</p>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How do I fill a PDF form online without Adobe?<svg class="faq-chev" width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Upload your PDF, select the Text tool, then click on any field to add text. For checkboxes, use the Tick or Cross tools. All elements can be dragged and resized. Click Download Filled PDF when done.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I add a tick or checkmark to a PDF checkbox?<svg class="faq-chev" width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. Select the Tick (✓) or Check (✔) tool and click on the checkbox. You can change the color, resize the symbol, and drag it to align perfectly inside the box.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Does this work on flat (non-interactive) PDFs?<svg class="faq-chev" width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. This tool works on any PDF — flat scans, image-based PDFs, and interactive form PDFs. Elements are placed as overlays on top of the page.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Are my files uploaded to a server?<svg class="faq-chev" width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">No. Everything happens locally in your browser. Your PDF files are never uploaded to any server, making this safe for confidential documents.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I delete an element after placing it?<svg class="faq-chev" width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a">Yes. Click the × button on any placed element, or use the delete icon in the Elements list on the left. The original PDF is never modified until you click Download.</div></div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Form Filler · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ═══════════════════════════ STATE ═══════════════════════════ */
+let pdfBuffer=null, pdfJsDoc=null, totalPages=0, currentPage=1, currentZoom=1.0, pdfFileName='';
+let elements=[]; // {id, pageNum, type, content, x,y,w,h, fontSize, bold, italic, color}
+let elemIdCtr=0;
+let selectedElemId=null;
+let activeTool='text';
+let pendingTextPlacement=null; // {x,y} in PDF coords waiting for text modal
+
+// Props state
+const props={fontSize:14, bold:false, italic:false, color:'#1a1a1a', symSize:28};
+
+// Symbol definitions
+const SYMBOLS={
+  tick:{char:'✓',isText:false},
+  heavytick:{char:'✔',isText:false},
+  cross:{char:'✕',isText:false},
+  xmark:{char:'✗',isText:false},
+  circle:{char:'○',isText:false},
+  dot:{char:'●',isText:false},
+  rect:{char:'▭',isText:false},
+  fillrect:{char:'▬',isText:false},
+  underline:{char:'—',isText:false},
+  arrow:{char:'→',isText:false},
+  star:{char:'★',isText:false},
+  na:{char:'N/A',isText:true},
+  number:{char:'',isText:true,prompt:'Enter number:'},
+  initial:{char:'',isText:true,prompt:'Enter initials:'},
+  date:{char:'',isText:true,isDate:true},
+  text:{char:'',isText:true}
+};
+const TEXT_TOOLS=new Set(['text','na','number','initial','date']);
+const SYMBOL_TOOLS=new Set(['tick','heavytick','cross','xmark','circle','dot','rect','fillrect','underline','arrow','star']);
+
+/* ═══════════════════════════ FILE INPUT ═══════════════════════════ */
+const dropZone=document.getElementById('dropZone');
+const fileInput=document.getElementById('fileInput');
+dropZone.addEventListener('click',e=>{if(!e.target.closest('.browse-btn'))fileInput.click();});
+dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('drag-over');});
+dropZone.addEventListener('dragleave',e=>{if(!dropZone.contains(e.relatedTarget))dropZone.classList.remove('drag-over');});
+dropZone.addEventListener('drop',e=>{e.preventDefault();dropZone.classList.remove('drag-over');const f=[...e.dataTransfer.files].find(f=>f.type==='application/pdf');if(f)loadPDF(f);});
+fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadPDF(fileInput.files[0]);fileInput.value='';});
+
+async function loadPDF(file){
+  pdfBuffer=await file.arrayBuffer();
+  pdfFileName=file.name;
+  try{
+    pdfJsDoc=await pdfjsLib.getDocument({data:pdfBuffer.slice(0)}).promise;
+    totalPages=pdfJsDoc.numPages; currentPage=1; elements=[];
+    dropZone.style.display='none';
+    document.getElementById('appLayout').classList.add('visible');
+    document.getElementById('viewerFilename').textContent=pdfFileName;
+    updatePageNav();
+    await renderPage(currentPage);
+    renderElemList(); updateDownloadBtn();
+  }catch(e){showToast('Could not read PDF');console.error(e);}
+}
+
+/* ═══════════════════════════ RENDERER ═══════════════════════════ */
+async function renderPage(pn){
+  const page=await pdfJsDoc.getPage(pn);
+  const vp=page.getViewport({scale:currentZoom});
+  const cv=document.getElementById('pdfCanvas');
+  cv.width=vp.width; cv.height=vp.height;
+  await page.render({canvasContext:cv.getContext('2d'),viewport:vp}).promise;
+  positionOverlays();
+}
+
+function updatePageNav(){
+  document.getElementById('pageInfo').textContent=currentPage+' / '+totalPages;
+  document.getElementById('btnPrev').disabled=currentPage<=1;
+  document.getElementById('btnNext').disabled=currentPage>=totalPages;
+  document.getElementById('zoomLabel').textContent=Math.round(currentZoom*100)+'%';
+}
+async function goPage(d){const np=currentPage+d;if(np<1||np>totalPages)return;currentPage=np;updatePageNav();await renderPage(currentPage);}
+function setZoom(d){currentZoom=Math.min(3,Math.max(0.4,currentZoom+d));document.getElementById('zoomLabel').textContent=Math.round(currentZoom*100)+'%';renderPage(currentPage);}
+
+/* ═══════════════════════════ TOOL SELECTION ═══════════════════════════ */
+function setTool(btn){
+  activeTool=btn.dataset.tool;
+  document.querySelectorAll('.tool-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  // Show relevant props
+  const isText=TEXT_TOOLS.has(activeTool);
+  document.getElementById('textProps').style.display=isText?'':'none';
+  document.getElementById('symbolProps').style.display=(!isText)?'':'none';
+  // Update cursor
+  const wrap=document.getElementById('pdfCanvasWrap');
+  wrap.classList.add('tool-active');
+  document.getElementById('placeHint').classList.add('show');
+}
+
+// Init: show text props, hide symbol props
+document.getElementById('symbolProps').style.display='none';
+document.getElementById('pdfCanvasWrap').classList.add('tool-active');
+document.getElementById('placeHint').classList.add('show');
+
+/* ═══════════════════════════ PROPS ═══════════════════════════ */
+document.getElementById('propFontSize').addEventListener('input',function(){
+  props.fontSize=parseInt(this.value);
+  document.getElementById('fszVal').textContent=props.fontSize;
+  updateSelectedElemProp('fontSize',props.fontSize);
+});
+document.getElementById('propSymSize').addEventListener('input',function(){
+  props.symSize=parseInt(this.value);
+  document.getElementById('symSzVal').textContent=props.symSize;
+  updateSelectedElemProp('fontSize',props.symSize);
+});
+function toggleProp(p){
+  props[p]=!props[p];
+  document.getElementById(p==='bold'?'btnBold':'btnItalic').classList.toggle('active',props[p]);
+  updateSelectedElemProp(p,props[p]);
+}
+// Color
+document.getElementById('propColorInput').addEventListener('input',function(){
+  props.color=this.value;
+  document.getElementById('colorSwatch').style.background=this.value;
+  document.getElementById('colorHex').textContent=this.value.toUpperCase();
+  document.querySelectorAll('.pal-dot').forEach(d=>d.classList.toggle('active',d.dataset.color.toLowerCase()===this.value.toLowerCase()));
+  updateSelectedElemProp('color',props.color);
+});
+function setPalColor(dot){
+  props.color=dot.dataset.color;
+  document.getElementById('propColorInput').value=props.color;
+  document.getElementById('colorSwatch').style.background=props.color;
+  document.getElementById('colorHex').textContent=props.color.toUpperCase();
+  document.querySelectorAll('.pal-dot').forEach(d=>d.classList.remove('active'));
+  dot.classList.add('active');
+  updateSelectedElemProp('color',props.color);
+}
+function updateSelectedElemProp(key,val){
+  if(!selectedElemId)return;
+  const el=elements.find(e=>e.id===selectedElemId);
+  if(!el)return;
+  el[key]=val;
+  refreshOverlay(el);
+}
+
+/* ═══════════════════════════ CLICK TO PLACE ═══════════════════════════ */
+document.getElementById('pdfCanvasWrap').addEventListener('click',async function(e){
+  // Ignore clicks on overlays
+  if(e.target.closest('.elem-overlay'))return;
+  const cv=document.getElementById('pdfCanvas');
+  const cvRect=cv.getBoundingClientRect();
+  const cx=e.clientX-cvRect.left, cy=e.clientY-cvRect.top;
+  if(cx<0||cy<0||cx>cvRect.width||cy>cvRect.height)return;
+
+  const page=await pdfJsDoc.getPage(currentPage);
+  const {width:pW,height:pH}=page.getViewport({scale:1});
+  const scaleX=pW/cvRect.width, scaleY=pH/cvRect.height;
+  const pdfX=cx*scaleX, pdfY=(cvRect.height-cy)*scaleY; // PDF Y is bottom-up
+
+  const def=SYMBOLS[activeTool]||SYMBOLS.text;
+
+  if(activeTool==='text'||activeTool==='number'||activeTool==='initial'){
+    pendingTextPlacement={x:pdfX,y:pdfY};
+    document.getElementById('textModalTitle').textContent=
+      activeTool==='number'?'Enter Number':activeTool==='initial'?'Enter Initials':'Enter Text';
+    document.getElementById('textModalInput').value='';
+    document.getElementById('textModalBackdrop').classList.add('show');
+    setTimeout(()=>document.getElementById('textModalInput').focus(),50);
+    return;
+  }
+  if(activeTool==='date'){
+    const today=new Date();
+    const dateStr=today.toLocaleDateString('en-GB',{day:'2-digit',month:'2-digit',year:'numeric'});
+    placeElement({type:'text',content:dateStr,x:pdfX,y:pdfY,pW,pH});
+    return;
+  }
+  if(activeTool==='na'){
+    placeElement({type:'text',content:'N/A',x:pdfX,y:pdfY,pW,pH});
+    return;
+  }
+  if(SYMBOL_TOOLS.has(activeTool)){
+    placeElement({type:'symbol',content:def.char,x:pdfX,y:pdfY,pW,pH});
+    return;
+  }
+});
+
+// Text modal confirm
+function closeTextModal(confirm){
+  document.getElementById('textModalBackdrop').classList.remove('show');
+  if(!confirm||!pendingTextPlacement)return;
+  const txt=document.getElementById('textModalInput').value.trim();
+  if(!txt){showToast('Please enter some text');return;}
+  placeElement({type:'text',content:txt,...pendingTextPlacement,pW:null,pH:null,_deferred:true});
+  pendingTextPlacement=null;
+}
+document.getElementById('textModalInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();closeTextModal(true);}});
+document.getElementById('textModalBackdrop').addEventListener('click',e=>{if(e.target===e.currentTarget)closeTextModal(false);});
+
+async function placeElement({type,content,x,y,pW,pH,_deferred}){
+  if(_deferred){
+    const page=await pdfJsDoc.getPage(currentPage);
+    const vp=page.getViewport({scale:1});
+    pW=vp.width; pH=vp.height;
+  }
+  const isText=type==='text';
+  const fz=isText?props.fontSize:props.symSize;
+  const approxW=Math.max(30,content.length*(fz*0.6));
+  const approxH=fz*1.4;
+  const id=++elemIdCtr;
+  elements.push({
+    id, pageNum:currentPage, type, content,
+    x, y:y-(approxH*0.5), // center vertically on click
+    w:approxW, h:approxH,
+    fontSize:fz, bold:props.bold, italic:props.italic, color:props.color
+  });
+  positionOverlays();
+  renderElemList();
+  updateDownloadBtn();
+  selectElem(id);
+}
+
+/* ═══════════════════════════ OVERLAYS ═══════════════════════════ */
+function positionOverlays(){
+  const wrap=document.getElementById('pdfCanvasWrap');
+  const cv=document.getElementById('pdfCanvas');
+  wrap.querySelectorAll('.elem-overlay').forEach(o=>o.remove());
+
+  if(!pdfJsDoc)return;
+  pdfJsDoc.getPage(currentPage).then(page=>{
+    const {width:pW,height:pH}=page.getViewport({scale:1});
+    const cvRect=cv.getBoundingClientRect();
+    const wrapRect=wrap.getBoundingClientRect();
+    const scaleX=cvRect.width/pW;
+    const scaleY=cvRect.height/pH;
+    const offX=cvRect.left-wrapRect.left+wrap.scrollLeft;
+    const offY=cvRect.top-wrapRect.top+wrap.scrollTop;
+
+    elements.filter(el=>el.pageNum===currentPage).forEach(el=>{
+      const sx=el.x*scaleX+offX;
+      const sy=(pH-el.y-el.h)*scaleY+offY;
+      const sw=el.w*scaleX;
+      const sh=el.h*scaleY;
+
+      const div=document.createElement('div');
+      div.className='elem-overlay type-'+el.type;
+      div.dataset.id=el.id;
+      if(el.id===selectedElemId)div.classList.add('selected');
+      div.style.cssText=`left:${sx}px;top:${sy}px;width:${sw}px;height:${sh}px;`;
+
+      // Inner content
+      const inner=document.createElement('div');
+      inner.className=el.type==='text'?'inner-text':'inner-sym';
+      const fontStyle=`${el.italic?'italic ':''} ${el.bold?'bold ':''}${el.fontSize*(cvRect.width/pW)}px`;
+      inner.style.cssText=`font:${fontStyle} 'Plus Jakarta Sans',sans-serif;color:${el.color};`;
+      inner.textContent=el.content;
+      div.appendChild(inner);
+
+      // Controls
+      const ctrl=document.createElement('div');
+      ctrl.className='elem-controls';
+      const del=document.createElement('button');
+      del.className='ctrl-btn ctrl-del';del.innerHTML='×';del.title='Delete';
+      del.onclick=e=>{e.stopPropagation();removeElem(el.id);};
+      ctrl.appendChild(del);
+      div.appendChild(ctrl);
+
+      // Resize handle
+      const rz=document.createElement('div');
+      rz.className='elem-resize';
+      makeResizable(rz,div,el,pW,pH,cvRect,wrapRect,wrap,scaleX,scaleY);
+      div.appendChild(rz);
+
+      // Select on click
+      div.addEventListener('mousedown',e=>{
+        if(e.target===rz||e.target.classList.contains('ctrl-btn'))return;
+        e.stopPropagation();
+        selectElem(el.id);
+      });
+
+      makeDraggable(div,el,pW,pH,cvRect,wrapRect,wrap,scaleX,scaleY);
+      wrap.appendChild(div);
+    });
+  });
+}
+
+function refreshOverlay(el){
+  const div=document.querySelector(`.elem-overlay[data-id="${el.id}"]`);
+  if(!div)return;
+  const cv=document.getElementById('pdfCanvas');
+  const cvRect=cv.getBoundingClientRect();
+  pdfJsDoc.getPage(currentPage).then(page=>{
+    const {width:pW}=page.getViewport({scale:1});
+    const inner=div.querySelector('.inner-text,.inner-sym');
+    if(inner){
+      const fontStyle=`${el.italic?'italic ':''} ${el.bold?'bold ':''}${el.fontSize*(cvRect.width/pW)}px`;
+      inner.style.font=`${fontStyle} 'Plus Jakarta Sans',sans-serif`;
+      inner.style.color=el.color;
+      inner.textContent=el.content;
+    }
+  });
+}
+
+function selectElem(id){
+  selectedElemId=id;
+  document.querySelectorAll('.elem-overlay').forEach(o=>o.classList.toggle('selected',o.dataset.id==id));
+  document.querySelectorAll('.elem-item').forEach(i=>i.classList.toggle('selected',i.dataset.id==id));
+  // Load element props into panel
+  const el=elements.find(e=>e.id===id);
+  if(!el)return;
+  if(el.type==='text'){
+    document.getElementById('propFontSize').value=el.fontSize;
+    document.getElementById('fszVal').textContent=el.fontSize;
+    document.getElementById('btnBold').classList.toggle('active',el.bold);
+    document.getElementById('btnItalic').classList.toggle('active',el.italic);
+  } else {
+    document.getElementById('propSymSize').value=el.fontSize;
+    document.getElementById('symSzVal').textContent=el.fontSize;
+  }
+  document.getElementById('propColorInput').value=el.color;
+  document.getElementById('colorSwatch').style.background=el.color;
+  document.getElementById('colorHex').textContent=el.color.toUpperCase();
+}
+
+function makeDraggable(div,el,pW,pH,cvRect,wrapRect,wrap,scaleX,scaleY){
+  let sx,sy,ex,ey;
+  function start(e){
+    if(e.target.classList.contains('elem-resize')||e.target.classList.contains('ctrl-btn'))return;
+    e.preventDefault();
+    sx=e.touches?e.touches[0].clientX:e.clientX;
+    sy=e.touches?e.touches[0].clientY:e.clientY;
+    ex=el.x; ey=el.y;
+    document.addEventListener('mousemove',move);document.addEventListener('mouseup',end);
+    document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',end);
+  }
+  function move(e){
+    e.preventDefault();
+    const cx=e.touches?e.touches[0].clientX:e.clientX;
+    const cy=e.touches?e.touches[0].clientY:e.clientY;
+    el.x=ex+(cx-sx)/scaleX;
+    el.y=ey-(cy-sy)/scaleY;
+    const nx=el.x*scaleX+(cvRect.left-wrapRect.left+wrap.scrollLeft);
+    const ny=(pH-el.y-el.h)*scaleY+(cvRect.top-wrapRect.top+wrap.scrollTop);
+    div.style.left=nx+'px'; div.style.top=ny+'px';
+  }
+  function end(){
+    document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',end);
+    document.removeEventListener('touchmove',move);document.removeEventListener('touchend',end);
+  }
+  div.addEventListener('mousedown',start);
+  div.addEventListener('touchstart',start,{passive:false});
+}
+
+function makeResizable(handle,div,el,pW,pH,cvRect,wrapRect,wrap,scaleX,scaleY){
+  let sx,sy,sw,sh;
+  function start(e){
+    e.preventDefault();e.stopPropagation();
+    sx=e.touches?e.touches[0].clientX:e.clientX;
+    sy=e.touches?e.touches[0].clientY:e.clientY;
+    sw=el.w; sh=el.h;
+    document.addEventListener('mousemove',move);document.addEventListener('mouseup',end);
+    document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',end);
+  }
+  function move(e){
+    e.preventDefault();
+    const cx=e.touches?e.touches[0].clientX:e.clientX;
+    const cy=e.touches?e.touches[0].clientY:e.clientY;
+    el.w=Math.max(10,sw+(cx-sx)/scaleX);
+    el.h=Math.max(8,sh+(cy-sy)/scaleY);
+    div.style.width=el.w*scaleX+'px';
+    div.style.height=el.h*scaleY+'px';
+    // Update font size proportionally
+    const inner=div.querySelector('.inner-text,.inner-sym');
+    if(inner){
+      const fs=Math.round(el.h/1.4);
+      el.fontSize=fs;
+      inner.style.font=`${el.italic?'italic ':''} ${el.bold?'bold ':''}${fs*(cvRect.width/pW)}px 'Plus Jakarta Sans',sans-serif`;
+    }
+  }
+  function end(){
+    document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',end);
+    document.removeEventListener('touchmove',move);document.removeEventListener('touchend',end);
+  }
+  handle.addEventListener('mousedown',start);
+  handle.addEventListener('touchstart',start,{passive:false});
+}
+
+/* ═══════════════════════════ ELEM LIST ═══════════════════════════ */
+function renderElemList(){
+  const list=document.getElementById('elemList');
+  const empty=document.getElementById('elemEmpty');
+  list.querySelectorAll('.elem-item').forEach(i=>i.remove());
+  document.getElementById('elemCount').textContent=elements.length;
+  if(!elements.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  elements.forEach((el,i)=>{
+    const def=SYMBOLS[el.type]||SYMBOLS.text;
+    const ico=def&&def.char?def.char:'T';
+    const lbl=el.type==='text'?el.content.substring(0,18)+(el.content.length>18?'…':''):(def.char||el.type);
+    const item=document.createElement('div');
+    item.className='elem-item'+(el.id===selectedElemId?' selected':'');
+    item.dataset.id=el.id;
+    item.innerHTML=`<span class="elem-ico">${ico}</span><span class="elem-lbl">${escHtml(lbl)}</span><span class="elem-pg">P${el.pageNum}</span><button class="elem-del" title="Delete">×</button>`;
+    item.addEventListener('click',e=>{if(!e.target.classList.contains('elem-del')){selectElem(el.id);if(el.pageNum!==currentPage){currentPage=el.pageNum;updatePageNav();renderPage(currentPage);}}});
+    item.querySelector('.elem-del').onclick=e=>{e.stopPropagation();removeElem(el.id);};
+    list.appendChild(item);
+  });
+}
+
+function removeElem(id){
+  elements=elements.filter(e=>e.id!==id);
+  if(selectedElemId===id)selectedElemId=null;
+  positionOverlays();renderElemList();updateDownloadBtn();
+}
+function updateDownloadBtn(){document.getElementById('btnDownload').disabled=elements.length===0;}
+
+/* ═══════════════════════════ DOWNLOAD ═══════════════════════════ */
+async function downloadFilledPDF(){
+  if(!elements.length){showToast('Add at least one element');return;}
+  const btn=document.getElementById('btnDownload');
+  const wrap=document.getElementById('progressWrap');
+  const bar=document.getElementById('progressBar');
+  const lbl=document.getElementById('progressLabel');
+  btn.disabled=true;
+  wrap.classList.add('show');bar.style.width='0%';lbl.textContent='Loading PDF…';
+
+  try{
+    const {PDFDocument,rgb,StandardFonts}=PDFLib;
+    const pdfDoc=await PDFDocument.load(pdfBuffer,{ignoreEncryption:true});
+    const pages=pdfDoc.getPages();
+
+    // Embed fonts
+    const fonts={
+      regular:await pdfDoc.embedFont(StandardFonts.Helvetica),
+      bold:await pdfDoc.embedFont(StandardFonts.HelveticaBold),
+      italic:await pdfDoc.embedFont(StandardFonts.HelveticaOblique),
+      boldItalic:await pdfDoc.embedFont(StandardFonts.HelveticaBoldOblique),
+    };
+
+    for(let i=0;i<elements.length;i++){
+      const el=elements[i];
+      bar.style.width=Math.round(((i+1)/elements.length)*90)+'%';
+      lbl.textContent=`Embedding element ${i+1} of ${elements.length}…`;
+
+      const page=pages[el.pageNum-1];
+      const hex=el.color.replace('#','');
+      const cr=parseInt(hex.substring(0,2),16)/255;
+      const cg=parseInt(hex.substring(2,4),16)/255;
+      const cb=parseInt(hex.substring(4,6),16)/255;
+      const color=rgb(cr,cg,cb);
+
+      // Pick font
+      let font=fonts.regular;
+      if(el.bold&&el.italic)font=fonts.boldItalic;
+      else if(el.bold)font=fonts.bold;
+      else if(el.italic)font=fonts.italic;
+
+      const text=el.content;
+      const fz=el.fontSize;
+
+      // pdf-lib y: el.y is already in PDF-point space (bottom-up)
+      page.drawText(text,{
+        x:el.x, y:el.y,
+        size:fz, font, color,
+        lineHeight:fz*1.4,
+        maxWidth:el.w*1.5,
+      });
+    }
+
+    bar.style.width='97%';lbl.textContent='Saving PDF…';
+    const bytes=await pdfDoc.save();
+    bar.style.width='100%';lbl.textContent='✓ Done! Downloading…';
+    const base=pdfFileName.replace(/\.pdf$/i,'');
+    triggerDownload(bytes,base+'_filled.pdf');
+    showToast('Filled PDF downloaded!');
+    setTimeout(()=>{wrap.classList.remove('show');bar.style.width='0%';},3500);
+  }catch(e){
+    console.error(e);showToast('Download failed. Please try again.');wrap.classList.remove('show');
+  }
+  btn.disabled=elements.length===0;
+}
+
+/* ═══════════════════════════ UTIL ═══════════════════════════ */
+function triggerDownload(bytes,filename){
+  const blob=new Blob([bytes],{type:'application/pdf'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download=filename;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url),8000);
+}
+function confirmNewPDF(){
+  if(!confirm('Load a new PDF? All placed elements will be removed.'))return;
+  pdfBuffer=null;pdfJsDoc=null;totalPages=0;currentPage=1;elements=[];selectedElemId=null;
+  document.getElementById('appLayout').classList.remove('visible');
+  dropZone.style.display='';
+  document.getElementById('pdfCanvasWrap').querySelectorAll('.elem-overlay').forEach(o=>o.remove());
+  renderElemList();updateDownloadBtn();
+}
+function toggleFAQ(el){
+  const ans=el.nextElementSibling,isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
+  if(!isOpen){el.classList.add('open');ans.classList.add('open');}
+}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// Re-position on scroll/resize
+document.getElementById('pdfCanvasWrap').addEventListener('scroll',()=>positionOverlays());
+window.addEventListener('resize',()=>{if(pdfJsDoc)renderPage(currentPage);});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

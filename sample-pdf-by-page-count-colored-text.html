@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample PDF Files by Page Count – Text & Images | 1 to 1000 Pages | QwikPDF</title>
+<meta name="description" content="Download free sample PDF files by page count with colorful text. 1, 2, 5, 10, 20, 50, 100 or 1000 pages. Generated instantly in your browser.">
+<meta name="theme-color" content="#01796f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:#01796f;--teal-light:#eaf5f4;--teal-xs:#f3faf9;
+  --bg:#f7fafa;--white:#ffffff;--border:#d6eeec;
+  --text:#1c2b2a;--muted:#5f7775;
+  --r:12px;--sh:0 2px 14px rgba(1,121,111,.08);--sh2:0 6px 28px rgba(1,121,111,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+header{background:var(--teal);color:#fff;padding:36px 20px 44px;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0px,rgba(255,255,255,.02) 1px,transparent 1px,transparent 18px);pointer-events:none}
+.h-inner{max-width:700px;margin:0 auto;position:relative}
+header h1{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:800;letter-spacing:-.5px;line-height:1.18}
+header h1 span{opacity:.82;font-weight:500}
+header p{margin-top:10px;font-size:.94rem;opacity:.82;max-width:560px;margin-left:auto;margin-right:auto}
+
+.badge-new{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;margin-bottom:12px}
+
+.page-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:20px}
+.page-pill{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;text-decoration:none;color:#fff}
+.page-pill:hover{background:rgba(255,255,255,.28);transform:translateY(-1px)}
+
+main{max-width:1100px;margin:0 auto;padding:36px 16px 120px}
+
+.intro-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:34px}
+.intro-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--sh)}
+.intro-ico{width:36px;height:36px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.intro-card h3{font-size:.8rem;font-weight:700}
+.intro-card p{font-size:.73rem;color:var(--muted);margin-top:1px;line-height:1.45}
+
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.section-head h2{font-size:1.15rem;font-weight:800;color:var(--text)}
+.section-head p{font-size:.82rem;color:var(--muted)}
+.sh-line{flex:1;height:1.5px;background:var(--border)}
+
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:14px}
+
+.dl-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;transition:box-shadow .22s,transform .18s;animation:fadeUp .3s ease both}
+.dl-card:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.dl-card:nth-child(1){animation-delay:.04s}.dl-card:nth-child(2){animation-delay:.08s}
+.dl-card:nth-child(3){animation-delay:.12s}.dl-card:nth-child(4){animation-delay:.16s}
+.dl-card:nth-child(5){animation-delay:.20s}.dl-card:nth-child(6){animation-delay:.24s}
+.dl-card:nth-child(7){animation-delay:.28s}.dl-card:nth-child(8){animation-delay:.32s}
+
+.dl-card-top{height:4px}
+.dl-card-body{padding:18px 18px 14px;display:flex;align-items:flex-start;gap:14px}
+
+.page-badge{flex-shrink:0;width:72px;height:72px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.page-badge-num{font-size:1.55rem;font-weight:800;line-height:1;color:#fff}
+.page-badge-unit{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.82);letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
+
+.dl-card-info{flex:1;min-width:0}
+.dl-card-title{font-size:1rem;font-weight:800;color:var(--text);line-height:1.2}
+.dl-card-sub{font-size:.75rem;color:var(--muted);margin-top:3px;line-height:1.4}
+.dl-card-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.meta-chip{display:inline-flex;align-items:center;gap:4px;background:var(--teal-xs);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:.68rem;font-weight:600;color:var(--teal);font-family:'Courier New',monospace}
+
+/* color preview strip */
+.color-preview{padding:0 18px 12px;display:flex;gap:5px;align-items:center}
+.cp-swatch{height:18px;flex:1;border-radius:4px}
+.cp-label{font-size:.6rem;font-weight:700;color:var(--muted);white-space:nowrap}
+
+/* page stack bar */
+.page-stack{padding:0 18px 10px;display:flex;align-items:center;gap:6px}
+.ps-track{flex:1;height:6px;background:var(--border);border-radius:4px;overflow:hidden}
+.ps-fill{height:100%;border-radius:4px}
+.ps-count{font-size:.65rem;font-weight:700;color:var(--muted);white-space:nowrap}
+
+.dl-card-tags{display:flex;flex-wrap:wrap;gap:4px;padding:0 18px 14px}
+.tag{font-size:.64rem;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--teal-light);color:var(--teal);border:1px solid var(--border)}
+
+.dl-card-footer{border-top:1.5px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:10px;background:var(--teal-xs)}
+.dl-prog-track{flex:1;height:5px;background:var(--border);border-radius:4px;overflow:hidden;display:none}
+.dl-prog-fill{height:100%;border-radius:4px;width:0%;transition:width .3s ease}
+.dl-status{font-size:.72rem;font-weight:600;color:var(--muted);white-space:nowrap;display:none}
+
+.btn-dl{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 18px;border-radius:8px;border:none;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:filter .18s,transform .12s;white-space:nowrap;min-width:162px}
+.btn-dl:hover:not(:disabled){filter:brightness(1.1);transform:translateY(-1px)}
+.btn-dl:disabled{opacity:.6;cursor:not-allowed;transform:none;filter:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin-icon{animation:spin .8s linear infinite;transform-origin:50% 50%}
+
+.compare-section{margin-top:56px}
+.compare-table-wrap{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead{background:var(--teal);color:#fff}
+thead th{padding:12px 16px;font-size:.78rem;font-weight:700;text-align:left}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--teal-xs)}
+td{padding:11px 16px;font-size:.8rem;color:var(--text)}
+td:first-child{font-weight:700}
+.td-mono{font-family:'Courier New',monospace;font-size:.75rem;color:var(--muted)}
+
+.section{margin-top:56px}
+.sec-title{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:800;color:var(--teal);text-align:center;margin-bottom:5px}
+.sec-sub{text-align:center;color:var(--muted);font-size:.83rem;margin-bottom:24px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.feat{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:18px 16px;transition:box-shadow .2s,transform .2s}
+.feat:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
+.feat-ico{width:36px;height:36px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.feat h3{font-size:.84rem;font-weight:700;margin-bottom:3px}
+.feat p{font-size:.77rem;color:var(--muted);line-height:1.5}
+
+.faq-list{display:flex;flex-direction:column;gap:6px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden}
+.faq-q{padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.85rem;user-select:none;gap:12px;transition:background .15s,color .15s}
+.faq-q:hover{background:var(--teal-xs)}
+.faq-q.open{color:var(--teal);background:var(--teal-xs)}
+.faq-chev{flex-shrink:0;transition:transform .25s;color:var(--muted)}
+.faq-q.open .faq-chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:.81rem;color:var(--muted);line-height:1.65;padding:0 16px}
+.faq-a.open{max-height:300px;padding:0 16px 14px}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.tool-a{display:flex;align-items:center;gap:6px;background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;text-decoration:none;color:var(--text);font-size:.78rem;font-weight:600;transition:border-color .17s,background .15s,color .17s,transform .15s}
+.tool-a:hover{border-color:var(--teal);background:var(--teal-xs);color:var(--teal);transform:translateY(-1px)}
+.tool-a svg{flex-shrink:0;color:var(--teal)}
+
+footer{background:var(--teal);color:rgba(255,255,255,.82);text-align:center;padding:26px 16px;font-size:.79rem}
+footer a{color:rgba(255,255,255,.9);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.f-note{margin-top:6px;opacity:.62;font-size:.71rem}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--teal);color:#fff;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;box-shadow:0 5px 20px rgba(1,121,111,.3);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:1100;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:600px){.dl-grid{grid-template-columns:1fr}.intro-strip{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <div class="badge-new">
+      <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><circle cx="3" cy="3" r="2" fill="#ff6b6b"/><circle cx="9" cy="3" r="2" fill="#ffd93d"/><circle cx="6" cy="9" r="2" fill="#6bcb77"/></svg>
+      Colorful text — no images
+    </div>
+    <h1>Sample PDF Files<br><span>By Page Count — Color Text</span></h1>
+    <p>Download free test PDFs with an exact number of pages. Every page is packed with vibrant colored headings, tinted rows, highlight boxes and colored bullets. No images — pure color text. Generated in your browser.</p>
+    <div class="page-pills">
+      <a class="page-pill" href="#pg-1">1 Page</a>
+      <a class="page-pill" href="#pg-2">2 Pages</a>
+      <a class="page-pill" href="#pg-5">5 Pages</a>
+      <a class="page-pill" href="#pg-10">10 Pages</a>
+      <a class="page-pill" href="#pg-20">20 Pages</a>
+      <a class="page-pill" href="#pg-50">50 Pages</a>
+      <a class="page-pill" href="#pg-100">100 Pages</a>
+      <a class="page-pill" href="#pg-1000">1000 Pages</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="intro-strip">
+    <div class="intro-card">
+      <div class="intro-ico"><svg width="18" height="18" fill="none" viewBox="0 0 18 18"><rect x="3" y="2" width="12" height="15" rx="2" stroke="#01796f" stroke-width="1.5"/><path d="M6 6h6M6 9h6M6 12h4" stroke="#01796f" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      <div><h3>8 Page Counts</h3><p>1 to 1000 pages — every count you need for testing</p></div>
+    </div>
+    <div class="intro-card">
+      <div class="intro-ico"><svg width="18" height="18" fill="none" viewBox="0 0 18 18"><circle cx="5" cy="5" r="3" fill="#e74c3c" opacity=".7"/><circle cx="13" cy="5" r="3" fill="#3498db" opacity=".7"/><circle cx="9" cy="13" r="3" fill="#2ecc71" opacity=".7"/></svg></div>
+      <div><h3>Color Text</h3><p>Vibrant headings, highlights &amp; tinted sections per page</p></div>
+    </div>
+    <div class="intro-card">
+      <div class="intro-ico"><svg width="18" height="18" fill="none" viewBox="0 0 18 18"><rect x="2" y="3" width="10" height="13" rx="1.5" stroke="#01796f" stroke-width="1.3" opacity=".4"/><rect x="4" y="2" width="10" height="13" rx="1.5" stroke="#01796f" stroke-width="1.3" opacity=".6"/><rect x="6" y="1" width="10" height="13" rx="1.5" stroke="#01796f" stroke-width="1.5"/></svg></div>
+      <div><h3>Exact Page Count</h3><p>Each PDF has precisely the number of pages shown</p></div>
+    </div>
+    <div class="intro-card">
+      <div class="intro-ico"><svg width="18" height="18" fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" stroke="#01796f" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#01796f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><h3>Browser Generated</h3><p>Built instantly in your browser — no server needed</p></div>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <h2>Choose Your Page Count</h2>
+    <div class="sh-line"></div>
+    <p>Every page has rich color text — no images at all</p>
+  </div>
+
+  <div class="dl-grid" id="dlGrid"></div>
+
+  <div class="compare-section">
+    <div class="section-head" style="margin-bottom:14px;">
+      <h2>Page Count Comparison</h2><div class="sh-line"></div>
+    </div>
+    <div class="compare-table-wrap">
+      <table>
+        <thead><tr><th>File Name</th><th>Pages</th><th>Approx. Size</th><th>Content</th><th>Best For</th><th>Gen. Time</th></tr></thead>
+        <tbody id="compareTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="sec-title">Why Use Color Text PDFs by Page Count?</h2>
+    <p class="sec-sub">Test color rendering, pagination, and long-document workflows with exactly the right number of pages.</p>
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 6h12M4 10h8M4 14h10" stroke="#01796f" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Color Rendering Tests</h3><p>Verify PDF viewers correctly render colored headings, tinted backgrounds, and highlight boxes.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M2 10a8 8 0 1016 0A8 8 0 002 10z" stroke="#01796f" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Render Performance</h3><p>Benchmark how fast your viewer renders 100 or 1000 pages of rich color content.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="4" width="10" height="13" rx="1.5" stroke="#01796f" stroke-width="1.4" opacity=".35"/><rect x="6" y="2" width="10" height="13" rx="1.5" stroke="#01796f" stroke-width="1.6"/></svg></div><h3>Pagination Testing</h3><p>Test page navigation, scroll, TOC linking, and page count metadata fields accurately.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 4h12v12H4z" stroke="#01796f" stroke-width="1.6" stroke-linejoin="round" opacity=".35"/><path d="M7 10l2.5 2.5 4-4" stroke="#01796f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Upload Limit Testing</h3><p>Check whether your system accepts colored multi-page PDFs at specific page counts.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2L2 6v7c0 5 3.2 9.3 8 10.5C14.8 20.3 18 16 18 11V6L10 2z" fill="#01796f" opacity=".15" stroke="#01796f" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#01796f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Safe &amp; Private</h3><p>Generated entirely in your browser — no data sent to any server.</p></div>
+      <div class="feat"><div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M5 10h10M10 5l5 5-5 5" stroke="#01796f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Unique Per Page</h3><p>Each page cycles through different accent colors, section layouts, and highlight styles.</p></div>
+    </div>
+  </section>
+
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Sample PDFs by Page Count · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All PDF files are generated locally in your browser. No data is sent to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script>
+/* ══════════════════════════════════
+   PAGE DEFINITIONS
+══════════════════════════════════ */
+const PAGES = [
+  { id:'pg-1',    pages:1,    label:'1 Page',     color:'#0891b2', accent2:'#7c3aed', approxSize:'~18 KB',  barPct:1,   delay:'Instant', tags:['Single page','Viewer test','Color render'],     uses:'Color rendering test, single-page viewer compatibility', bestFor:'Quick tests'    },
+  { id:'pg-2',    pages:2,    label:'2 Pages',    color:'#059669', accent2:'#0891b2', approxSize:'~28 KB',  barPct:2,   delay:'Instant', tags:['Two pages','Cover + content','Color test'],     uses:'Cover + content, basic color pagination test',           bestFor:'Basic pagination'},
+  { id:'pg-5',    pages:5,    label:'5 Pages',    color:'#01796f', accent2:'#059669', approxSize:'~65 KB',  barPct:5,   delay:'Instant', tags:['Short doc','Upload test','Color sections'],      uses:'Short colorful document, upload form validation',        bestFor:'Short docs'     },
+  { id:'pg-10',   pages:10,   label:'10 Pages',   color:'#0d6fa8', accent2:'#059669', approxSize:'~125 KB', barPct:10,  delay:'Instant', tags:['Medium doc','Page nav','Scroll test'],          uses:'Medium document, page navigation and scroll testing',    bestFor:'Navigation'     },
+  { id:'pg-20',   pages:20,   label:'20 Pages',   color:'#7c3aed', accent2:'#0891b2', approxSize:'~245 KB', barPct:20,  delay:'~1s',     tags:['Report size','TOC test','Color perf'],          uses:'Report-size color document, TOC and viewer performance', bestFor:'Reports'        },
+  { id:'pg-50',   pages:50,   label:'50 Pages',   color:'#b45309', accent2:'#c0392b', approxSize:'~610 KB', barPct:46,  delay:'~2s',     tags:['Long doc','Render bench','Color stress'],       uses:'Long color document, rendering benchmark',               bestFor:'Long docs'      },
+  { id:'pg-100',  pages:100,  label:'100 Pages',  color:'#c0392b', accent2:'#b45309', approxSize:'~1.2 MB', barPct:70,  delay:'~4s',     tags:['Book length','Perf test','Color split'],        uses:'Book-length color document, performance testing',        bestFor:'Stress test'    },
+  { id:'pg-1000', pages:1000, label:'1000 Pages', color:'#374151', accent2:'#0891b2', approxSize:'~12 MB',  barPct:100, delay:'~30s',    tags:['Max stress','Chunk render','Large color doc'],  uses:'Maximum color stress test, large doc APIs',              bestFor:'Max stress'     },
+];
+
+/* ── secondary accent rotation ── */
+const ACCENT2_LIST = ['#7c3aed','#0891b2','#059669','#c0392b','#b45309','#01796f','#0d6fa8','#374151'];
+function getAccent2(idx){ return ACCENT2_LIST[idx % ACCENT2_LIST.length]; }
+
+/* ══════════════════════════════════
+   RENDER CARDS
+══════════════════════════════════ */
+PAGES.forEach((f, idx) => {
+  // Build 4 color swatches for preview
+  const a2 = f.accent2;
+  const swatches = [f.color, a2, f.color+'99', a2+'77'].map(c =>
+    `<div class="cp-swatch" style="background:${c};"></div>`).join('');
+
+  const card = document.createElement('div');
+  card.className = 'dl-card'; card.id = f.id;
+  card.innerHTML = `
+    <div class="dl-card-top" style="background:${f.color};"></div>
+    <div class="dl-card-body">
+      <div class="page-badge" style="background:${f.color};">
+        <span class="page-badge-num">${f.pages >= 1000 ? '1K' : f.pages}</span>
+        <span class="page-badge-unit">${f.pages === 1 ? 'page' : 'pages'}</span>
+      </div>
+      <div class="dl-card-info">
+        <div class="dl-card-title">${f.label} Color PDF</div>
+        <div class="dl-card-sub">${f.uses}</div>
+        <div class="dl-card-meta">
+          <span class="meta-chip">
+            <svg width="9" height="9" fill="none" viewBox="0 0 9 9"><rect x=".5" y=".5" width="8" height="8" rx="1.2" stroke="#01796f" stroke-width="1"/></svg>
+            ${f.pages} ${f.pages===1?'page':'pages'}
+          </span>
+          <span class="meta-chip">≈ ${f.approxSize}</span>
+        </div>
+      </div>
+    </div>
+    <div class="color-preview">
+      <span class="cp-label">Colors</span>
+      ${swatches}
+      <span class="cp-label">per page</span>
+    </div>
+    <div class="page-stack">
+      <span class="ps-count">${f.pages} pg</span>
+      <div class="ps-track"><div class="ps-fill" style="width:${f.barPct}%;background:${f.color};"></div></div>
+      <span class="ps-count">≈${f.approxSize}</span>
+    </div>
+    <div class="dl-card-tags">
+      ${f.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
+      <span class="tag" style="background:#fef9c3;color:#854d0e;border-color:#fde68a;">🎨 Color Text</span>
+    </div>
+    <div class="dl-card-footer">
+      <button class="btn-dl" id="btn-${f.id}" style="background:${f.color};" onclick="downloadPDF('${f.id}')">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 12h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download ${f.label}
+      </button>
+      <div class="dl-prog-track" id="prog-track-${f.id}">
+        <div class="dl-prog-fill" id="prog-fill-${f.id}" style="background:${f.color};"></div>
+      </div>
+      <span class="dl-status" id="dl-status-${f.id}"></span>
+    </div>`;
+  document.getElementById('dlGrid').appendChild(card);
+
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>sample-${f.pages}page${f.pages===1?'':'s'}-color.pdf</td>
+    <td class="td-mono">${f.pages.toLocaleString()}</td>
+    <td class="td-mono">${f.approxSize}</td>
+    <td>Color text, no images</td>
+    <td>${f.bestFor}</td>
+    <td style="font-size:.72rem;font-weight:600;color:${f.color};">${f.delay}</td>`;
+  document.getElementById('compareTableBody').appendChild(tr);
+});
+
+/* ══════════════════════════════════
+   PDF GENERATION
+══════════════════════════════════ */
+const generating = {};
+
+async function downloadPDF(id) {
+  if(generating[id]) return;
+  const f = PAGES.find(x => x.id === id); if(!f) return;
+  generating[id] = true;
+
+  const btn   = document.getElementById('btn-'+id);
+  const track = document.getElementById('prog-track-'+id);
+  const fill  = document.getElementById('prog-fill-'+id);
+  const stat  = document.getElementById('dl-status-'+id);
+
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,.35)" stroke-width="2"/><path d="M7 2a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin-icon"/></svg> Generating…`;
+  track.style.display = 'block'; stat.style.display = 'block';
+  stat.textContent = 'Starting…'; fill.style.width = '3%';
+
+  try {
+    await tick();
+    const bytes = await generatePDF(f, (pct, msg) => {
+      fill.style.width = pct + '%';
+      stat.textContent = msg;
+    });
+    fill.style.width = '100%'; stat.textContent = '✓ Ready!';
+    const filename = `sample-${f.pages}page${f.pages===1?'':'s'}-color.pdf`;
+    triggerDownload(bytes, filename);
+    showToast(`${f.label} color PDF downloaded!`);
+    setTimeout(() => {
+      track.style.display = 'none'; stat.style.display = 'none'; fill.style.width = '0%';
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 12h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download ${f.label}`;
+    }, 1800);
+  } catch(e) {
+    console.error(e); showToast('Generation failed. Try again.');
+    track.style.display = 'none'; stat.style.display = 'none'; btn.disabled = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 12h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download ${f.label}`;
+  }
+  generating[id] = false;
+}
+
+/* ── colour helpers ── */
+function h(hex){
+  const {rgb} = PDFLib, s = hex.replace('#','');
+  return rgb(parseInt(s.slice(0,2),16)/255, parseInt(s.slice(2,4),16)/255, parseInt(s.slice(4,6),16)/255);
+}
+function tint(hex, t=0.88){
+  const s=hex.replace('#','');
+  const r=parseInt(s.slice(0,2),16)/255, g=parseInt(s.slice(2,4),16)/255, b=parseInt(s.slice(4,6),16)/255;
+  return PDFLib.rgb(r+(1-r)*t, g+(1-g)*t, b+(1-b)*t);
+}
+
+/* ── text pools ── */
+const PARAS = [
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum et dolorum fuga.',
+  'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+  'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor amet.',
+  'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique.',
+  'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum dolorem eum fugiat quo voluptas nulla pariatur? Temporibus autem quibusdam aut officiis debitis rerum.',
+  'Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nam libero tempore cum soluta nobis eligendi optio nihil.',
+  'Temporibus autem quibusdam et aut officiis debitis rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae non recusandae. Itaque earum rerum hic tenetur sapiente delectus eligendi.',
+];
+const SEC_TITLES = [
+  'Introduction & Overview','Background & Context','Methodology & Approach',
+  'Key Findings','Detailed Analysis','Discussion','Results & Outcomes',
+  'Recommendations','Technical Appendix','References & Notes',
+  'Executive Summary','Scope & Objectives','Data & Evidence',
+  'Risk Assessment','Implementation Plan','Conclusion & Next Steps',
+];
+const BULLETS = [
+  ['Verify color rendering accuracy across all platforms','Test pagination and colored heading display','Check tinted background sections render correctly'],
+  ['Benchmark multi-page scroll speed with color content','Validate consistent color-coding across all pages','Verify footer and header colors are stable throughout'],
+  ['Test document splitting preserving color on each page','Verify export and conversion accuracy with color','Check print layout color consistency across the count'],
+];
+const CALLOUTS = [
+  'This section contains color-coded content for testing PDF rendering pipelines and viewer compatibility.',
+  'Color-coded highlights like this box are used to verify tinted background rendering in PDF viewers.',
+  'Key callout: colored rectangles and text are rendered purely using PDF vector operations — no images.',
+];
+
+async function generatePDF(f, onProgress) {
+  const {PDFDocument, StandardFonts, rgb} = PDFLib;
+  const WHT = rgb(1,1,1);
+  const BLK = rgb(0,0,0);
+  const DGRY = rgb(0.14,0.14,0.14);
+  const MGRY = rgb(0.38,0.38,0.38);
+  const LGRY = rgb(0.72,0.72,0.72);
+
+  const C1 = h(f.color);
+  const C2 = h(f.accent2);
+  const TIN1 = tint(f.color, 0.88);
+  const TIN2 = tint(f.accent2, 0.88);
+  const TIN3 = tint(f.color, 0.94);
+
+  const doc  = await PDFDocument.create();
+  const reg  = await doc.embedFont(StandardFonts.Helvetica);
+  const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const mono = await doc.embedFont(StandardFonts.Courier);
+
+  const totalPages = f.pages;
+  const CHUNK = 15;
+
+  onProgress(5, `Building ${totalPages} pages…`);
+  await tick();
+
+  /* word-wrap helper */
+  function wrapText(page, text, x, y, maxChars, size, font, color, lh){
+    const words = text.split(' '); let line = '', cy = y;
+    for(const w of words){
+      const t = line ? line+' '+w : w;
+      if(t.length > maxChars && line){ if(cy < 46) return cy; page.drawText(line,{x,y:cy,size,font,color}); cy -= lh; line = w; }
+      else line = t;
+    }
+    if(line && cy > 46){ page.drawText(line,{x,y:cy,size,font,color}); cy -= lh; }
+    return cy;
+  }
+
+  const PAGE_W = 595, PAGE_H = 842, M = 30;
+
+  for(let pg = 0; pg < totalPages; pg++){
+    if(pg % CHUNK === 0){
+      const pct = 5 + Math.round((pg / totalPages) * 87);
+      onProgress(pct, `Page ${pg+1} of ${totalPages}…`);
+      await tick();
+    }
+
+    const page = doc.addPage([PAGE_W, PAGE_H]);
+    const isFirst = pg === 0;
+
+    // Accent colours rotate every page for variety
+    const PC  = pg % 2 === 0 ? C1 : C2;    // primary on this page
+    const SC  = pg % 2 === 0 ? C2 : C1;    // secondary on this page
+    const PT  = pg % 2 === 0 ? TIN1 : TIN2;
+    const ST  = pg % 2 === 0 ? TIN2 : TIN1;
+
+    /* ── HEADER BAND ── */
+    page.drawRectangle({x:0, y:812, width:PAGE_W, height:30, color:PC});
+    // thin accent stripe
+    page.drawRectangle({x:0, y:808, width:PAGE_W, height:4, color:SC});
+    page.drawText(`${totalPages}-PAGE COLOR PDF  ·  Text Only`, {x:M, y:822, size:8.5, font:bold, color:WHT});
+    page.drawText(`Page ${pg+1} / ${totalPages}`, {x:494, y:822, size:8.5, font:reg, color:WHT});
+
+    let y = 795;
+
+    /* ── COVER BLOCK (page 1 only) ── */
+    if(isFirst){
+      page.drawRectangle({x:M, y:748, width:PAGE_W-M*2, height:47, color:PT});
+      page.drawRectangle({x:M, y:748, width:5, height:47, color:PC});
+      page.drawText('SAMPLE COLOR PDF DOCUMENT', {x:M+14, y:781, size:16, font:bold, color:PC});
+      page.drawText(`${totalPages} Page${totalPages===1?'':'s'}  ·  Color Text Only  ·  No Images  ·  QwikPDF`, {x:M+14, y:761, size:9.5, font:reg, color:MGRY});
+      y = 735;
+
+      // meta info strip
+      page.drawRectangle({x:0, y:y-2, width:PAGE_W, height:16, color:TIN3});
+      page.drawText('DOCUMENT INFORMATION', {x:M, y:y+3, size:8, font:bold, color:PC});
+      y -= 16;
+
+      const meta = [
+        ['Total Pages', `${totalPages} page${totalPages===1?'':'s'}`],
+        ['Content',     'Color text — no images, no embedded media'],
+        ['Format',      'PDF 1.7 (Portable Document Format)'],
+        ['Generated',   new Date().toUTCString()],
+        ['Purpose',     f.uses],
+      ];
+      meta.forEach(([k,v], i) => {
+        if(y < 560) return;
+        page.drawRectangle({x:0, y:y-12, width:PAGE_W, height:16, color: i%2===0?TIN3:rgb(1,1,1)});
+        page.drawText(k+':', {x:M+4, y:y, size:9, font:bold, color:PC});
+        page.drawText(v,     {x:M+110, y:y, size:9, font:mono, color:BLK});
+        y -= 16;
+      });
+
+      y -= 8;
+      page.drawRectangle({x:0, y:y, width:PAGE_W, height:2, color:SC});
+      y -= 16;
+    }
+
+    /* ── SECTION HEADING ── */
+    const secTitle = `Section ${pg+1}: ${SEC_TITLES[pg % SEC_TITLES.length]}`;
+    page.drawRectangle({x:0, y:y-11, width:PAGE_W, height:20, color:PT});
+    page.drawRectangle({x:0, y:y-11, width:6, height:20, color:PC});
+    page.drawText(secTitle, {x:14, y:y, size:11, font:bold, color:PC});
+    y -= 26;
+
+    /* ── PARAGRAPH 1 ── */
+    if(y > 130){
+      y = wrapText(page, PARAS[(pg*3)%PARAS.length], M, y, 88, 9.5, reg, DGRY, 15);
+      y -= 8;
+    }
+
+    /* ── COLORED CALLOUT BOX ── */
+    if(y > 160){
+      const calloutH = 30;
+      page.drawRectangle({x:M, y:y-calloutH+6, width:PAGE_W-M*2, height:calloutH, color:ST});
+      page.drawRectangle({x:M, y:y-calloutH+6, width:5, height:calloutH, color:SC});
+      page.drawText(CALLOUTS[pg % CALLOUTS.length], {x:M+14, y:y, size:8.5, font:bold, color:SC});
+      y -= calloutH + 10;
+    }
+
+    /* ── PARAGRAPH 2 ── */
+    if(y > 130){
+      y = wrapText(page, PARAS[(pg*3+1)%PARAS.length], M, y, 88, 9.5, reg, DGRY, 15);
+      y -= 8;
+    }
+
+    /* ── COLORED SUBSECTION HEADING ── */
+    if(y > 160){
+      page.drawText('Key Points:', {x:M, y:y, size:10, font:bold, color:SC});
+      y -= 16;
+
+      // colored bullets
+      const bullets = BULLETS[pg % BULLETS.length];
+      for(let b = 0; b < 3; b++){
+        if(y < 110) break;
+        page.drawRectangle({x:M, y:y-3, width:5, height:10, color:PC});
+        y = wrapText(page, bullets[b], M+12, y, 84, 9, reg, DGRY, 13);
+        y -= 5;
+      }
+      y -= 6;
+    }
+
+    /* ── PARAGRAPH 3 ── */
+    if(y > 130){
+      y = wrapText(page, PARAS[(pg*3+2)%PARAS.length], M, y, 88, 9, reg, MGRY, 14);
+      y -= 8;
+    }
+
+    /* ── SECOND CALLOUT (alternate color) ── */
+    if(y > 100){
+      const c2H = 22;
+      page.drawRectangle({x:M, y:y-c2H+6, width:PAGE_W-M*2, height:c2H, color:PT});
+      page.drawRectangle({x:M, y:y-c2H+6, width:4, height:c2H, color:PC});
+      page.drawText(`Page ${pg+1} of ${totalPages}  ·  ${f.label} Color PDF  ·  qwikpdf.com`, {x:M+12, y:y, size:8, font:reg, color:PC});
+      y -= c2H + 6;
+    }
+
+    /* ── STATS ROW ── */
+    if(y > 80){
+      const cols = [['Pages', `${totalPages}`], ['Format', 'PDF 1.7'], ['Color Mode', 'Full RGB'], ['Images', 'None']];
+      const colW = (PAGE_W - M*2) / cols.length;
+      cols.forEach(([k,v], i) => {
+        const cx = M + i * colW;
+        page.drawRectangle({x:cx, y:y-22, width:colW-4, height:26, color: i%2===0?TIN3:PT});
+        page.drawText(k+':', {x:cx+6, y:y, size:7.5, font:bold, color:PC});
+        page.drawText(v,     {x:cx+6, y:y-13, size:8, font:mono, color:BLK});
+      });
+    }
+
+    /* ── FOOTER BAND ── */
+    page.drawRectangle({x:0, y:0, width:PAGE_W, height:28, color:PC});
+    page.drawRectangle({x:0, y:28, width:PAGE_W, height:3, color:SC});
+    page.drawText('QwikPDF  ·  qwikpdf.com  ·  Color Text PDF  ·  No Images', {x:M, y:9, size:7.5, font:reg, color:rgb(1,1,1,0.72)});
+    page.drawText(`${pg+1} / ${totalPages}`, {x:553, y:9, size:8.5, font:bold, color:WHT});
+  }
+
+  onProgress(93, 'Serializing PDF…'); await tick();
+  const bytes = await doc.save();
+  onProgress(99, 'Done!'); await tick();
+  return bytes;
+}
+
+/* ══════════════════════════════════
+   UTILS
+══════════════════════════════════ */
+function tick(){ return new Promise(r => setTimeout(r, 0)); }
+function triggerDownload(bytes, filename){
+  const blob = new Blob([bytes], {type:'application/pdf'}), url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 15000);
+}
+function toggleFAQ(el){
+  const ans = el.nextElementSibling, isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if(!isOpen){ el.classList.add('open'); ans.classList.add('open'); }
+}
+function showToast(msg){
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+document.querySelectorAll('.page-pill').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+});
+</script>
+</body>
+</html>

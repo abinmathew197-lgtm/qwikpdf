@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free PDF Splitter – Split PDF into Separate Pages Online | QwikPDF</title>
+<meta name="description" content="Split PDF files into separate pages online for free. Upload multiple PDFs, preview every page, then download pages one by one or as a ZIP file. No uploads to any server, no watermarks.">
+<meta name="keywords" content="split pdf, pdf splitter, split pdf into pages, extract pdf pages, separate pdf pages online, split pdf free, pdf page extractor, download pdf pages, pdf to individual pages">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/pdf-splitter.html">
+
+<meta property="og:title" content="Free PDF Splitter – Split PDF into Separate Pages Online">
+<meta property="og:description" content="Upload PDFs, preview every page, then download pages individually or as a ZIP. Free, private, no watermarks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/pdf-splitter.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PDF Splitter – Split Pages Online">
+<meta name="twitter:description" content="Split any PDF into individual pages. Download one by one or as a ZIP. Free, browser-based, no uploads.">
+
+<meta name="theme-color" content="#01796f">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikPDF – Free PDF Splitter",
+  "url": "https://qwikpdf.com/pdf-splitter.html",
+  "description": "Split PDF files into individual pages online for free. Download pages one by one or as a ZIP archive. No file uploads, no watermarks, entirely browser-based.",
+  "applicationCategory": "DocumentEditor",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Split PDF into individual pages",
+    "Visual thumbnail preview of every page",
+    "Download pages one at a time",
+    "Download all pages as a ZIP file",
+    "Support for multiple PDFs at once",
+    "No watermarks",
+    "100% browser-based",
+    "Free forever"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Split a PDF into Separate Pages Online for Free",
+  "description": "Extract individual pages from any PDF using QwikPDF's free online PDF splitter.",
+  "step": [
+    { "@type": "HowToStep", "name": "Upload your PDF files", "text": "Drag and drop one or more PDF files onto the upload area, or click to browse. Every page loads as a visual thumbnail." },
+    { "@type": "HowToStep", "name": "Preview the pages", "text": "Review each page thumbnail to identify the exact pages you want. Pages are numbered and labeled with their source file name." },
+    { "@type": "HowToStep", "name": "Download your pages", "text": "Click Download on any individual page to save it as a single-page PDF, or click Download All as ZIP to get every page in one ZIP archive." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I split a PDF into separate pages online for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to QwikPDF's splitter. Every page appears as a thumbnail. Click the Download button on any page to save it as an individual PDF, or click Download All as ZIP to get all pages at once in a ZIP archive." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download all split pages as a ZIP file?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After uploading your PDF, click Download All as ZIP at the top of the page. All pages are packaged into a single ZIP file and downloaded to your device instantly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I extract just one specific page from a PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each page thumbnail has its own Download button. Click it to download only that specific page as a standalone single-page PDF file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my PDF files uploaded to a server when I split them?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. QwikPDF processes everything locally in your browser using JavaScript. Your PDF files never leave your device, ensuring complete privacy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I split multiple PDFs at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can upload several PDF files and all their pages will appear together as thumbnails. Download individual pages from any file, or download all pages from all files as a single ZIP." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:        #01796f;
+  --teal-dark:   #015f57;
+  --teal-mid:    #019d91;
+  --teal-light:  #eaf5f4;
+  --teal-xs:     #f3faf9;
+  --warn:        #dc4f4f;
+  --warn-light:  #fef2f2;
+  --purple:      #6c5ce7;
+  --purple-light:#f0eeff;
+  --green:       #00a86b;
+  --green-light: #e6f9f2;
+  --bg:          #f7fafa;
+  --white:       #ffffff;
+  --border:      #d6eeec;
+  --text:        #1c2b2a;
+  --muted:       #5f7775;
+  --r:           12px;
+  --sh:          0 2px 14px rgba(1,121,111,.08);
+  --sh2:         0 4px 24px rgba(1,121,111,.14);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--teal);
+  color: #fff;
+  padding: 32px 20px 36px;
+  text-align: center;
+}
+.h-inner { max-width: 680px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem, 3.8vw, 2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span {
+  background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500;
+}
+
+/* ── LAYOUT ── */
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 140px; }
+
+/* ── DROP ZONE ── */
+#dropZone {
+  background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r);
+  padding: 48px 24px; text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.005); }
+.dz-icon {
+  width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+}
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 18px; background: var(--teal); color: #fff; border: none;
+  padding: 11px 26px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s;
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* ── TOOLBAR ── */
+#toolbar {
+  display: none;
+  align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 16px 18px;
+  box-shadow: var(--sh); margin-top: 20px;
+}
+#toolbar.visible { display: flex; }
+
+.toolbar-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar-info { font-size: .875rem; font-weight: 600; }
+.toolbar-info span { color: var(--teal); }
+.toolbar-info em { font-style: normal; color: var(--muted); font-weight: 400; margin-left: 4px; font-size: .8rem; }
+
+.tb-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 15px; border-radius: 8px; border: 1.5px solid var(--border);
+  background: var(--white); color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 600;
+  cursor: pointer; transition: all .17s; white-space: nowrap;
+}
+.tb-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.tb-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.tb-btn-add { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
+.tb-btn-add:hover { background: var(--teal); color: white; }
+
+.toolbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* main action buttons */
+.btn-action {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border: none; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 700;
+  cursor: pointer; transition: background .17s, transform .12s, box-shadow .17s;
+  white-space: nowrap;
+}
+.btn-action:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+.btn-split-all {
+  background: var(--teal); color: #fff;
+  box-shadow: 0 3px 12px rgba(1,121,111,.28);
+}
+.btn-split-all:hover:not(:disabled) { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(1,121,111,.35); }
+
+.btn-zip {
+  background: var(--purple); color: #fff;
+  box-shadow: 0 3px 12px rgba(108,92,231,.25);
+}
+.btn-zip:hover:not(:disabled) { background: #5a4cd1; transform: translateY(-1px); box-shadow: 0 5px 18px rgba(108,92,231,.32); }
+
+/* ── PROGRESS ── */
+.prog-wrap { display: none; margin-top: 10px; width: 100%; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .25s ease; width: 0%; }
+.prog-lbl { font-size: .75rem; color: var(--muted); margin-top: 5px; text-align: center; }
+
+/* ── GROUP SEPARATOR ── */
+.file-group { margin-top: 22px; }
+.file-group-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px; padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--border);
+}
+.file-group-icon {
+  width: 32px; height: 32px; background: var(--teal-light); border-radius: 7px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.file-group-title { font-weight: 700; font-size: .9rem; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-group-meta { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+.btn-download-file {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 7px; border: none;
+  background: var(--purple); color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 700;
+  cursor: pointer; transition: background .15s, transform .12s;
+  flex-shrink: 0;
+}
+.btn-download-file:hover { background: #5a4cd1; transform: translateY(-1px); }
+
+/* ── PAGE GRID ── */
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 13px;
+}
+
+/* ── PAGE CARD ── */
+.page-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color .18s, box-shadow .18s, transform .15s;
+  box-shadow: var(--sh);
+  animation: fadeUp .22s ease both;
+  position: relative;
+}
+.page-card:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); transform: translateY(-2px); }
+.page-card.downloading { border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,168,107,.15); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* preview */
+.page-preview {
+  width: 100%; aspect-ratio: 3/4;
+  background: #f0f4f3;
+  position: relative; overflow: hidden; flex-shrink: 0;
+}
+.page-preview img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+}
+
+/* shimmer */
+@keyframes shimmer { 0%{ background-position:-200% 0 } 100%{ background-position:200% 0 } }
+.page-shimmer {
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, #eaf5f4 25%, #d4eeeb 50%, #eaf5f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* page number badge */
+.pg-num {
+  position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%);
+  background: rgba(1,80,73,.72); color: #fff;
+  font-size: .64rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px;
+  backdrop-filter: blur(4px); z-index: 3;
+  pointer-events: none; white-space: nowrap;
+}
+
+/* download-done check overlay */
+.done-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,168,107,.18);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .3s;
+  z-index: 4;
+}
+.page-card.downloading .done-overlay { opacity: 1; }
+
+/* action bar */
+.page-actions {
+  padding: 8px 8px 9px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 5px;
+}
+.btn-dl-page {
+  width: 100%; padding: 7px 4px; border: none; border-radius: 7px;
+  background: var(--teal); color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .75rem; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: background .15s, transform .12s;
+}
+.btn-dl-page:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-dl-page:active { transform: translateY(0); }
+.pg-label { font-size: .68rem; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
+
+/* ── HINT BANNER ── */
+.hint-banner {
+  display: none;
+  align-items: center; gap: 9px;
+  background: var(--teal-light); border: 1.5px dashed var(--teal);
+  border-radius: 9px; padding: 9px 16px; margin-top: 14px;
+  font-size: .78rem; font-weight: 600; color: var(--teal);
+}
+.hint-banner.visible { display: flex; }
+
+/* ── CONTENT SECTIONS ── */
+.section { margin-top: 60px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 13px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; transition: box-shadow .2s; }
+.feat:hover { box-shadow: var(--sh2); }
+.feat-ico { width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 11px; }
+.feat h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.feat p { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+
+.use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 13px; }
+.use { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; }
+.use h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.use p { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q {
+  padding: 15px 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: .875rem; user-select: none; gap: 12px;
+  transition: background .15s, color .15s;
+}
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px; }
+.faq-a.open { max-height: 240px; padding: 0 17px 15px; }
+
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 9px; }
+.tool-a {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 9px;
+  padding: 11px 13px; text-decoration: none; color: var(--text);
+  font-size: .80rem; font-weight: 600;
+  transition: border-color .17s, background .15s, color .17s;
+}
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* ── FOOTER ── */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 86px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--teal); color: #fff;
+  padding: 11px 20px; border-radius: 8px;
+  font-size: .86rem; font-weight: 600;
+  box-shadow: 0 5px 20px rgba(1,121,111,.32);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 1100; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── PWA ── */
+#pwaBtn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: var(--teal); color: #fff; border: none;
+  padding: 11px 18px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .82rem; font-weight: 700;
+  cursor: pointer; display: none; align-items: center; gap: 7px;
+  box-shadow: 0 4px 18px rgba(1,121,111,.38);
+  z-index: 999; transition: background .17s, transform .12s;
+  animation: floatUp .4s ease;
+}
+#pwaBtn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+@keyframes floatUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; }
+
+/* ── DIVIDER ── */
+#pageGroups { margin-top: 0; }
+
+@media (max-width: 520px) {
+  .page-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .toolbar-right { width: 100%; }
+  .btn-action { flex: 1; justify-content: center; }
+  #pwaBtn { bottom: 12px; right: 12px; padding: 10px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="h-inner">
+    <h1>PDF Splitter — <em>Free &amp; Online</em></h1>
+    <p>Split any PDF into separate pages. Download individually or as a ZIP archive.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>✨ No watermarks</span>
+      <span>📄 Download page by page</span>
+      <span>🗜 Download all as ZIP</span>
+      <span>⚡ Instant</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path d="M12 4v13M7 10l5-6 5 6" stroke="#01796f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="4" y="19" width="16" height="2.5" rx="1.25" fill="#01796f" opacity=".2"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF files here to split them</h2>
+    <p>Every page loads as a preview — download pages one by one or all at once as a ZIP</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF Files
+    </button>
+    <input type="file" id="fileInput" accept=".pdf" multiple>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div id="toolbar">
+    <div class="toolbar-left">
+      <div class="toolbar-info">
+        <span id="totalPagesLabel">0</span> pages
+        <em id="filesLabel"></em>
+      </div>
+      <button class="tb-btn tb-btn-add" onclick="document.getElementById('fileInput').click()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Add More PDFs
+      </button>
+      <button class="tb-btn danger" onclick="clearAll()">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Clear All
+      </button>
+    </div>
+    <div class="toolbar-right">
+      <button class="btn-action btn-split-all" id="btnSplitAll" onclick="downloadAllPages()">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <rect x="2" y="2" width="5" height="6.5" rx="1.2" fill="white" opacity=".3"/>
+          <rect x="9" y="2" width="5" height="4" rx="1.2" fill="white" opacity=".5"/>
+          <rect x="9" y="8" width="5" height="6" rx="1.2" fill="white"/>
+          <rect x="2" y="10.5" width="5" height="3.5" rx="1.2" fill="white" opacity=".6"/>
+        </svg>
+        Download All Pages
+      </button>
+      <button class="btn-action btn-zip" id="btnZip" onclick="downloadZip()">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <rect x="2" y="3" width="12" height="10" rx="2" stroke="white" stroke-width="1.6"/>
+          <path d="M8 6v5M5.5 8.5l2.5 2.5 2.5-2.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download All as ZIP
+      </button>
+    </div>
+    <!-- progress spans full width below buttons -->
+    <div class="prog-wrap" id="progressWrap" style="width:100%;">
+      <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+      <div class="prog-lbl" id="progressLabel">Processing…</div>
+    </div>
+  </div>
+
+  <!-- HINT BANNER -->
+  <div class="hint-banner" id="hintBanner">
+    <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+    Click <strong style="margin:0 3px;">Download</strong> on any page to save it individually, or use <strong style="margin:0 3px;">Download All as ZIP</strong> to get every page at once.
+  </div>
+
+  <!-- PAGE GROUPS -->
+  <div id="pageGroups"></div>
+
+  <!-- ═══ HOW TO ═══ -->
+  <section class="section">
+    <h2 class="sec-title">How to Split a PDF into Separate Pages</h2>
+    <p class="sec-sub">Three steps. No account. Completely free.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="s-num">01</div>
+        <h3>Upload Your PDF</h3>
+        <p>Drag and drop one or more PDF files, or click <strong>Select PDF Files</strong>. Every page from every file loads as a visual thumbnail so you can see exactly what you have.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">02</div>
+        <h3>Preview the Pages</h3>
+        <p>Browse each page thumbnail. Pages are clearly numbered and labeled with their source file name, so you always know where each page comes from.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">03</div>
+        <h3>Download Your Pages</h3>
+        <p>Click <strong>Download</strong> on any individual page to save it as a single-page PDF. Or click <strong>Download All as ZIP</strong> to package every page into one downloadable archive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="sec-title">Why Use QwikPDF to Split PDF Files?</h2>
+    <p class="sec-sub">The simplest way to extract individual pages from any PDF — for free.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="2" width="7" height="9" rx="1.5" fill="#01796f"/><rect x="11" y="2" width="7" height="5.5" rx="1.5" fill="#01796f" opacity=".5"/><rect x="11" y="9.5" width="7" height="8.5" rx="1.5" fill="#01796f" opacity=".75"/><rect x="2" y="13" width="7" height="5" rx="1.5" fill="#01796f" opacity=".35"/></svg>
+        </div>
+        <h3>Full Page Previews</h3>
+        <p>Every page renders as a real thumbnail before you download anything. See exactly what's on each page and identify the ones you need.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2v12M6 10l4 4 4-4" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 17h14" stroke="#01796f" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Download Any Page</h3>
+        <p>Each page has its own Download button. Click it to save just that page as a clean, standalone single-page PDF file instantly.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#01796f" stroke-width="1.7"/><path d="M7 10h6M10 7v6" stroke="#01796f" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Download All as ZIP</h3>
+        <p>Get every page in one click. The ZIP download packages all split pages into a neatly named archive you can extract and use immediately.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 1L2 5v6c0 5 3.2 9.3 8 10.5C14.8 20.3 18 16 18 11V5L10 1z" fill="#01796f"/></svg>
+        </div>
+        <h3>100% Private</h3>
+        <p>Your files never leave your browser. All splitting and extraction happens locally using JavaScript — no server involved, ever.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#01796f" stroke-width="1.7"/><path d="M7 10l2 2 4-4" stroke="#01796f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>No Watermarks</h3>
+        <p>Split pages are clean copies of the originals. No stamps, logos, or branding are ever added to your downloaded pages.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#01796f" stroke-width="1.6"/><path d="M6 17h8M10 16v1" stroke="#01796f" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Multiple PDFs at Once</h3>
+        <p>Upload several PDF files and all their pages appear together grouped by file. Split and download pages from any or all of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section">
+    <h2 class="sec-title">Common Uses for a PDF Splitter</h2>
+    <p class="sec-sub">Extract exactly the pages you need from any document.</p>
+    <div class="use-grid">
+      <div class="use"><h3>📄 Extract a Single Page</h3><p>Pull one specific page from a large PDF — a certificate, a receipt, or a signature page — without any extra tools.</p></div>
+      <div class="use"><h3>📑 Separate Invoice Pages</h3><p>Split a batch invoice PDF so each client's invoice is its own separate file, ready to send individually.</p></div>
+      <div class="use"><h3>🎓 Share Lecture Slides</h3><p>Split a lecture PDF into individual slides to share specific pages with students or embed in other documents.</p></div>
+      <div class="use"><h3>📋 Remove Confidential Pages</h3><p>Extract only the pages you want to share while keeping sensitive pages private — no manual redacting needed.</p></div>
+      <div class="use"><h3>📸 Separate Scanned Documents</h3><p>When multiple documents are scanned into one PDF, split them into individual files so each can be saved and filed correctly.</p></div>
+      <div class="use"><h3>🏥 Share Specific Records</h3><p>Extract a single test result or prescription page from a patient record PDF to share with a specific provider.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything about splitting PDF pages online for free.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          How do I split a PDF into separate pages online for free?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Upload your PDF using the button above. Every page appears as a numbered thumbnail. Click the <strong>Download</strong> button on any page to save it as an individual PDF, or click <strong>Download All as ZIP</strong> to get all pages at once.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I download all the split pages as one ZIP file?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. Click the purple <strong>Download All as ZIP</strong> button in the toolbar. The tool builds every page into a separate PDF, packages them all into a ZIP archive, and downloads it to your device in one step. Each file in the ZIP is named with the source file name and page number.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I extract just one specific page from a PDF?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. Each page thumbnail has its own individual <strong>Download</strong> button. Click it to save just that one page as a standalone single-page PDF. You can download as many individual pages as you need, in any order.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Are my PDF files uploaded to a server when splitting?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No. QwikPDF runs entirely in your browser. Your PDF files never leave your device and are never sent to any external server. This makes the tool safe for confidential, legal, medical, or personal documents.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I split multiple PDF files at the same time?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. Upload several PDFs at once and all their pages appear grouped by source file. Download individual pages from any file, or click <strong>Download All as ZIP</strong> to get every page from all uploaded PDFs in one archive.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Will the split pages lose any quality?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No quality is lost. Each page is copied directly from the source PDF using pdf-lib. Text sharpness, fonts, vector graphics, and images are preserved exactly as they appear in the original. No re-rendering or compression is applied.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Splitter · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<button id="pwaBtn" onclick="installPWA()">
+  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Install App
+</button>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<!-- JSZip for ZIP download -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// ── STATE ──
+// files = [{ uid, name, shortName, buffer, pageCount, pdfJsDoc, pages:[{thumb}] }]
+let sourceFiles = [];
+let deferredPrompt = null;
+
+// ── INPUT ──
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  loadFiles([...e.dataTransfer.files].filter(f => f.type === 'application/pdf'));
+});
+fileInput.addEventListener('change', () => { loadFiles([...fileInput.files]); fileInput.value = ''; });
+
+async function loadFiles(newFiles) {
+  for (const file of newFiles) {
+    if (file.type !== 'application/pdf') continue;
+    const uid = 'f' + Date.now() + '_' + Math.floor(Math.random() * 1e9);
+    const buffer = await file.arrayBuffer();
+    let pdfJsDoc;
+    try {
+      pdfJsDoc = await pdfjsLib.getDocument({ data: buffer.slice(0) }).promise;
+    } catch(e) { showToast('Could not read: ' + file.name); continue; }
+
+    const baseName = file.name.replace(/\.pdf$/i, '');
+    const pages = Array.from({ length: pdfJsDoc.numPages }, (_, i) => ({ thumb: null }));
+    sourceFiles.push({ uid, name: file.name, baseName, buffer, pageCount: pdfJsDoc.numPages, pdfJsDoc, pages });
+    renderGroups();
+    generateThumbs(uid);
+  }
+  updateUI();
+}
+
+async function generateThumbs(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    try {
+      const page = await src.pdfJsDoc.getPage(pi + 1);
+      const vp = page.getViewport({ scale: 1 });
+      const scale = 280 / vp.width;
+      const sv = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = sv.width; canvas.height = sv.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: sv }).promise;
+      src.pages[pi].thumb = canvas.toDataURL('image/jpeg', 0.82);
+      // Live update: find the card by data-uid + data-pi attribute selectors (safe with any uid format)
+      const card = document.querySelector(`.page-card[data-uid="${src.uid}"][data-pi="${pi}"]`);
+      if (card) {
+        const preview = card.querySelector('.page-preview');
+        if (preview) {
+          preview.innerHTML = `
+            <img class="pg-img" src="${src.pages[pi].thumb}" draggable="false" alt="Page ${pi+1} of ${src.name}">
+            <div class="pg-num">Page ${pi+1} of ${src.pageCount}</div>
+            <div class="done-overlay">
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#00a86b" opacity=".85"/><path d="M10 16l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>`;
+        }
+      }
+    } catch(e) { /* leave shimmer */ }
+  }
+}
+
+function renderGroups() {
+  const container = document.getElementById('pageGroups');
+  container.innerHTML = '';
+  let totalPages = 0;
+
+  sourceFiles.forEach(src => {
+    totalPages += src.pageCount;
+    const group = document.createElement('div');
+    group.className = 'file-group';
+
+    // Build header via innerHTML, then grab the grid div by class (not by ID with special chars)
+    group.innerHTML = `
+      <div class="file-group-header">
+        <div class="file-group-icon">
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M9 2H4a1.5 1.5 0 00-1.5 1.5v8A1.5 1.5 0 004 13h7a1.5 1.5 0 001.5-1.5V6L9 2z" stroke="#01796f" stroke-width="1.4"/><path d="M9 2v4h4" stroke="#01796f" stroke-width="1.4"/></svg>
+        </div>
+        <div class="file-group-title" title="${escHtml(src.name)}">${escHtml(src.name)}</div>
+        <div class="file-group-meta">${src.pageCount} page${src.pageCount !== 1 ? 's' : ''}</div>
+        <button class="btn-download-file" onclick="downloadFileZip('${src.uid}')" title="Download all pages from this file as ZIP">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="2" y="2" width="9" height="9" rx="1.5" stroke="white" stroke-width="1.4"/><path d="M6.5 4.5v3M5 6l1.5 1.5L8 6" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          ZIP this file
+        </button>
+        <button class="tb-btn danger" style="padding:5px 10px;font-size:.73rem;" onclick="removeFile('${src.uid}')">Remove</button>
+      </div>
+      <div class="page-grid"></div>`;
+
+    // Get the grid by class — avoids any ID/selector issues with special chars in uid
+    const grid = group.querySelector('.page-grid');
+    src.pages.forEach((pg, pi) => {
+      const card = document.createElement('div');
+      card.className = 'page-card';
+      card.dataset.uid = src.uid;
+      card.dataset.pi  = pi;
+      card.innerHTML = `
+        <div class="page-preview">
+          ${pg.thumb
+            ? `<img class="pg-img" src="${pg.thumb}" draggable="false" alt="Page ${pi+1} of ${src.name}"><div class="pg-num">Page ${pi+1} of ${src.pageCount}</div>`
+            : `<div class="page-shimmer pg-img" data-uid="${src.uid}" data-pi="${pi}"></div><div class="pg-num">Page ${pi+1} of ${src.pageCount}</div>`
+          }
+          <div class="done-overlay">
+            <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#00a86b" opacity=".85"/><path d="M10 16l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="page-actions">
+          <button class="btn-dl-page" onclick="downloadSinglePage('${src.uid}', ${pi})">
+            <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download Page ${pi+1}
+          </button>
+          <div class="pg-label" title="${escHtml(src.baseName)}">${escHtml(src.baseName)}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+
+    container.appendChild(group);
+  });
+
+  // update toolbar info
+  document.getElementById('totalPagesLabel').textContent = totalPages;
+  const fc = sourceFiles.length;
+  document.getElementById('filesLabel').textContent = fc > 0 ? `from ${fc} file${fc !== 1 ? 's' : ''}` : '';
+}
+
+function updateUI() {
+  const hasFiles = sourceFiles.length > 0;
+  document.getElementById('toolbar').classList.toggle('visible', hasFiles);
+  document.getElementById('hintBanner').classList.toggle('visible', hasFiles);
+}
+
+function removeFile(uid) {
+  sourceFiles = sourceFiles.filter(f => f.uid !== uid);
+  renderGroups();
+  updateUI();
+}
+
+function clearAll() {
+  sourceFiles = [];
+  document.getElementById('pageGroups').innerHTML = '';
+  updateUI();
+}
+
+// ── DOWNLOAD SINGLE PAGE ──
+async function downloadSinglePage(uid, pi) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+
+  const card = document.querySelector(`.page-card[data-uid="${uid}"][data-pi="${pi}"]`);
+  if (card) card.classList.add('downloading');
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const srcDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+    const outDoc = await PDFDocument.create();
+    const [page] = await outDoc.copyPages(srcDoc, [pi]);
+    outDoc.addPage(page);
+    const bytes = await outDoc.save();
+    triggerDownload(bytes, `${src.baseName}_page${pi+1}.pdf`);
+    showToast(`Page ${pi+1} downloaded!`);
+  } catch(e) {
+    console.error(e); showToast('Download failed. Please try again.');
+  }
+
+  setTimeout(() => { if (card) card.classList.remove('downloading'); }, 1800);
+}
+
+// ── DOWNLOAD ALL PAGES (one by one, sequential) ──
+async function downloadAllPages() {
+  if (!sourceFiles.length) return;
+  const btn = document.getElementById('btnSplitAll');
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  let total = sourceFiles.reduce((s, f) => s + f.pageCount, 0);
+  btn.disabled = true;
+  btn.innerHTML = spinnerHTML() + ' Downloading…';
+  wrap.classList.add('show'); bar.style.width = '0%';
+
+  try {
+    const { PDFDocument } = PDFLib;
+    let done = 0;
+
+    for (const src of sourceFiles) {
+      const srcDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+      for (let pi = 0; pi < src.pageCount; pi++) {
+        bar.style.width = Math.round((done / total) * 100) + '%';
+        lbl.textContent = `Downloading: ${src.baseName} — Page ${pi+1} of ${src.pageCount}`;
+
+        const card = document.querySelector(`.page-card[data-uid="${src.uid}"][data-pi="${pi}"]`);
+        if (card) card.classList.add('downloading');
+
+        const outDoc = await PDFDocument.create();
+        const [page] = await outDoc.copyPages(srcDoc, [pi]);
+        outDoc.addPage(page);
+        const bytes = await outDoc.save();
+        triggerDownload(bytes, `${src.baseName}_page${pi+1}.pdf`);
+
+        // Small delay so browser doesn't block multiple rapid downloads
+        await sleep(350);
+        if (card) card.classList.remove('downloading');
+        done++;
+      }
+    }
+
+    bar.style.width = '100%'; lbl.textContent = `✓ All ${total} pages downloaded!`;
+    showToast(`All ${total} pages downloaded!`);
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(e) {
+    console.error(e); showToast('Something went wrong. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="16" height="16" fill="none" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="6.5" rx="1.2" fill="white" opacity=".3"/><rect x="9" y="2" width="5" height="4" rx="1.2" fill="white" opacity=".5"/><rect x="9" y="8" width="5" height="6" rx="1.2" fill="white"/><rect x="2" y="10.5" width="5" height="3.5" rx="1.2" fill="white" opacity=".6"/></svg> Download All Pages`;
+}
+
+// ── DOWNLOAD ALL AS ZIP ──
+async function downloadZip() {
+  if (!sourceFiles.length) return;
+  const btn = document.getElementById('btnZip');
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  let total = sourceFiles.reduce((s, f) => s + f.pageCount, 0);
+  btn.disabled = true;
+  btn.innerHTML = spinnerHTML() + ' Building ZIP…';
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Starting…';
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const zip = new JSZip();
+    let done = 0;
+
+    for (const src of sourceFiles) {
+      const folder = zip.folder(src.baseName);
+      const srcDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+      for (let pi = 0; pi < src.pageCount; pi++) {
+        bar.style.width = Math.round((done / total) * 88) + '%';
+        lbl.textContent = `Preparing: ${src.baseName} — Page ${pi+1} of ${src.pageCount}`;
+
+        const outDoc = await PDFDocument.create();
+        const [page] = await outDoc.copyPages(srcDoc, [pi]);
+        outDoc.addPage(page);
+        const bytes = await outDoc.save();
+        const paddedNum = String(pi+1).padStart(String(src.pageCount).length, '0');
+        folder.file(`page_${paddedNum}.pdf`, bytes);
+        done++;
+      }
+    }
+
+    bar.style.width = '92%'; lbl.textContent = 'Compressing ZIP…';
+    const zipBlob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } }, meta => {
+      bar.style.width = Math.round(92 + meta.percent * 0.08) + '%';
+    });
+    const url = URL.createObjectURL(zipBlob);
+    const a = document.createElement('a'); a.href = url;
+    a.download = sourceFiles.length === 1 ? `${sourceFiles[0].baseName}_split.zip` : 'split_pages.zip';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    bar.style.width = '100%'; lbl.textContent = `✓ ZIP downloaded — ${total} pages inside!`;
+    showToast(`ZIP with ${total} pages downloaded!`);
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(e) {
+    console.error(e); showToast('ZIP creation failed. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="16" height="16" fill="none" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2" stroke="white" stroke-width="1.6"/><path d="M8 6v4M6 8l2 2 2-2" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Download All as ZIP`;
+}
+
+// ── DOWNLOAD ZIP FOR ONE FILE ──
+async function downloadFileZip(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  showToast('Building ZIP for ' + src.name + '…');
+  try {
+    const { PDFDocument } = PDFLib;
+    const zip = new JSZip();
+    const srcDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+    for (let pi = 0; pi < src.pageCount; pi++) {
+      const outDoc = await PDFDocument.create();
+      const [page] = await outDoc.copyPages(srcDoc, [pi]);
+      outDoc.addPage(page);
+      const bytes = await outDoc.save();
+      const paddedNum = String(pi+1).padStart(String(src.pageCount).length, '0');
+      zip.file(`${src.baseName}_page_${paddedNum}.pdf`, bytes);
+    }
+    const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = `${src.baseName}_split.zip`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    showToast(`ZIP for "${src.name}" downloaded!`);
+  } catch(e) { console.error(e); showToast('Failed. Please try again.'); }
+}
+
+// ── HELPERS ──
+function triggerDownload(bytes, filename) {
+  const blob = new Blob([bytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function spinnerHTML() {
+  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M8 2a6 6 0 016 6" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg>`;
+}
+
+function toggleFAQ(el) {
+  const ans = el.nextElementSibling, isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3600);
+}
+
+// ── PWA ──
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; document.getElementById('pwaBtn').style.display = 'flex'; });
+async function installPWA() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') { document.getElementById('pwaBtn').style.display = 'none'; showToast('App installed!'); }
+  deferredPrompt = null;
+}
+window.addEventListener('appinstalled', () => document.getElementById('pwaBtn').style.display = 'none');
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

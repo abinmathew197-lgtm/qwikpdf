@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free PDF Page Counter – Count Pages in PDF Online | QwikPDF</title>
+<meta name="description" content="Count the number of pages in any PDF file instantly. Upload one or multiple PDFs and get the exact page count for each. 100% browser-based, no uploads, free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── HEADER ── */
+header{background:var(--teal);color:#fff;padding:32px 20px 36px;text-align:center}
+.h-inner{max-width:680px;margin:0 auto}
+header h1{font-size:clamp(1.45rem,3.8vw,2.1rem);font-weight:700;letter-spacing:-.3px;line-height:1.22}
+header h1 em{font-style:normal;font-weight:400;opacity:.86}
+header p{margin-top:8px;font-size:.94rem;opacity:.8}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:16px}
+.badges span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 11px;font-size:.74rem;font-weight:500}
+
+/* ── MAIN ── */
+main{max-width:860px;margin:0 auto;padding:28px 16px 100px}
+
+/* ── DROP ZONE ── */
+#dropZone{background:var(--white);border:2px dashed var(--teal);border-radius:var(--r);padding:48px 24px;text-align:center;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;box-shadow:var(--sh)}
+#dropZone:hover{background:var(--teal-xs)}
+#dropZone.drag-over{background:var(--teal-light);border-color:var(--teal-mid);transform:scale(1.005)}
+.dz-icon{width:64px;height:64px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+#dropZone h2{font-size:1.1rem;font-weight:700;color:var(--teal)}
+#dropZone p{color:var(--muted);font-size:.85rem;margin-top:4px}
+.browse-btn{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:var(--teal);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .17s,transform .12s;box-shadow:0 3px 14px rgba(1,121,111,.3)}
+.browse-btn:hover{background:var(--teal-dark);transform:translateY(-1px)}
+#fileInput{display:none}
+
+/* ── ACTION BAR ── */
+#actionBar{display:none;margin-top:18px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:16px 20px;box-shadow:var(--sh)}
+#actionBar.visible{display:block}
+.ab-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ab-info{font-size:.84rem;color:var(--muted)}
+.ab-info strong{color:var(--teal);font-size:1rem}
+.ab-btns{display:flex;gap:8px;flex-wrap:wrap}
+.tb-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:8px;border:1.5px solid var(--border);background:var(--white);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .17s;white-space:nowrap}
+.tb-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-xs)}
+.tb-btn.danger:hover{border-color:var(--warn);color:var(--warn);background:var(--warn-light)}
+.btn-count{background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:0 2px 10px rgba(1,121,111,.25);font-size:.88rem;padding:10px 22px}
+.btn-count:hover{background:var(--teal-dark);border-color:var(--teal-dark);color:#fff}
+.btn-count:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
+
+/* ── RESULTS TABLE ── */
+#resultsWrap{display:none;margin-top:20px}
+#resultsWrap.visible{display:block}
+
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.results-title{font-size:.92rem;font-weight:700;color:var(--text)}
+.results-meta{font-size:.78rem;color:var(--muted)}
+
+/* Summary card */
+.summary-card{background:var(--teal);border-radius:var(--r);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:16px;box-shadow:0 4px 20px rgba(1,121,111,.25);animation:fadeUp .25s ease both}
+.sum-item{text-align:center}
+.sum-num{font-size:1.9rem;font-weight:700;color:#fff;line-height:1}
+.sum-lbl{font-size:.7rem;color:rgba(255,255,255,.75);font-weight:500;margin-top:3px;white-space:nowrap}
+.sum-divider{width:1px;height:40px;background:rgba(255,255,255,.2)}
+
+/* Table */
+.result-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1.5px solid var(--border);animation:fadeUp .3s ease both}
+.result-table thead th{background:var(--teal-light);padding:11px 16px;text-align:left;font-size:.76rem;font-weight:700;color:var(--teal);border-bottom:1.5px solid var(--border);white-space:nowrap}
+.result-table thead th:last-child{text-align:center}
+.result-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.result-table tbody tr:last-child{border-bottom:none}
+.result-table tbody tr:hover{background:var(--teal-xs)}
+.result-table tbody tr.error-row{background:var(--warn-light)}
+.result-table tbody tr.error-row:hover{background:#fde8e8}
+
+.td-icon{width:44px;padding:12px 8px 12px 16px;vertical-align:middle}
+.file-icon{width:32px;height:32px;background:var(--teal-light);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.file-icon.err{background:#fde8e8}
+
+.td-name{padding:12px 14px;vertical-align:middle}
+.td-name .fn{font-size:.85rem;font-weight:600;color:var(--text);word-break:break-word}
+.td-name .fs{font-size:.72rem;color:var(--muted);margin-top:2px}
+
+.td-pages{padding:12px 16px;text-align:center;vertical-align:middle;white-space:nowrap}
+.page-badge{display:inline-flex;align-items:center;gap:5px;background:var(--teal);color:#fff;border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:700;box-shadow:0 2px 8px rgba(1,121,111,.2)}
+.page-badge.error{background:var(--warn)}
+.page-badge.pending{background:var(--border);color:var(--muted)}
+.processing-row td{opacity:.6}
+
+/* pending shimmer */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.shimmer-badge{display:inline-block;width:70px;height:26px;border-radius:20px;background:linear-gradient(90deg,#d4eceb 25%,#b2dcda 50%,#d4eceb 75%);background-size:200% 100%;animation:shimmer 1.3s infinite;vertical-align:middle}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin .8s linear infinite;transform-origin:50% 50%}
+
+/* ── EXPORT ── */
+.export-row{display:flex;justify-content:flex-end;gap:8px;margin-top:10px;flex-wrap:wrap}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--teal);color:#fff;padding:11px 20px;border-radius:8px;font-size:.86rem;font-weight:600;box-shadow:0 5px 20px rgba(1,121,111,.32);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:1100;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── FOOTER ── */
+footer{background:var(--teal);color:rgba(255,255,255,.82);text-align:center;padding:26px 16px;font-size:.79rem}
+footer a{color:rgba(255,255,255,.9);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.f-note{margin-top:7px;opacity:.62;font-size:.73rem}
+
+@media(max-width:600px){
+  .summary-card{justify-content:center}
+  .sum-divider{display:none}
+  .result-table thead th:nth-child(2){display:none}
+  .result-table tbody td:nth-child(2){display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>PDF Page Counter — <em>Free &amp; Instant</em></h1>
+    <p>Upload one or more PDF files and instantly see the exact page count for each one.</p>
+    <div class="badges">
+      <span>🔒 Files stay on your device</span>
+      <span>📄 Multiple PDFs at once</span>
+      <span>⚡ Instant results</span>
+      <span>✅ No account needed</span>
+      <span>🌐 100% browser-based</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="30" height="30" fill="none" viewBox="0 0 30 30">
+        <path d="M10 22h10a4 4 0 004-4V10l-6-6H10a4 4 0 00-4 4v10a4 4 0 004 4z" stroke="#01796f" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M20 4v6h6" stroke="#01796f" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M15 11v7M12 15l3 3 3-3" stroke="#01796f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF files here</h2>
+    <p>Upload one or more PDF files — we'll count the pages in each one</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M7.5 1v10M4.5 8l3 3 3-3M1 13h13" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF Files
+    </button>
+    <input type="file" id="fileInput" accept=".pdf" multiple>
+  </div>
+
+  <!-- ACTION BAR -->
+  <div id="actionBar">
+    <div class="ab-inner">
+      <div class="ab-info">
+        <strong id="queueCount">0</strong> PDF file(s) ready to count
+      </div>
+      <div class="ab-btns">
+        <button class="tb-btn" onclick="document.getElementById('fileInput').click()">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Add More
+        </button>
+        <button class="tb-btn danger" onclick="clearAll()">
+          <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Clear All
+        </button>
+        <button class="tb-btn btn-count" id="btnCount" onclick="countPages()">
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M3 4h9M3 7.5h9M3 11h5" stroke="white" stroke-width="1.9" stroke-linecap="round"/></svg>
+          Count Page Numbers
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultsWrap">
+    <div class="summary-card" id="summaryCard">
+      <div class="sum-item">
+        <div class="sum-num" id="sumTotalPages">—</div>
+        <div class="sum-lbl">TOTAL PAGES</div>
+      </div>
+      <div class="sum-divider"></div>
+      <div class="sum-item">
+        <div class="sum-num" id="sumFiles">—</div>
+        <div class="sum-lbl">FILES COUNTED</div>
+      </div>
+      <div class="sum-divider"></div>
+      <div class="sum-item">
+        <div class="sum-num" id="sumAvg">—</div>
+        <div class="sum-lbl">AVG PAGES / FILE</div>
+      </div>
+      <div class="sum-divider"></div>
+      <div class="sum-item">
+        <div class="sum-num" id="sumMax">—</div>
+        <div class="sum-lbl">MOST PAGES (SINGLE)</div>
+      </div>
+    </div>
+
+    <div class="results-header">
+      <div class="results-title">Results</div>
+      <div class="results-meta" id="resultsTimestamp"></div>
+    </div>
+
+    <table class="result-table" id="resultTable">
+      <thead>
+        <tr>
+          <th style="width:44px"></th>
+          <th>File Name</th>
+          <th style="width:130px;text-align:center">File Size</th>
+          <th style="width:130px;text-align:center">Page Count</th>
+        </tr>
+      </thead>
+      <tbody id="resultBody"></tbody>
+    </table>
+
+    <div class="export-row">
+      <button class="tb-btn" onclick="copyResults()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><rect x="4" y="4" width="8" height="8" rx="1.3" stroke="currentColor" stroke-width="1.5"/><path d="M1 9V2.5A1.5 1.5 0 012.5 1H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Copy Results
+      </button>
+      <button class="tb-btn" onclick="downloadCSV()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Export CSV
+      </button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Page Counter · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ── STATE ── */
+let queuedFiles = []; // { file, uid }
+let results     = []; // { uid, name, size, pages, error }
+
+/* ── INPUT ── */
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  addFiles([...e.dataTransfer.files].filter(f => f.type === 'application/pdf'));
+});
+fileInput.addEventListener('change', () => { addFiles([...fileInput.files]); fileInput.value = ''; });
+
+function addFiles(files) {
+  let added = 0;
+  for (const file of files) {
+    if (file.type !== 'application/pdf') continue;
+    // Avoid duplicates by name+size
+    const exists = queuedFiles.some(q => q.file.name === file.name && q.file.size === file.size);
+    if (exists) continue;
+    queuedFiles.push({ file, uid: 'f' + Date.now() + '_' + Math.random().toString(36).slice(2) });
+    added++;
+  }
+  if (added === 0) { showToast('No new PDF files added.'); return; }
+  updateActionBar();
+  showToast(`${added} file${added > 1 ? 's' : ''} added — click "Count Page Numbers"`);
+}
+
+function updateActionBar() {
+  const bar = document.getElementById('actionBar');
+  bar.classList.toggle('visible', queuedFiles.length > 0);
+  document.getElementById('queueCount').textContent = queuedFiles.length;
+}
+
+/* ── COUNT ── */
+async function countPages() {
+  if (queuedFiles.length === 0) return;
+
+  const btn = document.getElementById('btnCount');
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,.35)" stroke-width="2"/><path d="M7 2a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg> Counting…`;
+
+  // Show results panel with shimmer rows immediately
+  results = queuedFiles.map(q => ({ uid: q.uid, name: q.file.name, size: q.file.size, pages: null, error: null }));
+  renderResultsTable(true);
+
+  let totalPages = 0;
+  let maxPages   = 0;
+  let errors     = 0;
+  const finalResults = [];
+
+  for (let i = 0; i < queuedFiles.length; i++) {
+    const { file, uid } = queuedFiles[i];
+    try {
+      const buf    = await file.arrayBuffer();
+      const doc    = await pdfjsLib.getDocument({ data: buf }).promise;
+      const pages  = doc.numPages;
+      doc.destroy();
+      totalPages += pages;
+      if (pages > maxPages) maxPages = pages;
+      finalResults.push({ uid, name: file.name, size: file.size, pages, error: null });
+    } catch(e) {
+      errors++;
+      finalResults.push({ uid, name: file.name, size: file.size, pages: null, error: 'Could not read file' });
+    }
+    // Update row immediately
+    results[i] = finalResults[i];
+    updateRow(finalResults[i]);
+  }
+
+  results = finalResults;
+
+  // Update summary
+  const counted = finalResults.filter(r => r.pages !== null).length;
+  document.getElementById('sumTotalPages').textContent = totalPages.toLocaleString();
+  document.getElementById('sumFiles').textContent      = counted;
+  document.getElementById('sumAvg').textContent        = counted > 0 ? Math.round(totalPages / counted) : '—';
+  document.getElementById('sumMax').textContent        = maxPages > 0 ? maxPages.toLocaleString() : '—';
+  document.getElementById('resultsTimestamp').textContent = `Counted at ${new Date().toLocaleTimeString()}`;
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M3 4h9M3 7.5h9M3 11h5" stroke="white" stroke-width="1.9" stroke-linecap="round"/></svg> Count Page Numbers`;
+
+  const msg = errors > 0
+    ? `Done! ${counted} counted, ${errors} failed.`
+    : `✓ Counted ${counted} file${counted !== 1 ? 's' : ''} — ${totalPages.toLocaleString()} pages total`;
+  showToast(msg);
+}
+
+/* ── TABLE RENDER ── */
+function renderResultsTable(shimmer = false) {
+  document.getElementById('resultsWrap').classList.add('visible');
+  const tbody = document.getElementById('resultBody');
+  tbody.innerHTML = '';
+
+  if (shimmer) {
+    // Reset summary
+    ['sumTotalPages','sumFiles','sumAvg','sumMax'].forEach(id => document.getElementById(id).textContent = '…');
+  }
+
+  results.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.dataset.uid = r.uid;
+    if (shimmer) tr.className = 'processing-row';
+
+    tr.innerHTML = `
+      <td class="td-icon">
+        <div class="file-icon">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M9.5 2H4.5A1.5 1.5 0 003 3.5v9A1.5 1.5 0 004.5 14h7A1.5 1.5 0 0013 12.5V5.5L9.5 2z" stroke="#01796f" stroke-width="1.4"/><path d="M9.5 2v3.5H13" stroke="#01796f" stroke-width="1.4"/></svg>
+        </div>
+      </td>
+      <td class="td-name">
+        <div class="fn">${escHtml(r.name)}</div>
+      </td>
+      <td style="text-align:center;padding:12px 14px;font-size:.82rem;color:var(--muted);vertical-align:middle">${formatSize(r.size)}</td>
+      <td class="td-pages">
+        ${shimmer ? '<div class="shimmer-badge"></div>' : renderBadge(r)}
+      </td>`;
+
+    tbody.appendChild(tr);
+  });
+}
+
+function updateRow(r) {
+  const tr = document.querySelector(`tr[data-uid="${r.uid}"]`);
+  if (!tr) return;
+  tr.className = r.error ? 'error-row' : '';
+  const badge = tr.querySelector('.td-pages');
+  if (badge) badge.innerHTML = renderBadge(r);
+  if (r.error) {
+    const icon = tr.querySelector('.file-icon');
+    if (icon) { icon.classList.add('err'); icon.innerHTML = `<svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 3v4M7 9.5v.5" stroke="#dc4f4f" stroke-width="1.8" stroke-linecap="round"/><circle cx="7" cy="7" r="5.5" stroke="#dc4f4f" stroke-width="1.4"/></svg>`; }
+  }
+}
+
+function renderBadge(r) {
+  if (r.pages === null && !r.error) return '<div class="shimmer-badge"></div>';
+  if (r.error) return `<span class="page-badge error">Error</span>`;
+  return `<span class="page-badge">${r.pages.toLocaleString()} page${r.pages !== 1 ? 's' : ''}</span>`;
+}
+
+/* ── EXPORT ── */
+function copyResults() {
+  if (results.length === 0) { showToast('No results yet.'); return; }
+  const lines = ['File Name\tPages\tFile Size'];
+  results.forEach(r => lines.push(`${r.name}\t${r.pages ?? 'Error'}\t${formatSize(r.size)}`));
+  navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('Copied to clipboard!')).catch(() => showToast('Copy failed.'));
+}
+
+function downloadCSV() {
+  if (results.length === 0) { showToast('No results yet.'); return; }
+  const rows = [['File Name', 'Page Count', 'File Size']];
+  results.forEach(r => rows.push([`"${r.name.replace(/"/g,'""')}"`, r.pages ?? 'Error', formatSize(r.size)]));
+  const csv  = rows.map(r => r.join(',')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = 'pdf_page_counts.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  showToast('CSV downloaded!');
+}
+
+/* ── UTILS ── */
+function clearAll() {
+  queuedFiles = []; results = [];
+  document.getElementById('actionBar').classList.remove('visible');
+  document.getElementById('resultsWrap').classList.remove('visible');
+  showToast('Cleared.');
+}
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+</script>
+</body>
+</html>

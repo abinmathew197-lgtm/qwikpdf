@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compress PDF Online Free – Real Ghostscript Engine, No Uploads | QwikCompress</title>
+<meta name="description" content="Compress PDF files online for free using real Ghostscript technology. Choose Screen, eBook, Printer or Prepress quality. 100% browser-based — files never leave your device, no watermarks, no sign-up.">
+<meta name="keywords" content="compress pdf, reduce pdf size, pdf compressor online free, shrink pdf, compress pdf without losing quality, reduce pdf file size, compress pdf to 100kb, pdf size reducer, ghostscript pdf compression, free pdf compressor">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikCompress">
+<link rel="canonical" href="https://qwikcompress.app/">
+
+<meta property="og:title" content="Compress PDF Online Free – Real Ghostscript, No Uploads">
+<meta property="og:description" content="Reduce PDF size using actual Ghostscript compression — the same engine used by professionals. 100% browser-based, no watermarks, free forever.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikcompress.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compress PDF Free – Ghostscript WASM, No Uploads">
+<meta name="twitter:description" content="Real Ghostscript PDF compression in your browser. Free, private, no watermarks. Works on any device.">
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikCompress – Free Online PDF Compressor",
+  "url": "https://qwikcompress.app/",
+  "description": "Compress PDF files online for free using Ghostscript WebAssembly. Choose Screen, eBook, Printer or Prepress quality presets. No uploads, no watermarks, no registration.",
+  "applicationCategory": "DocumentEditor",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Real Ghostscript WASM compression engine","4 quality presets: Screen, eBook, Printer, Prepress","Preserves vector text and fonts","100% browser-based — no file uploads","No watermarks ever","Free forever"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Compress a PDF Online for Free",
+  "step": [
+    { "@type": "HowToStep", "name": "Upload your PDF", "text": "Drag and drop your PDF onto the upload area or click Select PDF File to choose from your device." },
+    { "@type": "HowToStep", "name": "Choose a quality preset", "text": "Select Screen for smallest size, eBook for balanced quality, Printer for desktop printing, or Prepress for professional output." },
+    { "@type": "HowToStep", "name": "Compress and download", "text": "Click Compress PDF. Ghostscript processes your file entirely in the browser and downloads the result instantly." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does browser-based Ghostscript compression work?", "acceptedAnswer": { "@type": "Answer", "text": "Ghostscript has been compiled to WebAssembly (WASM), which lets it run natively inside any modern browser. Your PDF is processed by the actual Ghostscript engine without any server involved." } },
+    { "@type": "Question", "name": "Does this preserve text and vector quality?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Unlike canvas-rasterization approaches, Ghostscript recompresses embedded images while keeping text, fonts, and vector graphics as real PDF objects. Your text stays sharp and selectable." } },
+    { "@type": "Question", "name": "Are my files uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs inside your browser using WebAssembly. Your PDF never leaves your device — it is processed entirely in local memory." } },
+    { "@type": "Question", "name": "What do the quality presets mean?", "acceptedAnswer": { "@type": "Answer", "text": "Screen (72 dpi) is for email and on-screen viewing. eBook (150 dpi) balances quality and size. Printer (300 dpi) is for desktop printing. Prepress (300 dpi+) is for professional commercial printing." } },
+    { "@type": "Question", "name": "How much will my PDF shrink?", "acceptedAnswer": { "@type": "Answer", "text": "Results depend on content. Image-heavy PDFs typically shrink 50-85% on the eBook preset. Text-only PDFs compress less (10-30%) since text is already compact in PDF format." } },
+    { "@type": "Question", "name": "Will the compressed PDF have a watermark?", "acceptedAnswer": { "@type": "Answer", "text": "No. Zero watermarks, logos, or branding are ever added. You receive a clean, professional PDF identical in appearance to your original." } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --success:    #16a34a;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.13);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+header { background: var(--teal); color: #fff; padding: 34px 20px 38px; text-align: center; }
+.h-inner { max-width: 640px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem,3.8vw,2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span { background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500; }
+
+main { max-width: 760px; margin: 0 auto; padding: 30px 16px 140px; }
+
+/* WASM BANNER */
+#wasmBanner { margin-bottom: 14px; background: var(--teal-light); border: 1.5px solid var(--teal); border-radius: 9px; padding: 11px 15px; font-size: .81rem; font-weight: 600; color: var(--teal); align-items: center; gap: 10px; display: none; }
+#wasmBanner.visible { display: flex; }
+.wasm-spin { width: 15px; height: 15px; border: 2.5px solid rgba(1,121,111,.25); border-top-color: var(--teal); border-radius: 50%; animation: spin .8s linear infinite; flex-shrink: 0; }
+
+/* DROP ZONE */
+#dropZone { background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r); padding: 50px 24px; text-align: center; cursor: pointer; transition: background .2s, border-color .2s, transform .15s; box-shadow: var(--sh); }
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.01); }
+.dz-icon { width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p  { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; background: var(--teal); color: #fff; border: none; padding: 11px 26px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600; cursor: pointer; transition: background .17s, transform .12s; }
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* FILE CARD */
+#fileSection { margin-top: 20px; display: none; animation: fadeUp .25s ease both; }
+.file-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 16px 18px; display: flex; align-items: center; gap: 14px; box-shadow: var(--sh); }
+.file-thumb { width: 52px; height: 66px; border-radius: 7px; overflow: hidden; flex-shrink: 0; background: var(--teal-light); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
+.file-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.file-info { flex: 1; min-width: 0; }
+.file-name { font-weight: 700; font-size: .88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-meta { display: flex; gap: 9px; margin-top: 6px; flex-wrap: wrap; }
+.meta-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--teal-xs); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: .73rem; font-weight: 600; color: var(--teal); }
+.btn-change { background: none; border: 1.5px solid var(--border); color: var(--muted); padding: 6px 13px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 600; cursor: pointer; transition: border-color .17s, color .17s; flex-shrink: 0; }
+.btn-change:hover { border-color: var(--teal); color: var(--teal); }
+
+/* COMPRESS BOX */
+#compressSection { margin-top: 18px; display: none; animation: fadeUp .3s ease both; }
+.compress-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 20px; box-shadow: var(--sh); }
+.compress-box > h3 { font-size: .88rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; color: var(--teal); }
+
+.section-label { font-size: .74rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+.presets { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 8px; }
+.preset-btn { border: 1.5px solid var(--border); background: var(--bg); border-radius: 10px; padding: 13px 8px 11px; text-align: center; cursor: pointer; transition: border-color .18s, background .17s, transform .12s, box-shadow .17s; position: relative; }
+.preset-btn:hover { border-color: var(--teal-mid); background: var(--teal-xs); transform: translateY(-1px); box-shadow: var(--sh); }
+.preset-btn.active { border-color: var(--teal); background: var(--teal-light); box-shadow: 0 0 0 3px rgba(1,121,111,.12); }
+.preset-btn.active::after { content: '✓'; position: absolute; top: 6px; right: 8px; font-size: .66rem; font-weight: 800; color: var(--teal); }
+.p-icon { font-size: 1.4rem; margin-bottom: 5px; line-height: 1; }
+.p-name { font-size: .79rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+.p-sub  { font-size: .66rem; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+.p-dpi  { font-size: .64rem; font-weight: 700; color: var(--teal); margin-top: 4px; background: rgba(1,121,111,.09); display: inline-block; padding: 1px 6px; border-radius: 4px; }
+
+.preset-info { background: var(--teal-xs); border: 1px solid var(--border); border-radius: 8px; padding: 9px 13px; font-size: .78rem; color: var(--muted); margin-top: 4px; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.preset-info svg { flex-shrink: 0; margin-top: 1px; color: var(--teal); }
+
+.error-box { background: #fff5f5; border: 1.5px solid #fccaca; border-radius: 9px; padding: 12px 15px; font-size: .82rem; color: #b91c1c; margin-top: 12px; display: none; gap: 9px; align-items: flex-start; line-height: 1.5; }
+.error-box.show { display: flex; }
+
+.btn-compress { width: 100%; padding: 15px; background: var(--teal); color: #fff; border: none; border-radius: 9px; margin-top: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background .17s, transform .12s, box-shadow .17s; box-shadow: 0 3px 12px rgba(1,121,111,.27); }
+.btn-compress:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(1,121,111,.34); }
+.btn-compress:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* PROGRESS */
+.prog-wrap { display: none; margin-top: 16px; }
+.prog-wrap.show { display: block; animation: fadeUp .2s ease both; }
+.prog-track { background: var(--border); border-radius: 8px; height: 8px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .5s ease; width: 0%; }
+.prog-lbl { font-size: .76rem; color: var(--muted); margin-top: 7px; text-align: center; }
+.prog-steps { display: flex; justify-content: space-between; margin-top: 10px; gap: 4px; }
+.prog-step { font-size: .68rem; font-weight: 600; color: #b0c4c2; display: flex; align-items: center; gap: 4px; transition: color .3s; }
+.prog-step.active { color: var(--teal); font-weight: 700; }
+.prog-step.done   { color: var(--teal); }
+
+/* RESULT */
+#resultSection { display: none; margin-top: 18px; animation: fadeUp .35s ease both; }
+.result-card { background: var(--white); border: 2px solid var(--teal); border-radius: var(--r); padding: 22px 20px; box-shadow: var(--sh2); }
+.result-title { font-size: .92rem; font-weight: 700; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 9px; }
+.result-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 16px; }
+.stat-box { background: var(--teal-xs); border: 1px solid var(--border); border-radius: 9px; padding: 13px 14px; text-align: center; }
+.stat-box.hl { background: var(--teal-light); border-color: var(--teal); }
+.stat-val { font-size: 1.1rem; font-weight: 700; color: var(--teal); }
+.stat-val.green { color: var(--success); }
+.stat-lbl { font-size: .67rem; color: var(--muted); margin-top: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.bar-wrap { margin-bottom: 18px; }
+.bar-top { display: flex; justify-content: space-between; font-size: .76rem; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.bar-track { background: var(--border); border-radius: 8px; height: 10px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); transition: width 1.2s cubic-bezier(.22,1,.36,1); width: 0%; }
+.btn-download { width: 100%; padding: 14px; background: var(--teal); color: #fff; border: none; border-radius: 9px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background .17s, transform .12s, box-shadow .17s; box-shadow: 0 3px 12px rgba(1,121,111,.27); }
+.btn-download:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-again { width: 100%; padding: 11px; margin-top: 9px; background: none; border: 1.5px dashed var(--border); border-radius: 9px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .84rem; font-weight: 600; color: var(--teal); cursor: pointer; transition: border-color .17s, background .17s; }
+.btn-again:hover { border-color: var(--teal); background: var(--teal-xs); }
+
+/* SECTIONS */
+.section { margin-top: 58px; }
+.sec-title { font-size: clamp(1.1rem,2.4vw,1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub   { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(195px,1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p  { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(205px,1fr)); gap: 13px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; transition: box-shadow .2s; }
+.feat:hover { box-shadow: var(--sh2); }
+.feat-ico { width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 11px; }
+.feat h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.feat p   { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+.use-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(215px,1fr)); gap: 13px; }
+.use { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; }
+.use h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.use p  { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+.tbl-wrap { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; box-shadow: var(--sh); }
+.tbl-wrap table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.tbl-wrap thead tr { background: var(--teal); color: white; }
+.tbl-wrap th { padding: 12px 16px; text-align: left; font-weight: 700; }
+.tbl-wrap td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.tbl-wrap tr:last-child td { border-bottom: none; }
+.tbl-wrap tr:nth-child(even) td { background: var(--teal-xs); }
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q { padding: 15px 17px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: .875rem; user-select: none; gap: 12px; transition: background .15s, color .15s; }
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px; }
+.faq-a.open { max-height: 300px; padding: 0 17px 15px; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(145px,1fr)); gap: 9px; }
+.tool-a { display: flex; align-items: center; gap: 7px; background: var(--white); border: 1.5px solid var(--border); border-radius: 9px; padding: 11px 13px; text-decoration: none; color: var(--text); font-size: .80rem; font-weight: 600; transition: border-color .17s, background .15s, color .17s; }
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+.toast { position: fixed; bottom: 86px; left: 50%; transform: translateX(-50%) translateY(12px); background: var(--teal); color: #fff; padding: 11px 20px; border-radius: 8px; font-size: .86rem; font-weight: 600; box-shadow: 0 5px 20px rgba(1,121,111,.32); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 1100; white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+#pwaBtn { position: fixed; bottom: 20px; right: 20px; background: var(--teal); color: #fff; border: none; padding: 11px 18px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .82rem; font-weight: 700; cursor: pointer; display: none; align-items: center; gap: 7px; box-shadow: 0 4px 18px rgba(1,121,111,.38); z-index: 999; transition: background .17s; animation: floatUp .4s ease; }
+#pwaBtn:hover { background: var(--teal-dark); }
+@keyframes fadeUp  { from { opacity:0; transform:translateY(8px);  } to { opacity:1; transform:translateY(0); } }
+@keyframes floatUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin    { to { transform:rotate(360deg); } }
+@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.shimmer { background:linear-gradient(90deg,#eaf5f4 25%,#d4eeeb 50%,#eaf5f4 75%);background-size:200% 100%;animation:shimmer 1.6s infinite; }
+code { font-family: monospace; font-size: .82em; background: rgba(1,121,111,.08); padding: 1px 5px; border-radius: 4px; }
+@media(max-width:500px){.presets{grid-template-columns:repeat(2,1fr)}.result-stats{grid-template-columns:repeat(2,1fr)}.result-stats .stat-box:last-child{grid-column:span 2}#pwaBtn{bottom:12px;right:12px;padding:10px 15px;font-size:.78rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>Compress PDF Online — <em>Real Ghostscript Engine</em></h1>
+    <p>True PDF compression in your browser. Vectors stay sharp. Text stays selectable. No uploads.</p>
+    <div class="badges">
+      <span>🔒 Files never leave your device</span>
+      <span>⚙️ Real Ghostscript WASM</span>
+      <span>✨ No watermarks</span>
+      <span>⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div id="wasmBanner">
+    <div class="wasm-spin" id="wasmSpinner"></div>
+    <span id="wasmMsg">Loading Ghostscript engine (~16 MB, cached after first use)…</span>
+  </div>
+
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="26" height="26" fill="none" viewBox="0 0 26 26">
+        <path d="M6 22h14a2 2 0 002-2V9l-6-6H6a2 2 0 00-2 2v15a2 2 0 002 2z" stroke="#01796f" stroke-width="1.9" stroke-linejoin="round"/>
+        <path d="M14 3v6h6" stroke="#01796f" stroke-width="1.9" stroke-linecap="round"/>
+        <path d="M13 13v6M10 16l3 3 3-3" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF here to compress</h2>
+    <p>Ghostscript recompresses images, preserves text &amp; vectors — no rasterization</p>
+    <button class="browse-btn" id="browseBtn">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF File
+    </button>
+    <input type="file" id="fileInput" accept=".pdf">
+  </div>
+
+  <div id="fileSection">
+    <div class="file-card">
+      <div class="file-thumb shimmer" id="thumbWrap">
+        <svg width="22" height="28" fill="none" viewBox="0 0 22 28"><rect x="1" y="1" width="16" height="20" rx="2" fill="#d1eae8"/><path d="M12 1v6h6" stroke="#7db8b4" stroke-width="1.4"/><rect x="4" y="13" width="9" height="1.5" rx=".75" fill="#7db8b4"/><rect x="4" y="16" width="7" height="1.5" rx=".75" fill="#7db8b4" opacity=".6"/></svg>
+      </div>
+      <div class="file-info">
+        <div class="file-name" id="fileName">—</div>
+        <div class="file-meta">
+          <span class="meta-pill" id="fileSize">—</span>
+          <span class="meta-pill" id="pageCount">— pages</span>
+        </div>
+      </div>
+      <button class="btn-change" id="changeBtn">Change</button>
+    </div>
+  </div>
+
+  <div id="compressSection">
+    <div class="compress-box">
+      <h3>
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 11l6-6M8 5h3v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Compression Quality
+      </h3>
+
+      <div class="section-label">Choose a Ghostscript preset</div>
+      <div class="presets">
+        <div class="preset-btn" data-preset="screen">
+          <div class="p-icon">📱</div>
+          <div class="p-name">Screen</div>
+          <div class="p-sub">Smallest file</div>
+          <div class="p-dpi">72 dpi</div>
+        </div>
+        <div class="preset-btn active" data-preset="ebook">
+          <div class="p-icon">📖</div>
+          <div class="p-name">eBook</div>
+          <div class="p-sub">Best balance</div>
+          <div class="p-dpi">150 dpi</div>
+        </div>
+        <div class="preset-btn" data-preset="printer">
+          <div class="p-icon">🖨️</div>
+          <div class="p-name">Printer</div>
+          <div class="p-sub">Home/office</div>
+          <div class="p-dpi">300 dpi</div>
+        </div>
+        <div class="preset-btn" data-preset="prepress">
+          <div class="p-icon">🎨</div>
+          <div class="p-name">Prepress</div>
+          <div class="p-sub">Pro printing</div>
+          <div class="p-dpi">300 dpi+</div>
+        </div>
+      </div>
+
+      <div class="preset-info">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M7 4.5v3.5M7 9.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span id="presetInfoText">eBook — Ghostscript compresses images to 150 dpi. Ideal for tablets, general reading, and balanced file sharing. Typical reduction: 40–70%.</span>
+      </div>
+
+      <div class="error-box" id="errorBox">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15" style="flex-shrink:0;margin-top:1px"><circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 4v4M7.5 10v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span id="errorMsg"></span>
+      </div>
+
+      <button class="btn-compress" id="compressBtn">
+        <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M8.5 3v7.5M5.5 8l3 3 3-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="13.5" width="13" height="1.5" rx=".75" fill="white" opacity=".5"/></svg>
+        Compress PDF
+      </button>
+
+      <div class="prog-wrap" id="progressWrap">
+        <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+        <div class="prog-lbl" id="progressLabel">Initialising…</div>
+        <div class="prog-steps">
+          <span class="prog-step" id="step1">① Load engine</span>
+          <span class="prog-step" id="step2">② Read file</span>
+          <span class="prog-step" id="step3">③ Compress</span>
+          <span class="prog-step" id="step4">④ Finalise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultSection">
+    <div class="result-card">
+      <div class="result-title">
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#01796f"/><path d="M6 10l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Compression Complete!
+      </div>
+      <div class="result-stats">
+        <div class="stat-box"><div class="stat-val" id="origStat">—</div><div class="stat-lbl">Original</div></div>
+        <div class="stat-box hl"><div class="stat-val" id="newStat">—</div><div class="stat-lbl">Compressed</div></div>
+        <div class="stat-box"><div class="stat-val green" id="savingStat">—</div><div class="stat-lbl">Saved</div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-top"><span>File size reduction</span><span id="savingsPct">0%</span></div>
+        <div class="bar-track"><div class="bar-fill" id="savingsBar"></div></div>
+      </div>
+      <button class="btn-download" id="downloadBtn">
+        <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M8.5 2v9M5 8l3.5 3.5L12 8M2.5 14.5h12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Compressed PDF
+      </button>
+      <button class="btn-again" id="againBtn">↩ Compress Another PDF</button>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2 class="sec-title">How to Compress a PDF Online</h2>
+    <p class="sec-sub">Three steps. No account. No uploads. Completely free.</p>
+    <div class="steps">
+      <div class="step-card"><div class="s-num">01</div><h3>Upload Your PDF</h3><p>Drag and drop your PDF or click <strong>Select PDF File</strong>. Your file stays on your device — Ghostscript WASM loads into your browser's memory and processes it locally.</p></div>
+      <div class="step-card"><div class="s-num">02</div><h3>Choose a Preset</h3><p>Select <strong>Screen</strong> for email, <strong>eBook</strong> for balance, <strong>Printer</strong> for desktop printing, or <strong>Prepress</strong> for professional print. Each maps to a real Ghostscript <code>-dPDFSETTINGS</code> profile.</p></div>
+      <div class="step-card"><div class="s-num">03</div><h3>Compress &amp; Download</h3><p>Click <strong>Compress PDF</strong>. Ghostscript runs its <code>pdfwrite</code> device in WASM — recompressing images, optimising streams, and preserving all text and vector content exactly.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="sec-title">Why QwikCompress Is Different</h2>
+    <p class="sec-sub">Most browser PDF compressors rasterize everything into blurry images. This one does not.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="3" width="7" height="9" rx="1.5" fill="#01796f"/><rect x="11" y="3" width="7" height="5" rx="1.5" fill="#01796f" opacity=".5"/><rect x="11" y="10" width="7" height="7" rx="1.5" fill="#01796f" opacity=".75"/><rect x="2" y="14" width="7" height="3" rx="1.5" fill="#01796f" opacity=".35"/></svg></div>
+        <h3>Real Ghostscript, Not Canvas</h3>
+        <p>Other tools render every page as a JPEG — destroying text quality. Ghostscript recompresses only embedded images, leaving text, fonts, and vectors fully intact as proper PDF objects.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 1L2 5v7c0 5.25 3.5 9.75 8 11 4.5-1.25 8-5.75 8-11V5L10 1z" fill="#01796f"/></svg></div>
+        <h3>100% Private</h3>
+        <p>Your PDF is never sent anywhere. Ghostscript WebAssembly runs inside your browser tab — no server sees your file, not even for a millisecond.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#01796f" stroke-width="1.7"/><path d="M7 10l2 2 4-4" stroke="#01796f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Text Stays Selectable</h3>
+        <p>Because Ghostscript works at the PDF stream level, your text remains copy-paste-able and searchable after compression. No OCR re-run needed.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 10c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6-6-2.69-6-6z" stroke="#01796f" stroke-width="1.6"/><path d="M10 7v4l2.5 1.5" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Standard GS Presets</h3>
+        <p>Screen, eBook, Printer, and Prepress map directly to Ghostscript's <code>-dPDFSETTINGS</code> flags — the same parameters used by print professionals and Linux sysadmins for decades.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#01796f"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>No Watermarks, Ever</h3>
+        <p>Zero logos, stamps, or branding added at any step. The file you download is completely clean — what goes in is what comes out, just smaller.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#01796f" stroke-width="1.6"/><path d="M7 18h6M10 16v2" stroke="#01796f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Works on Any Device</h3>
+        <p>Runs in Chrome, Safari, Firefox, and Edge on Windows, Mac, iPhone, and Android. The WASM binary is downloaded once and cached by your browser for instant future use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section">
+    <h2 class="sec-title">Ghostscript Compression Presets Explained</h2>
+    <p class="sec-sub">Each preset is a native Ghostscript <code>-dPDFSETTINGS</code> profile — not a custom approximation.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Preset</th><th>GS Flag</th><th>Image DPI</th><th>Best For</th><th>Typical Reduction</th></tr></thead>
+        <tbody>
+          <tr><td>📱 <strong>Screen</strong></td><td><code>/screen</code></td><td>72 dpi</td><td>Email, web, on-screen</td><td><strong style="color:var(--teal)">60–85%</strong></td></tr>
+          <tr><td>📖 <strong>eBook</strong></td><td><code>/ebook</code></td><td>150 dpi</td><td>Tablets, general sharing</td><td><strong style="color:var(--teal)">40–70%</strong></td></tr>
+          <tr><td>🖨️ <strong>Printer</strong></td><td><code>/printer</code></td><td>300 dpi</td><td>Home/office printing</td><td><strong style="color:var(--teal)">20–45%</strong></td></tr>
+          <tr><td>🎨 <strong>Prepress</strong></td><td><code>/prepress</code></td><td>300 dpi+</td><td>Commercial print</td><td><strong style="color:var(--teal)">10–30%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section">
+    <h2 class="sec-title">When to Use PDF Compression</h2>
+    <p class="sec-sub">Everyday situations where file size limits get in the way.</p>
+    <div class="use-grid">
+      <div class="use"><h3>📧 Email Attachments</h3><p>Most email providers cap attachments at 10–25 MB. Compress reports or brochures to ensure they send without being rejected or bouncing.</p></div>
+      <div class="use"><h3>🏛️ Government Portals</h3><p>Many government and court portals enforce strict upload limits of 2–5 MB. Compress your PDF to exactly meet the size before submitting.</p></div>
+      <div class="use"><h3>🎓 University Submissions</h3><p>Thesis repositories and LMS systems often have upload caps. Compress dissertations and coursework to size before the deadline.</p></div>
+      <div class="use"><h3>📱 Mobile Sharing</h3><p>Sharing PDFs via WhatsApp, Telegram, or iMessage is faster and more reliable with smaller files on mobile data connections.</p></div>
+      <div class="use"><h3>☁️ Cloud Storage</h3><p>Make the most of free storage tiers on Google Drive, Dropbox, or OneDrive without upgrading to a paid plan.</p></div>
+      <div class="use"><h3>🌐 Website Uploads</h3><p>CMS platforms like WordPress have upload limits. Compress PDFs used as downloadable brochures or whitepapers before uploading.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Technical details and common questions about this PDF compressor.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" data-faq>How does Ghostscript WASM compression work in a browser?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Ghostscript — a C PDF processing engine that has existed since the 1980s — has been compiled to WebAssembly using Emscripten. The full real Ghostscript binary runs inside your browser tab. Your PDF is written to an in-memory virtual filesystem, Ghostscript processes it using its <code>pdfwrite</code> device, and the output is read back and downloaded to your device. No server is involved at any step.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-faq>Why is Ghostscript better than canvas-based compression?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Canvas-based compressors render every page to a bitmap and reassemble them into a PDF. This converts all text and vector graphics into blurry pixels — the result is not selectable, not searchable, and looks poor when zoomed. Ghostscript works at the stream level: it recompresses only embedded raster images, while keeping all text, fonts, and vector content as proper PDF objects.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-faq>Are my files uploaded to a server?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">No. The Ghostscript WASM binary (~16 MB) is loaded from a CDN once and runs entirely inside your browser. Your PDF file itself never leaves your device — it is read into browser memory, processed locally by the WASM engine, and the output is downloaded directly. No network request is made with your file content.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-faq>Why does the first compression take longer?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">The Ghostscript WebAssembly binary is approximately 16 MB. Your browser downloads and compiles it the first time. Subsequent uses in the same session reuse the loaded engine instantly. Your browser also caches the WASM file, so future visits are much faster.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-faq>Will compressed PDFs have a watermark?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">No. Ghostscript does not add watermarks or branding. The library is open source (AGPL-3.0) and this tool is free — there is no reason to watermark your output. You receive a completely clean compressed PDF.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-faq>Which preset should I use?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">For email and general web sharing, use <strong>eBook</strong> — best balance of quality and compression. For maximum size reduction (strict upload limits), use <strong>Screen</strong>. For printing at home or the office, use <strong>Printer</strong>. For PDFs going to a commercial print house, use <strong>Prepress</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikCompress · Free Online PDF Compressor · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">⚙️ Powered by Ghostscript WebAssembly · 🔒 Files never leave your browser</p>
+</footer>
+
+<button id="pwaBtn">
+  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Install App
+</button>
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js for thumbnail only -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<!-- MAIN APP — ES module so we can use top-level import -->
+<script type="module">
+import initGhostscript from 'https://cdn.jsdelivr.net/npm/@jspawn/ghostscript-wasm@0.0.2/gs.mjs';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let currentFile    = null;
+let compressedData = null;
+let gsInstance     = null;
+let gsLoading      = false;
+let activePreset   = 'ebook';
+let deferredPrompt = null;
+
+const PRESET_DESCRIPTIONS = {
+  screen:   'Screen — Ghostscript compresses images to 72 dpi with aggressive colour downsampling. Best for email, web downloads, and on-screen reading. Typical reduction: 60–85%.',
+  ebook:    'eBook — Ghostscript compresses images to 150 dpi. Ideal for tablets, general reading, and balanced file sharing. Typical reduction: 40–70%.',
+  printer:  'Printer — Ghostscript targets 300 dpi, suitable for desktop and home office printing. Fonts and vectors are fully preserved. Typical reduction: 20–45%.',
+  prepress: 'Prepress — Ghostscript targets 300 dpi+ with colour profile preservation. Designed for commercial print workflows. Typical reduction: 10–30%.',
+};
+
+// ── GHOSTSCRIPT PRELOAD ──────────────────────────────────────────────────────
+// Load GS in the background so it's warm when the user hits Compress
+async function preloadGS() {
+  if (gsInstance || gsLoading) return;
+  gsLoading = true;
+  showWasmBanner('loading');
+  try {
+    gsInstance = await initGhostscript({
+      locateFile: f => `https://cdn.jsdelivr.net/npm/@jspawn/ghostscript-wasm@0.0.2/${f}`
+    });
+    showWasmBanner('ready');
+    gsLoading = false;
+  } catch(e) {
+    console.warn('GS background preload failed, will retry on demand:', e);
+    gsLoading = false;
+    document.getElementById('wasmBanner').classList.remove('visible');
+  }
+}
+
+function showWasmBanner(state) {
+  const b = document.getElementById('wasmBanner');
+  b.classList.add('visible');
+  if (state === 'loading') {
+    b.innerHTML = `<div class="wasm-spin"></div><span>Loading Ghostscript engine (~16 MB, cached after first use)…</span>`;
+  } else {
+    b.innerHTML = `<span>⚡</span><span>Ghostscript engine ready — upload your PDF to begin.</span>`;
+    setTimeout(() => b.classList.remove('visible'), 3000);
+  }
+}
+
+preloadGS();
+
+// ── FILE INPUT ───────────────────────────────────────────────────────────────
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+document.getElementById('browseBtn').addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('click', e => { if (!e.target.closest('#browseBtn')) fileInput.click(); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  const f = [...e.dataTransfer.files].find(f => f.type === 'application/pdf');
+  if (f) loadFile(f); else showToast('Please drop a PDF file.');
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) loadFile(fileInput.files[0]); fileInput.value = ''; });
+document.getElementById('changeBtn').addEventListener('click', resetAll);
+document.getElementById('againBtn').addEventListener('click', resetAll);
+
+async function loadFile(file) {
+  currentFile = file; compressedData = null;
+  hideError();
+  document.getElementById('resultSection').style.display = 'none';
+  document.getElementById('fileName').textContent = file.name;
+  document.getElementById('fileSize').textContent  = fmtSize(file.size);
+  document.getElementById('fileSection').style.display    = 'block';
+  document.getElementById('compressSection').style.display = 'block';
+
+  // Thumbnail via PDF.js
+  try {
+    const ab  = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: ab }).promise;
+    document.getElementById('pageCount').textContent = `${pdf.numPages} page${pdf.numPages !== 1 ? 's' : ''}`;
+    const page = await pdf.getPage(1);
+    const vp   = page.getViewport({ scale: 1 });
+    const sc   = 100 / vp.width;
+    const svp  = page.getViewport({ scale: sc });
+    const cv   = document.createElement('canvas');
+    cv.width = svp.width; cv.height = svp.height;
+    await page.render({ canvasContext: cv.getContext('2d'), viewport: svp }).promise;
+    const tw = document.getElementById('thumbWrap');
+    tw.className = 'file-thumb'; tw.style.cssText = '';
+    tw.innerHTML = `<img src="${cv.toDataURL('image/jpeg',.8)}" alt="">`;
+  } catch(e) { /* leave shimmer placeholder */ }
+}
+
+// ── PRESET BUTTONS ───────────────────────────────────────────────────────────
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activePreset = btn.dataset.preset;
+    document.getElementById('presetInfoText').textContent = PRESET_DESCRIPTIONS[activePreset];
+    hideError();
+  });
+});
+
+// ── COMPRESS ─────────────────────────────────────────────────────────────────
+document.getElementById('compressBtn').addEventListener('click', async () => {
+  if (!currentFile) { showToast('Please select a PDF file first.'); return; }
+
+  const btn  = document.getElementById('compressBtn');
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+
+  hideError();
+  btn.disabled = true;
+  btn.innerHTML = `<div style="width:16px;height:16px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite"></div>&nbsp;Compressing…`;
+  wrap.classList.add('show');
+
+  const setStep = n => {
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById(`step${i}`);
+      el.classList.toggle('active', i === n);
+      el.classList.toggle('done',   i < n);
+    }
+  };
+
+  try {
+    // STEP 1 — ensure GS loaded
+    setStep(1); bar.style.width = '8%'; lbl.textContent = 'Loading Ghostscript engine…';
+    if (!gsInstance) {
+      gsInstance = await initGhostscript({
+        locateFile: f => `https://cdn.jsdelivr.net/npm/@jspawn/ghostscript-wasm@0.0.2/${f}`
+      });
+    }
+
+    // STEP 2 — read PDF bytes
+    setStep(2); bar.style.width = '28%'; lbl.textContent = 'Reading PDF…';
+    const inputBytes = new Uint8Array(await currentFile.arrayBuffer());
+
+    // Write to GS virtual filesystem
+    gsInstance.FS.writeFile('/input.pdf', inputBytes);
+
+    // STEP 3 — run Ghostscript
+    setStep(3); bar.style.width = '48%';
+    lbl.textContent = `Running Ghostscript -dPDFSETTINGS=/${activePreset}…`;
+
+    // Yield to let UI paint before the heavy WASM work blocks the thread
+    await new Promise(r => setTimeout(r, 80));
+
+    // ── THE ACTUAL GHOSTSCRIPT COMMAND ──────────────────────────────────────
+    // Identical to running on a server/desktop:
+    //   gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook
+    //      -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+    await gsInstance.callMain([
+      '-sDEVICE=pdfwrite',
+      '-dCompatibilityLevel=1.4',
+      `-dPDFSETTINGS=/${activePreset}`,
+      '-dNOPAUSE',
+      '-dQUIET',
+      '-dBATCH',
+      '-sOutputFile=/output.pdf',
+      '/input.pdf'
+    ]);
+
+    // STEP 4 — read output
+    setStep(4); bar.style.width = '88%'; lbl.textContent = 'Finalising…';
+
+    let outputBytes;
+    try {
+      outputBytes = gsInstance.FS.readFile('/output.pdf');
+    } catch(e) {
+      throw new Error('Ghostscript produced no output. The PDF may be password-protected or corrupted.');
+    }
+
+    // Clean up virtual FS so next run starts fresh
+    try { gsInstance.FS.unlink('/input.pdf');  } catch(e) {}
+    try { gsInstance.FS.unlink('/output.pdf'); } catch(e) {}
+
+    bar.style.width = '100%'; lbl.textContent = '✓ Done!'; setStep(5);
+    compressedData = outputBytes;
+    showResult(currentFile.size, outputBytes.byteLength);
+    showToast('PDF compressed successfully!');
+    setTimeout(() => wrap.classList.remove('show'), 2500);
+
+  } catch(err) {
+    console.error(err);
+    wrap.classList.remove('show');
+    showError(err.message || 'Ghostscript compression failed. Please try a different PDF.');
+    gsInstance = null; // force reload on next attempt
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M8.5 3v7.5M5.5 8l3 3 3-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="13.5" width="13" height="1.5" rx=".75" fill="white" opacity=".5"/></svg> Compress PDF`;
+});
+
+// ── RESULT ───────────────────────────────────────────────────────────────────
+function showResult(origBytes, newBytes) {
+  const saved = origBytes - newBytes;
+  const pct   = origBytes > 0 ? Math.max(0, Math.round((saved / origBytes) * 100)) : 0;
+
+  document.getElementById('origStat').textContent   = fmtSize(origBytes);
+  document.getElementById('newStat').textContent    = fmtSize(newBytes);
+  document.getElementById('savingStat').textContent = saved > 0 ? `−${fmtSize(saved)}` : '~Same size';
+  document.getElementById('savingsPct').textContent = `${pct}%`;
+
+  const rs = document.getElementById('resultSection');
+  rs.style.display = 'block';
+  setTimeout(() => { document.getElementById('savingsBar').style.width = `${pct}%`; }, 80);
+
+  const blob = new Blob([compressedData], { type: 'application/pdf' });
+  const url  = URL.createObjectURL(blob);
+  const dlBtn = document.getElementById('downloadBtn');
+  // Remove old listener, add new one
+  const newDl = dlBtn.cloneNode(true);
+  dlBtn.parentNode.replaceChild(newDl, dlBtn);
+  newDl.addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (currentFile.name.replace(/\.pdf$/i,'') || 'file') + '_compressed.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    showToast('Downloading…');
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  });
+  rs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ── RESET ────────────────────────────────────────────────────────────────────
+function resetAll() {
+  currentFile = null; compressedData = null;
+  ['fileSection','compressSection','resultSection'].forEach(id =>
+    document.getElementById(id).style.display = 'none');
+  document.getElementById('progressWrap').classList.remove('show');
+  hideError();
+  const tw = document.getElementById('thumbWrap');
+  tw.className = 'file-thumb shimmer'; tw.style.cssText = '';
+  tw.innerHTML = `<svg width="22" height="28" fill="none" viewBox="0 0 22 28"><rect x="1" y="1" width="16" height="20" rx="2" fill="#d1eae8"/><path d="M12 1v6h6" stroke="#7db8b4" stroke-width="1.4"/><rect x="4" y="13" width="9" height="1.5" rx=".75" fill="#7db8b4"/><rect x="4" y="16" width="7" height="1.5" rx=".75" fill="#7db8b4" opacity=".6"/></svg>`;
+}
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+function fmtSize(b) {
+  if (b < 1024)    return `${b} B`;
+  if (b < 1048576) return `${(b/1024).toFixed(1)} KB`;
+  return `${(b/1048576).toFixed(2)} MB`;
+}
+function showError(msg) {
+  const b = document.getElementById('errorBox');
+  document.getElementById('errorMsg').textContent = msg;
+  b.classList.add('show');
+}
+function hideError() { document.getElementById('errorBox').classList.remove('show'); }
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3400);
+}
+
+// ── FAQ ──────────────────────────────────────────────────────────────────────
+document.querySelectorAll('[data-faq]').forEach(q => {
+  q.addEventListener('click', () => {
+    const ans = q.nextElementSibling, isOpen = q.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(x => {
+      x.classList.remove('open'); x.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) { q.classList.add('open'); ans.classList.add('open'); }
+  });
+});
+
+// ── PWA ──────────────────────────────────────────────────────────────────────
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  document.getElementById('pwaBtn').style.display = 'flex';
+});
+document.getElementById('pwaBtn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') { document.getElementById('pwaBtn').style.display = 'none'; showToast('App installed!'); }
+  deferredPrompt = null;
+});
+window.addEventListener('appinstalled', () => document.getElementById('pwaBtn').style.display = 'none');
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

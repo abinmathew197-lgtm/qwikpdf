@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free PDF Rotator – Rotate PDF Pages Online Instantly | QwikPDF</title>
+<meta name="description" content="Rotate PDF pages online for free. Upload multiple PDFs, rotate all pages at once or individual pages by 90°, 180°, or 270°. No uploads, no watermarks, 100% browser-based.">
+<meta name="keywords" content="rotate pdf, rotate pdf pages online, rotate pdf free, rotate pdf 90 degrees, rotate pdf pages, flip pdf pages, pdf page rotator, rotate single pdf page, rotate all pages pdf, fix rotated pdf">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikPDF">
+<link rel="canonical" href="https://qwikpdf.com/rotate-pdf.html">
+
+<meta property="og:title" content="Free PDF Rotator – Rotate PDF Pages Online Instantly">
+<meta property="og:description" content="Rotate any PDF page online for free. Rotate all pages at once or individual pages by 90°, 180°, or 270°. Private, no watermarks, instant.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikpdf.com/rotate-pdf.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PDF Rotator – Rotate Pages Online">
+<meta name="twitter:description" content="Rotate PDF pages online for free. All pages or individual pages. 90°, 180°, 270°. Browser-based, no uploads.">
+
+<meta name="theme-color" content="#01796f">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikPDF – Free PDF Rotator",
+  "url": "https://qwikpdf.com/rotate-pdf.html",
+  "description": "Rotate PDF pages online for free. Rotate all pages at once or specific individual pages by 90, 180, or 270 degrees. 100% browser-based — your files never leave your device.",
+  "applicationCategory": "DocumentEditor",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Rotate all PDF pages at once",
+    "Rotate individual pages independently",
+    "Rotate by 90°, 180°, or 270°",
+    "Visual thumbnail preview with live rotation",
+    "Support for multiple PDFs at once",
+    "Download rotated PDF instantly",
+    "No watermarks",
+    "100% browser-based",
+    "Free forever"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Rotate PDF Pages Online for Free",
+  "description": "Rotate all or individual pages of any PDF using QwikPDF's free online PDF rotator.",
+  "step": [
+    { "@type": "HowToStep", "name": "Upload your PDF", "text": "Drag and drop one or more PDF files onto the upload area, or click Select PDF Files. Every page loads as a visual thumbnail." },
+    { "@type": "HowToStep", "name": "Rotate your pages", "text": "Click Rotate All to rotate every page at once by 90°, 180°, or 270°. Or rotate individual pages using the rotation controls on each page card." },
+    { "@type": "HowToStep", "name": "Download the rotated PDF", "text": "Click Download Rotated PDF to save the final document with all your rotations applied." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I rotate PDF pages online for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to QwikPDF's rotator. Every page appears as a thumbnail. Use Rotate All to rotate every page at once, or click the rotation arrows on individual pages. Then click Download Rotated PDF to save your file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I rotate just one page in a PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each page thumbnail has its own rotate left and rotate right buttons. Click them to rotate only that specific page independently from the rest of the document." }
+    },
+    {
+      "@type": "Question",
+      "name": "What rotation angles are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can rotate pages by 90° clockwise, 90° counter-clockwise (270°), or 180°. Each click on the rotate button adds 90° of rotation, so clicking twice gives 180°." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my PDF files uploaded to a server when I rotate them?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. QwikPDF processes everything locally in your browser using JavaScript. Your PDF files never leave your device, ensuring complete privacy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I rotate multiple PDF files at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can upload several PDF files and rotate pages from all of them. Download each file individually as a rotated PDF." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will rotating a PDF reduce its quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Rotation is applied as a metadata change using pdf-lib. The actual page content — text, images, vectors — is never re-rendered or re-compressed, so quality is perfectly preserved." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --orange:     #f97316;
+  --orange-lt:  #fff7ed;
+  --warn:       #dc4f4f;
+  --warn-light: #fef2f2;
+  --green:      #00a86b;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.14);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--teal);
+  color: #fff;
+  padding: 32px 20px 36px;
+  text-align: center;
+}
+.h-inner { max-width: 680px; margin: 0 auto; }
+header h1 {
+  font-size: clamp(1.45rem, 3.8vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -.3px;
+  line-height: 1.22;
+}
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badge {
+  background: rgba(255,255,255,.13);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px; padding: 3px 11px;
+  font-size: .74rem; font-weight: 500;
+}
+
+/* ── MAIN ── */
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 140px; }
+
+/* ── DROP ZONE ── */
+#dropZone {
+  background: var(--white);
+  border: 2px dashed var(--teal);
+  border-radius: var(--r);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.005); }
+.dz-icon-wrap {
+  width: 54px; height: 54px;
+  background: var(--teal-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; background: var(--teal); color: #fff;
+  border: none; padding: 12px 28px; border-radius: 9px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s, box-shadow .17s;
+  box-shadow: 0 3px 14px rgba(1,121,111,.3);
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 5px 20px rgba(1,121,111,.38); }
+#fileInput { display: none; }
+
+/* ── GLOBAL ROTATE TOOLBAR ── */
+#toolbar {
+  display: none;
+  align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 16px 18px;
+  box-shadow: var(--sh); margin-top: 20px;
+}
+#toolbar.visible { display: flex; }
+
+.toolbar-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar-info { font-size: .875rem; font-weight: 600; }
+.toolbar-info span { color: var(--teal); }
+.toolbar-info em { font-style: normal; color: var(--muted); font-weight: 400; margin-left: 4px; font-size: .8rem; }
+
+.tb-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 15px; border-radius: 8px; border: 1.5px solid var(--border);
+  background: var(--white); color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 600;
+  cursor: pointer; transition: all .17s; white-space: nowrap;
+}
+.tb-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-xs); }
+.tb-btn.danger:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.tb-btn-add { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
+.tb-btn-add:hover { background: var(--teal); color: #fff; }
+
+/* ── GLOBAL ROTATION STRIP ── */
+#globalRotateStrip {
+  display: none;
+  align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+  background: linear-gradient(135deg, #fff8f3, #fff3ea);
+  border: 1.5px solid #fcd3aa;
+  border-radius: var(--r); padding: 14px 18px;
+  margin-top: 12px;
+  box-shadow: 0 2px 12px rgba(249,115,22,.08);
+}
+#globalRotateStrip.visible { display: flex; }
+.strip-label { font-size: .875rem; font-weight: 700; color: #c2460a; display: flex; align-items: center; gap: 7px; }
+.rotate-btn-group { display: flex; gap: 7px; flex-wrap: wrap; }
+.rot-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 8px; border: 1.5px solid;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 700;
+  cursor: pointer; transition: all .17s; white-space: nowrap;
+}
+.rot-btn-ccw { border-color: #fbbf24; background: #fffbeb; color: #92400e; }
+.rot-btn-ccw:hover { background: #fbbf24; color: #fff; border-color: #fbbf24; }
+.rot-btn-180 { border-color: #f97316; background: #fff7ed; color: #c2460a; }
+.rot-btn-180:hover { background: #f97316; color: #fff; border-color: #f97316; }
+.rot-btn-cw  { border-color: #10b981; background: #ecfdf5; color: #065f46; }
+.rot-btn-cw:hover { background: #10b981; color: #fff; border-color: #10b981; }
+.rot-btn-reset { border-color: var(--border); background: var(--white); color: var(--muted); }
+.rot-btn-reset:hover { border-color: var(--warn); background: var(--warn-light); color: var(--warn); }
+
+/* ── PROGRESS ── */
+.prog-wrap { display: none; width: 100%; margin-top: 10px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 7px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .25s ease; width: 0%; }
+.prog-lbl { font-size: .75rem; color: var(--muted); margin-top: 5px; text-align: center; }
+
+/* ── FILE GROUP ── */
+.file-group { margin-top: 24px; }
+.file-group-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px; padding-bottom: 11px;
+  border-bottom: 1.5px solid var(--border);
+}
+.file-group-icon {
+  width: 34px; height: 34px; background: var(--teal-light); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.file-group-title { font-weight: 700; font-size: .9rem; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-group-meta { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+
+.btn-download-file {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border-radius: 8px; border: none;
+  background: var(--teal); color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 700;
+  cursor: pointer; transition: background .15s, transform .12s;
+  box-shadow: 0 2px 8px rgba(1,121,111,.22);
+  flex-shrink: 0;
+}
+.btn-download-file:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.btn-download-file:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+/* ── PAGE GRID ── */
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+/* ── PAGE CARD ── */
+.page-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color .18s, box-shadow .18s, transform .15s;
+  box-shadow: var(--sh);
+  animation: fadeUp .22s ease both;
+  position: relative;
+}
+.page-card:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); transform: translateY(-2px); }
+.page-card.rotated { border-color: var(--orange); background: #fffbf7; }
+.page-card.rotated .page-actions { background: #fff8f3; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* rotation indicator pill */
+.rot-indicator {
+  position: absolute; top: 7px; left: 7px;
+  background: var(--orange); color: #fff;
+  font-size: .6rem; font-weight: 800; letter-spacing: .03em;
+  padding: 2px 8px; border-radius: 20px;
+  z-index: 10; opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+}
+.page-card.rotated .rot-indicator { opacity: 1; }
+
+/* preview area */
+.page-preview {
+  width: 100%; aspect-ratio: 3/4;
+  background: #eef3f2;
+  position: relative; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.page-preview img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+  transition: transform .35s cubic-bezier(.34,1.4,.64,1);
+  transform-origin: center center;
+}
+
+/* shimmer */
+@keyframes shimmer { 0%{ background-position:-200% 0 } 100%{ background-position:200% 0 } }
+.page-shimmer {
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, #eaf5f4 25%, #d4eeeb 50%, #eaf5f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* page number badge */
+.pg-num {
+  position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%);
+  background: rgba(1,70,64,.72); color: #fff;
+  font-size: .63rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px;
+  backdrop-filter: blur(4px); z-index: 3;
+  pointer-events: none; white-space: nowrap;
+}
+
+/* action bar */
+.page-actions {
+  padding: 9px 8px 10px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 6px;
+  transition: background .2s;
+}
+.page-rotate-btns {
+  display: flex; gap: 4px;
+}
+.btn-rot-page {
+  flex: 1; padding: 6px 2px; border: 1.5px solid var(--border); border-radius: 7px;
+  background: var(--white); color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .7rem; font-weight: 600;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 3px;
+  transition: all .15s;
+}
+.btn-rot-page:hover { border-color: var(--orange); color: var(--orange); background: #fff7ed; }
+.btn-rot-page.btn-rot-reset { color: var(--muted); }
+.btn-rot-page.btn-rot-reset:hover { border-color: var(--warn); color: var(--warn); background: var(--warn-light); }
+.pg-label { font-size: .67rem; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
+.rot-val-label { font-size: .67rem; font-weight: 700; text-align: center; color: var(--orange); display: none; }
+.page-card.rotated .rot-val-label { display: block; }
+
+/* ── HINT BANNER ── */
+.hint-banner {
+  display: none;
+  border: 1.5px dashed var(--teal);
+  border-radius: 9px; padding: 9px 16px; margin-top: 14px;
+  font-size: .78rem; font-weight: 600; color: var(--teal);
+  background: var(--teal-light);
+}
+.hint-banner.visible {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.hint-banner strong { font-weight: 700; }
+
+/* ── SECTIONS ── */
+.section { margin-top: 64px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub { text-align: center; color: var(--muted); font-size: .86rem; margin-bottom: 28px; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 24px 18px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3.5px; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+.step-card p { font-size: .81rem; color: var(--muted); line-height: 1.58; }
+
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 20px 18px; transition: box-shadow .2s, transform .2s; }
+.feat:hover { box-shadow: var(--sh2); transform: translateY(-2px); }
+.feat-ico { width: 40px; height: 40px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.feat h3 { font-size: .875rem; font-weight: 700; margin-bottom: 5px; }
+.feat p { font-size: .8rem; color: var(--muted); line-height: 1.58; }
+
+.use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.use { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 20px 18px; }
+.use h3 { font-size: .875rem; font-weight: 700; margin-bottom: 5px; }
+.use p { font-size: .8rem; color: var(--muted); line-height: 1.58; }
+
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q {
+  padding: 16px 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: .875rem; user-select: none; gap: 12px;
+  transition: background .15s, color .15s;
+}
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; font-size: .84rem; color: var(--muted); line-height: 1.68; padding: 0 18px; }
+.faq-a.open { max-height: 260px; padding: 0 18px 16px; }
+
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 9px; }
+.tool-a {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; text-decoration: none; color: var(--text);
+  font-size: .81rem; font-weight: 600;
+  transition: border-color .17s, background .15s, color .17s, transform .15s;
+}
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); transform: translateY(-1px); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* ── FOOTER ── */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--teal); color: #fff;
+  padding: 11px 20px; border-radius: 8px;
+  font-size: .86rem; font-weight: 600;
+  box-shadow: 0 5px 20px rgba(1,121,111,.32);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 1100; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; }
+
+@media (max-width: 520px) {
+  .page-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  #globalRotateStrip { flex-direction: column; align-items: flex-start; }
+  .file-group-header { flex-wrap: wrap; }
+  .rotate-btn-group { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="h-inner">
+    <h1>PDF Rotator — <em>Free &amp; Online</em></h1>
+    <p>Rotate all pages or individual pages of any PDF. 90°, 180°, 270° — instant, private, no watermarks.</p>
+    <div class="badges">
+      <span class="badge">🔒 Files stay on your device</span>
+      <span class="badge">✨ No watermarks</span>
+      <span class="badge">↻ Rotate all or individual pages</span>
+      <span class="badge">📐 90° · 180° · 270°</span>
+      <span class="badge">⚡ Instant download</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon-wrap">
+      <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+        <path d="M22 6A10 10 0 114 14.5" stroke="#01796f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M22 2v5h-5" stroke="#01796f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 9v5l3 3" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF files here to rotate</h2>
+    <p>Upload one or more PDFs — rotate all pages at once or pick individual pages to fix</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M7.5 1v10M4 8l3.5 3.5L11 8M1 13.5h13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF Files
+    </button>
+    <input type="file" id="fileInput" accept=".pdf" multiple>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div id="toolbar">
+    <div class="toolbar-left">
+      <div class="toolbar-info">
+        <span id="totalPagesLabel">0</span> pages
+        <em id="filesLabel"></em>
+      </div>
+      <button class="tb-btn tb-btn-add" onclick="document.getElementById('fileInput').click()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Add More PDFs
+      </button>
+      <button class="tb-btn danger" onclick="clearAll()">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Clear All
+      </button>
+    </div>
+  </div>
+
+  <!-- GLOBAL ROTATE STRIP -->
+  <div id="globalRotateStrip">
+    <div class="strip-label">
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M13 3.5A6 6 0 112.5 9" stroke="#c2460a" stroke-width="1.8" stroke-linecap="round"/><path d="M13 1v3h-3" stroke="#c2460a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate ALL pages:
+    </div>
+    <div class="rotate-btn-group">
+      <button class="rot-btn rot-btn-ccw" onclick="rotateAllPages(-90)">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 4A5 5 0 0112 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M2 1.5v3H4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        −90° (CCW)
+      </button>
+      <button class="rot-btn rot-btn-180" onclick="rotateAllPages(180)">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 2.5A4.5 4.5 0 117 11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 0v3.5M7 10.5V14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        180° (Flip)
+      </button>
+      <button class="rot-btn rot-btn-cw" onclick="rotateAllPages(90)">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M12 4A5 5 0 012 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M12 1.5v3H9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +90° (CW)
+      </button>
+      <button class="rot-btn rot-btn-reset" onclick="resetAllRotations()">
+        <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1A5.5 5.5 0 106.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6.5 4v-3L4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Reset All
+      </button>
+    </div>
+    <!-- progress -->
+    <div class="prog-wrap" id="progressWrap" style="width:100%;">
+      <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+      <div class="prog-lbl" id="progressLabel">Processing…</div>
+    </div>
+  </div>
+
+  <!-- HINT BANNER -->
+  <div class="hint-banner" id="hintBanner">
+    <svg width="16" height="16" fill="none" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="#01796f" stroke-width="1.5"/><path d="M8 5.5v3.5M8 10.5v.5" stroke="#01796f" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span>Use <strong>Rotate ALL pages</strong> to fix the whole document at once, or click <strong>↻ / ↺</strong> on individual page cards for targeted rotation. Click <strong>Download Rotated PDF</strong> when you're done.</span>
+  </div>
+
+  <!-- PAGE GROUPS -->
+  <div id="pageGroups"></div>
+
+  <!-- ═══ HOW TO ═══ -->
+  <section class="section">
+    <h2 class="sec-title">How to Rotate PDF Pages Online for Free</h2>
+    <p class="sec-sub">Three simple steps. No account required. Completely free.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="s-num">01</div>
+        <h3>Upload Your PDF</h3>
+        <p>Drag and drop one or more PDF files onto the upload area, or click <strong>Select PDF Files</strong>. Every page loads as a visual thumbnail so you can see exactly what needs rotating.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">02</div>
+        <h3>Rotate Your Pages</h3>
+        <p>Click <strong>Rotate ALL pages</strong> to fix the entire document instantly, or use the <strong>↺ / ↻</strong> buttons on individual page cards to rotate only the pages you need.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">03</div>
+        <h3>Download the Fixed PDF</h3>
+        <p>Click <strong>Download Rotated PDF</strong> next to any file. Your PDF is rebuilt with all rotations applied and downloaded instantly — clean, watermark-free, and full quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="sec-title">Why Use QwikPDF to Rotate PDFs?</h2>
+    <p class="sec-sub">The fastest, most private way to fix rotated PDF pages — for free.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M19 5A9 9 0 113 11" stroke="#01796f" stroke-width="2" stroke-linecap="round"/><path d="M19 2v4h-4" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Rotate All Pages Instantly</h3>
+        <p>One click to rotate the entire document 90°, 180°, or 270°. Perfect for fixing scanned PDFs that loaded sideways or upside down.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="3" width="7" height="9" rx="1.5" fill="#01796f" opacity=".4"/><rect x="12" y="3" width="7" height="6" rx="1.5" fill="#01796f"/><rect x="12" y="11" width="7" height="8" rx="1.5" fill="#01796f" opacity=".6"/></svg>
+        </div>
+        <h3>Rotate Individual Pages</h3>
+        <p>Each page has its own rotation controls. Rotate specific pages independently — without affecting the rest of the document.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="4" width="16" height="14" rx="2" stroke="#01796f" stroke-width="1.8"/><path d="M8 10l2.5 2.5L15 8" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Live Rotation Preview</h3>
+        <p>Page thumbnails update instantly as you rotate so you always see exactly how the final PDF will look before downloading.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M11 2L3 6v7c0 5.5 3.5 10.2 8 11.5 4.5-1.3 8-6 8-11.5V6L11 2z" fill="#01796f"/></svg>
+        </div>
+        <h3>100% Private</h3>
+        <p>All processing happens locally in your browser. Your PDF files are never uploaded to any server — not even temporarily.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" stroke="#01796f" stroke-width="1.8"/><path d="M8 11l2 2 4-4" stroke="#01796f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Zero Quality Loss</h3>
+        <p>Rotation is a metadata operation — text, images, and vector graphics are preserved exactly. No re-rendering or compression is applied.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#01796f" stroke-width="1.8"/><path d="M6 19h10M11 18v1" stroke="#01796f" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Multiple PDFs at Once</h3>
+        <p>Upload several PDFs simultaneously and rotate pages from each one. Download each file individually as a corrected PDF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section">
+    <h2 class="sec-title">Common Reasons to Rotate PDF Pages</h2>
+    <p class="sec-sub">Fix orientation issues in any PDF, for any purpose.</p>
+    <div class="use-grid">
+      <div class="use"><h3>🖨️ Fix Scanned Documents</h3><p>Scanned pages often load sideways or upside down. Rotate all pages instantly to correct the orientation before sharing or printing.</p></div>
+      <div class="use"><h3>📱 Fix Phone Scans</h3><p>Photos of documents taken in landscape mode come out rotated. Fix the orientation in seconds without any software.</p></div>
+      <div class="use"><h3>📊 Correct Landscape Pages</h3><p>Technical PDFs and reports sometimes mix portrait and landscape pages. Rotate individual pages to standardize the layout.</p></div>
+      <div class="use"><h3>📄 Align Signature Pages</h3><p>Contract or form signature pages that were scanned upside down can be rotated independently without touching the rest of the document.</p></div>
+      <div class="use"><h3>🎓 Fix Submitted Assignments</h3><p>Students often submit documents with rotated pages. Fix the orientation before uploading to a portal or printing for grading.</p></div>
+      <div class="use"><h3>📁 Archive & Filing</h3><p>Before storing PDFs in a document management system, rotate and correct all pages so they're consistently oriented and easy to read.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything about rotating PDF pages online for free.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">How do I rotate a PDF page online for free?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Upload your PDF using the button above. Use <strong>Rotate ALL pages</strong> to fix the whole document at once, or click the ↺/↻ buttons on individual page cards to rotate specific pages. Then click <strong>Download Rotated PDF</strong> to save the corrected file.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Can I rotate just one page in a PDF without changing the others?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Yes. Each page thumbnail has its own ↺ (rotate left, −90°) and ↻ (rotate right, +90°) buttons. Click them to rotate only that specific page. All other pages remain unchanged. A colored indicator shows which pages have been rotated.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">What rotation angles are supported?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">You can rotate pages 90° clockwise (+90°), 90° counter-clockwise (−90°), or 180°. Using the global controls you can apply these to all pages at once. On individual pages, click the ↻ button multiple times to add 90° increments (1× = 90°, 2× = 180°, 3× = 270°).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Are my PDF files uploaded to a server when I rotate them?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">No. QwikPDF runs entirely in your browser using JavaScript. Your PDF files are never sent to any server — not even temporarily. This makes the tool completely safe for confidential, legal, medical, or personal documents.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Will rotating the PDF reduce its quality or file size?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">No quality is lost. Page rotation is applied as a metadata change using pdf-lib — the actual page content (text, fonts, vector graphics, images) is never re-rendered or re-compressed. The output file quality is identical to the original.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Can I rotate multiple PDF files at the same time?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Yes. Upload several PDFs at once and all their pages appear grouped by source file. Apply global rotations to all files, or rotate pages within individual files, then download each corrected PDF separately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Can I undo a rotation if I make a mistake?<svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a">Yes. Click <strong>Reset</strong> on an individual page card to undo that page's rotation and return it to its original orientation. Use <strong>Reset All</strong> in the toolbar to undo all rotations across all pages at once.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="section">
+    <h2 class="sec-title">More Free PDF Tools</h2>
+    <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+    <div class="tools-grid">
+      <a href="https://qwikpdf.com/pdf_merger.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Merge PDFs
+      </a>
+      <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        Split PDF
+      </a>
+      <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+        Organize Pages
+      </a>
+      <a href="https://qwikpdf.com/pdf-to-image-converter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PDF to Image
+      </a>
+      <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 2h9a1 1 0 011 1v8a1 1 0 01-1 1h-9a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7.5l2 2 3-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PDF to JPG
+      </a>
+      <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 2h9a1 1 0 011 1v8a1 1 0 01-1 1h-9a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7.5l2 2 3-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PDF to PNG
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikPDF · Free PDF Rotator · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. Your files are never uploaded to any server.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// ── STATE ──
+// sourceFiles = [{ uid, name, baseName, buffer, pageCount, pdfJsDoc, pages:[{thumb, rotation}] }]
+let sourceFiles = [];
+
+// ── INPUT ──
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  loadFiles([...e.dataTransfer.files].filter(f => f.type === 'application/pdf'));
+});
+fileInput.addEventListener('change', () => { loadFiles([...fileInput.files]); fileInput.value = ''; });
+
+async function loadFiles(newFiles) {
+  for (const file of newFiles) {
+    if (file.type !== 'application/pdf') continue;
+    const uid = 'f' + Date.now() + '_' + Math.floor(Math.random() * 1e9);
+    const buffer = await file.arrayBuffer();
+    let pdfJsDoc;
+    try {
+      pdfJsDoc = await pdfjsLib.getDocument({ data: buffer.slice(0) }).promise;
+    } catch(e) { showToast('Could not read: ' + file.name); continue; }
+    const baseName = file.name.replace(/\.pdf$/i, '');
+    const pages = Array.from({ length: pdfJsDoc.numPages }, () => ({ thumb: null, rotation: 0 }));
+    sourceFiles.push({ uid, name: file.name, baseName, buffer, pageCount: pdfJsDoc.numPages, pdfJsDoc, pages });
+    renderGroups();
+    generateThumbs(uid);
+  }
+  updateUI();
+}
+
+async function generateThumbs(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  for (let pi = 0; pi < src.pageCount; pi++) {
+    try {
+      const page = await src.pdfJsDoc.getPage(pi + 1);
+      const vp = page.getViewport({ scale: 1 });
+      const scale = 280 / vp.width;
+      const sv = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = sv.width; canvas.height = sv.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: sv }).promise;
+      src.pages[pi].thumb = canvas.toDataURL('image/jpeg', 0.82);
+      // update live
+      const imgEl = document.querySelector(`.page-card[data-uid="${src.uid}"][data-pi="${pi}"] .pg-img`);
+      if (imgEl && imgEl.tagName === 'IMG') {
+        imgEl.src = src.pages[pi].thumb;
+        applyImgRotation(imgEl, src.pages[pi].rotation);
+      } else if (imgEl) {
+        // was shimmer — rebuild preview
+        const card = document.querySelector(`.page-card[data-uid="${src.uid}"][data-pi="${pi}"]`);
+        if (card) {
+          const preview = card.querySelector('.page-preview');
+          if (preview) preview.innerHTML = buildPreviewHTML(src, pi);
+        }
+      }
+    } catch(e) { /* leave shimmer */ }
+  }
+}
+
+function buildPreviewHTML(src, pi) {
+  const pg = src.pages[pi];
+  const rot = pg.rotation;
+  const rotStyle = rot ? `style="transform:rotate(${rot}deg)"` : '';
+  return `
+    ${pg.thumb
+      ? `<img class="pg-img" src="${pg.thumb}" ${rotStyle} draggable="false" alt="Page ${pi+1} of ${escHtml(src.name)}">`
+      : `<div class="page-shimmer pg-img"></div>`
+    }
+    <div class="pg-num">Page ${pi+1} of ${src.pageCount}</div>`;
+}
+
+function renderGroups() {
+  const container = document.getElementById('pageGroups');
+  container.innerHTML = '';
+  let totalPages = 0;
+
+  sourceFiles.forEach(src => {
+    totalPages += src.pageCount;
+    const group = document.createElement('div');
+    group.className = 'file-group';
+    group.innerHTML = `
+      <div class="file-group-header">
+        <div class="file-group-icon">
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M9 2H4a1.5 1.5 0 00-1.5 1.5v8A1.5 1.5 0 004 13h7a1.5 1.5 0 001.5-1.5V6L9 2z" stroke="#01796f" stroke-width="1.4"/><path d="M9 2v4h4" stroke="#01796f" stroke-width="1.4"/></svg>
+        </div>
+        <div class="file-group-title" title="${escHtml(src.name)}">${escHtml(src.name)}</div>
+        <div class="file-group-meta">${src.pageCount} page${src.pageCount !== 1 ? 's' : ''}</div>
+        <button class="btn-download-file" id="dlbtn-${src.uid}" onclick="downloadRotatedPDF('${src.uid}')">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download Rotated PDF
+        </button>
+        <button class="tb-btn danger" style="padding:5px 11px;font-size:.73rem;" onclick="removeFile('${src.uid}')">Remove</button>
+      </div>
+      <div class="page-grid"></div>`;
+
+    const grid = group.querySelector('.page-grid');
+    src.pages.forEach((pg, pi) => {
+      const card = document.createElement('div');
+      card.className = 'page-card' + (pg.rotation !== 0 ? ' rotated' : '');
+      card.dataset.uid = src.uid;
+      card.dataset.pi = pi;
+      const rotDisplay = pg.rotation !== 0 ? pg.rotation + '°' : '';
+      const rotStyle = pg.rotation ? `style="transform:rotate(${pg.rotation}deg)"` : '';
+      card.innerHTML = `
+        <div class="rot-indicator">${rotDisplay}</div>
+        <div class="page-preview">
+          ${pg.thumb
+            ? `<img class="pg-img" src="${pg.thumb}" ${rotStyle} draggable="false" alt="Page ${pi+1} of ${escHtml(src.name)}">`
+            : `<div class="page-shimmer pg-img"></div>`
+          }
+          <div class="pg-num">Page ${pi+1} of ${src.pageCount}</div>
+        </div>
+        <div class="page-actions">
+          <div class="page-rotate-btns">
+            <button class="btn-rot-page" title="Rotate 90° counter-clockwise" onclick="rotatePage('${src.uid}', ${pi}, -90)">
+              <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M2 3.5A4.5 4.5 0 0111.5 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 1.5v3H4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              −90°
+            </button>
+            <button class="btn-rot-page" title="Rotate 90° clockwise" onclick="rotatePage('${src.uid}', ${pi}, 90)">
+              <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M11 3.5A4.5 4.5 0 001.5 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M11 1.5v3H8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              +90°
+            </button>
+            <button class="btn-rot-page btn-rot-reset" title="Reset rotation" onclick="resetPage('${src.uid}', ${pi})">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 1A5 5 0 106 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 3.5v-3L3.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="pg-label" title="${escHtml(src.baseName)}">${escHtml(src.baseName)}</div>
+          <div class="rot-val-label">${pg.rotation !== 0 ? 'Rotated ' + pg.rotation + '°' : ''}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+    container.appendChild(group);
+  });
+
+  document.getElementById('totalPagesLabel').textContent = totalPages;
+  const fc = sourceFiles.length;
+  document.getElementById('filesLabel').textContent = fc > 0 ? `from ${fc} file${fc !== 1 ? 's' : ''}` : '';
+}
+
+function updateUI() {
+  const has = sourceFiles.length > 0;
+  document.getElementById('toolbar').classList.toggle('visible', has);
+  document.getElementById('globalRotateStrip').classList.toggle('visible', has);
+  document.getElementById('hintBanner').classList.toggle('visible', has);
+}
+
+// ── ROTATION LOGIC ──
+function normalizeAngle(a) { return ((a % 360) + 360) % 360; }
+
+function applyImgRotation(imgEl, rotation) {
+  if (imgEl && imgEl.tagName === 'IMG') {
+    imgEl.style.transform = rotation ? `rotate(${rotation}deg)` : '';
+  }
+}
+
+function rotatePage(uid, pi, delta) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  src.pages[pi].rotation = normalizeAngle(src.pages[pi].rotation + delta);
+  updateCard(src, pi);
+}
+
+function resetPage(uid, pi) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+  src.pages[pi].rotation = 0;
+  updateCard(src, pi);
+}
+
+function rotateAllPages(delta) {
+  sourceFiles.forEach(src => {
+    src.pages.forEach((pg, pi) => {
+      pg.rotation = normalizeAngle(pg.rotation + delta);
+      updateCard(src, pi);
+    });
+  });
+  const totalRotated = sourceFiles.reduce((s, f) => s + f.pages.filter(p => p.rotation !== 0).length, 0);
+  if (totalRotated > 0) showToast('All pages rotated!');
+}
+
+function resetAllRotations() {
+  sourceFiles.forEach(src => {
+    src.pages.forEach((pg, pi) => {
+      pg.rotation = 0;
+      updateCard(src, pi);
+    });
+  });
+  showToast('All rotations reset');
+}
+
+function updateCard(src, pi) {
+  const card = document.querySelector(`.page-card[data-uid="${src.uid}"][data-pi="${pi}"]`);
+  if (!card) return;
+  const pg = src.pages[pi];
+  const isRotated = pg.rotation !== 0;
+
+  card.classList.toggle('rotated', isRotated);
+
+  // update indicator
+  const indicator = card.querySelector('.rot-indicator');
+  if (indicator) indicator.textContent = isRotated ? pg.rotation + '°' : '';
+
+  // update img transform
+  const imgEl = card.querySelector('.pg-img');
+  if (imgEl && imgEl.tagName === 'IMG') {
+    imgEl.style.transform = isRotated ? `rotate(${pg.rotation}deg)` : '';
+  }
+
+  // update label
+  const rotLbl = card.querySelector('.rot-val-label');
+  if (rotLbl) rotLbl.textContent = isRotated ? `Rotated ${pg.rotation}°` : '';
+}
+
+// ── DOWNLOAD ──
+async function downloadRotatedPDF(uid) {
+  const src = sourceFiles.find(f => f.uid === uid);
+  if (!src) return;
+
+  const btn = document.getElementById('dlbtn-' + uid);
+  if (btn) { btn.disabled = true; btn.innerHTML = spinnerHTML() + ' Saving…'; }
+
+  const wrap = document.getElementById('progressWrap');
+  const bar  = document.getElementById('progressBar');
+  const lbl  = document.getElementById('progressLabel');
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Loading PDF…';
+
+  try {
+    const { PDFDocument, degrees } = PDFLib;
+    const pdfDoc = await PDFDocument.load(src.buffer, { ignoreEncryption: true });
+    const pages = pdfDoc.getPages();
+
+    for (let pi = 0; pi < pages.length; pi++) {
+      const rot = src.pages[pi].rotation;
+      if (rot !== 0) {
+        const page = pages[pi];
+        const current = page.getRotation().angle;
+        page.setRotation(degrees(normalizeAngle(current + rot)));
+      }
+      bar.style.width = Math.round(((pi + 1) / pages.length) * 88) + '%';
+      lbl.textContent = `Applying rotation: page ${pi+1} of ${pages.length}`;
+    }
+
+    bar.style.width = '94%'; lbl.textContent = 'Saving PDF…';
+    const bytes = await pdfDoc.save();
+    bar.style.width = '100%'; lbl.textContent = '✓ Done! Downloading…';
+
+    triggerDownload(bytes, `${src.baseName}_rotated.pdf`);
+    showToast('"' + src.name + '" downloaded!');
+    setTimeout(() => wrap.classList.remove('show'), 3200);
+  } catch(e) {
+    console.error(e); showToast('Download failed. Please try again.');
+    wrap.classList.remove('show');
+  }
+
+  if (btn) {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v8M4 7l2.5 2.5L9 7M1 11h11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download Rotated PDF`;
+  }
+}
+
+function triggerDownload(bytes, filename) {
+  const blob = new Blob([bytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
+}
+
+function removeFile(uid) {
+  sourceFiles = sourceFiles.filter(f => f.uid !== uid);
+  renderGroups(); updateUI();
+}
+
+function clearAll() {
+  sourceFiles = [];
+  document.getElementById('pageGroups').innerHTML = '';
+  updateUI();
+}
+
+function toggleFAQ(el) {
+  const ans = el.nextElementSibling, isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function spinnerHTML() {
+  return `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M7 2a5 5 0 015 5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg>`;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>

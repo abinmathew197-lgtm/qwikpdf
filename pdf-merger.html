@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Merge PDF Files Online Free – No Upload, No Watermark | QwikMerge</title>
+<meta name="description" content="Merge PDF files online for free in seconds. Combine multiple PDFs into one, drag to reorder, and download — no file uploads, no watermarks, no sign-up required.">
+<meta name="keywords" content="merge pdf, combine pdf online free, pdf merger, merge pdf files, pdf joiner, combine pdf files, merge pdfs without watermark, free pdf merger, pdf combiner online">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QwikMerge">
+<link rel="canonical" href="https://qwikmerge.app/">
+
+<meta property="og:title" content="Merge PDF Files Online Free – No Upload, No Watermark">
+<meta property="og:description" content="Combine multiple PDF files into one in seconds. Free, private, and no watermarks — runs entirely in your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qwikmerge.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Merge PDF Files Online Free">
+<meta name="twitter:description" content="Combine multiple PDFs into one. Free, private, no watermarks. Works in any browser.">
+
+<meta name="theme-color" content="#01796f">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QwikMerge – Free Online PDF Merger",
+  "url": "https://qwikmerge.app/",
+  "description": "Merge multiple PDF files into one document online for free. No file uploads, no watermarks, no registration required. Entirely browser-based.",
+  "applicationCategory": "DocumentEditor",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Merge unlimited PDF files","Drag-and-drop reordering","No watermarks","100% browser-based","No file uploads","Free forever"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Merge PDF Files Online for Free",
+  "description": "Combine multiple PDF files into one using QwikMerge — free, no uploads, no watermarks.",
+  "step": [
+    { "@type": "HowToStep", "name": "Upload your PDFs", "text": "Drag and drop multiple PDF files onto the upload area or click Select PDF Files to browse your device." },
+    { "@type": "HowToStep", "name": "Set the order", "text": "Drag files up or down in the list to choose the exact page order for your merged PDF." },
+    { "@type": "HowToStep", "name": "Merge and download", "text": "Click Merge & Download. Your combined PDF downloads instantly — no server, no email required." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I merge PDF files online for free?", "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF files on this page, drag to set the order, and click Merge & Download. Your combined PDF is ready in seconds — no sign-up, no payment." } },
+    { "@type": "Question", "name": "Are my PDF files uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs in your browser. Your files are never sent to any server, keeping your documents completely private." } },
+    { "@type": "Question", "name": "Will the merged PDF have a watermark?", "acceptedAnswer": { "@type": "Answer", "text": "No watermarks are ever added. You get a clean, professional PDF exactly as your original documents." } },
+    { "@type": "Question", "name": "How many PDFs can I merge at once?", "acceptedAnswer": { "@type": "Answer", "text": "There is no fixed limit. You can merge as many PDFs as your device can handle — most users combine 2 to 30 files without any issues." } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal:       #01796f;
+  --teal-dark:  #015f57;
+  --teal-mid:   #019d91;
+  --teal-light: #eaf5f4;
+  --teal-xs:    #f3faf9;
+  --warn:       #dc4f4f;
+  --bg:         #f7fafa;
+  --white:      #ffffff;
+  --border:     #d6eeec;
+  --text:       #1c2b2a;
+  --muted:      #5f7775;
+  --r:          12px;
+  --sh:         0 2px 14px rgba(1,121,111,.08);
+  --sh2:        0 4px 24px rgba(1,121,111,.13);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+header {
+  background: var(--teal);
+  color: #fff;
+  padding: 34px 20px 38px;
+  text-align: center;
+}
+.h-inner { max-width: 640px; margin: 0 auto; }
+header h1 { font-size: clamp(1.45rem, 3.8vw, 2.1rem); font-weight: 700; letter-spacing: -.3px; line-height: 1.22; }
+header h1 em { font-style: normal; font-weight: 400; opacity: .86; }
+header p { margin-top: 8px; font-size: .94rem; opacity: .8; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 16px; }
+.badges span {
+  background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px; padding: 3px 11px; font-size: .74rem; font-weight: 500;
+}
+
+/* LAYOUT */
+main { max-width: 760px; margin: 0 auto; padding: 30px 16px 140px; }
+
+/* DROP ZONE */
+#dropZone {
+  background: var(--white); border: 2px dashed var(--teal); border-radius: var(--r);
+  padding: 50px 24px; text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  box-shadow: var(--sh);
+}
+#dropZone:hover { background: var(--teal-xs); }
+#dropZone.drag-over { background: var(--teal-light); border-color: var(--teal-mid); transform: scale(1.01); }
+.dz-icon {
+  width: 54px; height: 54px; background: var(--teal-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+}
+#dropZone h2 { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+#dropZone p  { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.browse-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 18px; background: var(--teal); color: #fff; border: none;
+  padding: 11px 26px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, transform .12s; position: relative;
+}
+.browse-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+#fileInput { display: none; }
+
+/* FILE SECTION */
+#fileSection { margin-top: 20px; display: none; }
+#mergeSection { display: none; }
+
+.sec-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+.sec-hdr h3 { font-size: .875rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.f-badge {
+  background: var(--teal); color: #fff; font-size: .68rem; font-weight: 700;
+  border-radius: 20px; padding: 2px 8px;
+}
+.btn-clear {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 1.5px solid var(--warn); color: var(--warn);
+  padding: 5px 13px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .76rem; font-weight: 600;
+  cursor: pointer; transition: background .17s, color .17s;
+}
+.btn-clear:hover { background: var(--warn); color: #fff; }
+
+/* DRAG HINT BANNER */
+.drag-hint-banner {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--teal-light); border: 1.5px dashed var(--teal);
+  border-radius: 9px; padding: 9px 14px; margin-bottom: 10px;
+  font-size: .78rem; font-weight: 600; color: var(--teal);
+  animation: fadeUp .3s ease both;
+}
+.drag-hint-banner svg { flex-shrink: 0; }
+
+/* FILE LIST — card grid */
+#fileList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.file-item {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: stretch;
+  cursor: grab; user-select: none; position: relative; overflow: hidden;
+  transition: border-color .18s, box-shadow .18s, transform .15s;
+  animation: fadeUp .22s ease both;
+  box-shadow: var(--sh);
+}
+.file-item:hover { border-color: var(--teal-mid); box-shadow: var(--sh2); transform: translateY(-2px); }
+.file-item:active { cursor: grabbing; transform: scale(.97); }
+.file-item.dragging { opacity: .35; transform: scale(.95) rotate(1.5deg); border-color: var(--teal-mid); box-shadow: 0 8px 28px rgba(1,121,111,.22); }
+.file-item.drag-target { border-color: var(--teal-mid); box-shadow: 0 0 0 3px rgba(1,121,111,.18); }
+.file-item.drag-over-top    { border-top: 3px solid var(--teal-mid); }
+.file-item.drag-over-bottom { border-bottom: 3px solid var(--teal-mid); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* thumbnail area */
+.f-preview {
+  width: 100%; aspect-ratio: 3/4;
+  background: #f0f4f3;
+  position: relative; overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+.f-preview canvas {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; display: block;
+}
+/* SHIMMER for loading thumb */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.f-preview-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(90deg, #eaf5f4 25%, #d4eeeb 50%, #eaf5f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 10px 10px 0 0;
+}
+.f-preview-placeholder svg { opacity: .5; animation: none; }
+
+/* thumbnail overlay: order badge + drag icon */
+.f-order-badge {
+  position: absolute; top: 7px; left: 7px;
+  background: var(--teal); color: #fff;
+  font-size: .68rem; font-weight: 700;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  z-index: 2;
+}
+.f-drag-icon {
+  position: absolute; top: 7px; right: 7px;
+  background: rgba(255,255,255,.92);
+  border-radius: 6px;
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,.12);
+  z-index: 2; cursor: grab;
+  transition: background .15s;
+}
+.file-item:hover .f-drag-icon { background: white; box-shadow: 0 2px 8px rgba(1,121,111,.2); }
+.f-drag-icon svg { color: #7aada9; }
+
+/* bottom info strip */
+.f-info {
+  padding: 9px 10px 10px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 6px;
+  min-width: 0;
+}
+.f-text { flex: 1; min-width: 0; }
+.f-name { font-weight: 600; font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
+.f-size { font-size: .68rem; color: var(--muted); margin-top: 1px; }
+.btn-rm {
+  background: none; border: none; cursor: pointer; color: #c4d8d6;
+  padding: 2px; display: flex; border-radius: 5px; flex-shrink: 0;
+  transition: color .15s, background .15s; margin-top: 1px;
+}
+.btn-rm:hover { color: var(--warn); background: #fef2f2; }
+
+/* ADD MORE */
+.add-more {
+  width: 100%; margin-top: 7px; padding: 10px;
+  background: none; border: 1.5px dashed var(--border); border-radius: 10px;
+  color: var(--teal); font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .83rem; font-weight: 600; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  transition: border-color .18s, background .18s;
+}
+.add-more:hover { border-color: var(--teal); background: var(--teal-xs); }
+
+/* MERGE SECTION */
+#mergeSection {
+  margin-top: 18px; background: var(--white);
+  border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 20px 18px; box-shadow: var(--sh);
+}
+.hint {
+  display: flex; align-items: flex-start; gap: 9px;
+  background: var(--teal-xs); border-radius: 8px;
+  padding: 10px 13px; font-size: .80rem; color: var(--muted);
+  margin-bottom: 14px; line-height: 1.5;
+}
+.hint svg { flex-shrink: 0; margin-top: 1px; }
+.btn-merge {
+  width: 100%; padding: 14px; background: var(--teal); color: #fff;
+  border: none; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .98rem; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background .17s, transform .12s, box-shadow .17s;
+  box-shadow: 0 3px 12px rgba(1,121,111,.27);
+}
+.btn-merge:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(1,121,111,.34); }
+.btn-merge:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+/* PROGRESS */
+.prog-wrap { display: none; margin-top: 12px; }
+.prog-wrap.show { display: block; }
+.prog-track { background: var(--border); border-radius: 8px; height: 6px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 8px; transition: width .3s ease; width: 0%; }
+.prog-lbl { font-size: .76rem; color: var(--muted); margin-top: 6px; text-align: center; }
+
+/* CONTENT */
+.section { margin-top: 58px; }
+.sec-title { font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 700; color: var(--teal); text-align: center; margin-bottom: 5px; letter-spacing: -.2px; }
+.sec-sub   { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 26px; }
+
+/* STEPS */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 22px 17px; position: relative; overflow: hidden; }
+.step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.s-num { font-size: 1.9rem; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 10px; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.step-card p  { font-size: .80rem; color: var(--muted); line-height: 1.55; }
+
+/* FEATURES */
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 13px; }
+.feat { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; transition: box-shadow .2s; }
+.feat:hover { box-shadow: var(--sh2); }
+.feat-ico { width: 38px; height: 38px; background: var(--teal-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 11px; }
+.feat h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.feat p   { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+
+/* USE CASES */
+.use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 13px; }
+.use { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 19px 17px; }
+.use h3 { font-size: .86rem; font-weight: 700; margin-bottom: 4px; }
+.use p  { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 7px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-q {
+  padding: 15px 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: .875rem; user-select: none; gap: 12px;
+  transition: background .15s, color .15s;
+}
+.faq-q:hover { background: var(--teal-xs); }
+.faq-q.open { color: var(--teal); background: var(--teal-xs); }
+.faq-chev { flex-shrink: 0; transition: transform .25s; color: var(--muted); }
+.faq-q.open .faq-chev { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .3s ease, padding .3s;
+  font-size: .83rem; color: var(--muted); line-height: 1.65; padding: 0 17px;
+}
+.faq-a.open { max-height: 220px; padding: 0 17px 15px; }
+
+/* TOOLS GRID */
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 9px; }
+.tool-a {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 9px;
+  padding: 11px 13px; text-decoration: none; color: var(--text);
+  font-size: .80rem; font-weight: 600;
+  transition: border-color .17s, background .15s, color .17s;
+}
+.tool-a:hover { border-color: var(--teal); background: var(--teal-xs); color: var(--teal); }
+.tool-a svg { flex-shrink: 0; color: var(--teal); }
+
+/* FOOTER */
+footer { background: var(--teal); color: rgba(255,255,255,.82); text-align: center; padding: 26px 16px; font-size: .79rem; }
+footer a { color: rgba(255,255,255,.9); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.f-note { margin-top: 7px; opacity: .62; font-size: .73rem; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 86px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--teal); color: #fff;
+  padding: 11px 20px; border-radius: 8px;
+  font-size: .86rem; font-weight: 600;
+  box-shadow: 0 5px 20px rgba(1,121,111,.32);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 1100; white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* PWA BUTTON */
+#pwaBtn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: var(--teal); color: #fff; border: none;
+  padding: 11px 18px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .82rem; font-weight: 700;
+  cursor: pointer; display: none; align-items: center; gap: 7px;
+  box-shadow: 0 4px 18px rgba(1,121,111,.38);
+  z-index: 999; transition: background .17s, transform .12s;
+  animation: floatUp .4s ease;
+}
+#pwaBtn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+@keyframes floatUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SPIN */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { transform-origin: 50% 50%; animation: spin .8s linear infinite; }
+
+@media (max-width: 500px) {
+  #pwaBtn { bottom: 12px; right: 12px; padding: 10px 15px; font-size: .78rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <h1>Merge PDF Files Online — <em>Free &amp; Private</em></h1>
+    <p>Combine multiple PDFs into one file. Instant, no uploads, no watermarks.</p>
+    <div class="badges">
+      <span>🔒 Files never leave your device</span>
+      <span>✨ No watermarks</span>
+      <span>⚡ Instant download</span>
+      <span>📱 Any device</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DROP ZONE -->
+  <div id="dropZone">
+    <div class="dz-icon">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path d="M12 4v13M7 10l5-6 5 6" stroke="#01796f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="4" y="19" width="16" height="2.5" rx="1.25" fill="#01796f" opacity=".2"/>
+      </svg>
+    </div>
+    <h2>Drop your PDF files here</h2>
+    <p>Supports multiple files — drag from any folder</p>
+    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Select PDF Files
+    </button>
+    <input type="file" id="fileInput" accept=".pdf" multiple>
+  </div>
+
+  <!-- FILE SECTION -->
+  <div id="fileSection">
+    <div class="sec-hdr">
+      <h3>Files to Merge <span class="f-badge" id="fileCount">0</span></h3>
+      <button class="btn-clear" onclick="clearAll()">
+        <svg width="11" height="11" fill="none" viewBox="0 0 11 11"><path d="M1 1l9 9M10 1L1 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Clear All
+      </button>
+    </div>
+    <div class="drag-hint-banner">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M7.5 1v4M7.5 10v4M1 7.5h4M10 7.5h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="2" fill="currentColor"/></svg>
+      Drag cards to reorder — the merged PDF will follow this sequence
+    </div>
+    <div id="fileList"></div>
+    <button class="add-more" onclick="document.getElementById('fileInput').click()">
+      <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Add More PDF Files
+    </button>
+  </div>
+
+  <!-- MERGE SECTION -->
+  <div id="mergeSection">
+    <div class="hint">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#01796f" stroke-width="1.4"/><path d="M7.5 5v3.5M7.5 10v.5" stroke="#01796f" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Thumbnails show each PDF's first page. Drag cards to reorder — numbers show the final merge sequence.
+    </div>
+    <button class="btn-merge" id="mergeBtn" onclick="mergePDFs()">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M2 8.5h13M8.5 2l6.5 6.5-6.5 6.5" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge &amp; Download PDF
+    </button>
+    <div class="prog-wrap" id="progressWrap">
+      <div class="prog-track"><div class="prog-fill" id="progressBar"></div></div>
+      <div class="prog-lbl" id="progressLabel">Processing…</div>
+    </div>
+  </div>
+
+  <!-- HOW TO -->
+  <section class="section">
+    <h2 class="sec-title">How to Merge PDF Files Online</h2>
+    <p class="sec-sub">Three steps. No account. Completely free.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="s-num">01</div>
+        <h3>Upload Your PDF Files</h3>
+        <p>Drag and drop multiple PDF files onto the upload area, or click <strong>Select PDF Files</strong> to browse. You can add as many files as you need — there is no limit on the number of documents.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">02</div>
+        <h3>Arrange the Page Order</h3>
+        <p>Drag any file up or down in the list to set the exact order you want. The numbered badge on each file updates in real time so you always know how the final PDF will be structured.</p>
+      </div>
+      <div class="step-card">
+        <div class="s-num">03</div>
+        <h3>Merge and Download</h3>
+        <p>Click <strong>Merge &amp; Download PDF</strong>. Your browser processes everything locally and the finished PDF downloads straight to your device — no email link, no server, no waiting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="sec-title">Why Merge PDFs with QwikMerge?</h2>
+    <p class="sec-sub">Built to be fast, private, and genuinely free — always.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><path d="M9.5 1L1.5 5v6c0 4.68 3.32 9.06 8 10.33 4.68-1.27 8-5.65 8-10.33V5L9.5 1z" fill="#01796f"/></svg></div>
+        <h3>100% Private</h3>
+        <p>Your files are never sent anywhere. Merging happens entirely inside your browser using JavaScript, so your documents stay on your device only.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><circle cx="9.5" cy="9.5" r="8" stroke="#01796f" stroke-width="1.7"/><path d="M6.5 9.5l2 2 4-4" stroke="#01796f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>No Watermarks, Ever</h3>
+        <p>The PDF you download is completely clean — no logos, no stamps, no branding added at any point. What goes in is exactly what comes out, combined.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><path d="M2.5 9.5h14M9.5 2.5l7 7-7 7" stroke="#01796f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Instant Processing</h3>
+        <p>No upload queues. No waiting for a server. Your merged PDF is generated in your browser and downloaded the moment you click the button.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><rect x="2" y="2" width="6.5" height="9" rx="1.5" fill="#01796f"/><rect x="10.5" y="2" width="6.5" height="5.5" rx="1.5" fill="#01796f" opacity=".5"/><rect x="10.5" y="9.5" width="6.5" height="7.5" rx="1.5" fill="#01796f" opacity=".75"/><rect x="2" y="13" width="6.5" height="4" rx="1.5" fill="#01796f" opacity=".35"/></svg></div>
+        <h3>Drag to Reorder</h3>
+        <p>Before merging, freely drag files up or down in the list. The merge follows your exact order, giving you full control over the final document structure.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><path d="M4 5h11a1.5 1.5 0 011.5 1.5v8A1.5 1.5 0 0115 16H4a1.5 1.5 0 01-1.5-1.5v-8A1.5 1.5 0 014 5z" stroke="#01796f" stroke-width="1.6"/><path d="M4 8.5h11" stroke="#01796f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Preserves Original Quality</h3>
+        <p>Text sharpness, embedded fonts, vector graphics, images, and formatting are all preserved exactly. No compression or re-rendering happens during the merge.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg width="19" height="19" fill="none" viewBox="0 0 19 19"><rect x="2" y="4" width="15" height="11" rx="2" stroke="#01796f" stroke-width="1.6"/><path d="M6.5 17h6M9.5 15v2" stroke="#01796f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Works on Any Device</h3>
+        <p>Use it on Windows, Mac, iPhone, or Android. Chrome, Safari, Firefox, and Edge are all fully supported. No installation or plugin needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section">
+    <h2 class="sec-title">Common Uses for a PDF Merger</h2>
+    <p class="sec-sub">One tool that handles many everyday document tasks.</p>
+    <div class="use-grid">
+      <div class="use"><h3>📄 Business &amp; Contracts</h3><p>Combine invoices, signed agreements, and supporting documents into a single organized file before sending to clients or archiving.</p></div>
+      <div class="use"><h3>🎓 Academic &amp; Research</h3><p>Merge thesis chapters, bibliography PDFs, and scanned notes into one complete, submittable academic document.</p></div>
+      <div class="use"><h3>🏥 Medical Records</h3><p>Join lab results, prescription scans, and doctor notes into one portable patient file for appointments and insurance claims.</p></div>
+      <div class="use"><h3>📑 Tax &amp; Finance</h3><p>Merge bank statements, receipts, and tax forms into a single document for filing, review, or record-keeping purposes.</p></div>
+      <div class="use"><h3>🏠 Property &amp; Legal</h3><p>Assemble lease agreements, ID copies, and property reports into one submission-ready packet for landlords or solicitors.</p></div>
+      <div class="use"><h3>📸 Portfolios &amp; Pitches</h3><p>Combine design work, project pages, and cover letters into a polished single-file PDF portfolio to share with anyone.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything you need to know about merging PDFs online.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          How do I merge PDF files online for free?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Upload your PDFs to this page, drag them into the order you want, then click <strong>Merge &amp; Download PDF</strong>. The combined file is ready in seconds. No account, no payment, no file size restrictions imposed by this tool.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Are my files uploaded to a server when I use this tool?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No. QwikMerge runs entirely inside your browser using JavaScript and the pdf-lib library. Your PDF files are never sent over the internet to any external server. This makes it safe for confidential, sensitive, or personal documents.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Will the merged PDF have any watermark?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No watermarks are added at any point. QwikMerge never stamps a logo, URL, or any branding onto your document. The PDF you download is a clean, professional file identical to the quality of your originals.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          How many PDF files can I merge at once?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">There is no hard limit set by this tool. You can combine as many PDFs as your device memory allows. Most users merge 2 to 30 files without any issues. Very large sets of files may take a few extra seconds to complete.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Can I change the order of files before merging?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. Once uploaded, each file appears in a numbered list. Drag any row up or down to change its position. The final merged PDF will follow exactly the order shown in the list when you click download.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Will merging reduce the quality of my PDFs?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">No quality is lost. Text, vector graphics, embedded fonts, and images are copied directly from the source PDFs into the merged document. There is no re-rendering or compression applied during the process.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Does this work on iPhone, iPad, or Android?
+          <svg class="faq-chev" width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a">Yes. QwikMerge works in any modern browser including Safari on iPhone and iPad, and Chrome or Firefox on Android phones and tablets. You can also install it as an app from the Install button at the bottom of the screen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+<section class="section">
+  <h2 class="sec-title">More Free PDF Tools</h2>
+  <p class="sec-sub">Everything you need for working with PDF files — all free and browser-based.</p>
+  <div class="tools-grid">
+    <a href="https://qwikpdf.com/pdf-to-jpg-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to JPG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-png-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to PNG
+    </a>
+    <a href="https://qwikpdf.com/pdf-to-bmp-converter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PDF to BMP
+    </a>
+    <a href="https://qwikpdf.com/add-watermark-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5l1.5-4 1.5 4M5.2 8h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Watermark PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-merger.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Merge PDFs
+    </a>
+    <a href="https://qwikpdf.com/pdf-splitter.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v12M1 7h6M7 7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Split PDF
+    </a>
+    <a href="https://qwikpdf.com/rotate-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M11 3A5 5 0 112.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 1v3H8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Rotate PDF
+    </a>
+    <a href="https://qwikpdf.com/pdf-organizer.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="5.5" height="8" rx="1" fill="currentColor" opacity=".4"/><rect x="7.5" y="1" width="5.5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="7.5" y="8" width="5.5" height="5" rx="1" fill="currentColor"/></svg>
+      Organize Pages
+    </a>
+    <a href="https://qwikpdf.com/compress-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Compress PDF
+    </a>
+    <a href="https://qwikpdf.com/draw-on-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10.5l1.5-1.5 6-6a1.5 1.5 0 012 2l-6 6L2 12v-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Draw on PDF
+    </a>
+    <a href="https://qwikpdf.com/white-out-pdf-text.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="4" width="12" height="7" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      White Out PDF
+    </a>
+    <a href="https://qwikpdf.com/add-image-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="5.5" r="1" fill="currentColor"/><path d="M1 9.5l3.5-2.5L7 9.5l2-2 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v2M11 3H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Add Image to PDF
+    </a>
+    <a href="https://qwikpdf.com/crop-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M3 1v9h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1 3h2M11 5v6M5 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Crop PDF
+    </a>
+    <a href="https://qwikpdf.com/add-shapes-to-pdf.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 13l2.5-4.5L7 13H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="7.5" y="8.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+      Add Shapes
+    </a>
+    <a href="https://qwikpdf.com/pdf-metadata-editor.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      PDF Metadata
+    </a>
+    <a href="https://qwikpdf.com/sign-pdf-online.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 10c1-2 2-4 3.5-4S7 8 8.5 8 11 4 12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Sign PDF
+    </a>
+    <a href="https://qwikpdf.com/fill-pdf-forms.html" class="tool-a">
+      <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 5h6M4 8h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="4" y="9.5" width="2" height="2" rx=".4" fill="currentColor"/></svg>
+      Fill PDF Forms
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 QwikMerge · Free Online PDF Merger · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  <p class="f-note">🔒 All processing happens in your browser. No files are ever uploaded to any server.</p>
+</footer>
+
+<!-- PWA Install -->
+<button id="pwaBtn" onclick="installPWA()">
+  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v9M4 7l3 3 3-3M1 12h12" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Install App
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+// Set PDF.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+let files = [], dragSrcIdx = null, deferredPrompt = null;
+
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', e => { if (!e.target.closest('.browse-btn')) fileInput.click(); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  addFiles([...e.dataTransfer.files].filter(f => f.type === 'application/pdf'));
+});
+fileInput.addEventListener('change', () => { addFiles([...fileInput.files]); fileInput.value = ''; });
+
+function addFiles(newFiles) {
+  newFiles.forEach(f => {
+    if (f.type === 'application/pdf') files.push({ id: Date.now() + Math.random(), file: f, name: f.name, size: f.size, thumb: null });
+  });
+  renderFileList();
+  showUI();
+  // Generate thumbnails async for newly added files
+  files.forEach(f => { if (!f.thumb) generateThumb(f); });
+}
+
+async function generateThumb(fileObj) {
+  try {
+    const arrayBuffer = await fileObj.file.arrayBuffer();
+    const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const page = await pdfDoc.getPage(1);
+    const viewport = page.getViewport({ scale: 1 });
+    const scale = 300 / viewport.width; // target ~300px wide
+    const scaledViewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width  = scaledViewport.width;
+    canvas.height = scaledViewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
+    fileObj.thumb = canvas.toDataURL('image/jpeg', 0.85);
+    // Update just this card's preview without full re-render
+    const el = document.querySelector(`.file-item[data-id="${fileObj.id}"] .f-preview`);
+    if (el) {
+      el.innerHTML = `<img src="${fileObj.thumb}" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px 10px 0 0;" alt="PDF preview" draggable="false">`;
+    }
+  } catch(e) { /* silently leave placeholder */ }
+}
+
+function removeFile(id) { files = files.filter(f => f.id !== id); renderFileList(); if (!files.length) hideUI(); }
+function clearAll() { files = []; renderFileList(); hideUI(); }
+function showUI() { document.getElementById('fileSection').style.display = 'block'; document.getElementById('mergeSection').style.display = files.length ? 'block' : 'none'; }
+function hideUI() { document.getElementById('fileSection').style.display = 'none'; document.getElementById('mergeSection').style.display = 'none'; }
+function fmtSize(b) { return b < 1024 ? b + ' B' : b < 1048576 ? (b/1024).toFixed(1) + ' KB' : (b/1048576).toFixed(2) + ' MB'; }
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function renderFileList() {
+  const list = document.getElementById('fileList');
+  document.getElementById('fileCount').textContent = files.length;
+  list.innerHTML = '';
+
+  files.forEach((f, i) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+    item.draggable = true;
+    item.dataset.idx = i;
+    item.dataset.id  = f.id;
+
+    const previewContent = f.thumb
+      ? `<img src="${f.thumb}" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px 10px 0 0;" alt="PDF preview" draggable="false">`
+      : `<div class="f-preview-placeholder">
+           <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
+             <rect x="5" y="2" width="22" height="29" rx="2.5" fill="#d1eae8"/>
+             <path d="M20 2v8h8" stroke="#7db8b4" stroke-width="1.6"/>
+             <rect x="9" y="16" width="14" height="2" rx="1" fill="#7db8b4"/>
+             <rect x="9" y="20" width="10" height="2" rx="1" fill="#7db8b4" opacity=".6"/>
+             <rect x="9" y="24" width="12" height="2" rx="1" fill="#7db8b4" opacity=".4"/>
+           </svg>
+         </div>`;
+
+    item.innerHTML = `
+      <div class="f-preview">
+        ${previewContent}
+        <div class="f-order-badge">${i + 1}</div>
+        <div class="f-drag-icon" title="Drag to reorder">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13">
+            <circle cx="4.5" cy="2.5" r="1.2" fill="currentColor"/>
+            <circle cx="8.5" cy="2.5" r="1.2" fill="currentColor"/>
+            <circle cx="4.5" cy="6.5" r="1.2" fill="currentColor"/>
+            <circle cx="8.5" cy="6.5" r="1.2" fill="currentColor"/>
+            <circle cx="4.5" cy="10.5" r="1.2" fill="currentColor"/>
+            <circle cx="8.5" cy="10.5" r="1.2" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <div class="f-info">
+        <div class="f-text">
+          <div class="f-name" title="${escHtml(f.name)}">${escHtml(f.name)}</div>
+          <div class="f-size">${fmtSize(f.size)}</div>
+        </div>
+        <button class="btn-rm" title="Remove" onclick="removeFile(${f.id})">
+          <svg width="13" height="13" fill="none" viewBox="0 0 13 13"><path d="M1.5 1.5l10 10M11.5 1.5l-10 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>`;
+
+    // Drag reorder events
+    item.addEventListener('dragstart', e => {
+      dragSrcIdx = i;
+      e.dataTransfer.effectAllowed = 'move';
+      // Use thumbnail as drag image if available
+      if (f.thumb) {
+        const img = new Image(); img.src = f.thumb;
+        e.dataTransfer.setDragImage(img, 40, 60);
+      }
+      setTimeout(() => item.classList.add('dragging'), 0);
+    });
+    item.addEventListener('dragend', () => {
+      item.classList.remove('dragging');
+      document.querySelectorAll('.file-item').forEach(el => el.classList.remove('drag-target'));
+    });
+    item.addEventListener('dragover', e => {
+      e.preventDefault(); e.dataTransfer.dropEffect = 'move';
+      document.querySelectorAll('.file-item').forEach(el => el.classList.remove('drag-target'));
+      item.classList.add('drag-target');
+    });
+    item.addEventListener('dragleave', () => item.classList.remove('drag-target'));
+    item.addEventListener('drop', e => {
+      e.preventDefault(); e.stopPropagation();
+      item.classList.remove('drag-target');
+      if (dragSrcIdx === null || dragSrcIdx === i) return;
+      const moved = files.splice(dragSrcIdx, 1)[0];
+      files.splice(i, 0, moved);
+      dragSrcIdx = null;
+      renderFileList();
+    });
+
+    list.appendChild(item);
+  });
+
+  document.getElementById('mergeSection').style.display = files.length ? 'block' : 'none';
+}
+
+async function mergePDFs() {
+  if (!files.length) return;
+  const btn = document.getElementById('mergeBtn'), wrap = document.getElementById('progressWrap'), bar = document.getElementById('progressBar'), lbl = document.getElementById('progressLabel');
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M8.5 2a6.5 6.5 0 016.5 6.5" stroke="white" stroke-width="2" stroke-linecap="round" class="spin"/></svg> Merging…`;
+  wrap.classList.add('show'); bar.style.width = '0%'; lbl.textContent = 'Loading files…';
+  try {
+    const { PDFDocument } = PDFLib;
+    const merged = await PDFDocument.create();
+    for (let i = 0; i < files.length; i++) {
+      bar.style.width = Math.round((i / files.length) * 88) + '%';
+      lbl.textContent = `Processing ${i+1} of ${files.length}: ${files[i].name}`;
+      const bytes = await files[i].file.arrayBuffer();
+      const pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
+      const pages = await merged.copyPages(pdf, pdf.getPageIndices());
+      pages.forEach(p => merged.addPage(p));
+    }
+    bar.style.width = '95%'; lbl.textContent = 'Finalizing…';
+    const out = await merged.save();
+    const blob = new Blob([out], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'merged.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    bar.style.width = '100%'; lbl.textContent = '✓ Done! Downloading…';
+    showToast('PDF merged and downloaded!');
+    setTimeout(() => wrap.classList.remove('show'), 3500);
+  } catch(err) { console.error(err); showToast('Something went wrong. Please try again.'); wrap.classList.remove('show'); }
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M2 8.5h13M8.5 2l6.5 6.5-6.5 6.5" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg> Merge &amp; Download PDF`;
+}
+
+function toggleFAQ(el) {
+  const ans = el.nextElementSibling, isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3600);
+}
+
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; document.getElementById('pwaBtn').style.display = 'flex'; });
+async function installPWA() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') { document.getElementById('pwaBtn').style.display = 'none'; showToast('App installed!'); }
+  deferredPrompt = null;
+}
+window.addEventListener('appinstalled', () => document.getElementById('pwaBtn').style.display = 'none');
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+// Firebase config - replace with your values
+      // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAs2r7zpy2GGYNAKopJd7w-Mqwm8T8ro",
+  authDomain: "qwikpdf.firebaseapp.com",
+  projectId: "qwikpdf",
+  storageBucket: "qwikpdf.firebasestorage.app",
+  messagingSenderId: "792810056628",
+  appId: "1:792810056628:web:9d9e14ba43084a1bf420e1",
+  measurementId: "G-KLXS3T20P8"
+};
+
+
+// Initialize Firebase and make db global
+window.firebaseApp = firebase.initializeApp(firebaseConfig);
+window.db = firebase.firestore();
+</script>
+</body>
+</html>
